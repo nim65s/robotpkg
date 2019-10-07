@@ -28,6 +28,7 @@ include ../../devel/jrl-cmakemodules/Makefile.common
 
 include ../../devel/boost-headers/depend.mk
 include ../../devel/boost-libs/depend.mk
+include ../../graphics/urdfdom/depend.mk
 include ../../math/pinocchio/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../path/hpp-fcl/depend.mk
@@ -36,9 +37,16 @@ include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
-include ../../mk/language/c++11.mk
+include ../../mk/language/c++.mk
+
+# urdfdom >= 1 requires c++11, avoid it otherwise
+ifeq (yes,$(call pmatch,urdfdom>=1,${PKGVERSION.urdfdom}))
+	include ../../mk/language/c++11.mk
+	# boost < 1.55 and c++11 issues:
+	# https://svn.boost.org/trac10/ticket/8772
+	DEPEND_ABI.boost-headers +=	boost-headers>=1.55
+endif
 
 DEPEND_ABI.cmake +=		cmake>=2.8.12
-DEPEND_ABI.boost-headers +=	boost-headers>=1.55
 
 include ../../mk/robotpkg.mk
