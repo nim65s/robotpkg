@@ -11,8 +11,6 @@ endif
 
 ifeq (+,$(PY_QT_HPP_GUI_DEPEND_MK)) # -----------------------------------------
 
-include ../../mk/sysdep/python.mk
-
 PREFER.py-qt-hpp-gui?=	robotpkg
 
 DEPEND_USE+=		py-qt-hpp-gui
@@ -27,6 +25,9 @@ DEPEND_DIR.py-qt-hpp-gui?=	../../graphics/py-qt-hpp-gui
 SYSTEM_SEARCH.py-qt-hpp-gui=\
  'include/hpp/gui/config.hh'				\
  'lib/pkgconfig/hpp-gui.pc:/Version/s/[^0-9.]//gp'
+
+include ../../graphics/py-qt-hpp-gepetto-viewer/depend.mk
+include ../../path/py-hpp-manipulation-corba/depend.mk
 
 endif # PY_QT_HPP_GUI_DEPEND_MK -----------------------------------------------
 

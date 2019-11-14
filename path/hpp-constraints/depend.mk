@@ -24,7 +24,9 @@ SYSTEM_SEARCH.hpp-constraints=				\
   'lib/pkgconfig/hpp-constraints.pc:/Version/s/[^0-9.]//gp'
 
 DEPEND_ABI.eigen3 += eigen3>=3.2.4
-include ../../math/eigen3/depend.mk
+
+include ../../math/hpp-pinocchio/depend.mk
+include ../../path/hpp-statistics/depend.mk
 
 endif # HPP_CONSTRAINTS_DEPEND_MK --------------------------------------------
 

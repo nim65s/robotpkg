@@ -26,7 +26,7 @@ SYSTEM_SEARCH.hpp-pinocchio=		\
 DEPEND_ABI.eigen3 += eigen3>=3.2.92
 include ../../math/eigen3/depend.mk
 include ../../math/pinocchio/depend.mk
-include ../../path/hpp-fcl/depend.mk
+include ../../path/hpp-util/depend.mk
 
 endif # HPPPINOCCHIO_DEPEND_MK ---------------------------------
 

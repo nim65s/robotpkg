@@ -23,7 +23,8 @@ DEPEND_USE+=			py-pinocchio
 DEPEND_ABI.py-pinocchio?=	${PKGTAG.python-}pinocchio>=2.0.0<3.0.0
 DEPEND_DIR.py-pinocchio?=	../../math/py-pinocchio
 
-include ../../mk/sysdep/python.mk
+include ../../math/pinocchio/depend.mk
+include ../../math/py-eigenpy/depend.mk
 
 endif # PY_PINOCCHIO_DEPEND_MK ---------------------------------------------
 

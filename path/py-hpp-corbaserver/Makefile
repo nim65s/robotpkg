@@ -16,9 +16,7 @@ include ../../math/hpp-pinocchio/depend.mk
 include ../../middleware/omniORB/depend.mk
 include ../../middleware/py-omniORBpy/depend.mk
 include ../../middleware/hpp-template-corba/depend.mk
-include ../../path/hpp-constraints/depend.mk
 include ../../path/hpp-core/depend.mk
-include ../../mapping/octomap/depend.mk
 include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/language/c++11.mk
 include ../../mk/language/c.mk

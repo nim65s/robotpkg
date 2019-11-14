@@ -23,6 +23,9 @@ SYSTEM_SEARCH.hpp-walkgen=			\
 	lib/libhpp-walkgen.so		\
 	'lib/pkgconfig/hpp-walkgen.pc:/Version/s/[^0-9.]//gp'
 
+include ../../optimization/roboptim-trajectory/depend.mk
+include ../../path/hpp-core/depend.mk
+
 endif # HPPWALKGEN_DEPEND_MK ---------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

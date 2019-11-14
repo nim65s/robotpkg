@@ -23,6 +23,8 @@ SYSTEM_SEARCH.hpp-wholebody-step=		\
 	include/hpp/wholebody-step/static-stability-constraint.hh	\
 	'lib/pkgconfig/hpp-wholebody-step.pc:/Version/s/[^0-9.]//gp'
 
+include ../../path/hpp-walkgen/depend.mk
+
 endif # HPP_WHOLEBODY_STEP_DEPEND_MK ----------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

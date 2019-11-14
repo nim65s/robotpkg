@@ -22,6 +22,9 @@ SYSTEM_SEARCH.hpp-template-corba=\
 	include/hpp/corba/template/server.hh				\
 	'lib/pkgconfig/hpp-template-corba.pc:/Version/s/[^0-9.]//gp'
 
+include ../../middleware/omniORB/depend.mk
+include ../../path/hpp-util/depend.mk
+
 endif # --------------------------------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}

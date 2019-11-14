@@ -24,6 +24,8 @@ SYSTEM_SEARCH.hpp-manipulation-urdf=			\
 	lib/libhpp-manipulation-urdf.so		\
 	'lib/pkgconfig/hpp-manipulation-urdf.pc:/Version/s/[^0-9.]//gp'
 
+include ../../path/hpp-manipulation/depend.mk
+
 endif # HPPMANIPULATIONURDF_DEPEND_MK ---------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

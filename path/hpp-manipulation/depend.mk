@@ -24,6 +24,8 @@ SYSTEM_SEARCH.hpp-manipulation=			\
 	lib/libhpp-manipulation.so		\
 	'lib/pkgconfig/hpp-manipulation.pc:/Version/s/[^0-9.]//gp'
 
+include ../../path/hpp-wholebody-step/depend.mk
+
 endif # HPPMANIPULATION_DEPEND_MK ---------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

@@ -11,8 +11,6 @@ endif
 
 ifeq (+,$(PY_QT_HPP_PLOT_DEPEND_MK)) # ----------------------------------------
 
-include ../../mk/sysdep/python.mk
-
 PREFER.py-qt-hpp-plot?=	robotpkg
 
 DEPEND_USE+=		py-qt-hpp-plot
@@ -29,6 +27,10 @@ SYSTEM_SEARCH.py-qt-hpp-plot=\
   'include/hpp/plot/config.hh'	\
   'lib/libhpp-plot.so'	\
   'lib/pkgconfig/hpp-plot.pc:/Version/s/[^0-9.]//gp'
+
+include ../../graphics/py-qt-hpp-gepetto-viewer/depend.mk
+include ../../graphics/qt-qgv/depend.mk
+include ../../path/py-hpp-manipulation-corba/depend.mk
 
 endif # PY_QT_HPP_PLOT_DEPEND_MK ----------------------------------------------
 

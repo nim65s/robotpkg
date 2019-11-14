@@ -9,12 +9,7 @@ CATEGORIES=	path
 
 include ../../meta-pkgs/hpp/Makefile.common
 
-include ../../math/eigen3/depend.mk
-include ../../math/hpp-pinocchio/depend.mk
 include ../../path/hpp-constraints/depend.mk
-include ../../path/hpp-statistics/depend.mk
-include ../../path/hpp-util/depend.mk
-include ../../mapping/octomap/depend.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk
 include ../../mk/robotpkg.mk

@@ -14,7 +14,6 @@ CMAKE_ARGS+=		-DqpOASES_PREFIX=${PREFIX.qpoases}
 DEPEND_ABI.g++ += g++>=4.6
 DEPEND_ABI.eigen3 += eigen3>=3.2.92
 
-include ../../mapping/octomap/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../math/hpp-pinocchio/depend.mk
 include ../../math/pinocchio/depend.mk

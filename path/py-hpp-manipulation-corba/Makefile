@@ -17,14 +17,8 @@ CMAKE_ARGS+=		-DCXX_DISABLE_WERROR=yes
 PYTHON_NOTAG_CONFLICT=	yes
 
 include ../../meta-pkgs/hpp/Makefile.common
-include ../../middleware/omniORB/depend.mk
-include ../../middleware/py-omniORBpy/depend.mk
-include ../../mapping/octomap/depend.mk
-include ../../optimization/roboptim-trajectory/depend.mk
 include ../../path/py-hpp-corbaserver/depend.mk
 include ../../path/hpp-manipulation-urdf/depend.mk
-include ../../path/hpp-manipulation/depend.mk
-include ../../path/hpp-util/depend.mk
 
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

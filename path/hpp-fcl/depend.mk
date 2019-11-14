@@ -24,6 +24,8 @@ SYSTEM_SEARCH.hpp-fcl=\
   'lib/pkgconfig/hpp-fcl.pc:/Version/s/[^0-9.]//gp'
 
 include ../../math/eigen3/depend.mk
+include ../../mapping/octomap/depend.mk
+include ../../graphics/assimp/depend.mk
 
 endif # HPP_FCL_DEPEND_MK --------------------------------------------------
 

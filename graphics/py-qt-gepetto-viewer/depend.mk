@@ -24,6 +24,8 @@ SYSTEM_SEARCH.py-qt-gepetto-viewer=\
   'lib/libgepetto-viewer.so'					\
   'lib/pkgconfig/gepetto-viewer.pc:/Version/s/[^0-9.]//gp'
 
+include ../../mk/sysdep/openscenegraph.mk
+include ../../mk/sysdep/openthreads.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/qt.mk
 

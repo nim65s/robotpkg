@@ -25,6 +25,9 @@ DEPEND_DIR.py-qt-hpp-gepetto-viewer?=	../../graphics/py-qt-hpp-gepetto-viewer
 SYSTEM_SEARCH.py-qt-hpp-gepetto-viewer=			\
 	'lib/pkgconfig/hpp-gepetto-viewer.pc:/Version/s/[^0-9.]//gp'
 
+include ../../graphics/py-qt-gepetto-viewer-corba/depend.mk
+include ../../path/py-hpp-corbaserver/depend.mk
+
 endif # PY_QT_HPP_GEPETTO_VIEWER_DEPEND_MK ---------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

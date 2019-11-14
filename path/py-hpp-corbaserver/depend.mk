@@ -11,8 +11,6 @@ endif
 
 ifeq (+,$(PY_HPP_CORBASERVER_DEPEND_MK)) # ------------------------------------
 
-include ../../mk/sysdep/python.mk
-
 PREFER.py-hpp-corbaserver?=	robotpkg
 
 DEPEND_USE+=			py-hpp-corbaserver
@@ -28,11 +26,9 @@ SYSTEM_SEARCH.py-hpp-corbaserver=\
 # need omniidl_be in PYTHONPATH
 PYTHONPATH.py-hpp-corbaserver+=	$(dir ${SYSTEM_FILES.omniORBpy})
 
-include ../../middleware/omniORB/depend.mk
 include ../../middleware/py-omniORBpy/depend.mk
+include ../../middleware/hpp-template-corba/depend.mk
 include ../../path/hpp-core/depend.mk
-include ../../path/hpp-constraints/depend.mk
-include ../../math/hpp-pinocchio/depend.mk
 
 endif # --------------------------------------------------------------------
 

@@ -11,8 +11,6 @@ endif
 
 ifeq (+,$(PY_HPP_TUTORIAL_DEPEND_MK)) # --------------------------------------
 
-include ../../mk/sysdep/python.mk
-
 PREFER.py-hpp-tutorial?=	robotpkg
 
 DEPEND_USE+=			py-hpp-tutorial
@@ -23,6 +21,8 @@ DEPEND_DIR.py-hpp-tutorial?=	../../doc/py-hpp-tutorial
 SYSTEM_SEARCH.py-hpp-tutorial=\
 	bin/hpp-tutorial-server		\
 	'lib/pkgconfig/hpp_tutorial.pc:/Version/s/[^0-9.]//gp'
+
+include ../../path/py-hpp-manipulation-corba/depend.mk
 
 endif # PY_HPP_TUTORIAL_DEPEND_MK --------------------------------------------
 
