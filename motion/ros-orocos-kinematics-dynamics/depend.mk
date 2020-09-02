@@ -26,7 +26,7 @@ DEPEND_DIR.ros-orocos-kinematics-dynamics?=\
   ../../motion/ros-orocos-kinematics-dynamics
 
 SYSTEM_SEARCH.ros-orocos-kinematics-dynamics=\
-  'share/orocos_kinematics_dynamics/package.xml:/<version>/s/[^0-9.]//gp'
+  'share/orocos_{kinematics_dynamics,kdl}/package.xml:/<version>/s/[^0-9.]//gp'
 
 include ../../motion/orocos-kdl/depend.mk
 
