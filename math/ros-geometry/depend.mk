@@ -49,7 +49,7 @@ SYSTEM_SEARCH.ros-geometry=\
 include ../../math/eigen3/depend.mk
 
 # headers use C++11 in ros-melodic
-PKG_ALTERNATIVE_SET.melodic += $(eval include ../../mk/language/c++11.mk)
+#PKG_ALTERNATIVE_SET.melodic += $(eval include ../../mk/language/c++11.mk)
 
 endif # ROS_GEOMETRY_DEPEND_MK ---------------------------------------------
 
