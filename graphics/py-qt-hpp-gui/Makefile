@@ -2,11 +2,11 @@
 # Created:			Guilhem Saurel on Tue, 26 Feb 2019
 #
 
-PKGNAME=	${PKGTAG.python-}${PKGTAG.qt-}${DISTNAME}
-PKGREVISION=	1
+PKGNAME=		${PKGTAG.python-}${PKGTAG.qt-}${DISTNAME}
 
-HPP_PACKAGE=	hpp-gui
-HPP_COMMENT=	Graphical interface for HPP
+HPP_PACKAGE=		hpp-gui
+HPP_COMMENT=		Graphical interface for HPP
+HPP_VERSION=		4.10.1
 
 CATEGORIES=		graphics
 CONFLICTS+=		qt[0-9]-hpp-gui-[0-9]*
