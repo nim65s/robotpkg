@@ -3,6 +3,7 @@
 #
 
 HPP_PACKAGE=		hpp-manipulation
+HPP_VERSION=		4.10.1
 
 CATEGORIES=		path
 HPP_COMMENT=		Manipulation problem definition and resolution
