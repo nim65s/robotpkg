@@ -3,6 +3,7 @@
 #
 
 HPP_PACKAGE=		hpp-walkgen
+HPP_VERSION=		4.10.1
 
 CATEGORIES=		path
 HPP_COMMENT=		Walk generator for hpp framework
