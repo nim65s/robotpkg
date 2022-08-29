@@ -58,6 +58,9 @@ endif
 ifneq (,$(call isyes,${USE_QMAKE}))
   include ${ROBOTPKG_DIR}/mk/configure/qmake-configure.mk
 endif
+ifneq (,$(call isyes,${USE_MESON}))
+  include ${ROBOTPKG_DIR}/mk/configure/meson-configure.mk
+endif
 
 CONFIGURE_SCRIPT?=	./configure
 CONFIGURE_ENV+=		${ALL_ENV}
