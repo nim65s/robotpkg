@@ -1,0 +1,35 @@
+From b3162abb854c610c0baf7581731bcc50f4d59bf0 Mon Sep 17 00:00:00 2001
+From: Guilhem Saurel <guilhem.saurel@laas.fr>
+Date: Fri, 12 May 2023 11:44:09 +0200
+Subject: [PATCH] CMake: an example require python 3
+
+so don't activate it for python 2
+
+```
+$ rg ' @ ' -tpy
+examples/static-contact-dynamics.py
+100:ls = np.linalg.pinv(Jc__feet_bl_T) @ g_bl  # This is (3)
+131:tau = g_j - Jc__feet_j_T @ ls
+```
+---
+ examples/CMakeLists.txt | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/examples/CMakeLists.txt b/examples/CMakeLists.txt
+index 12eabff05..2f498e48f 100644
+--- examples/CMakeLists.txt
++++ examples/CMakeLists.txt
+@@ -90,8 +90,12 @@ IF(BUILD_PYTHON_INTERFACE)
+         collision-with-point-clouds
+         append-urdf-model-with-another-model
+         meshcat-viewer
+-        static-contact-dynamics
+         )
++      IF(PYTHON_VERSION_MAJOR EQUAL 3)
++        LIST(APPEND ${PROJECT_NAME}_PYTHON_EXAMPLES
++          static-contact-dynamics
++          )
++      ENDIF()
+     ENDIF(BUILD_WITH_URDF_SUPPORT)
+   ENDIF(hpp-fcl_FOUND)
+ 
