@@ -37,6 +37,7 @@ SUBDIR+=	ros-qt-gui-core
 SUBDIR+=	ros-rqt
 SUBDIR+=	ros-rqt-common-plugins
 SUBDIR+=	ros-urdf
+SUBDIR+=	sdformat
 SUBDIR+=	simple-humanoid-description
 SUBDIR+=	sun-java3d
 SUBDIR+=	urdfdom
