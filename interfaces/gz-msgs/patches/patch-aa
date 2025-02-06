@@ -1,0 +1,41 @@
+Fix compatibility with protobuf < 3.15
+
+--- core/src/DynamicFactory.cc~	2024-09-26 20:29:44.000000000 +0200
++++ core/src/DynamicFactory.cc	2025-02-13 21:09:09.641339419 +0100
+@@ -152,9 +152,36 @@
+ //////////////////////////////////////////////////
+ void DynamicFactory::Types(std::vector<std::string> &_types)
+ {
++#if 1 || GOOGLE_PROTOBUF_VERSION < 3015000
++  std::vector<std::string> files;
++  if (!this->db.FindAllFileNames(&files)) return;
++
++  using dproto = google::protobuf::DescriptorProto;
++  using fdproto = google::protobuf::FileDescriptorProto;
++  std::function<void (const dproto &, const std::string &)> adder;
++  std::set<std::string> set;
++
++  adder = [&adder, &set](const dproto &d, const std::string &prefix) {
++    auto name = prefix.empty() ? d.name() : prefix + "." + d.name();
++    set.insert(name);
++
++    for (const auto& n : d.nested_type()) adder(n, name);
++  };
++
++  fdproto f;
++  for (const auto &p : files) {
++    f.Clear();
++    if (!this->db.FindFileByName(p, &f)) continue;
++
++    for (const auto& d : f.message_type()) adder(d, f.package());
++  }
++
++  std::copy(set.begin(), set.end(), std::back_inserter(_types));
++#else
+   std::vector<std::string> messages;
+   this->db.FindAllMessageNames(&messages);
+   std::copy(messages.begin(), messages.end(), std::back_inserter(_types));
++#endif
+ }
+ 
+ //////////////////////////////////////////////////

@@ -1,0 +1,31 @@
+Workaround major(3) or minor(3) being macros on *BSD
+
+--- core/include/gz/msgs/convert/FuelMetadata.hh~	2024-09-26 20:29:44.000000000 +0200
++++ core/include/gz/msgs/convert/FuelMetadata.hh	2025-02-14 00:32:48.912580320 +0100
+@@ -17,6 +17,11 @@
+ #ifndef GZ_MSGS_CONVERT_FUELMETADATA_HH_
+ #define GZ_MSGS_CONVERT_FUELMETADATA_HH_
+ 
++// Workaround major(3) or minor(3) being macros on *BSD
++#include <sys/types.h>
++#undef major
++#undef minor
++
+ #include <gz/msgs/config.hh>
+ 
+ // Message Headers
+--- tools/gz_msgs_generate_factory.py~	2025-02-13 21:09:54.188892323 +0100
++++ tools/gz_msgs_generate_factory.py	2025-02-14 00:39:04.995955866 +0100
+@@ -43,6 +43,12 @@
+ 
+ #ifndef GZ_MSGS_MESSAGE_TYPES_HH_
+ #define GZ_MSGS_MESSAGE_TYPES_HH_
++
++/* Workaround major(3) or minor(3) being macros on *BSD */
++#include <sys/types.h>
++#undef major
++#undef minor
++
+ {gz_msgs_headers}
+ 
+ namespace {namespace} {{
