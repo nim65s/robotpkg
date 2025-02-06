@@ -11,6 +11,7 @@ SUBDIR+=	eigen3
 SUBDIR+=	eiquadprog
 SUBDIR+=	gbM
 SUBDIR+=	geometric-tools
+SUBDIR+=	gz-math
 SUBDIR+=	hpp-pinocchio
 SUBDIR+=	hrp2-dynamics
 SUBDIR+=	jafar-jmath

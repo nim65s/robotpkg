@@ -1,0 +1,11 @@
+Gazebo Math, a component of Gazebo, provides general purpose math classes and
+functions designed for robotic applications.
+
+Gazebo Math provides a wide range of functionality, including:
+* Type-templated pose, matrix, vector, and quaternion classes.
+* Shape representations along with operators to compute volume, density, size
+  and other properties.
+* Classes for material properties, mass, inertial, temperature, PID, kmeans,
+  spherical coordinates, and filtering.
+* Optional Eigen component that converts between a few Eigen and Gazebo Math
+  types.
