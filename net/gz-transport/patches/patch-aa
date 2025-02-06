@@ -1,0 +1,13 @@
+No stdc++fs required for g++>=9.1
+
+--- CMakeLists.txt~	2024-09-27 00:22:56.000000000 +0200
++++ CMakeLists.txt	2025-02-13 23:01:44.031811688 +0100
+@@ -42,7 +42,7 @@
+ # gz-transport currently has no options that are unique to it
+ 
+ if (UNIX AND NOT APPLE)
+-  set (EXTRA_TEST_LIB_DEPS stdc++fs)
++  set (EXTRA_TEST_LIB_DEPS)
+ else()
+   set (EXTRA_TEST_LIB_DEPS)
+ endif()

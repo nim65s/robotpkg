@@ -6,6 +6,7 @@ COMMENT=        Networking tools
 SUBDIR+=        evart-client
 SUBDIR+=        evart-stream
 SUBDIR+=        genomix
+SUBDIR+=	gz-transport
 SUBDIR+=	libfetch
 SUBDIR+=	libtclserv_client
 SUBDIR+=	py-poco
