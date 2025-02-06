@@ -10,6 +10,7 @@ SUBDIR+=	foonathan-memory
 SUBDIR+=	gbx-share
 SUBDIR+=	gbx-flexiport
 SUBDIR+=	gz-cmake
+SUBDIR+=	gz-plugin
 SUBDIR+=	gz-utils
 SUBDIR+=	jafar-kernel
 SUBDIR+=	libedit

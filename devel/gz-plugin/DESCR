@@ -1,0 +1,3 @@
+Gazebo Plugin is a component in the Gazebo framework, a set of libraries
+designed to rapidly develop robot applications. It is used to register plugin
+libraries and load them dynamically at runtime.
