@@ -1,0 +1,8 @@
+@comment Thu Feb 6 11:15:47 CET 2025
+bin/gz
+lib/cmake/gz-tools2-all/gz-tools2-all-config-version.cmake
+lib/cmake/gz-tools2-all/gz-tools2-all-config.cmake
+lib/cmake/gz-tools2-all/gz-tools2-all-targets.cmake
+lib/libgz-tools2-backward.so
+share/bash-completion/completions/gz
+share/gz/gz.completion

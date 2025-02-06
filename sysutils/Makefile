@@ -8,6 +8,7 @@ SUBDIR+=	ament-index
 SUBDIR+=	arduio
 SUBDIR+=	arduio-genom3
 SUBDIR+=	console-bridge
+SUBDIR+=	gz-tools
 SUBDIR+=	hrp2-bringup
 SUBDIR+=	hrp2-computer-monitor
 SUBDIR+=	interceptty
