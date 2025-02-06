@@ -1,0 +1,7 @@
+gz-cmake provides a set of cmake modules that are used by the C++ based Gazebo
+projects. These modules help to control the quality and consistency of the
+Gazebo projects build systems.
+
+These modules are tailored to the Gazebo projects, so their use for non-Gazebo
+projects might be limited, but they may serve as a useful reference for setting
+up a modern cmake build system using good practices.

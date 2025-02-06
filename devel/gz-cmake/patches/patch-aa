@@ -1,0 +1,35 @@
+Simplify ... Also fixes the case where there dlopen(2) is in libc
+
+--- cmake/FindDL.cmake~	2024-09-26 00:52:35.000000000 +0200
++++ cmake/FindDL.cmake	2025-02-06 19:07:16.000494035 +0100
+@@ -66,28 +66,11 @@
+   mark_as_advanced(DL_INCLUDE_DIRS)
+ 
+   # Search for the library
+-  find_library(DL_LIBRARIES dl)
+-  if(DL_LIBRARIES)
+-
+-    if(NOT DL_FIND_QUIETLY)
+-      message(STATUS "Looking for libdl - found")
+-    endif()
+-
+-  else(DL_LIBRARIES)
+-
+-    if(NOT DL_FIND_QUIETLY)
+-      message(STATUS "Looking for libdl - not found")
+-    endif()
+-
+-    set(DL_FOUND false)
+-
+-  endif()
++  set(DL_LIBRARIES ${CMAKE_DL_LIBS})
+   mark_as_advanced(DL_LIBRARIES)
+ 
+   if(DL_FOUND)
+-    include(GzImportTarget)
+-    gz_import_target(DL)
+-    set(DL_TARGET DL::DL)
++    set(DL_TARGET ${CMAKE_DL_LIBS})
+   endif()
+ 
+ endif()
