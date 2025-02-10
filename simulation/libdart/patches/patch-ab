@@ -1,0 +1,19 @@
+Fix macro generating a header file including all other headers.
+In case the generated file already exists, don't recursively include it.
+
+--- cmake/DARTMacros.cmake~	2024-11-15 17:57:40.000000000 +0100
++++ cmake/DARTMacros.cmake	2025-02-07 18:45:26.139122220 +0100
+@@ -66,9 +66,12 @@
+ #   dart_generate_include_header_file(file_path target_dir [headers...])
+ #===============================================================================
+ macro(dart_generate_include_header_file file_path target_dir)
++  get_filename_component(this ${file_path} NAME)
+   file(WRITE ${file_path} "// Automatically generated file by cmake\n\n")
+   foreach(header ${ARGN})
+-    file(APPEND ${file_path} "#include \"${target_dir}${header}\"\n")
++    if (NOT ${this} STREQUAL "${header}")
++      file(APPEND ${file_path} "#include \"${target_dir}${header}\"\n")
++    endif()
+   endforeach()
+ endmacro()
+ 

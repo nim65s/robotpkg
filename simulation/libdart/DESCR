@@ -1,0 +1,30 @@
+DART (Dynamic Animation and Robotics Toolkit) is a collaborative,
+cross-platform, open-source library developed by the Graphics Lab and Humanoid
+Robotics Lab at the Georgia Institute of Technology, with ongoing contributions
+from the Personal Robotics Lab at the University of Washington and the Open
+Source Robotics Foundation. It provides data structures and algorithms for
+kinematic and dynamic applications in robotics and computer animation. DART
+stands out due to its accuracy and stability, which are achieved through the
+use of generalized coordinates to represent articulated rigid body systems and
+the application of Featherstone’s Articulated Body Algorithm to compute motion
+dynamics.
+
+For developers, DART offers full access to internal kinematic and dynamic
+quantities, such as the mass matrix, Coriolis and centrifugal forces,
+transformation matrices, and their derivatives, unlike many popular physics
+engines that treat the simulator as a black box. It also provides efficient
+computation of Jacobian matrices for arbitrary body points and coordinate
+frames. The frame semantics of DART allow users to define and use arbitrary
+reference frames (both inertial and non-inertial) to specify or request data.
+
+DART is suitable for real-time controllers due to its lazy evaluation, which
+automatically updates forward kinematics and dynamics values to ensure code
+safety. It also allows for the extension of the API to embed user-provided
+classes into DART data structures. Contacts and collisions are handled using an
+implicit time-stepping, velocity-based linear complementarity problem (LCP) to
+guarantee non-penetration, directional friction, and approximated Coulomb
+friction cone conditions.
+
+In summary, DART has applications in robotics and computer animation as it
+features a multibody dynamic simulator and various kinematic tools for control
+and motion planning.
