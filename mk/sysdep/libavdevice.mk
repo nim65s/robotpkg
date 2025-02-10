@@ -15,9 +15,9 @@ DEPEND_USE+=			libavdevice
 DEPEND_ABI.libavdevice?=	libavdevice>=52
 
 SYSTEM_SEARCH.libavdevice=\
-	'include/{,ffmpeg/}libavdevice/avdevice.h'		\
-	'lib/libavdevice.{so,a}'				\
-	'lib/pkgconfig/libavdevice.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavdevice/avdevice.h'			\
+  'lib/{,ffmpeg*/}libavdevice.{so,a}'				\
+  'lib/{,ffmpeg*/}pkgconfig/libavdevice.pc:/Version/s/[^0-9.]//gp'
 
 SYSTEM_PKG.Fedora.libavdevice=ffmpeg-libs
 SYSTEM_PKG.Ubuntu.libavdevice=libavdevice-dev
