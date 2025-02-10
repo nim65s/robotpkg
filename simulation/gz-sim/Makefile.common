@@ -1,0 +1,42 @@
+# robotpkg Makefile.common for:	simulation/gz-sim
+# Created:			Anthony Mallet on Wed Feb  5 2025
+#
+
+# distfiles
+GZMAJOR?=	$(word 1,$(subst ., ,${PKGVERSION}))
+MASTER_SITES?=	${MASTER_SITE_GITHUB:=gazebosim/}
+GITHUB_TAG?=	${GITHUB_PROJECT}${GZMAJOR}_${PKGVERSION_NOREV}
+GITHUB_PROJECT?=$(patsubst %${GZMAJOR},%,${PKGBASE})
+
+# metadata
+LICENSE?=	apache-2.0
+COMMENT?=	Gazebo ${GZ_COMMENT}
+
+# Default to robotpkg for all gz-* packages when building one gazebo package in
+# robotpkg. This makes little sense to mix system and robotpkg gazebo packages
+# (but still overridable in user configuration).
+# When building a non-gazebo package merely depending on a gazebo package, the
+# default is still 'system' where supported.
+PREFER.gz-sim?=	robotpkg
+
+# configuration
+WRKSRC?=	${WRKDIR}/${GITHUB_PROJECT}-${GITHUB_TAG}
+
+CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=	-DBUILD_TESTING=OFF
+CMAKE_ARGS+=	-DSKIP_PYBIND11=ON
+CMAKE_ARGS+=	-DCPPCHECK_PATH=OFF
+
+DEPEND_ABI.python+=	python>=3
+
+USE_GZ_CMAKE?=	yes
+ifneq (,$(filter yes Yes YES,${USE_GZ_CMAKE}))
+  include ../../devel/gz-cmake/depend.mk
+  include ../../pkgtools/pkg-config/depend.mk
+endif
+
+
+# dependencies
+include ../../mk/sysdep/cmake.mk
+include ../../mk/language/c.mk
+include ../../mk/language/c++.mk
