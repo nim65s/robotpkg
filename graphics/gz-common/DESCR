@@ -1,0 +1,5 @@
+Gazebo Common, a component of Gazebo, provides a set of libraries that cover
+many different use cases. An audio-visual library supports processing audio and
+video files, a graphics library can load a variety 3D mesh file formats into a
+generic in-memory representation, and the core library of Gazebo Common
+contains functionality that spans Base64 encoding/decoding to thread pools.

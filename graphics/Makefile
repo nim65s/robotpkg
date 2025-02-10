@@ -10,6 +10,7 @@ SUBDIR+=	flann
 SUBDIR+=	gdhe
 SUBDIR+=	gerard-bauzil
 SUBDIR+=	grh2
+SUBDIR+=	gz-common
 SUBDIR+=	laaswm
 SUBDIR+=	laaswm-libs
 SUBDIR+=	ogre-next
