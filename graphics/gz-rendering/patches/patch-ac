@@ -1,0 +1,12 @@
+Add OpenGL header path
+
+--- ogre2/src/CMakeLists.txt~	2025-02-13 17:34:59.391658863 +0100
++++ ogre2/src/CMakeLists.txt	2025-02-13 17:37:12.771849648 +0100
+@@ -50,6 +50,7 @@
+   # VCT GI needs this
+   ${OGRE2_INCLUDE}/Hlms/Pbs
+   ${OGRE2_INCLUDE}/Hlms/Common
++  ${OPENGL_INCLUDE_DIRS}
+ )
+ 
+ target_link_libraries(${ogre2_target}

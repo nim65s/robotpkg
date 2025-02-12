@@ -1,0 +1,6 @@
+Gazebo Rendering is a C++ library designed to provide an abstraction for
+different rendering engines. It offers unified APIs for creating 3D graphics
+applications.
+
+Gazebo Rendering is a component in the Gazebo framework, a set of libraries
+designed to rapidly develop robot applications.

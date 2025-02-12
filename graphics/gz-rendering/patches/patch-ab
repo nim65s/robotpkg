@@ -1,0 +1,14 @@
+Find X11 properly
+
+--- src/CMakeLists.txt~	2024-09-26 20:56:28.000000000 +0200
++++ src/CMakeLists.txt	2025-02-13 17:25:29.559582685 +0100
+@@ -44,7 +44,8 @@
+   gz-plugin${GZ_PLUGIN_VER}::loader
+ )
+ if (UNIX AND NOT APPLE)
+-  target_link_libraries(${PROJECT_LIBRARY_TARGET_NAME} PRIVATE X11)
++  find_package(X11 REQUIRED)
++  target_link_libraries(${PROJECT_LIBRARY_TARGET_NAME} PRIVATE ${X11_LIBRARIES})
+ endif()
+ 
+ # Build the unit tests.

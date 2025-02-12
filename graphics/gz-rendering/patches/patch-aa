@@ -1,0 +1,12 @@
+Don't use EGL
+
+--- CMakeLists.txt~	2024-09-26 20:56:28.000000000 +0200
++++ CMakeLists.txt	2025-02-13 14:38:54.273048275 +0100
+@@ -59,7 +59,6 @@
+ else()
+   gz_find_package(OpenGL REQUIRED
+     COMPONENTS OpenGL
+-    OPTIONAL_COMPONENTS EGL
+     REQUIRED_BY ogre ogre2
+     PKGCONFIG gl)
+ endif()
