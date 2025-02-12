@@ -1,0 +1,11 @@
+Ogre-Next is a 3D graphics rendering engine. Not to be confused with a game
+engine which provides Networking, Sound, Physics, etc.
+
+Ogre-Next 3.0 has had a substantial overhaul to focus on high performance
+graphics using Data Oriented Design with:
+
+* Cache friendly Entity and Node layout
+* Threaded batch processing of Nodes, Frustum Culling and other techniques
+  such as Forward Clustered SIMD processing using AoSoA (Array of Structures
+  of Arrays) memory layout
+* Texture loaded via background streaming

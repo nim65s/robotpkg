@@ -1,0 +1,17 @@
+Not only FreeBSD has bswap* macros
+
+--- OgreMain/include/OgreBitwise.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/OgreBitwise.h	2025-02-13 15:09:54.893971907 +0100
+@@ -37,12 +37,10 @@
+     #define __has_builtin(x) 0
+ #endif
+ 
+-#if OGRE_PLATFORM == OGRE_PLATFORM_FREEBSD
+     /// Undefine in <sys/endian.h> defined bswap macros for FreeBSD
+     #undef bswap16
+     #undef bswap32
+     #undef bswap64
+-#endif
+ 
+ #if OGRE_COMPILER == OGRE_COMPILER_MSVC
+     #include <intrin.h>

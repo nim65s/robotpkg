@@ -12,6 +12,7 @@ SUBDIR+=	gerard-bauzil
 SUBDIR+=	grh2
 SUBDIR+=	laaswm
 SUBDIR+=	laaswm-libs
+SUBDIR+=	ogre-next
 SUBDIR+=	openscenegraph
 SUBDIR+=	openvrml-libs
 SUBDIR+=	pqp

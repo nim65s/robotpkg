@@ -1,0 +1,26 @@
+Do not hardcode libGL pathname
+
+--- RenderSystems/GL3Plus/CMakeLists.txt~	2023-11-05 22:38:38.000000000 +0100
++++ RenderSystems/GL3Plus/CMakeLists.txt	2025-02-13 15:13:53.698136676 +0100
+@@ -120,6 +120,10 @@
+         LINK_FLAGS "-framework Cocoa -framework OpenGL")
+ endif ()
+ 
++set_target_properties(RenderSystem_GL3Plus PROPERTIES
++  COMPILE_DEFINITIONS OPENGL_gl_LIBRARY="${OPENGL_gl_LIBRARY}"
++)
++
+ ogre_config_framework(RenderSystem_GL3Plus)
+ 
+ ogre_config_plugin(RenderSystem_GL3Plus)
+--- RenderSystems/GL3Plus/src/gl3w.cpp~	2023-11-05 22:38:38.000000000 +0100
++++ RenderSystems/GL3Plus/src/gl3w.cpp	2025-02-13 15:14:31.044609131 +0100
+@@ -105,7 +105,7 @@
+ static int open_libgl(void)
+ {
+ #ifndef OGRE_CONFIG_UNIX_NO_X11
+-    libgl = dlopen("libGL.so.1", RTLD_LAZY | RTLD_LOCAL);
++    libgl = dlopen(OPENGL_gl_LIBRARY, RTLD_LAZY | RTLD_LOCAL);
+     if (!libgl)
+         return GL3W_ERROR_LIBRARY_OPEN;
+ 

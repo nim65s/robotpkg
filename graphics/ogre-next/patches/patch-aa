@@ -1,0 +1,46 @@
+Remove some noisy -Wclass-memaccess
+
+--- OgreMain/include/OgreDescriptorSetUav.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/OgreDescriptorSetUav.h	2025-02-13 14:24:27.406597063 +0100
+@@ -157,15 +157,13 @@
+                 TextureSlot texture;
+             };
+         public:
+-            Slot()
+-            {
+-                memset( this, 0, sizeof(*this) );
+-            }
++            Slot() : Slot(SlotTypeBuffer) {}
+ 
+             Slot( SlotType _slotType )
+             {
+-                memset( this, 0, sizeof(*this) );
+-                slotType = _slotType;
++              texture = {0};
++              buffer = {0};
++              slotType = _slotType;
+             }
+ 
+             bool empty(void) const
+--- OgreMain/include/OgreDescriptorSetTexture.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/OgreDescriptorSetTexture.h	2025-02-13 14:24:19.590538737 +0100
+@@ -238,15 +238,13 @@
+                 TextureSlot texture;
+             };
+         public:
+-            Slot()
+-            {
+-                memset( this, 0, sizeof(*this) );
+-            }
++            Slot() : Slot(SlotTypeBuffer) {}
+ 
+             Slot( SlotType _slotType )
+             {
+-                memset( this, 0, sizeof(*this) );
+-                slotType = _slotType;
++              texture = {0};
++              buffer = {0};
++              slotType = _slotType;
+             }
+ 
+             bool empty(void) const
