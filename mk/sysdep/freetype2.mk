@@ -17,15 +17,18 @@ DEPEND_USE+=		freetype2
 DEPEND_ABI.freetype2?=	freetype2>=2
 
 SYSTEM_SEARCH.freetype2=\
-	'bin/freetype-config::% --ftversion'			\
-	'include/freetype2/{,freetype/}freetype.h'		\
-	'lib/libfreetype.{so,a}'				\
-	'lib/pkgconfig/freetype2.pc' # .pc contains a strange version
+  'include/freetype2/{,freetype/}freetype.h:${_ft_version_sed}'	\
+  'lib/libfreetype.{so,a}'					\
+  'lib/pkgconfig/freetype2.pc' # .pc contains a strange version
+
+# extracting version from the header file
+_ft_version_sed=\
+  /define FREETYPE_\(MAJOR\|MINOR\|PATCH\)/{s/[^0-9]//g;H;};	\
+  $${x;s/\n/./g;s/^\.//p;}
 
 SYSTEM_PKG.Fedora.freetype2=	freetype-devel
-SYSTEM_PKG.Ubuntu.freetype2=	libfreetype6-dev
-SYSTEM_PKG.Debian.freetype2=	libfreetype6-dev
-SYSTEM_PKG.NetBSD.freetype2=		pkgsrc/graphics/freetype2
+SYSTEM_PKG.Debian.freetype2=	libfreetype-dev
+SYSTEM_PKG.NetBSD.freetype2=	graphics/freetype2
 
 endif # FREETYPE2_DEPEND_MK ------------------------------------------------
 
