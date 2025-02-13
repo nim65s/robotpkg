@@ -15,7 +15,7 @@ PREFER.zeromq?=		system
 
 DEPEND_USE+=		zeromq
 
-DEPEND_DIR.zeromq?=	../../net/zeromq
+DEPEND_ABI.zeromq?=	zeromq>=1
 
 SYSTEM_SEARCH.zeromq=\
   'include/zmq.h'	\
