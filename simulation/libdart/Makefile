@@ -40,7 +40,7 @@ define PKG_OPTION_SET.doc
   include ../../mk/sysdep/doxygen.mk
 endef
 define PKG_OPTION_UNSET.doc
-CMAKE_ARGS+=	-DDOXYGEN=OFF
+  CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON -DDOXYGEN_FOUND=OFF
 endef
 
 DEPEND_ABI.assimp+= assimp>=5.2.0

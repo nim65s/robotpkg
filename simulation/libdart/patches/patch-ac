@@ -1,0 +1,20 @@
+Don't install documention if not told so
+
+--- CMakeLists.txt~	2024-11-15 17:57:40.000000000 +0100
++++ CMakeLists.txt	2025-02-14 14:24:38.114196578 +0100
+@@ -530,6 +530,7 @@
+ # Install sample data, examples, and tutorials
+ #===============================================================================
+ 
++if(DOXYGEN_FOUND)
+ # Sample data
+ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data"
+   DESTINATION ${DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH}
+@@ -544,6 +545,7 @@
+ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tutorials"
+   DESTINATION ${DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH}
+ )
++endif()
+ 
+ #===============================================================================
+ # Uninstall
