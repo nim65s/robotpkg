@@ -1,4 +1,4 @@
-@comment Thu Feb 13 13:58:09 CET 2025
+@comment Fri Feb 14 17:37:53 CET 2025
 include/OGRE-Next/Animation/OgreBone.h
 include/OGRE-Next/Animation/OgreBone.inl
 include/OGRE-Next/Animation/OgreSkeletonAnimManager.h
@@ -2359,21 +2359,10 @@ share/OGRE-Next/docs/2.0/OGRE.2.0.Proposal.Slides.odp
 share/OGRE-Next/docs/2.0/Ogre 2.0 Porting Manual DRAFT.odt
 share/OGRE-Next/docs/2.0/Ogre.2.0.Proposal.Slides.ThreadingAddendum01.odp
 share/OGRE-Next/docs/2.0/VctMipmap.odp
-share/OGRE-Next/docs/CMakeFiles/CMakeDirectoryInformation.cmake
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/DependInfo.cmake
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/build.make
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/cmake_clean.cmake
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/compiler_depend.make
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/compiler_depend.ts
-share/OGRE-Next/docs/CMakeFiles/OgreDoc.dir/progress.make
-share/OGRE-Next/docs/CMakeFiles/progress.marks
-share/OGRE-Next/docs/CMakeLists.txt
 share/OGRE-Next/docs/ChangeLog.html
 share/OGRE-Next/docs/CodingStandards.html
 share/OGRE-Next/docs/License.html
-share/OGRE-Next/docs/Makefile
 share/OGRE-Next/docs/ReadMe.html
-share/OGRE-Next/docs/cmake_install.cmake
 share/OGRE-Next/docs/frontpage/AreaLights.jpg
 share/OGRE-Next/docs/frontpage/ForwardClustered.jpg
 share/OGRE-Next/docs/frontpage/HDR.jpg

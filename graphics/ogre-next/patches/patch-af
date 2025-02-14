@@ -1,0 +1,14 @@
+Avoid installing build sytem to the docs
+
+--- Docs/CMakeLists.txt~	2023-11-05 22:38:38.000000000 +0100
++++ Docs/CMakeLists.txt	2025-02-14 17:33:40.699599049 +0100
+@@ -26,6 +26,9 @@
+ 	DESTINATION ${OGRE_DOCS_PATH}
+ 	PATTERN ".hg" EXCLUDE
+ 	PATTERN "src" EXCLUDE
++	PATTERN "Makefile" EXCLUDE
++	PATTERN "CMake*" EXCLUDE
++	PATTERN "cmake*" EXCLUDE
+       )
+     endif ()
+     
