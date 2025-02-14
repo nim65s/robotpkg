@@ -10,7 +10,6 @@ SUBDIR+=	foonathan-memory
 SUBDIR+=	gbx-share
 SUBDIR+=	gbx-flexiport
 SUBDIR+=	jafar-kernel
-SUBDIR+=	jsoncpp
 SUBDIR+=	libedit
 SUBDIR+=	log4cxx
 SUBDIR+=	mkdep

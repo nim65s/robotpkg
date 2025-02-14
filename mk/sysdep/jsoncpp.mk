@@ -1,4 +1,4 @@
-# robotpkg depend.mk for:	devel/jsoncpp
+# robotpkg sysdep/jsoncpp.mk
 # Created:			Anthony Mallet on Tue, 18 Oct 2011
 #
 
@@ -11,16 +11,21 @@ endif
 
 ifeq (+,$(JSONCPP_DEPEND_MK)) # --------------------------------------------
 
-PREFER.jsoncpp?=	robotpkg
+PREFER.jsoncpp?=	system
 
 DEPEND_USE+=		jsoncpp
 
-DEPEND_ABI.jsoncpp?=	jsoncpp>=0.5.0
-DEPEND_DIR.jsoncpp?=	../../devel/jsoncpp
+DEPEND_ABI.jsoncpp?=	jsoncpp>=1
 
 SYSTEM_SEARCH.jsoncpp=\
-	include/json/json.h	\
-	'lib/libjson.{so,a}'
+  'include/{,jsoncpp/}json/json.h'		\
+  'lib/libjsoncpp.so'				\
+  'lib/cmake/jsoncpp/jsoncppConfig.cmake'	\
+  'lib/pkgconfig/jsoncpp.pc:/Version/s/[^.0-9]//gp'
+
+SYSTEM_PKG.Debian.jsoncpp=libjsoncpp-dev
+SYSTEM_PKG.RedHat.jsoncpp=jsoncpp-devel
+SYSTEM_PKG.NetBSD.jsoncpp=textproc/jsoncpp
 
 endif # JSONCPP_DEPEND_MK --------------------------------------------------
 
