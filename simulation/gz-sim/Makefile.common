@@ -35,8 +35,9 @@ ifneq (,$(filter yes Yes YES,${USE_GZ_CMAKE}))
   include ../../pkgtools/pkg-config/depend.mk
 endif
 
-
 # dependencies
+DEPEND_ABI.cmake?=	cmake>=3.22.1
+
 include ../../mk/sysdep/cmake.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
