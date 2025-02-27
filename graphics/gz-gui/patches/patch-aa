@@ -1,0 +1,19 @@
+Explicitly request OpenGL 3.3+
+
+https://github.com/gazebosim/gz-gui/issues/659
+
+--- src/plugins/minimal_scene/MinimalScene.cc~	2024-09-27 01:38:17.000000000 +0200
++++ src/plugins/minimal_scene/MinimalScene.cc	2025-03-13 10:32:43.496872363 +0100
+@@ -1207,8 +1207,11 @@
+       // and makeCurrent down below while setting up our own context.
+       current->doneCurrent();
+ 
++      QSurfaceFormat format;
++      format.setVersion(3, 3);
++
+       this->dataPtr->renderThread->SetContext(new QOpenGLContext());
+-      this->dataPtr->renderThread->Context()->setFormat(current->format());
++      this->dataPtr->renderThread->Context()->setFormat(format);
+       this->dataPtr->renderThread->Context()->setShareContext(current);
+       this->dataPtr->renderThread->Context()->create();
+ 

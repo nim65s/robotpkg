@@ -11,6 +11,7 @@ SUBDIR+=	gdhe
 SUBDIR+=	gerard-bauzil
 SUBDIR+=	grh2
 SUBDIR+=	gz-common
+SUBDIR+=	gz-gui
 SUBDIR+=	gz-rendering
 SUBDIR+=	laaswm
 SUBDIR+=	laaswm-libs

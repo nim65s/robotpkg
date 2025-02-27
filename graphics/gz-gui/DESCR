@@ -1,0 +1,6 @@
+Gazebo GUI builds on top of Qt to provide widgets which are useful when
+developing robotics applications, such as a 3D view, plots, dashboard, etc, and
+can be used together in a convenient unified interface.
+
+Gazebo GUI ships with several widgets ready to use and offers a plugin
+interface which can be used to add custom widgets.
