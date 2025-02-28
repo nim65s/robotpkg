@@ -1,0 +1,4 @@
+Gazebo Sensors, a component of Gazebo, provides numerous sensor models designed
+to generate realistic data from simulation environments. Gazebo Sensors is used
+in conjunction with Gazebo Libraries, and especially relies on the rendering
+capabilities from Gazebo Rendering and physics simulation from Gazebo Physics.

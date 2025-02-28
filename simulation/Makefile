@@ -6,6 +6,7 @@ COMMENT=	Simulation tools
 SUBDIR+=	dxsim-gazebo
 SUBDIR+=	gazebo-ros-pkgs
 SUBDIR+=	gz-physics
+SUBDIR+=	gz-sensors
 SUBDIR+=	hpp-environments
 SUBDIR+=	libdart
 SUBDIR+=	libdynamixel
