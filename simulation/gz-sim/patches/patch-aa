@@ -1,0 +1,24 @@
+No stdc++fs required for g++>=9.1
+
+--- CMakeLists.txt~	2024-09-27 04:48:19.000000000 +0200
++++ CMakeLists.txt	2025-02-28 16:58:06.276335125 +0100
+@@ -33,7 +33,7 @@
+ endif()
+ 
+ if (UNIX AND NOT APPLE)
+-  set (EXTRA_TEST_LIB_DEPS stdc++fs)
++  set (EXTRA_TEST_LIB_DEPS)
+ else()
+   set (EXTRA_TEST_LIB_DEPS)
+ endif()
+--- src/CMakeLists.txt~	2024-09-27 04:48:19.000000000 +0200
++++ src/CMakeLists.txt	2025-03-02 17:07:49.698677467 +0100
+@@ -235,7 +235,7 @@
+ 
+ if (UNIX AND NOT APPLE)
+   target_link_libraries(${PROJECT_LIBRARY_TARGET_NAME}
+-    PRIVATE stdc++fs)
++    )
+ endif()
+ 
+ target_include_directories(${PROJECT_LIBRARY_TARGET_NAME}

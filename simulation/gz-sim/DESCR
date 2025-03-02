@@ -1,0 +1,9 @@
+Gazebo Sim is an open source robotics simulator. Through Gazebo Sim, users have
+access to high fidelity physics, rendering, and sensor models. Additionally,
+users and developers have multiple points of entry to simulation including a
+graphical user interface, plugins, and asynchronous message passing and
+services.
+
+Gazebo Sim is derived from Gazebo Classic and represents over 16 years of
+development and experience in robotics and simulation. This library is part of
+the Gazebo project.
