@@ -1,0 +1,11 @@
+--- src/Makefile.in~	2018-08-22 17:24:43.000000000 +0200
++++ src/Makefile.in	2025-03-07 17:00:32.038027374 +0100
+@@ -233,7 +233,7 @@
+ LD = @LD@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = $(MOR_LIBS)
++LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@
+ LN_S = @LN_S@

@@ -2,6 +2,7 @@
 # Created:			Matthieu Herrb on Wed, 31 Aug 2011
 #
 
+PKGREVISION=	1
 DISTNAME=	mor-libs-0.3
 CATEGORIES=	robots
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=neobotix/}
