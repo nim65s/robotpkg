@@ -2,10 +2,9 @@
 # Created:			Florent Lamiraux on Sat, 7 Mar 2015
 #
 
-PKGREVISION=		1
 ORG=			coal-library
 NAME=			coal
-VERSION=		3.0.0
+VERSION=		3.0.1
 
 CATEGORIES=		path
 COMMENT=		collision detection and distance computations

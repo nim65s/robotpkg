@@ -256,6 +256,7 @@ lib/cmake/coal/cxx-standard.cmake
 lib/cmake/hpp-fcl/hpp-fclConfig.cmake
 lib/cmake/hpp-fcl/hpp-fclConfigVersion.cmake
 lib/libcoal.so
+lib/libcoal.so.${PKGVERSION}
 lib/pkgconfig/coal.pc
 share/ament_index/resource_index/packages/coal
 share/coal/hook/ament_prefix_path.dsv

@@ -4,7 +4,7 @@
 
 ORG=			coal-library
 NAME=			coal
-VERSION=		3.0.0
+VERSION=		3.0.1
 
 CATEGORIES=		path
 HPP_COMMENT=		collision detection and distance computations (python bindingss)
