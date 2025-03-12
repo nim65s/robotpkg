@@ -23,7 +23,7 @@ DEPEND_ABI.qhull?=	qhull
 
 SYSTEM_SEARCH.qhull=	\
   'include/{,lib}qhull/{,lib}qhull.h' \
-  'lib/libqhull.so'
+  'lib/libqhull{,_r}.so'
 
 SYSTEM_PKG.Fedora.qhull=qhull-devel
 SYSTEM_PKG.Debian.qhull=libqhull-dev
