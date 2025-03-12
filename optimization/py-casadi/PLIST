@@ -13,5 +13,4 @@ ${PYTHON_SITELIB}/casadi/tools/bounds.py
 ${PYTHON_SITELIB}/casadi/tools/graph/__init__.py
 ${PYTHON_SITELIB}/casadi/tools/graph/graph.py
 ${PYTHON_SITELIB}/casadi/tools/in_out.py
-${PYTHON_SITELIB}/casadi/tools/structure.py
 ${PYTHON_SITELIB}/casadi/tools/structure3.py

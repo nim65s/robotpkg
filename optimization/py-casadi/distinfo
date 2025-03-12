@@ -1,7 +1,6 @@
-SHA1 (casadi-3.6.7.tar.gz) = 5d06d1538b8a030a84823a2b9d23d00209a8781f
-RMD160 (casadi-3.6.7.tar.gz) = 11952b674973df464a7dc7714de27cd3ec329f01
-Size (casadi-3.6.7.tar.gz) = 3786659 bytes
+SHA1 (casadi-3.7.2.tar.gz) = bf297515a5f00dfa75dfaf2438395c262cd44cd5
+RMD160 (casadi-3.7.2.tar.gz) = 9c411e9a43e221bd42406b713fb5d22ea0a38bda
+Size (casadi-3.7.2.tar.gz) = 3914171 bytes
 SHA1 (patch-aa) = 3ea7f5ce1ec50cd823cf19bcafb1b9781bfb33c4
 SHA1 (patch-ab) = 2cf69a74399cacc3a979fb732440861d613d39d9
-SHA1 (patch-ad) = 58d3fca69f63fb58e2a0858c0c5e42f5234ea328
-SHA1 (patch-ae) = 3f8ddeadf43e94c918888a3cfe6c2a52486612a9
+SHA1 (patch-ae) = 8501a1a51c27c62008cf3553a4553f0b95075a7e
