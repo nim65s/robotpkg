@@ -1,7 +1,7 @@
 Don't install files already installed by pinocchio
 
---- CMakeLists.txt.orig	2024-08-27 18:45:25.000000000 +0200
-+++ CMakeLists.txt	2024-08-29 15:24:08.330632746 +0200
+--- CMakeLists.txt.orig	2025-03-12 23:35:15.599978402 +0100
++++ CMakeLists.txt	2025-03-12 23:35:52.565561685 +0100
 @@ -11,7 +11,6 @@
  )
  set(PROJECT_URL "http://github.com/stack-of-tasks/pinocchio")
@@ -10,29 +10,17 @@ Don't install files already installed by pinocchio
  set(PROJECT_USE_KEYWORD_LINK_LIBRARIES TRUE)
  set(PROJECT_COMPATIBILITY_VERSION AnyNewerVersion)
  set(PINOCCHIO_PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR})
-@@ -507,19 +506,4 @@
+@@ -518,7 +517,4 @@
  pkg_config_append_cflags("${CFLAGS_DEPENDENCIES}")
  pkg_config_append_cflags("${CFLAGS_OPTIONS}")
  
 -# Install catkin package.xml
 -install(FILES package.xml DESTINATION share/${PROJECT_NAME})
--# Allows Colcon to find non-Ament packages when using workspace underlays
--file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/share/ament_index/resource_index/packages/${PROJECT_NAME} "")
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/share/ament_index/resource_index/packages/${PROJECT_NAME}
--        DESTINATION share/ament_index/resource_index/packages)
--file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/ament_prefix_path.dsv
--     "prepend-non-duplicate;AMENT_PREFIX_PATH;")
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/ament_prefix_path.dsv
--        DESTINATION share/${PROJECT_NAME}/hook)
--file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/python_path.dsv
--     "prepend-non-duplicate;PYTHONPATH;${PYTHON_SITELIB}")
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/hook/python_path.dsv
--        DESTINATION share/${PROJECT_NAME}/hook)
 -
  setup_project_finalize()
---- bindings/python/CMakeLists.txt.orig	2024-11-06 15:13:21.000000000 +0100
-+++ bindings/python/CMakeLists.txt	2024-11-08 12:38:28.368329997 +0100
-@@ -290,14 +290,6 @@
+--- bindings/python/CMakeLists.txt.orig	2025-03-12 23:35:31.865235101 +0100
++++ bindings/python/CMakeLists.txt	2025-03-12 23:36:21.038010697 +0100
+@@ -299,14 +299,6 @@
      set(_PKG_CONFIG_PYWRAP_CFLAGS "${_PKG_CONFIG_PYWRAP_CFLAGS} ${cflags}")
    endforeach()
  

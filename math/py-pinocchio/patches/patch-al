@@ -3,16 +3,22 @@ boost::asio::const_buffer does not have a data() member in boost-1.65
 But using self.data() directly should be equivalent as the const_buffer is
 only a reference to it.
 
+buffer_cast was removed in 1.87
+
 --- bindings/python/serialization/serialization.cpp~	2024-05-27 21:47:00.000000000 +0200
 +++ bindings/python/serialization/serialization.cpp	2024-09-18 14:45:33.794362665 +0200
-@@ -29,9 +29,8 @@
+@@ -29,9 +29,12 @@
  
      static PyObject * view(boost::asio::streambuf & self)
      {
 -      boost::asio::streambuf::const_buffers_type bufs = self.data();
        PyObject * py_buffer = PyMemoryView_FromMemory(
 -        const_cast<char *>(static_cast<const char *>(bufs.data())), self.size(), PyBUF_READ);
++#if BOOST_VERSION / 100 % 1000 < 66
 +        const_cast<char *>(boost::asio::buffer_cast<const char*>(self.data())), self.size(), PyBUF_READ);
++#else
++        const_cast<char *>(static_cast<const char *>(self.data().data())), self.size(), PyBUF_READ);
++#endif
        return py_buffer;
      }
  

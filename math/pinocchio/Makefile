@@ -4,7 +4,7 @@
 
 ORG=			stack-of-tasks
 NAME=			pinocchio
-VERSION=		3.3.1
+VERSION=		3.4.0
 
 CATEGORIES=		math
 COMMENT=		Efficient rigid body dynamics
