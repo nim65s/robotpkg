@@ -2,13 +2,12 @@ Don't install stuff already installed by casadi
 
 --- CMakeLists.txt.orig	2024-09-30 18:31:53.000000000 +0200
 +++ CMakeLists.txt	2024-10-15 09:47:23.544737377 +0200
-@@ -394,13 +394,6 @@
+@@ -424,12 +424,6 @@
  set(MATLAB_PREFIX ${DEF_MATLAB_PREFIX} CACHE PATH "Installation directory for MATLAB/Octave files")
  
  
--install(DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/bin/" OPTIONAL DESTINATION ${LIB_PREFIX})
+-install(DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/bin/" OPTIONAL DESTINATION ${BIN_PREFIX} USE_SOURCE_PERMISSIONS)
 -install(DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/lib/" OPTIONAL DESTINATION ${LIB_PREFIX})
--install(DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/lib64/" OPTIONAL DESTINATION ${LIB_PREFIX})
 -if(CMAKE_CROSS_COMPILING)
 -  install(DIRECTORY ${CMAKE_FIND_ROOT_PATH}/bin/ DESTINATION ${LIB_PREFIX} FILES_MATCHING PATTERN "*${CMAKE_SHARED_LIBRARY_SUFFIX}")
 -endif()
@@ -16,7 +15,7 @@ Don't install stuff already installed by casadi
  # Make relative paths absolute (needed later on)
  foreach(p LIB BIN INCLUDE CMAKE PYTHON MATLAB)
    set(var ${p}_PREFIX)
-@@ -894,9 +887,6 @@
+@@ -970,9 +964,6 @@
      DEPENDS "${TARGET_LIB}"
      )
      set("TARGET_LIB: ${TARGET_LIB}")
@@ -26,7 +25,7 @@ Don't install stuff already installed by casadi
    endif()
  endmacro()
  
-@@ -1029,9 +1019,6 @@
+@@ -1099,9 +1090,6 @@
      IMPORTED_LOCATION "${CPLEX_ADAPTOR_LIB}"
      IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/mockups/cplex/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}cplex_adaptor${CMAKE_IMPORT_LIBRARY_SUFFIX}"
    )
@@ -36,7 +35,7 @@ Don't install stuff already installed by casadi
  endif()
  add_feature_info(cplex-interface WITH_CPLEX "Interface to the QP solver CPLEX.")
  
-@@ -1045,9 +1032,6 @@
+@@ -1115,9 +1103,6 @@
      IMPORTED_LOCATION "${GUROBI_ADAPTOR_LIB}"
      IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/mockups/gurobi/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}gurobi_adaptor${CMAKE_IMPORT_LIBRARY_SUFFIX}"
    )
@@ -46,7 +45,7 @@ Don't install stuff already installed by casadi
  endif()
  add_feature_info(gurobi-interface WITH_GUROBI "Interface to the (mixed-integer) QP solver GUROBI")
  
-@@ -1163,9 +1147,6 @@
+@@ -1233,9 +1218,6 @@
        IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}blasfeo${CMAKE_IMPORT_LIBRARY_SUFFIX}"
      )
      create_import_library(blasfeo blasfeo)
@@ -56,7 +55,7 @@ Don't install stuff already installed by casadi
    else()
      #add_library(lapack INTERFACE)
      #target_link_libraries(lapack INTERFACE ${LAPACK_LIBRARIES})
-@@ -1197,9 +1178,6 @@
+@@ -1267,9 +1249,6 @@
         IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}hpipm${CMAKE_IMPORT_LIBRARY_SUFFIX}"
      )
      create_import_library(hpipm hpipm)
@@ -66,7 +65,7 @@ Don't install stuff already installed by casadi
    else()
      #add_library(lapack INTERFACE)
      #target_link_libraries(lapack INTERFACE ${LAPACK_LIBRARIES})
-@@ -1547,9 +1525,6 @@
+@@ -1620,9 +1599,6 @@
        CMAKE_ARGS ${CMAKE_BLAS_CONFIG} -DCMAKE_INSTALL_RPATH=${CMAKE_INSTALL_RPATH} -DTRLIB_BLAS_LAPACK_UNDERSCORE_SUFFIX=ON -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR> ${CROSS_FLAGS_CMAKE})
    add_library(trlib INTERFACE)
    add_dependencies(trlib trlib-external)
@@ -76,7 +75,7 @@ Don't install stuff already installed by casadi
  endif()
  
  if(WITH_IPOPT)
-@@ -1590,9 +1565,6 @@
+@@ -1664,9 +1640,6 @@
        INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_BINARY_DIR}/external_projects/include/coin-or"
      )
      create_import_library(ipopt ipopt)
@@ -86,7 +85,7 @@ Don't install stuff already installed by casadi
    endif()
  endif()
  add_feature_info(ipopt-interface WITH_IPOPT "Interface to the NLP solver Ipopt.")
-@@ -1652,9 +1624,6 @@
+@@ -1726,9 +1699,6 @@
         IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}highs${CMAKE_IMPORT_LIBRARY_SUFFIX}"
      )
      create_import_library(highs highs)
@@ -96,7 +95,7 @@ Don't install stuff already installed by casadi
    endif()
  endif()
  add_feature_info(highs-interface WITH_HIGHS "Interface to the MILP / QP solver HiGHS.")
-@@ -1679,9 +1648,6 @@
+@@ -1753,9 +1723,6 @@
         IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}daqp${CMAKE_IMPORT_LIBRARY_SUFFIX}"
      )
      create_import_library(daqp daqp)
@@ -105,8 +104,8 @@ Don't install stuff already installed by casadi
 -      DESTINATION "${INCLUDE_PREFIX}")
    endif()
  endif()
- add_feature_info(daqp-interface WITH_DAQP "Interface to the MILP / QP solver HiGHS.")
-@@ -1728,9 +1694,6 @@
+ add_feature_info(daqp-interface WITH_DAQP "Interface to the MILP / QP solver DAQP.")
+@@ -1799,9 +1766,6 @@
    add_dependencies(eigen3 eigen3-external)
    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/include/eigen3")
    target_include_directories(eigen3 INTERFACE "${CMAKE_BINARY_DIR}/external_projects/include/eigen3")
@@ -116,7 +115,7 @@ Don't install stuff already installed by casadi
  endif()
  
  if(WITH_ALPAQA)
-@@ -1776,9 +1739,6 @@
+@@ -1844,9 +1808,6 @@
    add_library(Simde INTERFACE)
    add_dependencies(Simde simde-external)
    target_include_directories(Simde INTERFACE "${CMAKE_BINARY_DIR}/external_projects/include/simde")
@@ -126,7 +125,7 @@ Don't install stuff already installed by casadi
  endif()
  
  if(WITH_PROXQP)
-@@ -1801,9 +1761,6 @@
+@@ -1869,9 +1830,6 @@
      file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/external_projects/include")
      target_include_directories(proxqp INTERFACE "${CMAKE_BINARY_DIR}/external_projects/include")
      target_link_libraries(proxqp INTERFACE eigen3)
@@ -136,7 +135,7 @@ Don't install stuff already installed by casadi
    endif()
  endif()
  add_feature_info(proxqp-interface WITH_PROXQP "Interface to QP solver PROXQP.")
-@@ -1829,9 +1786,6 @@
+@@ -1897,9 +1855,6 @@
         IMPORTED_LOCATION "${CMAKE_BINARY_DIR}/external_projects/${SHARED_LIBRARY_RELDIR}/${CMAKE_SHARED_LIBRARY_PREFIX}osqp${CMAKE_SHARED_LIBRARY_SUFFIX}"
         IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_IMPORT_LIBRARY_PREFIX}osqp${CMAKE_IMPORT_LIBRARY_SUFFIX}"
      )
@@ -146,7 +145,17 @@ Don't install stuff already installed by casadi
        create_import_library(osqp osqp)
    endif()
  endif()
-@@ -1865,9 +1819,6 @@
+@@ -1928,9 +1883,6 @@
+        IMPORTED_IMPLIB "${CMAKE_BINARY_DIR}/clarabel_c.lib"
+        IMPORTED_SO_NAME "${CMAKE_SHARED_LIBRARY_PREFIX}clarabel_c${CMAKE_SHARED_LIBRARY_SUFFIX}"
+     )
+-    install(DIRECTORY
+-      "${CMAKE_BINARY_DIR}/external_projects/include/clarabel"
+-      DESTINATION "${INCLUDE_PREFIX}")
+       create_import_library(clarabel clarabel_c)
+   endif()
+ endif()
+@@ -1980,9 +1932,6 @@
      set_target_properties(superscs-linsys-indirect PROPERTIES
         IMPORTED_LOCATION "${CMAKE_BINARY_DIR}/external_projects/lib/${CMAKE_SHARED_LIBRARY_PREFIX}indirect${CMAKE_STATIC_LIBRARY_SUFFIX}"
      )
@@ -156,7 +165,7 @@ Don't install stuff already installed by casadi
    endif()
  endif()
  add_feature_info(superscs-interface WITH_SUPERSCS "Interface to QP solver SUPERSCS.")
-@@ -1915,10 +1866,8 @@
+@@ -2114,10 +2063,8 @@
      foreach(LICENSE_FILE ${LICENSE_FILES_A})
        # Extract directory from LICENSE_FILE
        get_filename_component(LICENSE_DIR ${LICENSE_FILE} DIRECTORY)
@@ -167,10 +176,11 @@ Don't install stuff already installed by casadi
  endif()
  
  
-@@ -2030,39 +1979,3 @@
+@@ -2228,40 +2175,4 @@
+ set(OLD_GCC OFF)
  if("$ENV{DEFAULT_DOCKCROSS_IMAGE}" MATCHES "manylinux2014" OR "$ENV{DEFAULT_DOCKCROSS_IMAGE}" MATCHES "manylinux1")
    set(OLD_GCC ON)
- endif()
+-endif()
 -
 -# Create casadi-config.cmake
 -file(RELATIVE_PATH REL_LIB_PREFIX "${CMAKE_PREFIX}" "${LIB_PREFIX}")
@@ -202,14 +212,15 @@ Don't install stuff already installed by casadi
 -
 -# Install the export set for use with the install-tree
 -file(RELATIVE_PATH REL_CMAKE_PREFIX "${CMAKE_INSTALL_PREFIX}" "${CMAKE_PREFIX}")
--install(EXPORT casadi-targets DESTINATION ${REL_CMAKE_PREFIX})
+-install(EXPORT casadi-targets NAMESPACE casadi:: DESTINATION ${REL_CMAKE_PREFIX})
 -
 -set(CPACK_PACKAGE_CONTACT "casadi-users@googlegroups.com")
 -set(CPACK_PACKAGE_VERSION ${PACKAGE_VERSION_FULL})
 -include(CPack)
++endif()
 --- casadi/core/CMakeLists.txt.orig	2024-09-30 18:31:53.000000000 +0200
 +++ casadi/core/CMakeLists.txt	2024-10-15 09:53:59.557216443 +0200
-@@ -209,9 +209,6 @@
+@@ -238,9 +238,6 @@
  add_executable(casadi-cli casadi_cli.cpp)
  target_link_libraries(casadi-cli casadi)
  file(RELATIVE_PATH TREL_BIN_PREFIX "${CMAKE_INSTALL_PREFIX}" "${BIN_PREFIX}")
@@ -219,11 +230,11 @@ Don't install stuff already installed by casadi
  
  # Add the runtime sources to internal (installed separately)
  set(RUNTIME_SRC)
-@@ -265,18 +262,6 @@
-   add_custom_command(TARGET casadi POST_BUILD
+@@ -295,18 +292,6 @@
      COMMAND $ENV{DLLTOOL} --dllname $<TARGET_FILE:casadi> --def "${CMAKE_CURRENT_SOURCE_DIR}/casadi.def" --output-lib casadi.lib
+     COMMAND $ENV{DLLTOOL} --dllname $<TARGET_FILE:casadi> --def "${CMAKE_CURRENT_SOURCE_DIR}/casadi.def" --output-lib libcasadi.lib
    )
--  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/casadi.lib"
+-  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/casadi.lib" "${CMAKE_CURRENT_BINARY_DIR}/libcasadi.lib"
 -    DESTINATION ${DEF_LIB_PREFIX}
 -  )
 -endif()
@@ -261,7 +272,7 @@ Don't install stuff already installed by casadi
    endif()
  
    if(WITH_SO_VERSION)
-@@ -147,5 +135,3 @@
+@@ -158,5 +146,3 @@
  
    configure_file(config.h.cmake "${CMAKE_CURRENT_BINARY_DIR}/config.h" ESCAPE_QUOTES)
  endif()
@@ -269,7 +280,7 @@ Don't install stuff already installed by casadi
 -        DESTINATION ${INCLUDE_PREFIX}/casadi)
 --- casadi/core/runtime/CMakeLists.txt.orig	2024-09-30 18:31:53.000000000 +0200
 +++ casadi/core/runtime/CMakeLists.txt	2024-10-15 12:31:20.449885228 +0200
-@@ -81,7 +81,3 @@
+@@ -90,7 +90,3 @@
  set(CASADI_RUNTIME_SRC "${RUNTIME_SRC}" PARENT_SCOPE)
  
  set(EXTRA_CASADI_CXX_FLAGS "${EXTRA_CASADI_CXX_FLAGS} -Wno-conversion")
