@@ -20,7 +20,8 @@ SYSTEM_SEARCH.protobuf=	\
   'lib/libprotobuf.so'				\
   'lib/pkgconfig/protobuf.pc:/Version/s/[^0-9.]//gp'
 
-SYSTEM_PKG.NetBSD.protobuf=devel/protobuf
+SYSTEM_PKG.Debian.protobuf=	libprotoc-dev
+SYSTEM_PKG.NetBSD.protobuf=	devel/protobuf
 
 endif # PROTOBUF_DEPEND_MK -------------------------------------------------
 
