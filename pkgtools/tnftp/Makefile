@@ -28,6 +28,18 @@ NO_CHECKSUM=		yes
 # suppress useless warnings
 CFLAGS+=		-Wno-unused-result -Wno-implicit-function-declaration
 
+# editcomplete option
+PKG_SUPPORTED_OPTIONS+=	editcomplete
+PKG_SUGGESTED_OPTIONS+=	editcomplete
+PKG_OPTION_DESCR.editcomplete?=	turn on command line editing and completion
+
+define PKG_OPTION_SET.editcomplete
+  CONFIGURE_ARGS+=	--enable-editcomplete
+endef
+define PKG_OPTION_UNSET.editcomplete
+  CONFIGURE_ARGS+=	--disable-editcomplete
+endef
+
 # ssl option
 PKG_SUPPORTED_OPTIONS+=	ssl
 PKG_SUGGESTED_OPTIONS+=	ssl
