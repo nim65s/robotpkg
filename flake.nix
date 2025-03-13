@@ -13,49 +13,91 @@
       perSystem =
         { pkgs, self', ... }:
         {
-          devShells.default = (pkgs.buildFHSEnv {
-            name = "robotpkg-env";
-            targetPkgs = pkgs: with pkgs; [
-              assimp.dev
-              assimp.lib
-              blas
-              blas.dev
-              cmake
-              console-bridge
-              bzip2.dev
-              doxygen
-              eigen
-              file
-              gcc
-              ipopt
-              lapack
-              lapack.dev
-              ncurses
-              ncurses.dev
-              octomap
-              openssl
-              openssl.bin
-              openssl.dev
-              pax
-              pkg-config
-              qhull
-              swig
-              tinyxml-2
-              urdfdom
-              urdfdom-headers
-              zlib
-              zlib.dev
-              self'.packages.python
-              self'.packages.rptest
-              self'.packages.rprelease
-            ];
-          }).env;
+          devShells = {
+            default = pkgs.mkShell {
+              packages = with pkgs; [
+                    assimp.dev
+                    assimp.lib
+                    blas
+                    blas.dev
+                    cmake
+                    console-bridge
+                    bzip2.dev
+                    doxygen
+                    eigen
+                    file
+                    gcc
+                    ipopt
+                    lapack
+                    lapack.dev
+                    ncurses
+                    ncurses.dev
+                    octomap
+                    openssl
+                    openssl.bin
+                    openssl.dev
+                    pax
+                    pkg-config
+                    qhull
+                    swig
+                    tinyxml-2
+                    urdfdom
+                    urdfdom-headers
+                    zlib
+                    zlib.dev
+                    self'.packages.python
+                    self'.packages.rptest
+                    self'.packages.rprelease
+              ];
+            };
+            fhs =
+              (pkgs.buildFHSEnv {
+                name = "robotpkg-env";
+                targetPkgs =
+                  pkgs: with pkgs; [
+                    assimp.dev
+                    assimp.lib
+                    blas
+                    blas.dev
+                    cmake
+                    console-bridge
+                    bzip2.dev
+                    doxygen
+                    eigen
+                    file
+                    gcc
+                    ipopt
+                    lapack
+                    lapack.dev
+                    ncurses
+                    ncurses.dev
+                    octomap
+                    openssl
+                    openssl.bin
+                    openssl.dev
+                    pax
+                    pkg-config
+                    qhull
+                    swig
+                    tinyxml-2
+                    urdfdom
+                    urdfdom-headers
+                    zlib
+                    zlib.dev
+                    self'.packages.python
+                    self'.packages.rptest
+                    self'.packages.rprelease
+                  ];
+              }).env;
+          };
           packages = {
-            python = pkgs.python3.withPackages (p: with p; [
-              boost
-              boost.dev
-              scipy
-            ]);
+            python = pkgs.python3.withPackages (
+              p: with p; [
+                boost
+                boost.dev
+                scipy
+              ]
+            );
             rprelease = pkgs.writeShellScriptBin "rprelease" ''
               set -euxo pipefail
 
