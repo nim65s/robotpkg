@@ -21,9 +21,8 @@ SYSTEM_SEARCH.gdal=	\
 	'include/{gdal/,}gdal_version.h' \
 	'lib/libgdal{,[0-9]*}.so'
 
-SYSTEM_PKG.Debian.gdal=	libgdal1-dev
+SYSTEM_PKG.Debian.gdal=	libgdal-dev
 SYSTEM_PKG.Fedora.gdal=	gdal-devel
-SYSTEM_PKG.Ubuntu.gdal=	libgdal1-dev
 SYSTEM_PKG.NetBSD.gdal=	geography/gdal-lib
 
 endif # GDAL_DEPEND_MK -----------------------------------------------------
