@@ -22,6 +22,10 @@ SYSTEM_SEARCH.zeromq=\
   'lib/libzmq.so'	\
   'lib/pkgconfig/libzmq.pc:/Version/s/[^0-9.]//gp'
 
+SYSTEM_PKG.Debian.zeromq=	libczmq-dev
+SYSTEM_PKG.NetBSD.cppzmq=	net/zeromq
+SYSTEM_PKG.RedHat.cppzmq=	zeromq-devel
+
 endif # ZEROMQ_DEPEND_MK ---------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
