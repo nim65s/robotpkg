@@ -1,0 +1,13 @@
+Always use full path to libbackward.
+
+--- src/CMakeLists.txt~	2022-09-22 23:00:59.000000000 +0200
++++ src/CMakeLists.txt	2025-03-13 12:37:09.897991272 +0100
+@@ -39,7 +39,7 @@
+ 
+ #===============================================================================
+ # Used for the installed version.
+-if(APPLE)
++if(TRUE)
+   # On macOS, the full path to the library since DYLD_LIBRARY_PATH may not work.
+   set(backward_library_name ${CMAKE_INSTALL_FULL_LIBDIR}/$<TARGET_FILE_NAME:backward>)
+ else()

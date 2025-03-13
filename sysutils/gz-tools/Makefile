@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Thu,  6 Feb 2025
 #
 
+PKGREVISION=	1
 DISTNAME=	gz-tools-2.0.0
 
 GZ_COMMENT=	command line interface
