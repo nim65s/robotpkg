@@ -14,42 +14,77 @@
         { pkgs, self', ... }:
         {
           devShells = {
-            default = pkgs.mkShell {
-              packages = with pkgs; [
-                    assimp.dev
-                    assimp.lib
-                    blas
-                    blas.dev
-                    cmake
-                    console-bridge
-                    bzip2.dev
-                    doxygen
-                    eigen
-                    file
-                    gcc
-                    ipopt
-                    lapack
-                    lapack.dev
-                    ncurses
-                    ncurses.dev
-                    octomap
-                    openssl
-                    openssl.bin
-                    openssl.dev
-                    pax
-                    pkg-config
-                    qhull
-                    swig
-                    tinyxml-2
-                    urdfdom
-                    urdfdom-headers
-                    zlib
-                    zlib.dev
-                    self'.packages.python
-                    self'.packages.rptest
-                    self'.packages.rprelease
-              ];
-            };
+            default =
+              with pkgs;
+              mkShell {
+                env = {
+                  ROBOTPKG_BASE = "/home/nim/local/robotpkg/install";
+                  #   UNAME = lib.getExe' coreutils "uname";
+                  #   SH = lib.getExe' bash "sh";
+                  #   CAT = lib.getExe' coreutils "cat";
+                  #   SETENV = lib.getExe' coreutils "env";
+                  #   EXPR = lib.getExe' coreutils "expr";
+                  #   CMP = lib.getExe' diffutils "cmp";
+                  #   LS = lib.getExe' coreutils "ls";
+                  #   WC = lib.getExe' coreutils "wc";
+                  #   TOUCH = lib.getExe' coreutils "touch";
+                  #   CHOWN = lib.getExe' coreutils "chown";
+                  #   CHMOD = lib.getExe' coreutils "chmod";
+                  #   CP = lib.getExe' coreutils "cp";
+                  #   LN = lib.getExe' coreutils "ln";
+                  #   MV = lib.getExe' coreutils "mv";
+                  #   RM = lib.getExe' coreutils "rm";
+                  #   RMDIR = lib.getExe' coreutils "rmdir";
+                  #   MKDIR = lib.getExe' coreutils "mkdir";
+                  #   DATE = lib.getExe' coreutils "date";
+                  #   ID = lib.getExe' coreutils "id";
+                  #   GREP = lib.getExe' gnugrep "grep";
+                  #   EGREP = lib.getExe' gnugrep "egrep";
+                  #   FIND = lib.getExe' findutils "find";
+                  #   SED = lib.getExe' gnused "sed";
+                  #   SORT = lib.getExe' coreutils "sort";
+                  #   TSORT = lib.getExe' coreutils "tsort";
+                  #   AWK = lib.getExe' gawk "awk";
+                  #   XARGS = lib.getExe' findutils "xargs";
+                  #   TPUT = lib.getExe' ncurses "tput";
+                  #   PAGER = lib.getExe' less "less";
+                  #   PRINTF = lib.getExe' coreutils "printf";
+                };
+                packages = [
+                  assimp.dev
+                  assimp.lib
+                  blas
+                  blas.dev
+                  cmake
+                  console-bridge
+                  bzip2.dev
+                  doxygen
+                  eigen
+                  file
+                  gcc
+                  ipopt
+                  lapack
+                  lapack.dev
+                  ncurses
+                  ncurses.dev
+                  octomap
+                  openssl
+                  openssl.bin
+                  openssl.dev
+                  pax
+                  pkg-config
+                  qhull
+                  swig
+                  tinyxml-2
+                  urdfdom
+                  urdfdom-headers
+                  zlib
+                  zlib.dev
+                  self'.packages.python
+                  self'.packages.rptest
+                  self'.packages.rprelease
+                ];
+              };
             fhs =
               (pkgs.buildFHSEnv {
                 name = "robotpkg-env";

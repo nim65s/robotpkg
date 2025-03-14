@@ -11,21 +11,9 @@ endif
 
 ifeq (+,$(OPENSSL_DEPEND_MK)) # --------------------------------------------
 
-PREFER.openssl?=	system
-DEPEND_USE+=		openssl
-DEPEND_ABI.openssl?=	openssl>=0.9.6
-
-SYSTEM_PKG.Fedora.openssl=	openssl openssl-devel
-SYSTEM_PKG.Ubuntu.openssl=	libssl-dev
-SYSTEM_PKG.Debian.openssl=	libssl-dev
-SYSTEM_PKG.NetBSD.openssl=	pkgsrc/security/openssl
-
-_vregex.openssl:=s/^.*OpenSSL[ ]*//;s/[ -].*$$//;p
-SYSTEM_SEARCH.openssl:=	\
-  'bin/openssl:/OpenSSL/{${_vregex.openssl};}:% version'		\
-  'include/openssl/opensslv.h:/VERSION_TEXT/{${_vregex.openssl};q;}'	\
-  'lib/libcrypto.so'							\
-  'lib/libssl.so'
+include ../../mk/sysdep/openssl-bin.mk
+include ../../mk/sysdep/openssl-dev.mk
+include ../../mk/sysdep/openssl-lib.mk
 
 endif # OPENSSL_DEPEND_MK --------------------------------------------------
 

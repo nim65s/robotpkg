@@ -72,7 +72,7 @@ endif
 #
 ifndef MACHINE_PLATFORM
   # find uname location
-  _UNAME=$(or ${UNAME},$(call pathsearch,uname,/usr/bin:/bin))
+  _UNAME=$(or ${UNAME},$(call pathsearch,uname,/usr/bin:/bin:/run/current-system/sw/bin))
   ifeq (,$(_UNAME))
     $(info ===============================================================)
     $(info The uname tool could not be found.)

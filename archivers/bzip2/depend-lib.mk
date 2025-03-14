@@ -6,12 +6,12 @@ DEPEND_DEPTH:=		${DEPEND_DEPTH}+
 BZIP2_DEPEND_MK:=	${BZIP2_DEPEND_MK}+
 
 ifeq (+,$(BZIP2_DEPEND_MK)) # ----------------------------------------------
-PREFER.bzip2?=		system
+PREFER.bzip2-lib?=		system
 
-SYSTEM_PKG.RedHat.bzip2=	bzip2-devel
-SYSTEM_PKG.Debian.bzip2=	libbz2-dev
+SYSTEM_PKG.RedHat.bzip2-lib=	bzip2-devel
+SYSTEM_PKG.Debian.bzip2-lib=	libbz2-dev
 
-SYSTEM_SEARCH.bzip2=	\
+SYSTEM_SEARCH.bzip2-lib=	\
 	include/bzlib.h	\
 	'lib/libbz2.*'
 
@@ -44,15 +44,15 @@ bzip2-build:
   else
   # This is the regular version of bzip2 package, for normal install
   #
-DEPEND_USE+=		bzip2
+DEPEND_USE+=		bzip2-lib
 
-DEPEND_ABI.bzip2?=	bzip2
-DEPEND_DIR.bzip2?=	../../archivers/bzip2
+DEPEND_ABI.bzip2-lib?=	bzip2
+DEPEND_DIR.bzip2-lib?=	../../archivers/bzip2
   endif # inplace+robotpkg -------------------------------------------------
 endif # BZIP2_DEPEND_MK ----------------------------------------------------
 
 ifeq (+,$(DEPEND_DEPTH))
-  DEPEND_PKG+=		$(filter bzip2,${DEPEND_USE})
+  DEPEND_PKG+=		$(filter bzip2-lib,${DEPEND_USE})
 endif
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

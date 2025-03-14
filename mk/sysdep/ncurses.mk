@@ -26,19 +26,8 @@ endif
 
 ifeq (+,$(NCURSES_DEPEND_MK)) # --------------------------------------------
 
-PREFER.ncurses?=	system
-
-DEPEND_USE+=		ncurses
-DEPEND_ABI.ncurses?=	ncurses>=5
-
-SYSTEM_PKG.Fedora.ncurses=	ncurses-devel
-SYSTEM_PKG.Ubuntu.ncurses=	libncurses-dev
-SYSTEM_PKG.NetBSD.ncurses=		pkgsrc/devel/ncurses
-
-SYSTEM_SEARCH.ncurses=\
-	'include/{ncurses/,}ncurses.h:/NCURSES_VERSION[ 	]/s/[^0-9.]//gp'\
-	'lib/libncurses.{a,so}'
-
+include ../../mk/sysdep/ncurses-dev.mk
+include ../../mk/sysdep/ncurses-lib.mk
 
 endif # NCURSES_DEPEND_MK --------------------------------------------------
 

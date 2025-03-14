@@ -7,17 +7,17 @@ ZLIB_DEV_DEPEND_MK:=	${ZLIB_DEV_DEPEND_MK}+
 
 ifeq (+,$(ZLIB_DEV_DEPEND_MK)) # -----------------------------------------
 
-PREFER.zlib?=		system
+PREFER.zlib-dev?=		system
 
-DEPEND_ABI.zlib?=	zlib>=1.2.3
-DEPEND_DIR.zlib?=	../../archivers/zlib
+DEPEND_ABI.zlib-dev?=	zlib>=1.2.3
+DEPEND_DIR.zlib-dev?=	../../archivers/zlib
 
-SYSTEM_PKG.Fedora.zlib=	zlib-devel
-SYSTEM_PKG.Ubuntu.zlib=	zlib1g-dev
-SYSTEM_PKG.Debian.zlib=	zlib1g-dev
-SYSTEM_PKG.Gentoo.zlib=	sys-libs/zlib
+SYSTEM_PKG.Fedora.zlib-dev=	zlib-devel
+SYSTEM_PKG.Ubuntu.zlib-dev=	zlib1g-dev
+SYSTEM_PKG.Debian.zlib-dev=	zlib1g-dev
+SYSTEM_PKG.Gentoo.zlib-dev=	sys-libs/zlib
 
-SYSTEM_SEARCH.zlib=\
+SYSTEM_SEARCH.zlib-dev=\
 	'include/zlib.h:/define ZLIB_VERSION/s/[^0-9.]//gp'	\
 	include/zconf.h						\
 
@@ -49,13 +49,13 @@ zlib-build:
   else
   # This is the regular version of zlib package, for normal install
   #
-DEPEND_USE+=		zlib
+DEPEND_USE+=		zlib-dev
   endif
 
 endif # ZLIB_DEV_DEPEND_MK -----------------------------------------------
 
 ifeq (+,$(DEPEND_DEPTH))
-DEPEND_PKG+=		$(filter zlib,${DEPEND_USE})
+DEPEND_PKG+=		$(filter zlib-dev,${DEPEND_USE})
 endif
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

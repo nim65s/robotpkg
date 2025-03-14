@@ -6,12 +6,12 @@ DEPEND_DEPTH:=		${DEPEND_DEPTH}+
 BZIP2_TOOL_DEPEND_MK:=	${BZIP2_TOOL_DEPEND_MK}+
 
 ifeq (+,$(BZIP2_TOOL_DEPEND_MK)) # ----------------------------------------------
-PREFER.bzip2?=		system
+PREFER.bzip2-tool?=		system
 
-SYSTEM_PKG.RedHat.bzip2=	bzip2
-SYSTEM_PKG.Debian.bzip2=	bzip2
+SYSTEM_PKG.RedHat.bzip2-tool=	bzip2
+SYSTEM_PKG.Debian.bzip2-tool=	bzip2
 
-SYSTEM_SEARCH.bzip2=	\
+SYSTEM_SEARCH.bzip2-tool=	\
 	bin/bzip2
 
 # Don't call this variable "BZIP2" because the bzip2 program uses this
@@ -28,9 +28,6 @@ export BZIP2_CMD=	$(word 1,${SYSTEM_FILES.bzip2})
 BZIP2_FILESDIR=	${ROBOTPKG_DIR}/archivers/bzip2/dist
 BZIP2_SRCDIR=	${WRKDIR}/bzip2
 
-CPPFLAGS+=	-I${BZIP2_SRCDIR}
-LDFLAGS+=	-L${BZIP2_SRCDIR}
-LIBS+=		-lbz2
 
 post-extract: bzip2-extract
 bzip2-extract:
@@ -47,15 +44,15 @@ bzip2-build:
   else
   # This is the regular version of bzip2 package, for normal install
   #
-DEPEND_USE+=		bzip2
+DEPEND_USE+=		bzip2-tool
 
-DEPEND_ABI.bzip2?=	bzip2
-DEPEND_DIR.bzip2?=	../../archivers/bzip2
+DEPEND_ABI.bzip2-tool?=	bzip2
+DEPEND_DIR.bzip2-tool?=	../../archivers/bzip2
   endif # inplace+robotpkg -------------------------------------------------
 endif # BZIP2_TOOL_DEPEND_MK ----------------------------------------------------
 
 ifeq (+,$(DEPEND_DEPTH))
-  DEPEND_PKG+=		$(filter bzip2,${DEPEND_USE})
+  DEPEND_PKG+=		$(filter bzip2-tool,${DEPEND_USE})
 endif
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
