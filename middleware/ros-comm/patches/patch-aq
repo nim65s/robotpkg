@@ -3,12 +3,11 @@ Use replacement available since boost-1.72
 
 --- tools/rosbag/src/encrypt.cpp~	2021-04-26 22:06:23.000000000 +0200
 +++ tools/rosbag/src/encrypt.cpp	2024-06-05 23:49:04.176442336 +0200
-@@ -34,9 +34,17 @@
- 
+@@ -34,9 +34,16 @@
+ #define BOOST_TIMER_ENABLE_DEPRECATED
  #include <iostream>
  
 +#include <boost/version.hpp>
-+
  #include <boost/scoped_ptr.hpp>
  #include <boost/program_options.hpp>
 -#include <boost/progress.hpp>
