@@ -404,6 +404,7 @@ lib/rosbag/record
 lib/rosbag/savemsg.py
 lib/rosbag/topic_renamer.py
 lib/rosgraph/rosgraph
+lib/rosnode/rosnode
 lib/rosout/rosout
 lib/rosservice/rosservice
 lib/rostopic/rostopic
@@ -530,6 +531,7 @@ share/rostest/nodes/advertisetest
 share/rostest/nodes/hztest
 share/rostest/nodes/paramtest
 share/rostest/nodes/publishtest
+share/rostest/nodes/subscribetest
 share/rostest/package.xml
 share/rostopic/cmake/rostopicConfig-version.cmake
 share/rostopic/cmake/rostopicConfig.cmake
