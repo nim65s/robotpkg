@@ -4,6 +4,7 @@
 COMMENT=	Optimization tools
 
 SUBDIR+=	acado
+SUBDIR+=	crocoddyl
 SUBDIR+=	ipopt
 SUBDIR+=	proxsuite
 SUBDIR+=	py-casadi
