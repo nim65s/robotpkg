@@ -26,6 +26,9 @@ SYSTEM_PKG.NetBSD.flex=	devel/flex
 export FLEX=		$(word 1,${SYSTEM_FILES.flex})
 CONFIGURE_ENV+=		LEX=${FLEX}
 
+DEPEND_METHOD.m4?=	full
+include ../../mk/sysdep/m4.mk
+
 endif # FLEX_DEPEND_MK -----------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
