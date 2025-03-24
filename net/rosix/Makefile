@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Mon, 22 Jun 2015
 #
 
-DISTNAME=	rosix-1.2
+DISTNAME=	rosix-1.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=rosix/}
 MASTER_REPOSITORY= ${MASTER_REPOSITORY_OPENROBOTS}genomix/rosix
@@ -15,6 +15,8 @@ LICENSE=	2-clause-bsd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=PYTHON_SITELIB=$(PYTHON_SITELIB)
+
+DEPEND_ABI.python+=	python>=3
 
 include ../../lang/ros-genpy/depend.mk
 include ../../middleware/ros-comm/depend.mk

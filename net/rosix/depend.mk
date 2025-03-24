@@ -17,7 +17,7 @@ PREFER.rosix?=		robotpkg
 SYSTEM_SEARCH.rosix=\
   'bin/rosix:p:% --version'
 
-DEPEND_ABI.rosix?=	rosix>=1.0
+DEPEND_ABI.rosix?=	rosix>=1.3
 DEPEND_DIR.rosix?=	../../net/rosix
 
 endif # ROSIX_DEPEND_MK ----------------------------------------------------
