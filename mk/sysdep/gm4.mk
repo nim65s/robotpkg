@@ -10,9 +10,6 @@ endif
 
 ifeq (+,$(GM4_DEPEND_MK)) # ------------------------------------------------
 
-# search regular m4 first so that export M4 below can overrides it
-include ../../mk/sysdep/m4.mk
-
 PREFER.gm4?=		system
 
 DEPEND_USE+=		gm4

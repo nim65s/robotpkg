@@ -16,7 +16,7 @@ DEPEND_ABI.flex?=	flex>=2.5.33
 DEPEND_METHOD.flex+=	build
 
 SYSTEM_SEARCH.flex=\
-	'bin/flex:s/[^.0-9]//gp:% -V'
+  'bin/flex:s/[^.0-9]//gp:% -V'
 
 SYSTEM_PKG.Debian.flex=	flex
 SYSTEM_PKG.Fedora.flex=	flex flex-static
@@ -27,7 +27,7 @@ export FLEX=		$(word 1,${SYSTEM_FILES.flex})
 CONFIGURE_ENV+=		LEX=${FLEX}
 
 DEPEND_METHOD.m4?=	full
-include ../../mk/sysdep/m4.mk
+include ../../mk/sysdep/gm4.mk
 
 endif # FLEX_DEPEND_MK -----------------------------------------------
 
