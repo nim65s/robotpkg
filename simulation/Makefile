@@ -14,6 +14,7 @@ SUBDIR+=	libdynamixel
 SUBDIR+=	libmrsim
 SUBDIR+=	morse
 SUBDIR+=	morse-yarp
+SUBDIR+=	mrsim-gazebo
 SUBDIR+=	mrsim-gazebo-classic
 SUBDIR+=	mrsim-genom3
 SUBDIR+=	openhrp3
