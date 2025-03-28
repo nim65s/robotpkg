@@ -3,13 +3,15 @@
 #
 
 DISTNAME=		mrsim-gazebo-1.3
+PKGNAME=		mrsim-gazebo-classic-1.3
 CATEGORIES=		simulation
-MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
-MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}${PKGBASE}
+MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=mrsim-gazebo/}
+MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}mrsim-gazebo
 
 MAINTAINER=		openrobots@laas.fr
 COMMENT=		Gazebo simulator plugin for tk3-mikrokopter multi-rotors
 LICENSE=		2-clause-bsd
+CONFLICTS+=		mrsim-gazebo-[0-9]*
 
 GNU_CONFIGURE=		yes
 
