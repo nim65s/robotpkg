@@ -22,6 +22,12 @@ SYSTEM_SEARCH.gz-transport=\
   'lib/libgz-transport[0-9]*.so'		\
   $(call gz_system_search,gz-transport, log parameters)
 
+# transitive dependencies
+include ../../devel/gz-utils/depend.mk
+include ../../interfaces/gz-msgs/depend.mk
+include ../../mk/sysdep/libuuid.mk
+include ../../mk/sysdep/protobuf.mk
+
 endif # GZ_TRANSPORT_DEPEND_MK ---------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
