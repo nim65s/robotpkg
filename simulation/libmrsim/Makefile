@@ -2,13 +2,13 @@
 # Created:			Anthony Mallet on Tue, 11 Jun 2019
 #
 
-DISTNAME=		libmrsim-1.4
+DISTNAME=		libmrsim-1.4.1
 CATEGORIES=		simulation
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}${PKGBASE}
 
 MAINTAINER=		openrobots@laas.fr
-COMMENT=		Simulator library for tk3-mikrokopter based quadrotors
+COMMENT=		Simulator library for tk3-paparazzi based multi-rotors
 LICENSE=		2-clause-bsd
 
 GNU_CONFIGURE=		yes

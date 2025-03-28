@@ -1,7 +1,7 @@
 Multi-rotor simulator.
 
-The library provides a pty emulating the tk3-mikrokopter communication protocol
-and implements all the tk3-mikrokopter features so that the hardware can be
+The library provides a pty emulating the tk3-paparazzi communication protocol
+and implements all the tk3-paparazzi features, so that the hardware can be
 fully emulated.
 
 The rotor dynamics are simulated using a realistic motor model and a simple
