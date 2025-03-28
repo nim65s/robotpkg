@@ -23,13 +23,16 @@ SYSTEM_SEARCH.gz-common=\
   $(call gz_system_search,gz-common,		\
     av events geospatial graphics io profiler)
 
+# transitive dependencies
 DEPEND_ABI.libavdevice+=libavdevice>=56.4.100
 
+include ../../devel/gz-utils/depend.mk
 include ../../mk/sysdep/libavcodec.mk
 include ../../mk/sysdep/libavdevice.mk
 include ../../mk/sysdep/libavformat.mk
 include ../../mk/sysdep/libavutil.mk
 include ../../mk/sysdep/libswscale.mk
+include ../../mk/sysdep/libuuid.mk
 
 endif # GZ_COMMON_DEPEND_MK --------------------------------------------------
 
