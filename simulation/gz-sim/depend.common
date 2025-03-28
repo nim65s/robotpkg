@@ -36,6 +36,12 @@ override define gz_system_search
     'lib/pkgconfig/$_.pc:/Version/s/[^.0-9]//gp')
 endef
 
+# Convenience macro to extract pkg-config basename of a gz-* package
+#
+override define gz_pkgbase
+$(foreach _,$1,$(subst $_-,$_,$(word 1,$(subst ., ,${PKGVERSION.$_}))))
+endef
+
 # Even though gz-cmake is a build dependency, it is present in the Require:
 # field of all gz-*.pc files, turning it into a transitive dependency.
 #
