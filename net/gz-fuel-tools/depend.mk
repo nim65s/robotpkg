@@ -22,6 +22,16 @@ SYSTEM_SEARCH.gz-fuel-tools=\
   'lib/libgz-fuel_tools[0-9]*.so'			\
   $(call gz_system_search,gz-fuel_tools,)
 
+# transitive dependencies
+include ../../graphics/gz-common/depend.mk
+include ../../interfaces/gz-msgs/depend.mk
+include ../../math/gz-math/depend.mk
+include ../../mk/sysdep/jsoncpp.mk
+include ../../mk/sysdep/libcurl.mk
+include ../../mk/sysdep/libyaml.mk
+include ../../mk/sysdep/libzip.mk
+include ../../mk/sysdep/tinyxml2.mk
+
 endif # GZ_FUEL_TOOLS_DEPEND_MK --------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
