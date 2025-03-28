@@ -23,7 +23,12 @@ SYSTEM_SEARCH.gz-msgs=\
   '${PYTHON_SYSLIBSEARCH}/gz/msgs[0-9]*/__init__.py'	\
   $(call gz_system_search, gz-msgs,)
 
+# transitive dependencies
+include ../../devel/gz-utils/depend.mk
+include ../../math/gz-math/depend.mk
+include ../../mk/sysdep/protobuf.mk
 include ../../mk/sysdep/python.mk
+include ../../mk/sysdep/tinyxml2.mk
 
 endif # GZ_MSGS_DEPEND_MK --------------------------------------------------
 
