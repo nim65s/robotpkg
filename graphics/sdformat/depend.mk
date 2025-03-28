@@ -22,6 +22,11 @@ SYSTEM_SEARCH.sdformat=\
   'lib/libsdformat[0-9]*.so'		\
   $(call gz_system_search,sdformat,)
 
+# transitive dependencies
+include ../../devel/gz-utils/depend.mk
+include ../../math/gz-math/depend.mk
+include ../../mk/sysdep/tinyxml2.mk
+
 endif # SDFORMAT_DEPEND_MK --------------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
