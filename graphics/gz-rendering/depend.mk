@@ -22,6 +22,13 @@ SYSTEM_SEARCH.gz-rendering=\
   'lib/libgz-rendering[0-9]*.so'		\
   $(call gz_system_search,gz-rendering,)
 
+# transitive dependencies
+include ../../devel/gz-plugin/depend.mk
+include ../../devel/gz-utils/depend.mk
+include ../../math/gz-math/depend.mk
+include ../../graphics/gz-common/depend.mk
+include ../../mk/sysdep/glu.mk
+
 endif # GZ_RENDERING_DEPEND_MK ---------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
