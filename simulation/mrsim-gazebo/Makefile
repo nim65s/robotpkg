@@ -14,6 +14,8 @@ CONFLICTS+=		mrsim-gazebo-classic-[0-9]*
 
 GNU_CONFIGURE=		yes
 
+CONFIGURE_ARGS+=	--with-gz-sim=$(call gz_pkgbase, gz-sim)
+
 include ../../pkgtools/pkg-config/depend.mk
 include ../../simulation/gz-sim/depend.mk
 include ../../simulation/libmrsim/depend.mk
