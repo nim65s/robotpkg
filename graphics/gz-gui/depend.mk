@@ -22,6 +22,18 @@ SYSTEM_SEARCH.gz-gui=\
   'lib/libgz-gui[0-9]*.so'			\
   $(call gz_system_search,gz-gui,)
 
+# transitive dependencies
+include ../../devel/gz-plugin/depend.mk
+include ../../devel/gz-utils/depend.mk
+include ../../graphics/gz-rendering/depend.mk
+include ../../interfaces/gz-msgs/depend.mk
+include ../../math/gz-math/depend.mk
+include ../../net/gz-transport/depend.mk
+include ../../mk/sysdep/protobuf.mk
+include ../../mk/sysdep/qt5-qtbase.mk
+include ../../mk/sysdep/qt5-declarative.mk
+include ../../mk/sysdep/qt5-quickcontrols2.mk
+
 endif # GZ_GUI_DEPEND_MK ---------------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
