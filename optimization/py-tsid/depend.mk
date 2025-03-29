@@ -21,6 +21,8 @@ DEPEND_DIR.py-tsid?=	../../optimization/py-tsid
 SYSTEM_SEARCH.py-tsid=\
   '${PYTHON_SYSLIBSEARCH}/tsid/__init__.py'
 
+include ../../mk/sysdep/python.mk
+
 endif # PY_TSID_DEPEND_MK --------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

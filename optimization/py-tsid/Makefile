@@ -2,23 +2,27 @@
 # Created:			Guilhem Saurel on Tue, 14 Apr 2020
 #
 
-PKGREVISION=		1
 ORG=			stack-of-tasks
 NAME=			tsid
-VERSION=		1.7.1
+VERSION=		1.9.0
 
 CATEGORIES=		optimization
 COMMENT=		Efficient Inverse Dynamics (python bindings)
+LICENSE=		2-clause-bsd
+MAINTAINER=		guilhem.saurel@laas.fr
 
 USE_BOOST_LIBS=		unit_test_framework
 USE_PYTHON_ONLY=	yes
+
+USE_MASTER_GITHUB=	true
 
 # this does not support multiple parallel python version
 CONFLICTS+=		py[0-9][0-9]-tsid-[0-9]*
 
 DEPEND_ABI.python=	python>=3.6
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
+
 include ../../graphics/urdfdom/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../math/eiquadprog/depend.mk
