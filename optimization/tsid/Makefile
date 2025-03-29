@@ -2,10 +2,9 @@
 # Created:			Justin Carpentier on Tue, 14 Apr 2020
 #
 
-PKGREVISION=		1
 ORG=			stack-of-tasks
 NAME=			tsid
-VERSION=		1.7.1
+VERSION=		1.9.0
 
 CATEGORIES=		optimization
 COMMENT=		Efficient Inverse Dynamics based on Pinocchio
@@ -14,7 +13,9 @@ CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 
 USE_BOOST_LIBS=		unit_test_framework
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+USE_MASTER_GITHUB=	true
+
+include ../../devel/jrl-cmakemodules/depend.mk
 
 include ../../graphics/urdfdom/depend.mk
 include ../../mapping/octomap/depend.mk
