@@ -14,6 +14,13 @@ HOMEPAGE=	http://wiki.ros.org/gazebo_ros_pkgs
 
 include ../../meta-pkgs/ros-base/Makefile.common
 
+# Fedora version of tbb>=2021 is incompatible with gazebo-10 headers.
+# This was fixed in gazebo-11.11.0.
+include ../../mk/robotpkg.prefs.mk # for OPSYS
+ifeq (Fedora,${OPSYS})
+  DEPEND_ABI.gazebo+= gazebo>=11.11
+endif
+
 SUBST_CLASSES+=		py-interp
 
 SUBST_FILES.py-interp+=	gazebo_plugins/scripts/*.py
