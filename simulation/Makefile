@@ -5,6 +5,7 @@ COMMENT=	Simulation tools
 
 SUBDIR+=	dxsim-gazebo
 SUBDIR+=	gazebo-ros-pkgs
+SUBDIR+=	gazeboft-genom3
 SUBDIR+=	gz-physics
 SUBDIR+=	gz-sensors
 SUBDIR+=	gz-sim
