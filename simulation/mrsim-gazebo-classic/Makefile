@@ -13,6 +13,13 @@ COMMENT=		Gazebo simulator plugin for tk3-mikrokopter multi-rotors
 LICENSE=		2-clause-bsd
 CONFLICTS+=		mrsim-gazebo-[0-9]*
 
+# Fedora version of tbb>=2021 is incompatible with gazebo-10 headers.
+# This was fixed in gazebo-11.11.0.
+include ../../mk/robotpkg.prefs.mk # for OPSYS
+ifeq (Fedora,${OPSYS})
+  DEPEND_ABI.gazebo+= gazebo>=11.11
+endif
+
 GNU_CONFIGURE=		yes
 
 include ../../pkgtools/pkg-config/depend.mk
