@@ -19,7 +19,7 @@ SYSTEM_SEARCH.optitrack-gazebo=\
 
 DEPEND_USE+=			optitrack-gazebo
 
-DEPEND_ABI.optitrack-gazebo?=	optitrack-gazebo>=1.0
+DEPEND_ABI.optitrack-gazebo?=	optitrack-gazebo>=2.0
 DEPEND_DIR.optitrack-gazebo?=	../../simulation/optitrack-gazebo
 
 endif # OPTITRACK_GAZEBO_DEPEND_MK -----------------------------------------
