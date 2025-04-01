@@ -1,0 +1,8 @@
+@comment Tue Apr 1 17:51:00 CEST 2025
+include/camera/camera.h
+lib/libcamera_codels.la
+lib/pkgconfig/camera-libgenom3.pc
+share/camera/camviz
+share/doc/camera-libgenom3/README.adoc
+share/doc/camera-libgenom3/README.html
+share/idl/camera/camera.gen

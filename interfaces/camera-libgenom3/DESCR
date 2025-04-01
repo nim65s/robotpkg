@@ -1,0 +1,10 @@
+Generic genom3 camera interface for image acquisition.
+
+Multiple image (multiple out) output ports can be published, organized into
+individual banks. Each bank contains a number of coherent images, e.g. time
+synchronized.
+
+The internal architecture implements a graph of named source and sink slots,
+which can be published individually into images of a bank. Hardware-dependent
+functions can stream raw data into slots, which can then filtered or otherwise
+processed by generic services into other slots and eventually published.
