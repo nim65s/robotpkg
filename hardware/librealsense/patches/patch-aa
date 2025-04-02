@@ -1,0 +1,12 @@
+No downloads in robotpkg
+
+--- CMake/connectivity_check.cmake~	2024-11-25 13:24:09.000000000 +0100
++++ CMake/connectivity_check.cmake	2025-04-02 14:04:21.256469491 +0200
+@@ -1,5 +1,7 @@
+ # License: Apache 2.0. See LICENSE file in root directory.
+ # Copyright(c) 2019 Intel Corporation. All Rights Reserved.
++set(INTERNET_CONNECTION OFF)
++return()
+ message(STATUS "Checking internet connection...")
+ file(DOWNLOAD "https://librealsense.intel.com/Releases/connectivity_check" "${CMAKE_CURRENT_BINARY_DIR}/connectivity_check" SHOW_PROGRESS TIMEOUT 5 STATUS status)
+ list (FIND status "\"No error\"" _index)

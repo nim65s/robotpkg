@@ -1,0 +1,12 @@
+std::fabs
+
+--- src/types.cpp~	2024-11-25 13:24:09.000000000 +0100
++++ src/types.cpp	2025-04-02 17:03:07.742871511 +0200
+@@ -1,6 +1,7 @@
+ // License: Apache 2.0. See LICENSE file in root directory.
+ // Copyright(c) 2015 Intel Corporation. All Rights Reserved.
+ 
++#include <cmath>
+ #include "core/enum-helpers.h"
+ #include "core/notification.h"
+ #include "librealsense-exception.h"

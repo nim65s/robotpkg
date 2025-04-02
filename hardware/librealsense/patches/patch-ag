@@ -1,0 +1,17 @@
+Fix -Wpessimizing-move
+
+--- include/librealsense2/hpp/rs_device.hpp~	2024-11-25 13:24:09.000000000 +0100
++++ include/librealsense2/hpp/rs_device.hpp	2025-04-02 17:49:00.603426080 +0200
+@@ -1101,10 +1101,10 @@
+             return size;
+         }
+ 
+-        device front() const { return std::move((*this)[0]); }
++        device front() const { return (*this)[0]; }
+         device back() const
+         {
+-            return std::move((*this)[size() - 1]);
++            return (*this)[size() - 1];
+         }
+ 
+         class device_list_iterator

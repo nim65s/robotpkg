@@ -1,0 +1,31 @@
+Fix -Wsign-compare
+
+--- include/librealsense2/hpp/rs_frame.hpp~	2024-11-25 13:24:09.000000000 +0100
++++ include/librealsense2/hpp/rs_frame.hpp	2025-04-02 17:44:10.285392234 +0200
+@@ -1054,7 +1054,7 @@
+             {
+                 foreach_rs([&f, index](const frame& frm) {
+                     if (frm.get_profile().stream_type() == RS2_STREAM_INFRARED &&
+-                        frm.get_profile().stream_index() == index) f = frm;
++                        frm.get_profile().stream_index() == (signed)index) f = frm;
+                 });
+             }
+             return f;
+@@ -1076,7 +1076,7 @@
+             {
+                 foreach_rs([&f, index](const frame& frm) {
+                     if (frm.get_profile().stream_type() == RS2_STREAM_FISHEYE &&
+-                        frm.get_profile().stream_index() == index) f = frm;
++                        frm.get_profile().stream_index() == (signed)index) f = frm;
+                 });
+             }
+             return f;
+@@ -1098,7 +1098,7 @@
+             {
+                 foreach_rs([&f, index](const frame& frm) {
+                     if (frm.get_profile().stream_type() == RS2_STREAM_POSE &&
+-                        frm.get_profile().stream_index() == index) f = frm;
++                        frm.get_profile().stream_index() == (signed)index) f = frm;
+                 });
+             }
+             return f.as<pose_frame>();

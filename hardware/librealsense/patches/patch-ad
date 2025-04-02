@@ -1,0 +1,46 @@
+!APPLE && !ANDROID rather means linux || WIN32
+
+--- third-party/rsutils/src/network-adapter-watcher.cpp~	2024-11-25 13:24:09.000000000 +0100
++++ third-party/rsutils/src/network-adapter-watcher.cpp	2025-04-02 15:57:23.138403321 +0200
+@@ -6,14 +6,13 @@
+ #include <rsutils/signal.h>
+ #include <rsutils/easylogging/easyloggingpp.h>
+ 
+-#if ! defined( __APPLE__ ) && ! defined( __ANDROID__ )
+ #ifdef _WIN32
+ 
+ #include <windows.h>
+ #include <iphlpapi.h>
+ #pragma comment( lib, "iphlpapi.lib" )
+ 
+-#else
++#elif defined(__linux__)
+ 
+ #include <sys/socket.h>
+ #include <linux/netlink.h>
+@@ -24,7 +23,6 @@
+ #include <poll.h>
+ 
+ #endif
+-#endif  // ! __APPLE__ && ! __ANDROID__
+ 
+ 
+ namespace rsutils {
+@@ -32,7 +30,7 @@
+ namespace detail {
+ 
+ 
+-#if ! defined( __APPLE__ ) && ! defined( __ANDROID__ )
++#if defined(__linux__) || defined(_WIN32)
+ class network_adapter_watcher_singleton
+ {
+     using public_signal = rsutils::public_signal< network_adapter_watcher_singleton >;
+@@ -243,7 +241,7 @@
+ 
+ 
+ network_adapter_watcher::network_adapter_watcher( callback && cb )
+-#if ! defined( __APPLE__ ) && ! defined( __ANDROID__ )
++#if defined(__linux__) || defined(_WIN32)
+     : _singleton( detail::the_adapter_watcher.instance() )  // keep it alive
+     , _subscription( _singleton->callbacks.subscribe( std::move( cb ) ) )
+ #endif

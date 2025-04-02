@@ -1,0 +1,39 @@
+/proc is definitely not PLATFORM_POSIX
+
+--- third-party/rsutils/src/executable-name.cpp~	2024-11-25 13:24:09.000000000 +0100
++++ third-party/rsutils/src/executable-name.cpp	2025-04-02 15:51:17.538831635 +0200
+@@ -3,13 +3,15 @@
+ 
+ #include <rsutils/os/executable-name.h>
+ 
+-#if defined( PLATFORM_POSIX ) || defined( __linux__ )
++#if defined( __linux__ )
+ #include <fstream>
+ #elif defined( _WIN32 )
+ #include <Windows.h>
+ #elif defined( __APPLE__ )
+ #include <mach-o/dyld.h>
+ #include <limits.h>  // PATH_MAX is POSIX, rather than MAXPATHLEN
++#else
++# include <stdlib.h>
+ #endif
+ 
+ 
+@@ -19,7 +21,7 @@
+ 
+ std::string executable_path()
+ {
+-#if defined( PLATFORM_POSIX ) || defined( __linux__ )
++#if defined( __linux__ )
+ 
+     std::string sp;
+     std::ifstream( "/proc/self/comm" ) >> sp;
+@@ -42,7 +44,7 @@
+ 
+ #else
+ 
+-    static_assert( false, "unrecognized platform" );
++    return getprogname();
+ 
+ #endif
+ }

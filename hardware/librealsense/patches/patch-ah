@@ -1,0 +1,13 @@
+Fix libdir.
+
+--- config/librealsense.pc.in~	2024-11-25 13:24:09.000000000 +0100
++++ config/librealsense.pc.in	2025-04-02 17:54:04.445553506 +0200
+@@ -2,7 +2,7 @@
+ exec_prefix=${prefix}
+ includedir=${prefix}/include
+ #TODO: libdir=${exec_prefix}/lib@MULTI_ARCH_SUFFIX@
+-libdir= ${prefix}/lib/x86_64-linux-gnu
++libdir= ${prefix}/lib
+ 
+ Name:
+ Description: Intel(R) RealSense(tm) Cross Platform API

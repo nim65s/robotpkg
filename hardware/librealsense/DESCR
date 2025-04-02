@@ -1,0 +1,7 @@
+Intel® RealSense™ SDK 2.0 is a cross-platform library for Intel® RealSense™
+depth cameras.
+
+The SDK allows depth and color streaming, and provides intrinsic and extrinsic
+calibration information. The library also offers synthetic streams (pointcloud,
+depth aligned to color and vise-versa), and a built-in support for record and
+playback of streaming sessions.
