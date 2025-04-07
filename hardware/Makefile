@@ -17,6 +17,7 @@ SUBDIR+=	icub-libs
 SUBDIR+=	joystick-genom3
 SUBDIR+=	libfranka
 SUBDIR+=	libftdi
+SUBDIR+=	librealsense
 SUBDIR+=	mccdaqft-genom3
 SUBDIR+=	openni-sensor
 SUBDIR+=	platine-genom
