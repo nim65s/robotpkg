@@ -12,6 +12,18 @@ ifeq (Ubuntu,${OPSYS})
     PREFER.gz-sim?=	robotpkg
   endif
   PREFER.gz-sim?=	system
+
+  # Add ROS2 installation prefixes if they exist, at low priority
+  SYSTEM_PREFIX.gz-sim?=\
+    ${SYSTEM_PREFIX}						\
+    $(realpath $(addprefix /opt/ros/,rolling jazzy iron humble))
+
+  # Ubuntu gazebo packages provided from the ROS2 repository are each installed
+  # in their own prefix, under /opt/ros/<ros-version>/opt/<gz-package>_vendor.
+  # The following code tries to match such paths for gz-sim when they exist.
+  SYSTEM_PREFIX.gz-sim:=\
+    $(foreach _,${SYSTEM_PREFIX.gz-sim},			\
+      $(or $(realpath $(addsuffix /opt/gz_sim_vendor,$_)),$_))
 endif
 PREFER.gz-sim?=		robotpkg
 
@@ -19,11 +31,10 @@ PREFER.gz-sim?=		robotpkg
 define GZ_DEPEND_USE.defaults
   $(foreach _,${GZ_DEPEND_USE},$_ $(eval
     PREFER.$_?=		${PREFER.gz-sim}
-
+    # map any /opt/ros/.../gz_sim_vendor to the actual package name prefix
     SYSTEM_PREFIX.$_?=\
-      ${SYSTEM_PREFIX}						\
-      $(realpath $(addsuffix /opt/$(subst -,_,$_)_vendor,	\
-        $(addprefix /opt/ros/,rolling iron humble)))))
+      $(patsubst %/gz_sim_vendor,%/$(subst -,_,$_)_vendor,	\
+        ${SYSTEM_PREFIX.gz-sim})))
 endef
 DEPEND_USE+=		${GZ_DEPEND_USE.defaults}
 
