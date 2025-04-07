@@ -13,6 +13,7 @@ COMMENT=		Genom3 camera interface for image acquisition
 LICENSE=		2-clause-bsd
 
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	MAKE=${MAKE}
 CONFIGURE_ARGS+=	--with-opencv=${PKG_ALTERNATIVE.opencv:3=}
 
 DEPEND_ABI.opencv+=		opencv>=3
