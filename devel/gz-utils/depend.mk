@@ -20,7 +20,7 @@ DEPEND_DIR.gz-utils?=		../../devel/gz-utils
 SYSTEM_SEARCH.gz-utils=\
   'include/gz/utils[0-9]*/gz/utils.hh'	\
   'lib/libgz-utils[0-9]*.so'		\
-  $(call gz_system_search,gz-utils, cli log)
+  $(call gz_system_search,gz-utils, cli)
 
 endif # GZ_UTILS_DEPEND_MK ----------------------------------------------
 
