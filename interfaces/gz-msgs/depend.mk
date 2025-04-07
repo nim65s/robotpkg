@@ -18,9 +18,9 @@ DEPEND_ABI.gz-msgs?=	gz-msgs>=10
 DEPEND_DIR.gz-msgs?=	../../interfaces/gz-msgs
 
 SYSTEM_SEARCH.gz-msgs=\
-  'include/gz/msgs[0-9]*/gz/msgs.hh'			\
-  'lib/libgz-msgs[0-9]*.so'				\
-  '${PYTHON_SYSLIBSEARCH}/gz/msgs[0-9]*/__init__.py'	\
+  'include/gz/msgs[0-9]*/gz/msgs.hh'					\
+  'lib/libgz-msgs[0-9]*.so'						\
+  '{${PYTHON_SYSLIBSEARCH},lib/python}/gz/msgs[0-9]*/__init__.py'	\
   $(call gz_system_search, gz-msgs,)
 
 # transitive dependencies
