@@ -23,6 +23,7 @@ SUBDIR+=	openni-sensor
 SUBDIR+=	platine-genom
 SUBDIR+=	py-odri-control-interface
 SUBDIR+=	py-odri-master-board-sdk
+SUBDIR+=	realsense-genom3
 SUBDIR+=	sahand-kmod
 SUBDIR+=	sahand-libs
 SUBDIR+=	sahand-genom
