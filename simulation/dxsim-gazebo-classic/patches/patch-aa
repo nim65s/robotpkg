@@ -1,0 +1,19 @@
+From 0bd91894ac275760a10896aaddd7c8420bbd1b92 Mon Sep 17 00:00:00 2001
+
+Infinite loop in the plugin destructor ...
+---
+ src/plugin.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+--- src/plugin.cc
++++ src/plugin.cc
+@@ -339,7 +339,7 @@ class dxsim_plugin : public ModelPlugin
+ 
+     pthread_mutex_lock(&dxsim_mutex);
+     alive = false;
+-    for (i = 0; motors.size(); i++)
++    for (i = 0; i < motors.size(); i++)
+       dynamixel_fini(motors[i].dynamixel);
+     pthread_mutex_unlock(&dxsim_mutex);
+     pthread_join(reader, NULL);
+
