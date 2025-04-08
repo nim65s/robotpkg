@@ -1,0 +1,12 @@
+Don't install patch backup files or any random files
+
+--- CMake/install_config.cmake~	2024-11-25 13:24:09.000000000 +0100
++++ CMake/install_config.cmake	2025-04-08 11:46:15.240720334 +0200
+@@ -27,6 +27,7 @@
+ 
+ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/librealsense2
+         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++        FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
+ )
+ 
+ install(EXPORT realsense2Targets
