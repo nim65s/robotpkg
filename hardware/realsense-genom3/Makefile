@@ -17,6 +17,7 @@ DEPEND_ABI.openrobots2-idl=	openrobots2-idl>=2.3.1
 
 include ../../interfaces/camera-libgenom3/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
+include ../../hardware/librealsense/depend.mk
 include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
