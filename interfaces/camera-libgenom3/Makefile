@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue,  1 Apr 2025
 #
 
-PKGREVISION=		1
+PKGREVISION=		2
 DISTNAME=		camera-libgenom3-1.0
 CATEGORIES=		intefaces image
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
