@@ -5,8 +5,8 @@
 DISTNAME=		dxsim-gazebo-1.2
 PKGNAME=		dxsim-gazebo-classic-1.2
 CATEGORIES=		simulation
-MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
-MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}${PKGBASE}
+MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=dxsim-gazebo/}
+MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}dxsim-gazebo
 
 MAINTAINER=		openrobots@laas.fr
 COMMENT=		Gazebo simulator plugin for Dynamixel motors
