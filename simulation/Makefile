@@ -3,6 +3,7 @@
 
 COMMENT=	Simulation tools
 
+SUBDIR+=	dxsim-gazebo
 SUBDIR+=	dxsim-gazebo-classic
 SUBDIR+=	gazebo-ros-pkgs
 SUBDIR+=	gazeboft-genom3
