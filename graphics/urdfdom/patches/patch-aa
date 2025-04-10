@@ -1,0 +1,20 @@
+Fix build with tinyxml2-8.0.0
+
+tinyxml2-8.0.0 has ClearError() inline method invoking private method
+SetError() which has a visibility "hidden" setting. This later results in
+undefined symbol during the link.
+
+Since ClearError() is called just before returning and destroying the
+XMLDocument for which the error is to be reset, it serves no purpose.
+Just drop it.
+
+--- urdf_parser/src/model.cpp~	2024-09-12 00:00:42.000000000 +0200
++++ urdf_parser/src/model.cpp	2025-04-10 18:28:01.410277689 +0200
+@@ -99,7 +99,6 @@
+   if (xml_doc.Error())
+   {
+     CONSOLE_BRIDGE_logError(xml_doc.ErrorStr());
+-    xml_doc.ClearError();
+     model.reset();
+     return model;
+   }
