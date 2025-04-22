@@ -1,4 +1,4 @@
-@comment Tue Aug 20 15:52:25 CEST 2024
+@comment Tue Apr 22 18:54:46 CEST 2025
 bin/genom${PKGVERSION}
 bin/genom3
 bin/profundis
@@ -14,8 +14,10 @@ lib/pkgconfig/genom3-c-client.pc
 lib/pkgconfig/genom3.pc
 libexec/genom-pcpp
 ${PKGMANDIR}/man1/genom3.1
+share/doc/genom/AUTHORS
 share/doc/genom/CHANGES
-share/doc/genom/COPYING
+share/doc/genom/LICENSE
+share/doc/genom/README
 share/doc/genom/adoc/copying.adoc
 share/doc/genom/adoc/dotgen/codel.adoc
 share/doc/genom/adoc/dotgen/component.adoc
