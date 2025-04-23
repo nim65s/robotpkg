@@ -8,10 +8,9 @@ ifeq (+,${GZ_SIM_DEPEND_COMMON}) # -----------------------------------------
 
 include ../../mk/robotpkg.prefs.mk # for OPSYS
 ifeq (Ubuntu,${OPSYS})
-  ifneq (,$(filter 18.% 20.% 22.%,${OS_VERSION}))
-    PREFER.gz-sim?=	robotpkg
+  ifneq (,$(filter 24.04%,${OS_VERSION}))
+    PREFER.gz-sim?=	system
   endif
-  PREFER.gz-sim?=	system
 
   # Add ROS2 installation prefixes if they exist, at low priority
   SYSTEM_PREFIX.gz-sim?=\
