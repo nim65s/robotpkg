@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2024 LAAS/CNRS
+# Copyright (c) 2010-2025 LAAS/CNRS
 # All rights reserved.
 #
 # Redistribution  and  use  in  source  and binary  forms,  with  or  without
@@ -134,8 +134,8 @@ endif
 # define an alternative for available pythons packages
 PKG_ALTERNATIVES+=		python
 PKG_ALTERNATIVES.python=	python27
-PKG_ALTERNATIVES.python+=	python36
-PKG_ALTERNATIVES.python+=	python38 python39 python310 python311 python312
+PKG_ALTERNATIVES.python+=	python36 python38
+PKG_ALTERNATIVES.python+=	python39 python310 python311 python312 python313
 
 # select default preferences depending on OS/VERSION
 include ../../mk/robotpkg.prefs.mk # for OPSYS
@@ -159,7 +159,10 @@ else ifeq (Ubuntu,${OPSYS})
   ifneq (,$(filter 22.%,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python310 python27
   endif
-  PREFER_ALTERNATIVE.python?=	python312
+  ifneq (,$(filter 24.%,${OS_VERSION}))
+    PREFER_ALTERNATIVE.python?=	python312
+  endif
+  PREFER_ALTERNATIVE.python?=	python313
 else ifeq (Rocky,${OPSYS})
   PREFER_ALTERNATIVE.python?=	python36
 else ifeq (Arch,${OPSYS})
@@ -258,6 +261,19 @@ define PKG_ALTERNATIVE_SET.python312
   DEPEND_METHOD.python312?= ${DEPEND_METHOD.python}
 
   include ../../mk/sysdep/python312.mk
+endef
+
+PKG_ALTERNATIVE_DESCR.python313= Use python-3.13
+PKGTAG.python313 =		py313
+define PKG_ALTERNATIVE_SELECT.python313
+  $(call preduce,${DEPEND_ABI.python} python>=3.13<3.14)
+endef
+define PKG_ALTERNATIVE_SET.python313
+  _py_abi:=$(subst python,python313,${PKG_ALTERNATIVE_SELECT.python313})
+  DEPEND_ABI.python313?= $(strip ${_py_abi})
+  DEPEND_METHOD.python313?= ${DEPEND_METHOD.python}
+
+  include ../../mk/sysdep/python313.mk
 endef
 
 
