@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	geometry2
-ROS_VERSION=	0.7.7
+ROS_VERSION=	0.7.8
 ROS_METAPKG=	yes
 
 CATEGORIES=	math localization
@@ -23,8 +23,3 @@ include ../../motion/py-orocos-kdl/depend.mk
 include ../../sysutils/console-bridge/depend.mk
 include ../../mk/sysdep/bullet.mk
 include ../../mk/robotpkg.mk
-
-# fix a crazy circular dependency: tf depends on tf2, and test_tf2 depends on
-# tf, so obviously this cannot work...
-post-extract:
-	${RUN}${RM} -rf ${WRKSRC}/test_tf2

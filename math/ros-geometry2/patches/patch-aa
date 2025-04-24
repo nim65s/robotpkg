@@ -13,4 +13,4 @@ Fix for console-bridge < 0.4
 +#endif
  #include "tf2/LinearMath/Transform.h"
  #include <boost/foreach.hpp>
- 
+ #include <boost/tuple/tuple.hpp>

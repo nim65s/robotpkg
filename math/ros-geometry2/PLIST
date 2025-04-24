@@ -1,4 +1,4 @@
-@comment Tue Jun 18 21:30:05 CEST 2024
+@comment Thu Apr 24 11:54:51 CEST 2025
 include/tf2/LinearMath/Matrix3x3.h
 include/tf2/LinearMath/MinMax.h
 include/tf2/LinearMath/QuadWord.h
@@ -44,6 +44,7 @@ include/tf2_ros/transform_listener.h
 include/tf2_sensor_msgs/tf2_sensor_msgs.h
 lib/libtf2.so
 lib/libtf2_ros.so
+lib/pkgconfig/test_tf2.pc
 lib/pkgconfig/tf2.pc
 lib/pkgconfig/tf2_bullet.pc
 lib/pkgconfig/tf2_eigen.pc
@@ -132,6 +133,9 @@ share/common-lisp/ros/tf2_msgs/srv/_package.lisp
 share/common-lisp/ros/tf2_msgs/srv/_package_FrameGraph.lisp
 share/common-lisp/ros/tf2_msgs/srv/tf2_msgs-srv.asd
 share/geometry2/package.xml
+share/test_tf2/cmake/test_tf2Config-version.cmake
+share/test_tf2/cmake/test_tf2Config.cmake
+share/test_tf2/package.xml
 share/tf2/cmake/tf2Config-version.cmake
 share/tf2/cmake/tf2Config.cmake
 share/tf2/package.xml
