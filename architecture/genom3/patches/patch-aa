@@ -1,0 +1,91 @@
+From 65fc40b5a684d9f2a0466fa6b60ca234807e7fdb Mon Sep 17 00:00:00 2001
+
+Accept tcl>=9 in configure
+
+Only fail if tcl-8.[0-4] is detected, which should not happen anymore anyway.
+
+Also, tcl-9 is always threaded, so disable the threaded test and assume 'yes'.
+It seems that the TCL_THREADED variable has disappeared from
+tclConfig.sh, so the previous code would have assumed 'no'.
+
+--- configure	2025-04-22 18:36:40.000000000 +0200
++++ /home/mallet/src/genom3/configure	2025-04-25 19:20:24.289098273 +0200
+@@ -17758,11 +17758,8 @@
+ 
+ 
+                    case ${TCL_VERSION} in
+-                        8.[5-9]*)
+-                                ac_cv_c_tclconfig="${TCL_BIN_DIR}"
+-                                ;;
+-                        *)
+-                        as_fn_error $? "rejecting version ${TCL_VERSION} (need 8.5+)" "$LINENO" 5
++                        8.[0-4]*) as_fn_error $? "rejecting version ${TCL_VERSION} (need 8.5+)" "$LINENO" 5;;
++                        *) ac_cv_c_tclconfig="${TCL_BIN_DIR}" ;;
+                    esac
+ 		else
+ 		    as_fn_error $? "${with_tclconfig} directory doesn't contain tclConfig.sh" "$LINENO" 5
+@@ -17852,14 +17849,12 @@
+ 
+ 
+                         case ${TCL_VERSION} in
+-                             8.[5-9]*)
+-                                ac_cv_c_tclconfig="${TCL_BIN_DIR}"
+-                                ;;
+-                             *)
+-                                { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&5
++                          8.[0-4]*)
++                            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&5
+ printf "%s\n" "$as_me: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&2;}
+-                                { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for Tcl configuration" >&5
++                            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for Tcl configuration" >&5
+ printf %s "checking for Tcl configuration... " >&6; };;
++                          *) ac_cv_c_tclconfig="${TCL_BIN_DIR}" ;;
+                         esac
+ 		    fi
+ 		done
+@@ -17954,14 +17949,12 @@
+ 
+ 
+                         case ${TCL_VERSION} in
+-                             8.[5-9]*)
+-                                ac_cv_c_tclconfig="${TCL_BIN_DIR}"
+-                                break;;
+-                             *)
+-                                { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&5
++                          8.[0-4]*)
++                            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&5
+ printf "%s\n" "$as_me: WARNING: rejecting version ${TCL_VERSION} (need 8.5+)" >&2;}
+-                                { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for Tcl configuration" >&5
++                            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for Tcl configuration" >&5
+ printf %s "checking for Tcl configuration... " >&6; };;
++                          *) ac_cv_c_tclconfig="${TCL_BIN_DIR}" ;;
+                         esac
+ 		    fi
+ 		done
+@@ -17978,16 +17971,19 @@
+ 	fi
+     fi
+ 
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for threaded tcl" >&5
++  need_pthread=yes;
++  case ${TCL_VERSION} in 8.*)
++    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for threaded tcl" >&5
+ printf %s "checking for threaded tcl... " >&6; }
+-  if test "$TCL_THREADS" = 1; then
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++    if test "$TCL_THREADS" = 1; then
++      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+-    need_pthread=yes;
+-  else
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
++    else
++      need_pthread=no;
++      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+-  fi
++    fi;;
++  esac
+ 
+   # add runtime path
+   dir=`echo $TCL_LIB_SPEC | sed -ne 's|.*-L[ 	]*\([^ 	]*\).*|\1|p'`

@@ -1,0 +1,24 @@
+From 326ff164cb1594d48675a6086923f87fa972c59f Mon Sep 17 00:00:00 2001
+
+Fix for changed namespace resolution rules in tcl-9
+
+Namespace variables are now looked up only in the current namepace, not the
+global one.
+
+--- engine/tcl/merge.tcl
++++ engine/tcl/merge.tcl
+@@ -160,12 +160,12 @@ namespace eval merge {
+     }
+ 
+     # move to final destination
+-    if {${engine::move-if-change}} {
++    if {${::engine::move-if-change}} {
+       set t [::open $tmp r]; set d [::open $dst r]
+       while { "[read $t 4096]" == "[read $d 4096]" } {
+         if { [eof $t] && [eof $d] } {
+           close $t; close $d
+-          if {!$engine::silent} { puts "$dst was not modified" }
++          if {!$::engine::silent} { puts "$dst was not modified" }
+           return 0
+         }
+       }
