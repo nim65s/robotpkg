@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue, 13 Mar 2007
 #
 
-DISTNAME=		eltclsh-1.19
+DISTNAME=		eltclsh-1.20
 CATEGORIES=		shell
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=eltclsh/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}eltclsh
@@ -11,8 +11,6 @@ MAINTAINER=		openrobots@laas.fr
 HOMEPAGE=		https://git.openrobots.org/projects/eltclsh
 COMMENT=		Interactive shell for the TCL programming language.
 LICENSE=		2-clause-bsd
-
-NOT_FOR_PLATFORM=	# empty
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-tcl=$(dir ${TCL_CONFIG_SH})
