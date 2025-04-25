@@ -19,8 +19,8 @@ DEPEND_ABI.libedit?=	libedit>=2.10
 DEPEND_DIR.libedit?=	../../devel/libedit
 
 SYSTEM_SEARCH.libedit=\
-	include/histedit.h	\
-	lib/libedit.*
+  'include/histedit.h'	\
+  'lib/libedit.{so,a}'
 
 endif # LIBEDIT_DEPEND_MK --------------------------------------------
 

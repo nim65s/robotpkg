@@ -1,4 +1,4 @@
-@comment Mon Jan 16 11:49:11 CET 2017
+@comment Fri Apr 25 15:47:18 CEST 2025
 include/editline/readline.h
 include/histedit.h
 lib/libedit.la
@@ -9,6 +9,12 @@ ${PKGMANDIR}/man3/el_end.3
 ${PKGMANDIR}/man3/el_get.3
 ${PKGMANDIR}/man3/el_getc.3
 ${PKGMANDIR}/man3/el_gets.3
+${PKGMANDIR}/man3/el_history.3
+${PKGMANDIR}/man3/el_history_end.3
+${PKGMANDIR}/man3/el_history_init.3
+${PKGMANDIR}/man3/el_history_w.3
+${PKGMANDIR}/man3/el_history_wend.3
+${PKGMANDIR}/man3/el_history_winit.3
 ${PKGMANDIR}/man3/el_init.3
 ${PKGMANDIR}/man3/el_init_fd.3
 ${PKGMANDIR}/man3/el_insertstr.3
@@ -19,6 +25,16 @@ ${PKGMANDIR}/man3/el_reset.3
 ${PKGMANDIR}/man3/el_resize.3
 ${PKGMANDIR}/man3/el_set.3
 ${PKGMANDIR}/man3/el_source.3
+${PKGMANDIR}/man3/el_tok_end.3
+${PKGMANDIR}/man3/el_tok_init.3
+${PKGMANDIR}/man3/el_tok_line.3
+${PKGMANDIR}/man3/el_tok_reset.3
+${PKGMANDIR}/man3/el_tok_str.3
+${PKGMANDIR}/man3/el_tok_wend.3
+${PKGMANDIR}/man3/el_tok_winit.3
+${PKGMANDIR}/man3/el_tok_wline.3
+${PKGMANDIR}/man3/el_tok_wreset.3
+${PKGMANDIR}/man3/el_tok_wstr.3
 ${PKGMANDIR}/man3/el_wdeletestr.3
 ${PKGMANDIR}/man3/el_wget.3
 ${PKGMANDIR}/man3/el_wgetc.3
@@ -28,21 +44,5 @@ ${PKGMANDIR}/man3/el_wline.3
 ${PKGMANDIR}/man3/el_wparse.3
 ${PKGMANDIR}/man3/el_wpush.3
 ${PKGMANDIR}/man3/el_wset.3
-${PKGMANDIR}/man3/history.3
-${PKGMANDIR}/man3/history_end.3
-${PKGMANDIR}/man3/history_init.3
-${PKGMANDIR}/man3/history_w.3
-${PKGMANDIR}/man3/history_wend.3
-${PKGMANDIR}/man3/history_winit.3
-${PKGMANDIR}/man3/tok_end.3
-${PKGMANDIR}/man3/tok_init.3
-${PKGMANDIR}/man3/tok_line.3
-${PKGMANDIR}/man3/tok_reset.3
-${PKGMANDIR}/man3/tok_str.3
-${PKGMANDIR}/man3/tok_wend.3
-${PKGMANDIR}/man3/tok_winit.3
-${PKGMANDIR}/man3/tok_wline.3
-${PKGMANDIR}/man3/tok_wreset.3
-${PKGMANDIR}/man3/tok_wstr.3
 ${PKGMANDIR}/man5/editrc.5
 ${PKGMANDIR}/man7/editline.7

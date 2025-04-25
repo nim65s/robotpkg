@@ -2,9 +2,9 @@
 # Created:			Anthony Mallet on Tue, 13 Mar 2007
 #
 
-DISTNAME=		libedit-20160903-3.1
+DISTNAME=		libedit-20250104-3.1
 PKGNAME=		libedit-3.1
-PKGREVISION=		20160903
+PKGREVISION=		20250104
 CATEGORIES=		devel
 MASTER_SITES=		http://www.thrysoee.dk/editline/
 
