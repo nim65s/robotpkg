@@ -1,0 +1,34 @@
+Remove deprecated options in empy >= 4
+
+The RAW_OPT and BUFFERED_OPT only affect behaviour on error, so it should not
+matter to remove them, as distributed files are not supposed to err out.
+
+--- src/genmsg/template_tools.py~	2022-09-26 01:29:45.000000000 +0200
++++ src/genmsg/template_tools.py	2025-04-28 17:05:22.596471274 +0200
+@@ -43,6 +43,8 @@
+ import genmsg.msg_loader
+ import genmsg.gentools
+ 
++emvmajor = int(em.__version__.split('.')[0])
++
+ # generate msg or srv files from a template file
+ # template_map of the form { 'template_file':'output_file'} output_file can contain @NAME@ which will be replaced by the message/service name
+ def _generate_from_spec(input_file, output_dir, template_dir, msg_context, spec, template_map, search_path):
+@@ -74,7 +76,11 @@
+             g['msg_definition'] = msg_definition
+ 
+         # todo, reuse interpreter
+-        interpreter = em.Interpreter(output=ofile, globals=g, options={em.RAW_OPT:True,em.BUFFERED_OPT:True})
++        if emvmajor < 4:
++            interpreter = em.Interpreter(output=ofile, globals=g, options={em.RAW_OPT:True,em.BUFFERED_OPT:True})
++        else:
++            interpreter = em.Interpreter(output=ofile, globals=g)
++
+         if not os.path.isfile(template_file):
+             ofile.close()
+             os.remove(output_file)
+@@ -214,4 +220,3 @@
+         else:
+             parser.print_help()
+             exit(-1)
+-
