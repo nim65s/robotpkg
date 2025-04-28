@@ -1,0 +1,19 @@
+Fix compile with g++-15
+
+Not sure if that's the right fix, nor why this starts to break.
+
+Otherwise, we get "converting from initializer list would use explicit
+constructor" in several objects (e.g. OgreGPUProgramParams) that have stl
+unordered_map members.
+
+--- OgreMain/include/OgreMemorySTLAllocator.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/OgreMemorySTLAllocator.h	2025-04-28 19:02:16.138089303 +0200
+@@ -100,7 +100,7 @@
+         };
+ 
+         /// ctor
+-        inline explicit STLAllocator()
++        inline STLAllocator()
+         { }
+ 
+         /// dtor
