@@ -24,7 +24,7 @@ SYSTEM_PREFIX.qt5-quickcontrols?=${SYSTEM_PREFIX:=/qt5} ${SYSTEM_PREFIX}
 
 SYSTEM_PKG.Debian.qt5-quickcontrols=	qml-module-qtquick-controls \
 					qml-module-qtquick-dialogs
-SYSTEM_PKG.Fedora.qt5-quickcontrols=	qt5-qtquickcontrols-devel
+SYSTEM_PKG.Fedora.qt5-quickcontrols=	qt5-qtquickcontrols
 SYSTEM_PKG.NetBSD.qt5-quickcontrols=	x11/qt5-qtquickcontrols
 
 endif # QT5_QUICKCONTROLS_DEPEND_MK ----------------------------------------
