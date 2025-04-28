@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2012-2013,2015-2018 LAAS/CNRS
+# Copyright (c) 2012-2013,2015-2018, 2025 LAAS/CNRS
 # All rights reserved.
 #
 # Redistribution  and  use  in  source  and binary  forms,  with  or  without
@@ -58,27 +58,58 @@ DEPEND_DEPTH:=		${DEPEND_DEPTH}+
 TCL_DEPEND_MK:=		${TCL_DEPEND_MK}+
 
 ifeq (+,$(DEPEND_DEPTH))
-  DEPEND_PKG+=		${PKG_ALTERNATIVE.tcl}
+  DEPEND_PKG+=		tcl
 endif
 
 ifeq (+,$(TCL_DEPEND_MK)) # ------------------------------------------------
 
-DEPEND_USE+=		${PKG_ALTERNATIVE.tcl}
+DEPEND_USE+=		tcl
 
 PREFER.tcl?=		system
 DEPEND_ABI.tcl?=	tcl>=8.4
 
-# factorize SYSTEM_SEARCH.tcl* here for all tcl* packages
-override define _tcl_syssearch
+SYSTEM_SEARCH.tcl=\
   'bin/tclsh{[0-9.]*,}:p:echo puts [set tcl_patchLevel]| %'	\
   'lib/{,tcl{,[0-9]*}/}tclConfig.sh:/TCL_VERSION/s/[^.0-9]//gp'	\
   'include/{,tcl{,[0-9]*}/}tcl.h:/TCL_VERSION/s/[^.0-9]//gp'
+
+SYSTEM_PKG.Fedora.tcl=tcl-devel
+SYSTEM_PKG.Ubuntu.tcl=tcl-dev
+SYSTEM_PKG.Debian.tcl=tcl-dev
+SYSTEM_PKG.NetBSD.tcl=lang/tcl
+
+# define an alternative for available tcls packages
+PKG_ALTERNATIVES+=	tcl
+PKG_ALTERNATIVES.tcl=	tcl8 tcl9
+
+define PKG_ALTERNATIVE.tcl.create
+  PKG_ALTERNATIVE_DESCR.$(strip $2)= $1
+  PKGTAG.$(strip $2)= $2
+  PKG_ALTERNATIVE_SELECT.$(strip $2)= $$(call preduce,${DEPEND_ABI.tcl} $3)
+  define PKG_ALTERNATIVE_SET.$(strip $2)
+    DEPEND_ABI.tcl+= $3
+    DEPEND_ABI.tk+= $(subst tcl,tk,$3)
+  endef
 endef
 
+$(eval $(call PKG_ALTERNATIVE.tcl.create, Use tcl-8, tcl8, tcl>=8<9))
+$(eval $(call PKG_ALTERNATIVE.tcl.create, Use tcl-9, tcl9, tcl>=9<10))
+
+# set default preferences depending on OS/VERSION
+include ../../mk/robotpkg.prefs.mk # for OPSYS
+ifeq (Fedora,${OPSYS})
+  ifneq (,$(filter 3% 40 41,${OS_VERSION}))
+    PREFER_ALTERNATIVE.tcl?=	tcl8 tcl9
+  endif
+  PREFER_ALTERNATIVE.tcl?=	tcl9 tcl8
+endif
+PREFER_ALTERNATIVE.tcl?=	tcl8 tcl9
+
 # define some variables for use in the packages
-export TCLSH=		$(word 1,${SYSTEM_FILES.${PKG_ALTERNATIVE.tcl}})
-TCL_CONFIG_SH=		$(word 2,${SYSTEM_FILES.${PKG_ALTERNATIVE.tcl}})
-TCL_VERSION=		$(patsubst 8%,8.%,${PKG_ALTERNATIVE.tcl})
+export TCLSH=		$(word 1,${SYSTEM_FILES.tcl})
+TCL_CONFIG_SH=		$(word 2,${SYSTEM_FILES.tcl})
+TCL_VERSION=\
+  $(subst $  ,.,$(words 1 2,$(subst ., ,${PKG_VERSION.tcl} 0 0)))
 
 # TCLPATH.<pkg> is a list of subdirectories of PREFIX.<pkg> (or absolute
 # directories) that should be added to the tcl search paths.
@@ -95,67 +126,6 @@ TCLLIBPATH=$(filter-out ${_TCL_SYSPATH},				\
 	      $(dir $(filter %/pkgIndex.tcl,${SYSTEM_FILES.${_pkg_}}))	\
 	))))))
 export TCLLIBPATH
-
-# define an alternative for available tcls packages
-PKG_ALTERNATIVES+=	tcl
-PKG_ALTERNATIVES.tcl=	tcl84 tcl85 tcl86
-
-# set default preferences depending on OS/VERSION
-include ../../mk/robotpkg.prefs.mk # for OPSYS
-ifeq (Debian,${OPSYS})
-  ifneq (,$(filter 7.%,${OS_VERSION}))
-     PREFER_ALTERNATIVE.tcl?=	tcl85 tcl84
-  endif
-else ifeq (Ubuntu,${OPSYS})
-  ifneq (,$(filter 12.04,${OS_VERSION}))
-     PREFER_ALTERNATIVE.tcl?=	tcl85 tcl84
-  endif
-else ifeq (CentOS,${OPSYS})
-  PREFER_ALTERNATIVE.tcl?=	tcl85 tcl84
-else ifeq (Gentoo,${OS_FAMILY})
-  PREFER_ALTERNATIVE.tcl?=	tcl85 tcl84
-endif
-PREFER_ALTERNATIVE.tcl?=	tcl86 tcl85
-
-PKG_ALTERNATIVE_DESCR.tcl84= Use tcl-8.4
-PKGTAG.tcl84 =		tcl84
-define PKG_ALTERNATIVE_SELECT.tcl84
-  $(call preduce,${DEPEND_ABI.tcl} tcl>=8.4<8.5)
-endef
-define PKG_ALTERNATIVE_SET.tcl84
-  _tcl_abi:=$(subst tcl,tcl84,${PKG_ALTERNATIVE_SELECT.tcl84})
-  DEPEND_ABI.tcl84?=	$(strip ${_tcl_abi})
-  DEPEND_ABI.tk+=	tk>=8.4<8.5
-
-  include ../../mk/sysdep/tcl84.mk
-endef
-
-PKG_ALTERNATIVE_DESCR.tcl85= Use tcl-8.5
-PKGTAG.tcl85 =		tcl85
-define PKG_ALTERNATIVE_SELECT.tcl85
-  $(call preduce,${DEPEND_ABI.tcl} tcl>=8.5<8.6)
-endef
-define PKG_ALTERNATIVE_SET.tcl85
-  _tcl_abi:=$(subst tcl,tcl85,${PKG_ALTERNATIVE_SELECT.tcl85})
-  DEPEND_ABI.tcl85?=	$(strip ${_tcl_abi})
-  DEPEND_ABI.tk+=	tk>=8.5<8.6
-
-  include ../../mk/sysdep/tcl85.mk
-endef
-
-PKG_ALTERNATIVE_DESCR.tcl86= Use tcl-8.6
-PKGTAG.tcl86 =		tcl86
-define PKG_ALTERNATIVE_SELECT.tcl86
-  $(call preduce,${DEPEND_ABI.tcl} tcl>=8.6<8.7)
-endef
-define PKG_ALTERNATIVE_SET.tcl86
-  _tcl_abi:=$(subst tcl,tcl86,${PKG_ALTERNATIVE_SELECT.tcl86})
-  DEPEND_ABI.tcl86?=	$(strip ${_tcl_abi})
-  DEPEND_ABI.tk+=	tk>=8.6<8.7
-
-  include ../../mk/sysdep/tcl86.mk
-endef
-
 
 # Add extra replacement in PLISTs
 PLIST_SUBST+=\
