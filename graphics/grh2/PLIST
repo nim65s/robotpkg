@@ -1,4 +1,4 @@
-@comment Tue Apr 14 15:31:55 CEST 2009
+@comment Mon Apr 28 15:01:01 CEST 2025
 lib/grh2/grh2.so
 lib/grh2/pkgIndex.tcl
 share/grh2/icons/delete.gif
@@ -28,6 +28,3 @@ share/grh2/tcl/scout.tcl
 share/grh2/tcl/seglocEdit.tcl
 share/grh2/tcl/seglocPoster.tcl
 share/grh2/tcl/tk_entrydialog.tcl
-@dirrm share/grh2/tcl
-@dirrm share/grh2/icons
-@dirrm lib/grh2
