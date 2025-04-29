@@ -1,0 +1,10 @@
+Remove unsupported(?) option
+
+--- sensor_msgs_py/setup.py~	2022-03-31 23:42:43.000000000 +0200
++++ sensor_msgs_py/setup.py	2025-04-29 18:18:39.709056406 +0200
+@@ -19,5 +19,4 @@
+     author_email='sebastian.grans@gmail.com',
+     description='A package for easy creation and reading of PointCloud2 messages in Python.',
+     license='BSD',
+-    tests_require=['pytest'],
+ )
