@@ -233,6 +233,7 @@ share/rosidl_cmake/cmake/rosidl_cmake_export_typesupport_targets_package_hook.cm
 share/rosidl_cmake/cmake/rosidl_cmake_package_hook.cmake
 share/rosidl_cmake/cmake/rosidl_export_typesupport_libraries.cmake
 share/rosidl_cmake/cmake/rosidl_export_typesupport_targets.cmake
+share/rosidl_cmake/cmake/rosidl_find_package_idl.cmake
 share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake
 share/rosidl_cmake/cmake/rosidl_get_typesupport_target.cmake
 share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake

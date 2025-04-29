@@ -1,0 +1,12 @@
+Generated messages may containt <cstdint> types.
+
+--- rosidl_generator_cpp/resource/idl__struct.hpp.em~	2024-10-03 16:58:05.000000000 +0200
++++ rosidl_generator_cpp/resource/idl__struct.hpp.em	2025-04-29 18:46:30.175046970 +0200
+@@ -28,6 +28,7 @@
+ 
+ #include <algorithm>
+ #include <array>
++#include <cstdint>
+ #include <memory>
+ #include <string>
+ #include <vector>

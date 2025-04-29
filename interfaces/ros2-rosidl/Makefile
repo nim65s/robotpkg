@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rosidl
-ROS2_VERSION=	4.3.1
+ROS2_VERSION=	4.9.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	API and scripts to manipulate .msg/.srv/.action files.
