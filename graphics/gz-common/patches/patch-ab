@@ -10,3 +10,13 @@ Header for uint32_t
  #include <memory>
  #include <string>
  
+--- include/gz/common/Battery.hh~	2024-09-26 18:59:14.000000000 +0200
++++ include/gz/common/Battery.hh	2025-04-29 13:49:59.442760327 +0200
+@@ -17,6 +17,7 @@
+ #ifndef GZ_COMMON_BATTERY_HH_
+ #define GZ_COMMON_BATTERY_HH_
+ 
++#include <cstdint>
+ #include <functional>
+ #include <map>
+ #include <memory>
