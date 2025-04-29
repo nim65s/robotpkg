@@ -1,0 +1,12 @@
+For uint32_t
+
+--- include/gz/rendering/NativeWindow.hh~	2024-09-26 20:56:28.000000000 +0200
++++ include/gz/rendering/NativeWindow.hh	2025-04-29 11:59:20.950584303 +0200
+@@ -17,6 +17,7 @@
+ #ifndef GZ_RENDERING_NATIVEWINDOW_HH_
+ #define GZ_RENDERING_NATIVEWINDOW_HH_
+ 
++#include <cstdint>
+ #include <map>
+ #include <string>
+ #include "gz/rendering/config.hh"
