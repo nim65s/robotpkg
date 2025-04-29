@@ -3,3 +3,5 @@ RMD160 (rosidl-4.9.0.tar.gz) = f6b76066cb1adf3c867ae0251209d4d7ea800489
 Size (rosidl-4.9.0.tar.gz) = 287463 bytes
 SHA1 (patch-aa) = 5eb30d1b436b4f510a7c990c2992cf4418491b1e
 SHA1 (patch-ab) = aa55772897f387848402a6f69c90b844c5763852
+SHA1 (patch-ac) = b1e1a7a71997b2212afed870b4185ab2cfbd71b8
+SHA1 (patch-ad) = 9e9f11b611f95e7195672aafc968d8da565afa5f

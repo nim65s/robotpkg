@@ -1,0 +1,8 @@
+--- rosidl_generator_cpp/CMakeLists.txt~	2024-10-03 16:58:05.000000000 +0200
++++ rosidl_generator_cpp/CMakeLists.txt	2025-04-29 23:36:58.935904188 +0200
+@@ -25,4 +25,5 @@
+ install(
+   DIRECTORY cmake resource
+   DESTINATION share/${PROJECT_NAME}
++  FILES_MATCHING PATTERN "*.cmake" PATTERN "*.em" PATTERN "*.in"
+ )
