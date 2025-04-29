@@ -18,6 +18,7 @@ PKG_OPTION_DESCR.tcl?=	Enable the TCL interface
 
 define PKG_OPTION_SET.tcl
   CMAKE_ARGS+=		-DWITH_TCL=1
+  CMAKE_ARGS+=		-DSWIG_EXECUTABLE=${SWIG}
   include ../../mk/sysdep/libxml2.mk
   include ../../mk/sysdep/swig.mk
   include ../../mk/sysdep/tcl.mk
