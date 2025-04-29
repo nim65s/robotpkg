@@ -1,0 +1,22 @@
+For uint32_t and uint8_t
+
+--- src/cpp/fastdds/topic/DDSSQLFilter/DDSFilterCompoundCondition.hpp~	2023-08-11 10:03:17.000000000 +0200
++++ src/cpp/fastdds/topic/DDSSQLFilter/DDSFilterCompoundCondition.hpp	2025-04-29 15:31:27.404724263 +0200
+@@ -19,6 +19,7 @@
+ #ifndef _FASTDDS_TOPIC_DDSSQLFILTER_DDSFILTERCOMPOUNDCONDITION_HPP_
+ #define _FASTDDS_TOPIC_DDSSQLFILTER_DDSFILTERCOMPOUNDCONDITION_HPP_
+ 
++#include <cstdint>
+ #include <memory>
+ 
+ #include "DDSFilterCondition.hpp"
+--- src/cpp/fastdds/topic/DDSSQLFilter/DDSFilterValue.hpp~	2023-08-11 10:03:17.000000000 +0200
++++ src/cpp/fastdds/topic/DDSSQLFilter/DDSFilterValue.hpp	2025-04-29 15:33:13.427983426 +0200
+@@ -19,6 +19,7 @@
+ #ifndef _FASTDDS_TOPIC_DDSSQLFILTER_DDSFILTERVALUE_HPP_
+ #define _FASTDDS_TOPIC_DDSSQLFILTER_DDSFILTERVALUE_HPP_
+ 
++#include <cstdint>
+ #include <memory>
+ #include <regex>
+ 
