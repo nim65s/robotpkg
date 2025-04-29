@@ -1,0 +1,12 @@
+Workaround missing cstdint in urdf_parser.h
+
+--- dart/utils/urdf/IncludeUrdf.hpp~	2024-11-15 17:57:40.000000000 +0100
++++ dart/utils/urdf/IncludeUrdf.hpp	2025-04-29 13:38:42.233276094 +0200
+@@ -34,6 +34,7 @@
+ 
+ // clang-format off
+ 
++#include <cstdint> /* workaround missing cstdint in urdf_parser.h */
+ #include <dart/common/IncludeWindows.hpp>
+ 
+ #include <urdf_model/model.h>
