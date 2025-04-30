@@ -96,13 +96,6 @@ $(eval $(call PKG_ALTERNATIVE.tcl.create, Use tcl-8, tcl8, tcl>=8<9))
 $(eval $(call PKG_ALTERNATIVE.tcl.create, Use tcl-9, tcl9, tcl>=9<10))
 
 # set default preferences depending on OS/VERSION
-include ../../mk/robotpkg.prefs.mk # for OPSYS
-ifeq (Fedora,${OPSYS})
-  ifneq (,$(filter 3% 40 41,${OS_VERSION}))
-    PREFER_ALTERNATIVE.tcl?=	tcl8 tcl9
-  endif
-  PREFER_ALTERNATIVE.tcl?=	tcl9 tcl8
-endif
 PREFER_ALTERNATIVE.tcl?=	tcl8 tcl9
 
 # define some variables for use in the packages
