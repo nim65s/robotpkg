@@ -1,0 +1,303 @@
+Fix K&R function declarations/definitions
+
+--- tth.c~	2022-11-18 21:34:51.000000000 +0100
++++ tth.c	2025-05-01 23:47:10.216612701 +0200
+@@ -14401,8 +14401,8 @@
+ #define YY_NO_TOP_STATE
+ 
+     /* lex Globals */
+-void tth_push(),tth_pop();
+-char* tth_symbol_point();
++void tth_push(char arg[]),tth_pop(char arg[]);
++char* tth_symbol_point(char *chsym);
+ int tth_root_len[TTH_MAXDEPTH] ={0};
+ char tth_root_index[TTH_MAXDEPTH][TTH_CHARLEN]={{0}};
+ int tth_root_depth=0;
+@@ -14597,14 +14597,19 @@
+ \\def\\nolinkurl#1{\\verb!#1!}";
+ 
+  /* static functions */
+-static int indexkey();
+-static void mkkey(),rmkey(),rmdef(),mkdef();
+-static void delimit();
+-static int b_align();
+-static int roman();
+-static int scaledpoints();
+-static void tagpurge();
+-static int adddimen();
++static int indexkey(char *key, char *keys[], int *nkeys);
++static void mkkey(char *key, char *keys[], int *nkeys);
++static void rmkey(char *keys[], int *nkeys);
++static void rmdef(char *keys[], char *defs[], int *nkeys);
++static void mkdef(char *key, char *keys[], char *def, char *defs[],
++                  int *narg, int nargs[], int *nkeys);
++
++static void delimit(char *type, int heightin, char *codes);
++static int b_align(char *thestring, int tth_debug);
++static int roman(int num, char *rm);
++static int scaledpoints(float thenumber, char *thedimension);
++static void tagpurge(char *eqstr);
++static int adddimen(float *number1, char *unit1, float *number2, char *unit2);
+ 
+ #line 14610 "tth.c"
+ #line 329 "tth.lex"
+@@ -15128,7 +15133,7 @@
+     include_stack[tth_stack_ptr++] = YY_CURRENT_BUFFER;
+ char *buffdeep="**** Error: FATAL. Scan buffers nested too deeply. Infinite loop? Line %d.\n";
+ #define TTH_SCAN_STRING TTH_PUSH_BUFF(0);yy_scan_string
+-extern void tth_epsf(),tth_symext(),tth_encode(),tth_undefine();
++extern void tth_epsf(char *arg, int epsftype),tth_symext(char *charin, char *charout),tth_encode(char *code, int num),tth_undefine(char *keys[], int *nkeys, int udkey, int lkeys[]);
+  /*Not static except for tthfunc*/
+ #define STATIC
+ STATIC char closing[TTH_CHARLEN]={0};
+@@ -15222,7 +15227,7 @@
+ STATIC char *margs[NARMAX]={0};
+ STATIC int margn[NARMAX]={0};
+ /* Fractions and math */
+-extern void tth_enclose(),tth_prefix();
++extern void tth_enclose(char *str0, char *str2, char *str1, char *store),tth_prefix(char *str0, char *str1, char *store);
+ STATIC int eqdepth=0;
+ STATIC char *eqstrs[NFNMAX];
+ STATIC char eqstr[4*TTH_DLEN]={0};
+@@ -15297,7 +15302,7 @@
+ STATIC int tth_eqwidth=100;
+ STATIC int dimadvstate=0;
+ #define TTH_INDPC 5
+-extern int tth_group();
++extern int tth_group(char *group, char *text, int len);
+  /* Number of scaledpoints per screen pixel. 100 pixels per inch. */
+ #define SCALEDPERPIXEL (65536*72/100)
+  /* Guess of the screen width in pixels larger than real is usually the best
+@@ -15305,7 +15310,7 @@
+ #define DEFAULTHSIZEPIX 1000
+ /* extern int tth_halcode(); */
+ STATIC int boxborder=0;
+-extern int tth_cmykcolor();
++extern int tth_cmykcolor(char *ch, float *c, float *m, float *y, float *k);
+ STATIC char xpndstring[2]={0};
+ STATIC int bibliogs=0;
+ STATIC int verbinput=0;
+@@ -28073,8 +28078,7 @@
+   return 0;
+ } /* end main */
+ 
+-void tth_push(arg)
+-char arg[];
++void tth_push(char arg[])
+ {
+ 	if(tth_debug&16) fprintf(stderr,"tth_push:%s depth:%d\n",\
+ 			arg,tth_push_depth);	
+@@ -28094,8 +28098,7 @@
+ 	arg[0]=0;
+ }
+ 
+-void tth_pop(arg)
+-char arg[];
++void tth_pop(char arg[])
+ {
+   if(tth_push_depth < 1){ 
+     fprintf(stderr,"**** Error: Fatal. Apparently too many }s.\nCheck for TeX errors or incompatibilities before line %d,\nnext material      ",tth_num_lines);
+@@ -28114,9 +28117,7 @@
+    Process epsbox. If epsftype=0 put link. Arg is the file name.
+    epsftype=1 Convert the ps or eps file to a gif reference. 
+    epsftype=2 Ditto but inline it. epsftype=3 inline an iconized version.*/
+-void tth_epsf(arg,epsftype)
+-char *arg;
+-int epsftype;
++void tth_epsf(char *arg, int epsftype)
+ {
+ #define NCONV 2
+ #define NGTYPES 4
+@@ -28247,10 +28248,7 @@
+ /**************************************************************************/
+ /* handling code for defs */
+ 
+-static int indexkey(key,keys,nkeys)
+-char *key;
+-char *keys[];
+-int *nkeys;
++static int indexkey(char *key, char *keys[], int *nkeys)
+ {
+   int i, j;
+   j=-1;
+@@ -28263,10 +28261,7 @@
+   return j;
+ }
+ 
+-static void mkkey(key,keys,nkeys)
+-char *key;
+-char *keys[];
+-int *nkeys;
++static void mkkey(char *key, char *keys[], int *nkeys)
+ {
+   size_t size;
+   size=strlen(key)+1;
+@@ -28275,14 +28270,8 @@
+   (*nkeys)++;
+ }
+ 
+-static void mkdef(key,keys,def,defs,narg,nargs,nkeys)
+-char *key;
+-char *keys[];
+-char *def;
+-char *defs[];
+-int *narg;
+-int nargs[];
+-int *nkeys;
++static void mkdef(char *key, char *keys[], char *def, char *defs[],
++                  int *narg, int nargs[], int *nkeys)
+ {
+   size_t size;
+   size=strlen(key)+1;
+@@ -28295,9 +28284,7 @@
+   (*nkeys)++;
+ }
+ 
+-static void rmkey(keys,nkeys)
+-char *keys[];
+-int *nkeys;
++static void rmkey(char *keys[], int *nkeys)
+ {
+   if((*nkeys) > 0){
+     (*nkeys)--;
+@@ -28308,10 +28295,7 @@
+   }
+ }
+ 
+-static void rmdef(keys,defs,nkeys)
+-char *keys[];
+-char *defs[];
+-int *nkeys;
++static void rmdef(char *keys[], char *defs[], int *nkeys)
+ {
+   if((*nkeys) > 0){
+     (*nkeys)--;
+@@ -28324,11 +28308,7 @@
+   }
+ }
+ 
+-void tth_undefine(keys,nkeys,udkey,lkeys)
+-char *keys[];
+-int *nkeys;
+-int udkey;
+-int lkeys[];
++void tth_undefine(char *keys[], int *nkeys, int udkey, int lkeys[])
+      /* Undefine all local keys (lkeys(n)=1) from udkey to nkeys-1 */
+ {
+   /*static void rmkey();*/
+@@ -28349,8 +28329,7 @@
+   }
+ }
+ 
+-void tth_enclose(str0,str1,str2,store) /* Enclose str1 with str0, str2 */
+-char *str0, *str2, *str1, *store;
++void tth_enclose(char *str0, char *str2, char *str1, char *store) /* Enclose str1 with str0, str2 */
+ { /* Exit if string gets more than 3.5 of the 4*max */
+   int lost;
+   strcpy(store,str1);
+@@ -28373,8 +28352,7 @@
+   }
+ }
+ 
+-void tth_prefix(str0,str1,store)  /* Prefix str1 by str0, in str1 */
+-char *str0, *str1, *store;
++void tth_prefix(char *str0, char *str1, char *store)  /* Prefix str1 by str0, in str1 */
+ {
+   int lost;
+   strcpy(store,str1);
+@@ -28533,8 +28511,7 @@
+   /* end delimit */
+   /*start symext*/
+ /**************** Construct large, possibly extended, character. */
+-void tth_symext(charin,charout)
+-char *charin,*charout;
++void tth_symext(char *charin, char *charout)
+ {
+   int horizmode=1; /* In equations use font tags not divs */
+   char chr1[2]={0};
+@@ -28573,9 +28550,7 @@
+ }
+   /*end symext*/
+ /***************** Encode 3-digit integers *************************/
+-void tth_encode(code,num)
+-char *code;
+-int num;
++void tth_encode(char *code, int num)
+ {
+ int i;
+ sprintf(code,"%03d",num);
+@@ -28585,9 +28560,7 @@
+ /*******************************************************************/
+ /* Find the first brace group in the string "text" and copy it to the
+    string group, whose maximum length is len, value returned 0 if successful.*/
+-int tth_group(group,text,len)
+-char *text,*group;
+-int len;
++int tth_group(char *group, char *text, int len)
+ {
+   int i,j;
+   int brace;
+@@ -28654,9 +28627,7 @@
+  */
+ #define BMAXLEN 1000
+ #define NSTS 20
+-static int b_align(thestring,tth_debug)
+-     char *thestring;
+-     int tth_debug;
++static int b_align(char *thestring, int tth_debug)
+ {
+   char buff1[BMAXLEN];
+   char *chr,*chr1,*chr2;
+@@ -28714,9 +28685,7 @@
+ #define EMPOINTS 12
+ #define ENPOINTS 6
+ #define EXPOINTS 10
+-static int scaledpoints(thenumber,thedimension)
+-     float thenumber;
+-     char *thedimension;
++static int scaledpoints(float thenumber, char *thedimension)
+ {
+ int dimval;
+ if(strstr(thedimension,"pt")==thedimension)dimval=65536;
+@@ -28736,9 +28705,7 @@
+ }
+ 
+ /* Add dimension 2 into dimension 1*/
+-static int adddimen(number1,unit1,number2,unit2)
+-     float *number1,*number2;
+-     char *unit1,*unit2;
++static int adddimen(float *number1, char *unit1, float *number2, char *unit2)
+ {
+   if(*unit1=='%'){/* hsize supercedes others */
+     if(*unit2=='%') {
+@@ -28852,9 +28819,7 @@
+ };
+ 
+ /********************************  Return a named color if it exists.*/
+-int tth_cmykcolor(ch,c,m,y,k)
+-char *ch;
+-float *c,*m,*y,*k;
++int tth_cmykcolor(char *ch, float *c, float *m, float *y, float *k)
+ {
+ extern struct tth_ct tth_colortable[N_COLORS];
+ int i;
+@@ -28883,8 +28848,7 @@
+ 
+ char tth_chuni[TTH_CHARLEN];
+ 
+-char* tth_symbol_point(chsym)
+-     char *chsym;
++char* tth_symbol_point(char *chsym)
+ {
+   /* this table is based on the test/symbols.html file of MathML*/
+   /* It is used if the global tth_unicode == 1 */
+@@ -29045,8 +29009,7 @@
+  return tth_chuni;
+ }
+ /*************************************/
+-void tagpurge(eqstr)
+-     char *eqstr;
++void tagpurge(char *eqstr)
+ {
+   char *position;
+   char eqpurge[4*TTH_DLEN];

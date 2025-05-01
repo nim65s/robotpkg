@@ -2,19 +2,20 @@
 # Created:			Anthony Mallet on Tue, 13 Jan 2009
 #
 
-VERSION=		4.09
-DISTNAME=		tth_C
+VERSION=		4.16
+DISTNAME=		tthC
 PKGNAME=		tth-${VERSION}
 CATEGORIES=		sysutils
-MASTER_SITES=		http://hutchinson.belmont.ma.us/tth/tth-noncom/
+MASTER_SITES=		http://silas.psfc.mit.edu/tth/tars/
 EXTRACT_SUFX=		.tgz
 DIST_SUBDIR=		tth-${VERSION}
 
 COMMENT=		TeX to HTML translator
-HOMEPAGE=		http://hutchinson.belmont.ma.us/tth/
-LICENSE=		isc
+HOMEPAGE=		http://silas.psfc.mit.edu/tth/
+LICENSE=		gnu-gpl-v2
 MAINTAINER=		openrobots@laas.fr
 
+WRKSRC=			${WRKDIR}/tthgold
 DOCDIR=			${PREFIX}/share/doc/tth
 INSTALLATION_DIRS=	bin ${PKGMANDIR}/man1 ${DOCDIR}
 
@@ -30,8 +31,6 @@ do-install:
 	${RUN}cd ${WRKSRC};					\
 	${INSTALL_PROGRAM} tth ${PREFIX}/bin;			\
 	${INSTALL_PROGRAM} latex2gif ${PREFIX}/bin;		\
-	${INSTALL_PROGRAM} ps2gif ${PREFIX}/bin;		\
-	${INSTALL_PROGRAM} ps2png ${PREFIX}/bin;		\
 	${INSTALL_DATA} tth.1 ${PREFIX}/${PKGMANDIR}/man1;	\
-	${INSTALL_DATA} tth_manual.html ${DOCDIR};		\
+	${INSTALL_DATA} tth_man.html ${DOCDIR};			\
 	${INSTALL_DATA} tth.gif ${DOCDIR}
