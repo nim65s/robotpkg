@@ -1,4 +1,4 @@
-# robotpkg depend.mk for:	robots/segkit
+# robotpkg depend.mk for:	mapping/segkit
 # Created:			Anthony Mallet on Tue, 17 Jun 2008
 #
 
@@ -9,8 +9,9 @@ ifeq (+,$(DEPEND_DEPTH))
 DEPEND_PKG+=		segkit
 endif
 
-ifeq (+,$(SEGKIT_DEPEND_MK))
-PREFER.segkit?=	robotpkg
+ifeq (+,$(SEGKIT_DEPEND_MK)) # ---------------------------------------------
+
+PREFER.segkit?=		robotpkg
 
 DEPEND_USE+=		segkit
 
@@ -18,8 +19,9 @@ DEPEND_ABI.segkit?=	segkit>=1.0
 DEPEND_DIR.segkit?=	../../mapping/segkit
 
 SYSTEM_SEARCH.segkit=\
-	include/segkit/lasdef.h \
-	lib/pkgconfig/segkit.pc
-endif
+  'include/segkit/lasdef.h' \
+  'lib/pkgconfig/segkit.pc:/Version/s/[^0-9.]//gp'
+
+endif # --------------------------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
