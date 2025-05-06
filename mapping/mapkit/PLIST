@@ -1,5 +1,8 @@
-@comment lundi 9 juin 2008, 18:41:51 (UTC+0200)
+@comment Tue May 6 19:53:12 CEST 2025
 include/mapkit/Aff_prot.h
+include/mapkit/LaserAc_p.h
+include/mapkit/Nclient_p.h
+include/mapkit/Ndirect.h
 include/mapkit/api_P.h
 include/mapkit/aspect.h
 include/mapkit/aspectLib.h
@@ -10,7 +13,6 @@ include/mapkit/com_common.h
 include/mapkit/config_p.h
 include/mapkit/creat_graph.h
 include/mapkit/disambiguate_p.h
-include/mapkit/LaserAc_p.h
 include/mapkit/laserinit_p.h
 include/mapkit/lasers_robots.h
 include/mapkit/lasgraph_p.h
@@ -24,8 +26,6 @@ include/mapkit/map_util.h
 include/mapkit/match_p.h
 include/mapkit/match_private_p.h
 include/mapkit/mycoms_p.h
-include/mapkit/Nclient_p.h
-include/mapkit/Ndirect.h
 include/mapkit/print_results_p.h
 include/mapkit/serv.h
 include/mapkit/session_p.h
@@ -36,7 +36,3 @@ lib/libaspect.la
 lib/libmapkit.la
 lib/pkgconfig/mapkit-aspect.pc
 lib/pkgconfig/mapkit.pc
-@dirrm lib/pkgconfig
-@dirrm lib
-@dirrm include/mapkit
-@dirrm include

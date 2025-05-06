@@ -9,8 +9,9 @@ ifeq (+,$(DEPEND_DEPTH))
 DEPEND_PKG+=		mapkit
 endif
 
-ifeq (+,$(MAPKIT_DEPEND_MK))
-PREFER.mapkit?=	robotpkg
+ifeq (+,$(MAPKIT_DEPEND_MK)) # ---------------------------------------------
+
+PREFER.mapkit?=		robotpkg
 
 DEPEND_USE+=		mapkit
 
@@ -18,8 +19,9 @@ DEPEND_ABI.mapkit?=	mapkit>=1.0
 DEPEND_DIR.mapkit?=	../../mapping/mapkit
 
 SYSTEM_SEARCH.mapkit=\
-	include/mapkit/api_P.h \
-	lib/pkgconfig/mapkit.pc
-endif
+  'include/mapkit/api_P.h' \
+  'lib/pkgconfig/mapkit.pc:/Version/s/[^0-9.]//gp'
+
+endif # --------------------------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
