@@ -2,16 +2,15 @@
 # Created:			Anthony Mallet on Tue, 20 Nov 2007
 #
 
-DISTNAME=		insitu-1.3
+DISTNAME=		insitu-1.3.1
 CATEGORIES=		localization
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=insitu/}
-MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS_TRAC}insitu
+MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}insitu
 
 MAINTAINER=		openrobots@laas.fr
 COMMENT=		Sensor location management library.
 LICENSE=		2-clause-bsd
 
-NOT_FOR_PLATFORM=	# empty
 GNU_CONFIGURE=		yes
 
 include ../../math/t3d/depend.mk

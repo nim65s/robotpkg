@@ -19,8 +19,8 @@ DEPEND_ABI.insitu?=	insitu>=1.3
 DEPEND_DIR.insitu?=	../../localization/insitu
 
 SYSTEM_SEARCH.insitu=\
-	include/insitu/lib.h	\
-	lib/pkgconfig/insitu.pc
+  'include/insitu/lib.h'	\
+  'lib/pkgconfig/insitu.pc:/Version/s/[^0-9.]//gp'
 
 endif # --------------------------------------------------------------
 
