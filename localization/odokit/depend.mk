@@ -9,8 +9,9 @@ ifeq (+,$(DEPEND_DEPTH))
 DEPEND_PKG+=		odokit
 endif
 
-ifeq (+,$(ODOKIT_DEPEND_MK))
-PREFER.odokit?=	robotpkg
+ifeq (+,$(ODOKIT_DEPEND_MK)) # ---------------------------------------------
+
+PREFER.odokit?=		robotpkg
 
 DEPEND_USE+=		odokit
 
@@ -18,8 +19,9 @@ DEPEND_ABI.odokit?=	odokit>=1.0
 DEPEND_DIR.odokit?=	../../localization/odokit
 
 SYSTEM_SEARCH.odokit=\
-	include/odokit/odometer.h \
-	lib/pkgconfig/odokit.pc
-endif
+  'include/odokit/odometer.h' \
+  'lib/pkgconfig/odokit.pc:/Version/s/[^0-9.]//gp'
+
+endif # --------------------------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
