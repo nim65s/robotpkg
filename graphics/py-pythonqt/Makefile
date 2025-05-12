@@ -1,19 +1,11 @@
-# robotpkg Makefile for:	graphics/py38-PythonQt
+# robotpkg Makefile for:	graphics/py-pythonqt
 # Created:			Guilhem Saurel on Wed, 27 May 2020
 #
 
-ORG=			MeVisLab
-NAME=			PythonQt
-VERSION=		3.5.1
-
-NAME_LOWER=		pythonqt
-
-GITHUB_PROJECT=		${NAME}
-GITHUB_TAG=		${DISTNAME}
-DISTNAME=		v${VERSION}
-MASTER_SITES=		${MASTER_SITE_GITHUB:=${ORG}/}
-WRKSRC=			${WRKDIR}/${NAME_LOWER}-${VERSION}
-PKGNAME=		${PKGTAG.python-}${NAME_LOWER}-${VERSION}
+DISTNAME=		pythonqt-3.6.0
+PKGNAME=		${PKGTAG.python-}${DISTNAME}
+MASTER_SITES=		${MASTER_SITE_GITHUB:=MeVisLab/}
+GITHUB_TAG=		v${PKGVERSION_NOREV}
 
 CATEGORIES=		graphics
 COMMENT=		Dynamic Python binding for Qt Applications
@@ -41,19 +33,8 @@ QMAKE_ARGS+=		PYTHONQTALL_CONFIG='${PYTHONQTALL_CONFIG}'
 PYTHON_SELF_CONFLICT=	yes
 
 INSTALLATION_DIRS+=	lib
-INSTALLATION_DIRS+=	include/${NAME}/gui
-INSTALLATION_DIRS+=	include/${NAME}/extensions/${NAME}_QtAll
-
-do-install:
-	${RUN}cd ${WRKSRC};						\
-	${INSTALL_LIB} lib/*.so*					\
-	  ${DESTDIR}${PREFIX}/lib/;					\
-	${INSTALL_DATA} src/*.h						\
-	  ${DESTDIR}${PREFIX}/include/${NAME}/;				\
-	${INSTALL_DATA} src/gui/*.h					\
-	  ${DESTDIR}${PREFIX}/include/${NAME}/gui/;			\
-	${INSTALL_DATA} extensions/${NAME}_QtAll/*.h			\
-	  ${DESTDIR}${PREFIX}/include/${NAME}/extensions/${NAME}_QtAll/
+INSTALLATION_DIRS+=	include/PythonQt/gui
+INSTALLATION_DIRS+=	include/PythonQt/extensions/PythonQt_QtAll
 
 include ../../pkgtools/install-sh/depend.mk
 include ../../mk/sysdep/python.mk
@@ -71,3 +52,15 @@ include ../../mk/language/c++11.mk
 DEPEND_ABI.qt5-qtbase+=	qt5-qtbase>=5.4
 
 include ../../mk/robotpkg.mk
+
+# bundled installation rules are too exotic, use ours
+do-install:
+	${RUN}cd ${WRKSRC};						\
+	${INSTALL_LIB} lib/*.so*					\
+	  ${DESTDIR}${PREFIX}/lib/;					\
+	${INSTALL_DATA} src/*.h						\
+	  ${DESTDIR}${PREFIX}/include/PythonQt/;			\
+	${INSTALL_DATA} src/gui/*.h					\
+	  ${DESTDIR}${PREFIX}/include/PythonQt/gui/;			\
+	${INSTALL_DATA} extensions/PythonQt_QtAll/*.h			\
+	  ${DESTDIR}${PREFIX}/include/PythonQt/extensions/PythonQt_QtAll/

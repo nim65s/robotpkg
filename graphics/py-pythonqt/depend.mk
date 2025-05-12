@@ -1,4 +1,4 @@
-# robotpkg depend.mk for:	graphics/py38-PythonQt
+# robotpkg depend.mk for:	graphics/py-pythonqt
 # Created:			Guilhem Saurel on Wed, 27 May 2020
 #
 
@@ -11,15 +11,13 @@ endif
 
 ifeq (+,$(PY_PYTHONQT_DEPEND_MK)) # ------------------------------------------
 
-include ../../mk/sysdep/python.mk
 include ../../mk/robotpkg.prefs.mk  # for OPSYS
-
-ifeq (18.04,${OS_VERSION})
-  PREFER.py-pythonqt?=		system
-else ifeq (Arch,${OPSYS})
+ifeq (Arch,${OPSYS})
   PREFER.py-pythonqt?=		system
 endif
 PREFER.py-pythonqt?=		robotpkg
+
+include ../../mk/sysdep/python.mk
 
 SYSTEM_SEARCH.py-pythonqt=						\
   'include/PythonQt{,5}/PythonQt.h'					\
