@@ -18,6 +18,9 @@ USE_PYTHON_ONLY=	yes
 
 CMAKE_ARGS+=		-DCOAL_BACKWARD_COMPATIBILITY_WITH_HPP_FCL=ON
 
+# this currently install files conflicting with path/coal
+CMAKE_ARGS+=		-DBUILDING_ROS2_PACKAGE=OFF
+
 include ../../devel/jrl-cmakemodules/Makefile.common
 
 include ../../mk/robotpkg.prefs.mk

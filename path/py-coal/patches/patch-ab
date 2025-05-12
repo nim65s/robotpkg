@@ -1,0 +1,14 @@
+Workaround name.text possibly sometimes being None for some reason.
+Needs further investigation.
+
+--- doc/python/xml_docstring.py~	2025-02-12 14:31:28.000000000 +0100
++++ doc/python/xml_docstring.py	2025-05-12 17:25:30.959778134 +0200
+@@ -152,7 +152,7 @@
+         desc = node.find("parameterdescription")
+         sep = ""
+         for name in namelist.iterchildren("parametername"):
+-            self._write(sep + name.text)
++            self._write(sep + name.text if name.text is not None else "")
+             sep = ", "
+         self._write(" ")
+         self.visit(desc)
