@@ -5,6 +5,7 @@
 DISTNAME=		segkit-1.0.2
 CATEGORIES=		mapping
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS}
+DISTFILES=		${DISTNAME}a.tar.gz
 
 MAINTAINER=		openrobots@laas.fr
 COMMENT=		Library to manipulate laser data
