@@ -2,7 +2,7 @@
 # Created:			Matthieu Herrb on Tue, 14 Apr 2009
 #
 
-DISTNAME=		grh2-2.2
+DISTNAME=		grh2-2.2.1
 CATEGORIES=		graphics
 COMMENT=		2D graphical interface for Hilare 2 robots
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=grh2/}
