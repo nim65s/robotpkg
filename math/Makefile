@@ -20,7 +20,6 @@ SUBDIR+=	jrl-mathtools
 SUBDIR+=	lapack
 SUBDIR+=	libccd
 SUBDIR+=	liblbfgs
-SUBDIR+=	meschach
 SUBDIR+=	ndcurves
 SUBDIR+=	pinocchio
 SUBDIR+=	py-eigenpy
