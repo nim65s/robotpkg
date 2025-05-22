@@ -45,9 +45,9 @@ endef
 
 
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../archivers/pax/depend.mk
 include ../../mk/sysdep/libusb.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk
 

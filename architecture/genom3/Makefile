@@ -22,10 +22,10 @@ CONFIGURE_ARGS+=MAKE=${MAKE}
 
 DEPEND_ABI.tcl=	tcl>=8.5
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../shell/eltclsh/depend.mk
 include ../../mk/sysdep/bison.mk
 include ../../mk/sysdep/flex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/tcl.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

@@ -17,12 +17,12 @@ LICENSE=	mit
 MAINTAINER=	openrobots@laas.fr
 
 include ../../archivers/zlib/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/libxml2.mk
 include ../../mk/sysdep/pcre.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

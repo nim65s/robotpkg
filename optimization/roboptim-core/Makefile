@@ -29,13 +29,13 @@ DEPEND_ABI.g++ +=	g++>=4.6
 
 include ../../devel/log4cxx/depend.mk
 include ../../math/eigen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/latex.mk
 include ../../mk/sysdep/libtool-ltdl.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

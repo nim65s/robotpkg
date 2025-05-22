@@ -16,9 +16,9 @@ GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS+=	--with-gz-sim=$(call gz_pkgbase, gz-sim)
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../simulation/gz-sim/depend.mk
 include ../../simulation/libdynamixel/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

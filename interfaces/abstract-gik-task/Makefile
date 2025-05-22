@@ -15,7 +15,7 @@ LICENSE=	modified-bsd
 DYNAMIC_PLIST_DIRS+=	share/doc/abstract-gik-task
 
 include ../../interfaces/abstract-robot-dynamics/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/sysdep/cmake.mk

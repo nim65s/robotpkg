@@ -23,7 +23,7 @@ define PKG_OPTION_SET.codels
   include ../../math/eigen3/depend.mk
 endef
 include ../../interfaces/openrobots2-idl/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

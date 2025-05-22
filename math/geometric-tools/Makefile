@@ -67,10 +67,10 @@ SUBST_SED.make=		-e 's/ make / $${MAKE} /g'
 
 include ../../archivers/pax/depend.mk
 include ../../pkgtools/install-sh/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/glu.mk
 include ../../mk/sysdep/libX11.mk
 include ../../mk/sysdep/mesa.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

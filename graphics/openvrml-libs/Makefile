@@ -46,7 +46,6 @@ LIBRARY_DIRS.libtool-ltdl+=	lib
 DEPEND_ABI.boost-headers=	boost-headers>=1.44<1.60
 DEPEND_ABI.boost-libs=		boost-libs>=1.44<1.60
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/doxygen.mk
@@ -56,6 +55,7 @@ include ../../mk/sysdep/libpng.mk
 include ../../mk/sysdep/libtool-ltdl.mk
 include ../../mk/sysdep/libxml2.mk
 include ../../mk/sysdep/mesa.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

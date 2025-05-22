@@ -28,7 +28,7 @@ include ../../math/py-eigenpy/depend.mk
 include ../../path/hpp-constraints/depend.mk
 include ../../path/hpp-core/depend.mk
 include ../../path/py-hpp-corbaserver/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c++.mk
 include ../../mk/language/c.mk
 include ../../mk/sysdep/py-numpy.mk

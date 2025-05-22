@@ -19,10 +19,10 @@ DEPEND_ABI.openprs=	openprs>=1.1b8
 
 include ../../architecture/genom3/depend.mk
 include ../../supervision/openprs/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/bison.mk
 include ../../mk/sysdep/flex.mk
 include ../../mk/sysdep/perl.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/java.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

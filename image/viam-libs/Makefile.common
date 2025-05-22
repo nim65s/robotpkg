@@ -19,4 +19,4 @@ PATCHDIR=		${ROBOTPKG_DIR}/image/viam-libs/patches
 NOT_FOR_PLATFORM=
 GNU_CONFIGURE=		yes
 
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk

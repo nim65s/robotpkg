@@ -17,9 +17,9 @@ NO_PUBLIC_BIN=	${RESTRICTED}
 
 DYNAMIC_PLIST_DIRS+=	share/doc/hrp2-10
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

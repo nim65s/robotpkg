@@ -22,10 +22,10 @@ CONFIGURE_ARGS+=--disable-java
 LIBRARY_DIRS.lapack= $(dir ${LAPACK_LIB})
 RPATH_DIRS.lapack= $(dir ${LAPACK_LIB})
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../math/lapack/depend.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/latex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/language/fortran.mk

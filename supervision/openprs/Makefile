@@ -22,7 +22,6 @@ CONFIGURE_ARGS+=	LATEX='${PDFLATEX}'
 USE_TEX_PKGS+=	graphicx.sty index.sty hyperref.sty verbatim.sty
 USE_TEX_PKGS+=	alpha.bst
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/bibtex.mk
 include ../../mk/sysdep/bison.mk
 include ../../mk/sysdep/flex.mk
@@ -31,6 +30,7 @@ include ../../mk/sysdep/libXt.mk
 include ../../mk/sysdep/libtool-ltdl.mk
 include ../../mk/sysdep/motif.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/readline.mk
 include ../../mk/sysdep/tex-pkg.mk
 include ../../mk/language/c.mk

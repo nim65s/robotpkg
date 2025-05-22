@@ -15,7 +15,7 @@ MAINTAINER=	matthieu.herrb@laas.fr
 
 GNU_CONFIGURE=	yes
 
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/xorg-macros.mk
 include ../../mk/sysdep/libX11.mk
 include ../../mk/sysdep/libXext.mk

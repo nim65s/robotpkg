@@ -22,7 +22,7 @@ DEPEND_ABI.ros-genpy += ros-genpy>=0.6.3
 
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../math/eigen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

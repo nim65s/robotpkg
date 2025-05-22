@@ -32,12 +32,12 @@ include ../../math/lapack/depend.mk
 include ../../middleware/omniORB/depend.mk
 include ../../middleware/py-omniORBpy/depend.mk
 include ../../middleware/openrtm-aist/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/libjpeg.mk
 include ../../mk/sysdep/libpng.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

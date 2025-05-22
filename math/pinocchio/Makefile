@@ -39,11 +39,11 @@ include ../../math/eigen3/depend.mk
 include ../../path/coal/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../optimization/casadi/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../sysutils/console-bridge/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk
 

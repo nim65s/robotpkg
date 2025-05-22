@@ -36,10 +36,10 @@ DEPEND_METHOD.eigen3+=	full
 DEPEND_ABI.python=	python>=3
 
 include ../../math/eigen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/py-numpy.mk
 include ../../mk/sysdep/py-scipy.mk
 include ../../mk/sysdep/python.mk

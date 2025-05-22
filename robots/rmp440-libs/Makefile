@@ -15,6 +15,6 @@ LICENSE=		isc
 GNU_CONFIGURE=		yes
 ONLY_FOR_PLATFORM=	Linux-%
 
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

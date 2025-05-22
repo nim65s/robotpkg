@@ -100,9 +100,9 @@ endif # GENOM_MODULE
 include ../../devel/mkdep/depend.mk
 include ../../middleware/pocolibs/depend.mk
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/autoconf.mk
 include ../../mk/sysdep/perl.mk
+include ../../mk/sysdep/pkg-config.mk
 endif # DEPEND_DEPTH == +
 
 ifeq (+,$(GENOM_DEPEND_MK)) # ----------------------------------------

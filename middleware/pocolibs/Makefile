@@ -33,8 +33,8 @@ define PKG_OPTION_SET.xenomai
   include ../../mk/sysdep/xenomai.mk
 endef
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/perl.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/rpcgen.mk
 include ../../mk/language/c.mk
 include ../../mk/language/rpc.mk

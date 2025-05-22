@@ -24,9 +24,9 @@ GNU_CONFIGURE=	yes
 
 include ../../optimization/roboptim-core/depend.mk
 include ../../optimization/ipopt/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/latex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

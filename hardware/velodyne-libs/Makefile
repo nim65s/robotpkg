@@ -27,7 +27,7 @@ LIBRARY_DIRS.libpcap=	lib
 RPATH_DIRS.libpcap=	lib
 
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/tcl.mk
 include ../../mk/sysdep/tdom.mk
 include ../../mk/sysdep/libpcap.mk

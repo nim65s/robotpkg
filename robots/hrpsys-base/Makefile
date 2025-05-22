@@ -47,7 +47,6 @@ include ../../math/eigen3/depend.mk
 include ../../middleware/omniORB/depend.mk
 include ../../middleware/py-omniORBpy/depend.mk
 include ../../middleware/openrtm-aist/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../simulation/openhrp3/depend.mk
 include ../../mk/sysdep/SDL.mk
 include ../../mk/sysdep/boost-headers.mk
@@ -57,6 +56,7 @@ include ../../mk/sysdep/freeglut.mk
 include ../../mk/sysdep/glew.mk
 include ../../mk/sysdep/libxml2.mk
 include ../../mk/sysdep/mesa.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/qhull.mk
 include ../../mk/language/c.mk

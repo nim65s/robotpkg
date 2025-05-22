@@ -33,7 +33,7 @@ include ../../lang/ros-message-generation/depend.mk
 include ../../lang/ros-genlisp/depend.mk
 include ../../middleware/ros-comm/depend.mk
 include ../../devel/ros-catkin/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/sysdep/python.mk

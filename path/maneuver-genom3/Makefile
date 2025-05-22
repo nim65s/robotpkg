@@ -18,7 +18,7 @@ DEPEND_ABI.openrobots2-idl+=	openrobots2-idl>=2.1
 
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../path/libkdtp/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

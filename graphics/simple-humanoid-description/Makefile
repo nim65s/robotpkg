@@ -14,8 +14,8 @@ MAINTAINER=		hpp@laas.fr
 
 include ../../devel/jrl-cmakemodules/Makefile.common
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

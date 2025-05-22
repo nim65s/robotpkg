@@ -22,9 +22,9 @@ include ../../math/pinocchio/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../math/py-pinocchio/depend.mk
 include ../../path/coal/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../robots/example-robot-data/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

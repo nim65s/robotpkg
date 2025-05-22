@@ -18,10 +18,10 @@ LICENSE=		2-clause-bsd
 CMAKE_ARGS+=		-DCMAKE_INSTALL_LIBDIR=lib
 DYNAMIC_PLIST_DIRS+=	share/doc/gerard_bauzil
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/latex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

@@ -31,8 +31,8 @@ define PKG_OPTION_UNSET.boost
   include ../../image/libimages3d/depend.mk
 endef
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/doxygen.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

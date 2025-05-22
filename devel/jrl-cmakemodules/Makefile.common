@@ -60,8 +60,8 @@ endif
 
 DYNAMIC_PLIST_DIRS+=	share/doc/${NAME}
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 
 DEPEND_ABI.cmake+=	cmake>=3.10
 

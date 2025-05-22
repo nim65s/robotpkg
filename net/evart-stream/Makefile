@@ -24,6 +24,6 @@ DEPEND_METHOD.evart-client+=	build
 include ../../net/evart-client/depend.mk
 
 include ../../devel/cortex-sdk/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

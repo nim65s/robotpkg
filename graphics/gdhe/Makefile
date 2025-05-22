@@ -31,10 +31,10 @@ INCLUDE_DIRS.mesa+=include
 CFLAGS+=	-Wno-error=implicit-function-declaration
 CFLAGS+=	-Wno-error=incompatible-pointer-types
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../devel/mkdep/depend.mk
 include ../../mk/sysdep/mesa.mk
 include ../../mk/sysdep/glu.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/tcl.mk
 include ../../mk/sysdep/tk.mk
 include ../../mk/sysdep/libjpeg.mk

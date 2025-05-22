@@ -24,10 +24,10 @@ CMAKE_ARGS+=		-DQT_QMAKE_EXECUTABLE=${QMAKE}
 CMAKE_ARGS+=		-DGraphviz_INCLUDE_DIR=${PREFIX.graphviz}/include/graphviz
 
 include ../../devel/jrl-cmakemodules/Makefile.common
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/libgraphviz.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/qmake.mk
 include ../../mk/sysdep/qt.mk
 include ../../mk/language/c.mk

@@ -18,7 +18,7 @@ CONFIGURE_DIRS=		gyroKVH5000
 
 include ../../middleware/pocolibs/depend.mk
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../devel/mkdep/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

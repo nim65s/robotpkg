@@ -30,11 +30,11 @@ DEPEND_ABI.python+= python<3.0
 include ../../math/jrl-dynamics/depend.mk
 include ../../motion/py-sot-tools/depend.mk
 include ../../motion/sot-core/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

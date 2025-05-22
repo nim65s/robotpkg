@@ -45,13 +45,13 @@ include ../../archivers/zlib/depend.mk
 include ../../image/opencv/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../math/lapack/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/libX11.mk
 include ../../mk/sysdep/libjpeg.mk
 include ../../mk/sysdep/libpng.mk
 include ../../mk/sysdep/libxml2.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/py-numpy.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk

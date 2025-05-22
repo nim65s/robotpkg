@@ -17,8 +17,8 @@ CMAKE_ARGS+=	-DSPDLOG_BUILD_SHARED=ON
 DEPEND_METHOD.python?=	build
 DEPEND_ABI.cmake=	cmake>=3.2
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

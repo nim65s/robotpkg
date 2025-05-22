@@ -1,4 +1,4 @@
-# robotpkg depend.mk for:	pkgtools/pkg-config
+# robotpkg sysdep/pkg-config.mk
 # Created:			Anthony Mallet on Sun, 25 May 2008
 #
 
@@ -18,10 +18,10 @@ SYSTEM_SEARCH.pkg-config=	'bin/pkg-config::% --version'
 DEPEND_USE+=			pkg-config
 DEPEND_METHOD.pkg-config+=	build
 DEPEND_ABI.pkg-config?=		pkg-config>=0.22
-DEPEND_DIR.pkg-config?=		../../pkgtools/pkg-config
 
-SYSTEM_PKG.Fedora.pkg-config=	pkgconfig
-SYSTEM_PKG.NetBSD.pkg-config=		pkgsrc/devel/pkg-config
+SYSTEM_PKG.Fedora.pkg-config=	pkgconf-pkg-config
+SYSTEM_PKG.NetBSD.pkg-config=	pkgsrc/devel/pkg-config
+SYSTEM_PKG.Ubuntu.pkg-config=	pkgconf
 
 
 # Define the proper pkg-config environment

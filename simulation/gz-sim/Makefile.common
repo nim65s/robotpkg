@@ -32,7 +32,7 @@ DEPEND_ABI.python+=	python>=3
 USE_GZ_CMAKE?=	yes
 ifneq (,$(filter yes Yes YES,${USE_GZ_CMAKE}))
   include ../../devel/gz-cmake/depend.mk
-  include ../../pkgtools/pkg-config/depend.mk
+  include ../../mk/sysdep/pkg-config.mk
 endif
 
 # dependencies

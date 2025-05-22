@@ -20,6 +20,6 @@ include ../../graphics/gdhe/depend.mk
 include ../../image/libimages3d/depend.mk
 include ../../math/t3d/depend.mk
 include ../../mapping/libdtm/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

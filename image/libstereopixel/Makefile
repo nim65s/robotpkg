@@ -30,6 +30,6 @@ PKG_OPTION_UNSET.pthread=	CONFIGURE_ARGS+=--disable-threads
 
 
 include ../../image/libimages3d/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

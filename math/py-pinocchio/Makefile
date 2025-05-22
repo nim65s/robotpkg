@@ -47,10 +47,10 @@ include ../../path/coal/depend.mk
 include ../../path/py-coal/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../optimization/py-casadi/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk

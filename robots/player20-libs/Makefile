@@ -41,10 +41,10 @@ RPATH_DIRS.libtirpc=	lib
 LDFLAGS+= $(if $(filter libtirpc,${PKG_ALTERNATIVE.rpc}),-ltirpc)
 
 include ../../archivers/zlib/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/libjpeg.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/language/rpc.mk

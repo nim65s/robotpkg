@@ -213,9 +213,9 @@ PRINT_PLIST_FILTER+=\
 # --- common dependencies --------------------------------------------------
 
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../architecture/genom3/depend.mk
 include ../../mk/sysdep/autoconf.mk
 include ../../mk/sysdep/automake.mk
+include ../../mk/sysdep/pkg-config.mk
 
 endif # GENOM_MODULE_MK

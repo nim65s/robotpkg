@@ -20,13 +20,13 @@ WRKSRC=			${WRKDIR}/hrp2_bringup-${VERSION}
 
 DYNAMIC_PLIST_DIRS+=	share/doc/hrp2_bringup
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../robots/hrp2-machine/depend.mk
 include ../../sysutils/hrp2-computer-monitor/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

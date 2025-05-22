@@ -18,7 +18,7 @@ AUTORECONF_SCRIPT=	${SH}
 AUTORECONF_ARGS=	${WRKSRC}/bootstrap.sh
 
 include ../../supervision/transgen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../architecture/genom3/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

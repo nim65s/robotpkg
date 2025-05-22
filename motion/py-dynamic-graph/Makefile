@@ -41,13 +41,13 @@ CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_RELEASE=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_DEBUG=${Boost_PYTHON_LIBRARY}
 
 include ../../motion/dynamic-graph/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/py-sphinx.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk

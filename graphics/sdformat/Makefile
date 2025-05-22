@@ -19,7 +19,7 @@ DEPEND_ABI.urdfdom+=	urdfdom>=1.0
 include ../../devel/gz-utils/depend.mk
 include ../../graphics/urdfdom/depend.mk
 include ../../math/gz-math/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/tinyxml2.mk
 include ../../mk/robotpkg.mk

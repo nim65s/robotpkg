@@ -20,10 +20,10 @@ USE_BOOST_LIBS=	filesystem program_options system
 
 include ../../devel/ros-catkin/depend.mk
 include ../../devel/ros-cmake-modules/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../sysutils/py-catkin-pkg/depend.mk
 include ../../sysutils/py-rosdep/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/tinyxml2.mk
 include ../../mk/robotpkg.mk

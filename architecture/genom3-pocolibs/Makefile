@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 DEPEND_ABI.pocolibs=	pocolibs>=2.12
 
 include ../../middleware/pocolibs/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../architecture/genom3/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

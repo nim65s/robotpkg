@@ -20,6 +20,6 @@ ifeq (Linux,${OS_KERNEL})
   include ../../image/libraw1394/depend.mk
 endif
 include ../../pkgtools/libtool/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk

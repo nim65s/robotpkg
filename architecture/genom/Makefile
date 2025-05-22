@@ -62,11 +62,11 @@ pre-configure:
 
 include ../../devel/mkdep/depend.mk
 include ../../middleware/pocolibs/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../pkgtools/libtool/depend.mk
 include ../../mk/sysdep/perl.mk
 include ../../mk/sysdep/flex.mk
 include ../../mk/sysdep/bison.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk # genom checks for a c++ compiler
 include ../../mk/robotpkg.mk

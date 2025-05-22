@@ -27,11 +27,11 @@ DYNAMIC_PLIST_DIRS+=	share/doc/sot-application
 CMAKE_ARGS+=		-DSPHINX_BUILD=${SPHINX_BUILD}
 
 include ../../motion/sot-dynamic/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/py-sphinx.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk

@@ -35,9 +35,9 @@ DEPEND_ABI.python+=	python<3
 DEPEND_METHOD.asciidoc=	build
 DEPEND_METHOD.python27=	build
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/asciidoc.mk
 include ../../mk/sysdep/doxygen.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/source-highlight.mk
 include ../../mk/language/c.mk

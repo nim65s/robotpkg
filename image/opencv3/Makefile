@@ -52,7 +52,6 @@ CMAKE_ARGS+=\
 include ../../archivers/bzip2/depend.mk
 include ../../archivers/zlib/depend.mk
 include ../../math/eigen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/gtk.mk
 include ../../mk/sysdep/libavcodec.mk
@@ -64,6 +63,7 @@ include ../../mk/sysdep/libpng.mk
 include ../../mk/sysdep/libswscale.mk
 include ../../mk/sysdep/libtiff.mk
 include ../../mk/sysdep/libX11.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/py-numpy.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk

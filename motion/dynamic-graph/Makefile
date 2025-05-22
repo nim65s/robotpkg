@@ -26,12 +26,12 @@ CMAKE_ARGS+=		-DMANDIR=${PREFIX}/${PKGMANDIR}
 CMAKE_ARGS+=		-DCMAKE_INSTALL_LIBDIR=lib
 
 include ../../interfaces/jrl-mal/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/gzip.mk
 include ../../mk/sysdep/pdflatex.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/podlators.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

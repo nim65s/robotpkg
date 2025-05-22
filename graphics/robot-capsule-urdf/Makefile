@@ -18,8 +18,8 @@ SUBST_CLASSES+=         py-interp
 SUBST_FILES.py-interp+= bin/robot_capsule_urdf
 
 include ../../graphics/urdfdom/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

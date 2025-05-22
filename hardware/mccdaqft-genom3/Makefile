@@ -20,7 +20,7 @@ DEPEND_ABI.eigen3=		eigen3>=3.1
 include ../../hardware/daqflex-libs/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../math/eigen3/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

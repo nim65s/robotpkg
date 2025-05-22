@@ -35,9 +35,9 @@ SUBST_SED.perl-interp+=	-e 's|\([^/]\)perl|\1${PERL}|g'
 
 OVERRIDE_DIRDEPTH.pkg-config=	3
 
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/gtar.mk
 include ../../mk/sysdep/perl.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk

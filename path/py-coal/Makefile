@@ -34,11 +34,11 @@ DEPEND_ABI.assimp+=	assimp>=5
 include ../../mapping/octomap/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../path/coal/depend.mk
-include ../../pkgtools/pkg-config/depend.mk
 include ../../mk/sysdep/assimp.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
