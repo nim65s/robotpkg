@@ -16,7 +16,7 @@
         <div class="comment">@COMMENT@</div>
         <dl class="summary">
 	  <dt>Directory:</dt><dd><a href=".">@PKGPATH@</a>
-	  (<a href="http://trac.laas.fr/git/robotpkg/log/@PKGPATH@?showmsg=1"
+	  (<a href="https://git.openrobots.org/projects/robotpkg/repository/robotpkg/changes/@PKGPATH@"
               >package's history</a>)</dd>
 	  <dt>Package version:</dt><dd>@PKGNAME@</dd>
 	  <dt>Home page:</dt><dd>@HOMEPAGE@</dd>
