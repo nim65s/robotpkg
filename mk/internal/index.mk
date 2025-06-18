@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2007-2013,2019 LAAS/CNRS
+# Copyright (c) 2007-2013, 2019, 2025 LAAS/CNRS
 # All rights reserved.
 #
 # This project includes software developed by the NetBSD Foundation, Inc.
@@ -123,7 +123,9 @@ ifeq (2,${_ROBOTPKG_DEPTH})
 									\
 	export distfiles=;						\
   $(foreach _,${DISTFILES},						\
-    $(foreach -,$(addsuffix $_,${SITES.$(notdir $_)}),			\
+    $(foreach -,$(if $(filter -%,${SITES.$(notdir $_)}),		\
+	$(patsubst -%,%,${SITES.$(notdir $_)}),				\
+	$(addsuffix $_,${SITES.$(notdir $_)})),				\
 	distfiles=$$distfiles'<dt><a href="$-">$-</a></dt>';))		\
 	distfiles=$${distfiles:='(none)'};				\
 									\
