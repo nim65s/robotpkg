@@ -5,10 +5,11 @@
 VERSION=	0.14.2
 DISTNAME=	libfranka-${VERSION}
 GITHUB_TAG=	${VERSION}
-MASTER_SITES=	${MASTER_SITE_GITHUB:=frankaemika/}
+MASTER_SITES=	${MASTER_SITE_GITHUB:=frankarobotics/}
 DISTFILES=	${GITHUB_DISTFILE} ${SUBMODULE}.tar.gz
 
 CATEGORIES=	hardware
+HOMEPAGE=	https://frankarobotics.github.io/docs/
 COMMENT=	Low-level control of Franka Robotics research robots
 LICENSE=	apache-2.0
 MAINTAINER=	openrobots@laas.fr
