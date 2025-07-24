@@ -1,5 +1,9 @@
-@comment Tue May 10 11:28:25 CEST 2022
+@comment Thu Jul 24 19:02:56 CEST 2025
 bin/tk3-mux
 lib/tk3-firmware/boot-chimera
+lib/tk3-firmware/boot-tawaki
 lib/tk3-firmware/chimera
+lib/tk3-firmware/tawaki
 ${PKGMANDIR}/man1/tk3-mux.1
+share/doc/tk3-paparazzi/index.html
+share/doc/tk3-paparazzi/install.html
