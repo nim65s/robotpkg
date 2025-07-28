@@ -22,6 +22,8 @@ endif
 
 GNU_CONFIGURE=		yes
 
+DEPEND_ABI.libdynamixel+=libdynamixel>=1.3
+
 include ../../simulation/libdynamixel/depend.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/gazebo.mk
