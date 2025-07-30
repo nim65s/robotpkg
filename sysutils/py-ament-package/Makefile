@@ -3,7 +3,7 @@
 #
 
 PKGNAME=	${PKGTAG.python-}$(subst _,-,${DISTNAME})
-DISTNAME=	ament_package-0.14.0
+DISTNAME=	ament_package-0.18.0
 MASTER_SITES=	${MASTER_SITE_GITHUB:=ament/}
 
 COMMENT=	Python package for parsing ament manifest files.

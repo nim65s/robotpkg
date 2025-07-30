@@ -1,4 +1,4 @@
-@comment Wed Mar 30 21:29:50 CEST 2022
+@comment Thu Jul 31 14:26:46 CEST 2025
 ${PYTHON_SITELIB}/ament_package-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/ament_package-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/ament_package-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -16,12 +16,6 @@ ${PYTHON_SITELIB}/ament_package/template/environment_hook/pkg_config_path.bat
 ${PYTHON_SITELIB}/ament_package/template/environment_hook/pkg_config_path.sh
 ${PYTHON_SITELIB}/ament_package/template/environment_hook/pythonpath.bat.in
 ${PYTHON_SITELIB}/ament_package/template/environment_hook/pythonpath.sh.in
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/__init__.py
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/_order_isolated_packages.py
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/local_setup.bash
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/local_setup.bat.in
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/local_setup.sh.in
-${PYTHON_SITELIB}/ament_package/template/isolated_prefix_level/local_setup.zsh
 ${PYTHON_SITELIB}/ament_package/template/package_level/__init__.py
 ${PYTHON_SITELIB}/ament_package/template/package_level/local_setup.bash.in
 ${PYTHON_SITELIB}/ament_package/template/package_level/local_setup.bat.in

@@ -62,3 +62,41 @@ setup.* files are in prefix/etc/ros2 instead of prefix
          for line in get_commands(
              pkg_name, prefix, args.primary_extension,
              args.additional_extension
+--- ament_package/template/prefix_level/setup.zsh~	2022-01-18 19:41:21.000000000 +0100
++++ ament_package/template/prefix_level/setup.zsh	2025-07-30 11:48:05.892705208 +0200
+@@ -5,6 +5,9 @@
+ # source setup.sh from same directory as this file
+ AMENT_CURRENT_PREFIX=$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)
+ 
++# robotpkg installs this to <prefix>/etc/ros, so strip it if present
++AMENT_CURRENT_PREFIX=${AMENT_CURRENT_PREFIX%/etc/ros2}
++
+ # function to convert array-like strings into arrays
+ # to wordaround SH_WORD_SPLIT not being set
+ ament_zsh_to_array() {
+@@ -17,6 +20,6 @@
+ 
+ # trace output
+ if [ -n "$AMENT_TRACE_SETUP_FILES" ]; then
+-  echo "# . \"$AMENT_CURRENT_PREFIX/setup.sh\""
++  echo "# . \"$AMENT_CURRENT_PREFIX/etc/ros2/setup.sh\""
+ fi
+-. "$AMENT_CURRENT_PREFIX/setup.sh"
++. "$AMENT_CURRENT_PREFIX/etc/ros2/setup.sh"
+--- ament_package/template/prefix_level/local_setup.zsh~	2025-04-24 19:38:19.000000000 +0200
++++ ament_package/template/prefix_level/local_setup.zsh	2025-07-30 12:56:05.194683558 +0200
+@@ -4,8 +4,12 @@
+ 
+ # source local_setup.sh from same directory as this file
+ AMENT_CURRENT_PREFIX=$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)
++
++# robotpkg installs this to <prefix>/etc/ros, so strip it if present
++AMENT_CURRENT_PREFIX=${AMENT_CURRENT_PREFIX%/etc/ros2}
++
+ # trace output
+ if [ -n "$AMENT_TRACE_SETUP_FILES" ]; then
+-  echo "# . \"$AMENT_CURRENT_PREFIX/local_setup.sh\""
++  echo "# . \"$AMENT_CURRENT_PREFIX/etc/ros2/local_setup.sh\""
+ fi
+-. "$AMENT_CURRENT_PREFIX/local_setup.sh"
++. "$AMENT_CURRENT_PREFIX/etc/ros2/local_setup.sh"
