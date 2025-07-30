@@ -1,5 +1,4 @@
-SHA1 (python_cmake_module-0.10.0.tar.gz) = 0418369f85971f74808001a9abc7d20df425c36f
-RMD160 (python_cmake_module-0.10.0.tar.gz) = 5a0dd7705aa31507382127561305a6c95178dd39
-Size (python_cmake_module-0.10.0.tar.gz) = 7825 bytes
-SHA1 (patch-aa) = 246df493a9f9eec5029dfadf9ef91263e7df3c93
+SHA1 (python_cmake_module-0.12.0.tar.gz) = cc98812c141b00ab5e9b0b3b2c9119cd458b9e7d
+RMD160 (python_cmake_module-0.12.0.tar.gz) = a8755d45e867a22f1ed36b77b4dcaca0d842e22f
+Size (python_cmake_module-0.12.0.tar.gz) = 7448 bytes
 SHA1 (patch-ab) = 2dc7972ce3b35eb8149f24e649de4db4317bde92
