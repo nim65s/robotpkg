@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rosidl_python
-ROS2_VERSION=	0.21.1
+ROS2_VERSION=	0.25.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	IDL support for python
@@ -20,7 +20,8 @@ SUBST_FILES.py-interp=\
 SUBST_CLASSES+=	py-vers
 SUBST_STAGE.py-vers=	pre-configure
 SUBST_MESSAGE.py-vers=	Forcing exact python version search
-SUBST_SED.py-vers=	-e 's|@PYTHON_VERSION@|${PYTHON_VERSION}|g'
+SUBST_SED.py-vers=\
+  -e 's|package(Python3 REQ|package(Python3 ${PYTHON_VERSION} EXACT REQ|'
 SUBST_FILES.py-vers=\
   rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake
 

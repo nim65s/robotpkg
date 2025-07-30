@@ -1,5 +1,5 @@
-SHA1 (rosidl_python-0.21.1.tar.gz) = 1aa67d40d0d81973b366e721c0789dbb6315445a
-RMD160 (rosidl_python-0.21.1.tar.gz) = 410926cf4977f239ccd9a2d60fefe439d52eab60
-Size (rosidl_python-0.21.1.tar.gz) = 38571 bytes
-SHA1 (patch-aa) = c79c92d079a68ebe0d86c598f5f4cdf3a7be64cf
+SHA1 (rosidl_python-0.25.0.tar.gz) = d97b8f298be71dcbcd4879142fbb8d73a4dbacc6
+RMD160 (rosidl_python-0.25.0.tar.gz) = a6a178aa77d1808604cb68df37668525967a76e6
+Size (rosidl_python-0.25.0.tar.gz) = 37978 bytes
+SHA1 (patch-aa) = c2df2f6a0c5b1736b2047f8b794a36f46b1e354a
 SHA1 (patch-ab) = c63d87aabf7d1a42ef01aba197ee800ffb6f9121

@@ -1,14 +1,27 @@
-Use FindPython3 as in ament_cmake_core.
-Require exact version to match robotpkg selected version.
+Don't require too much of cmake, as the exact python version is searched anyway.
 
---- rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake~	2022-03-01 19:45:38.000000000 +0100
-+++ rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake	2022-04-21 23:58:57.323803695 +0200
-@@ -17,7 +17,7 @@
+--- rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake~	2025-04-25 20:21:16.000000000 +0200
++++ rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake	2025-07-30 14:33:36.743186170 +0200
+@@ -17,22 +17,6 @@
  find_package(rosidl_typesupport_c REQUIRED)
  find_package(rosidl_typesupport_interface REQUIRED)
  
--find_package(PythonInterp 3.6 REQUIRED)
-+find_package(Python3 @PYTHON_VERSION@ EXACT REQUIRED COMPONENTS Interpreter)
+-# By default, without the settings below, find_package(Python3) will attempt
+-# to find the newest python version it can, and additionally will find the
+-# most specific version.  For instance, on a system that has
+-# /usr/bin/python3.10, /usr/bin/python3.11, and /usr/bin/python3, it will find
+-# /usr/bin/python3.11, even if /usr/bin/python3 points to /usr/bin/python3.10.
+-# The behavior we want is to prefer the "system" installed version unless the
+-# user specifically tells us othewise through the Python3_EXECUTABLE hint.
+-# Setting CMP0094 to NEW means that the search will stop after the first
+-# python version is found.  Setting Python3_FIND_UNVERSIONED_NAMES means that
+-# the search will prefer /usr/bin/python3 over /usr/bin/python3.11.  And that
+-# latter functionality is only available in CMake 3.20 or later, so we need
+-# at least that version.
+-cmake_minimum_required(VERSION 3.20)
+-cmake_policy(SET CMP0094 NEW)
+-set(Python3_FIND_UNVERSIONED_NAMES FIRST)
+-
+ find_package(Python3 REQUIRED COMPONENTS Interpreter Development NumPy)
  
- find_package(python_cmake_module REQUIRED)
- find_package(PythonExtra MODULE REQUIRED)
+ # Get a list of typesupport implementations from valid rmw implementations.
