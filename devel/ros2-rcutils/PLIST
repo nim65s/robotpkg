@@ -1,4 +1,4 @@
-@comment Mon Sep 4 16:20:11 CEST 2023
+@comment Wed Jul 30 20:31:04 CEST 2025
 include/rcutils/rcutils/allocator.h
 include/rcutils/rcutils/cmdline_parser.h
 include/rcutils/rcutils/env.h
@@ -7,6 +7,7 @@ include/rcutils/rcutils/filesystem.h
 include/rcutils/rcutils/find.h
 include/rcutils/rcutils/format_string.h
 include/rcutils/rcutils/isalnum_no_locale.h
+include/rcutils/rcutils/join.h
 include/rcutils/rcutils/logging.h
 include/rcutils/rcutils/logging_macros.h
 include/rcutils/rcutils/macros.h

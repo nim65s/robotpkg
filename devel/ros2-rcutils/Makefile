@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rcutils
-ROS2_VERSION=	6.3.0
+ROS2_VERSION=	6.10.1
 
 CATEGORIES=	devel
 ROS2_COMMENT=	common C functions and data structures.

@@ -1,5 +1,8 @@
-SHA1 (rcutils-6.3.0.tar.gz) = 4458808f55710466beb89bb3e23bdae9eabde395
-RMD160 (rcutils-6.3.0.tar.gz) = 7c8bb87f7e9f6bcf0be4607ea8924c2d4842ca0c
-Size (rcutils-6.3.0.tar.gz) = 148133 bytes
-SHA1 (patch-aa) = ad0cc19752af66aa7fce8e0a3ee8acb9e98665d7
-SHA1 (patch-ab) = f4a3e772b1507c10142278a8dab7c5eb379d3135
+SHA1 (rcutils-6.10.1.tar.gz) = 9b50192aadc9b8bea5453ec3cd3ecf4d487bae1f
+RMD160 (rcutils-6.10.1.tar.gz) = f8efe8a821b43c25bd4effa70d05c7070f44cb32
+Size (rcutils-6.10.1.tar.gz) = 155132 bytes
+SHA1 (patch-aa) = 95e277ce997c5a9518fcf84c425738d69f7eead4
+SHA1 (patch-ab) = 530889c7d0f6a07eff94a54273868ff72758095e
+SHA1 (patch-ac) = 74208db17927851606029a53df732ef9aea667c8
+SHA1 (patch-ad) = 5ee5939aaf22fa73dc398becde72f47034d5ffa5
+SHA1 (patch-ae) = 9458f3d60cbbcf6532c80b2fab213cd0160f06df

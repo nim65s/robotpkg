@@ -1,0 +1,14 @@
+Fix assert check, as buffer_size is casted to int64_t later on, it needs to be
+smaller than 1ULL<<63
+
+--- src/error_handling.c~	2025-07-14 16:50:44.000000000 +0200
++++ src/error_handling.c	2025-07-30 19:21:40.590443900 +0200
+@@ -94,7 +94,7 @@
+ {
+   assert(NULL != buffer);
+   assert(0 != buffer_size);
+-  assert(SIZE_MAX > buffer_size);
++  assert((1ULL<<63) > buffer_size);
+   assert(NULL != new_error_state);
+ 
+   int64_t bytes_left = (int64_t)buffer_size;
