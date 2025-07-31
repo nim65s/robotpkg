@@ -1,8 +1,8 @@
 TinyXML2 < 5 does not have GetLineNum()
 
---- src/cpp/rtps/xmlparser/XMLDynamicParser.cpp~	2023-09-05 17:51:15.858108630 +0200
-+++ src/cpp/rtps/xmlparser/XMLDynamicParser.cpp	2023-09-05 17:55:15.072031180 +0200
-@@ -1008,7 +1008,11 @@
+--- src/cpp/rtps/xmlparser/XMLDynamicParser.cpp~	2025-07-30 15:03:58.000000000 +0200
++++ src/cpp/rtps/xmlparser/XMLDynamicParser.cpp	2025-07-31 01:18:17.039286644 +0200
+@@ -1083,7 +1083,11 @@
              }
              catch (const std::exception&)
              {
@@ -14,7 +14,7 @@ TinyXML2 < 5 does not have GetLineNum()
                  return nullptr;
              }
          }
-@@ -1092,8 +1096,13 @@
+@@ -1167,8 +1171,13 @@
              }
              catch (const std::exception&)
              {
@@ -28,9 +28,33 @@ TinyXML2 < 5 does not have GetLineNum()
                  return nullptr;
              }
          }
---- src/cpp/rtps/xmlparser/XMLElementParser.cpp~	2023-09-05 17:51:15.859032941 +0200
-+++ src/cpp/rtps/xmlparser/XMLElementParser.cpp	2023-09-05 18:00:22.885770362 +0200
-@@ -3559,7 +3559,11 @@
+--- src/cpp/rtps/xmlparser/XMLElementParser.cpp~	2025-07-30 15:03:58.000000000 +0200
++++ src/cpp/rtps/xmlparser/XMLElementParser.cpp	2025-07-31 01:19:57.578552525 +0200
+@@ -163,7 +163,11 @@
+ 
+         if (!ss || std::numeric_limits<octet>::max() < o)
+         {
++#if TIXML2_MAJOR_VERSION >= 5
+             EPROSIMA_LOG_ERROR(XMLPARSER, "Expected an octet value on line " << elem->GetLineNum());
++#else
++            EPROSIMA_LOG_ERROR(XMLPARSER, "Expected an octet value on " << elem->Name());
++#endif
+             return XMLP_ret::XML_ERROR;
+         }
+ 
+@@ -177,7 +181,11 @@
+ 
+             if (!ss || '.' != c)
+             {
++#if TIXML2_MAJOR_VERSION >= 5
+                 EPROSIMA_LOG_ERROR(XMLPARSER, "Expected a '.' separator on line " << elem->GetLineNum());
++#else
++                EPROSIMA_LOG_ERROR(XMLPARSER, "Expected a '.' separator on " << elem->Name());
++#endif
+                 return XMLP_ret::XML_ERROR;
+             }
+         }
+@@ -3825,7 +3833,11 @@
      {
          if (1 < ++num_elems)
          {
@@ -39,34 +63,10 @@ TinyXML2 < 5 does not have GetLineNum()
 +#else
 +            EPROSIMA_LOG_ERROR(XMLPARSER, "More than one tag on " << p_aux0->Name());
 +#endif
-             ret_value = XMLP_ret::XML_ERROR;
+             return XMLP_ret::XML_ERROR;
          }
          if (0 == strcmp(p_aux0->Name(), VALUE))
-@@ -3576,7 +3580,11 @@
- 
-                 if (!ss || std::numeric_limits<octet>::max() < o)
-                 {
-+#if TIXML2_MAJOR_VERSION >= 5
-                     EPROSIMA_LOG_ERROR(XMLPARSER, "Expected an octet value on line " << p_aux0->GetLineNum());
-+#else
-+                    EPROSIMA_LOG_ERROR(XMLPARSER, "Expected an octet value on line " << p_aux0->Name());
-+#endif
-                     ret_value = XMLP_ret::XML_ERROR;
-                     break;
-                 }
-@@ -3591,7 +3599,11 @@
- 
-                     if (!ss || '.' != c)
-                     {
-+#if TIXML2_MAJOR_VERSION >= 5
-                         EPROSIMA_LOG_ERROR(XMLPARSER, "Expected a '.' separator on line " << p_aux0->GetLineNum());
-+#else
-+                        EPROSIMA_LOG_ERROR(XMLPARSER, "Expected a '.' separator on " << p_aux0->Name());
-+#endif
-                         ret_value = XMLP_ret::XML_ERROR;
-                         break;
-                     }
-@@ -3600,8 +3612,13 @@
+@@ -3834,8 +3846,13 @@
          }
          else
          {
@@ -77,6 +77,6 @@ TinyXML2 < 5 does not have GetLineNum()
 +            EPROSIMA_LOG_ERROR(XMLPARSER,
 +                    "Invalid tag with name of " << p_aux0->Name());
 +#endif
-             ret_value = XMLP_ret::XML_ERROR;
+             return XMLP_ret::XML_ERROR;
          }
      }

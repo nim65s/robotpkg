@@ -1,9 +1,9 @@
 Don't install empty directories or cmake files
 
---- thirdparty/optionparser/CMakeLists.txt~	2022-03-17 07:49:49.000000000 +0100
-+++ thirdparty/optionparser/CMakeLists.txt	2022-04-11 16:17:00.680480011 +0200
-@@ -38,12 +38,13 @@
-         COMPONENT libraries 
+--- thirdparty/optionparser/CMakeLists.txt~	2025-07-31 00:32:20.287836327 +0200
++++ thirdparty/optionparser/CMakeLists.txt	2025-07-31 00:35:09.654364993 +0200
+@@ -37,12 +37,13 @@
+         COMPONENT libraries
          )
  
 -install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}

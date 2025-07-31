@@ -1,8 +1,8 @@
 Fix shell, bash is not required.
 
---- tools/fds/CMakeLists.txt~	2023-08-11 10:03:17.000000000 +0200
-+++ tools/fds/CMakeLists.txt	2024-08-06 19:22:01.162978102 +0200
-@@ -127,6 +127,6 @@
+--- tools/fds/CMakeLists.txt~	2025-07-10 07:40:22.000000000 +0200
++++ tools/fds/CMakeLists.txt	2025-07-31 00:37:34.360159630 +0200
+@@ -114,6 +114,6 @@
  else()
      # Use ln to create the symbolic link. We remove the version from the file name but keep the debug suffix
      install(

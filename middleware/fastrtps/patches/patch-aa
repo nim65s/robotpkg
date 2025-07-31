@@ -20,7 +20,7 @@ use kqueue(2) on __NetBSD__
  #endif // __unix__
  
  #include <algorithm>
-@@ -193,10 +199,11 @@
+@@ -199,10 +206,11 @@
          };
  
          FolderInfo  _directory;
@@ -34,7 +34,7 @@ use kqueue(2) on __NetBSD__
 +# endif
  #endif // __unix__
  
-         void init()
+         void init(
 @@ -238,7 +245,7 @@
              _running = std::promise<void>();
  #ifdef _WIN32
