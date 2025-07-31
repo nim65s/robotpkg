@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Fri, 1 Apr 2022
 #
 
+PKGREVISION=	1
 ROS2_PKG=	rosidl
 ROS2_VERSION=	4.9.0
 

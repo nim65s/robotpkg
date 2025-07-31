@@ -1,4 +1,5 @@
 Generated messages may containt <cstdint> types.
+https://github.com/ros2/rosidl/pull/864
 
 --- rosidl_generator_cpp/resource/idl__struct.hpp.em~	2024-10-03 16:58:05.000000000 +0200
 +++ rosidl_generator_cpp/resource/idl__struct.hpp.em	2025-04-29 18:46:30.175046970 +0200
@@ -10,3 +11,13 @@ Generated messages may containt <cstdint> types.
  #include <memory>
  #include <string>
  #include <vector>
+--- rosidl_runtime_cpp/include/rosidl_runtime_cpp/traits.hpp~	2024-10-03 16:58:05.000000000 +0200
++++ rosidl_runtime_cpp/include/rosidl_runtime_cpp/traits.hpp	2025-07-31 18:30:37.160095833 +0200
+@@ -16,6 +16,7 @@
+ #define ROSIDL_RUNTIME_CPP__TRAITS_HPP_
+ 
+ #include <codecvt>
++#include <cstdint>
+ #include <iomanip>
+ #include <iosfwd>
+ #include <string>
