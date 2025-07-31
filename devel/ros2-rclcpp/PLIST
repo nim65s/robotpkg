@@ -1,4 +1,4 @@
-@comment Tue May 10 11:50:40 CEST 2022
+@comment Thu Jul 31 02:26:48 CEST 2025
 include/rclcpp/rclcpp/allocator/allocator_common.hpp
 include/rclcpp/rclcpp/allocator/allocator_deleter.hpp
 include/rclcpp/rclcpp/any_executable.hpp
@@ -9,7 +9,9 @@ include/rclcpp/rclcpp/client.hpp
 include/rclcpp/rclcpp/clock.hpp
 include/rclcpp/rclcpp/context.hpp
 include/rclcpp/rclcpp/contexts/default_context.hpp
+include/rclcpp/rclcpp/copy_all_parameter_values.hpp
 include/rclcpp/rclcpp/create_client.hpp
+include/rclcpp/rclcpp/create_generic_client.hpp
 include/rclcpp/rclcpp/create_generic_publisher.hpp
 include/rclcpp/rclcpp/create_generic_subscription.hpp
 include/rclcpp/rclcpp/create_publisher.hpp
@@ -26,17 +28,27 @@ include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp
 include/rclcpp/rclcpp/detail/rmw_implementation_specific_publisher_payload.hpp
 include/rclcpp/rclcpp/detail/rmw_implementation_specific_subscription_payload.hpp
 include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp
+include/rclcpp/rclcpp/detail/template_contains.hpp
+include/rclcpp/rclcpp/detail/template_unique.hpp
 include/rclcpp/rclcpp/detail/utilities.hpp
 include/rclcpp/rclcpp/duration.hpp
+include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message.hpp
+include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message_type.hpp
+include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message_type_builder.hpp
+include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message_type_support.hpp
+include/rclcpp/rclcpp/dynamic_typesupport/dynamic_serialization_support.hpp
 include/rclcpp/rclcpp/event.hpp
+include/rclcpp/rclcpp/event_handler.hpp
 include/rclcpp/rclcpp/exceptions.hpp
 include/rclcpp/rclcpp/exceptions/exceptions.hpp
 include/rclcpp/rclcpp/executor.hpp
 include/rclcpp/rclcpp/executor_options.hpp
 include/rclcpp/rclcpp/executors.hpp
+include/rclcpp/rclcpp/executors/executor_entities_collection.hpp
+include/rclcpp/rclcpp/executors/executor_entities_collector.hpp
+include/rclcpp/rclcpp/executors/executor_notify_waitable.hpp
 include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp
 include/rclcpp/rclcpp/executors/single_threaded_executor.hpp
-include/rclcpp/rclcpp/executors/static_executor_entities_collector.hpp
 include/rclcpp/rclcpp/executors/static_single_threaded_executor.hpp
 include/rclcpp/rclcpp/expand_topic_or_service_name.hpp
 include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp
@@ -44,13 +56,19 @@ include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp
 include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp
 include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp
 include/rclcpp/rclcpp/experimental/executable_list.hpp
+include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor.hpp
+include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor_event_types.hpp
+include/rclcpp/rclcpp/experimental/executors/events_executor/events_queue.hpp
+include/rclcpp/rclcpp/experimental/executors/events_executor/simple_events_queue.hpp
 include/rclcpp/rclcpp/experimental/intra_process_manager.hpp
 include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp
 include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp
 include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp
 include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp
+include/rclcpp/rclcpp/experimental/timers_manager.hpp
 include/rclcpp/rclcpp/function_traits.hpp
 include/rclcpp/rclcpp/future_return_code.hpp
+include/rclcpp/rclcpp/generic_client.hpp
 include/rclcpp/rclcpp/generic_publisher.hpp
 include/rclcpp/rclcpp/generic_subscription.hpp
 include/rclcpp/rclcpp/get_message_type_support_handle.hpp
@@ -71,6 +89,7 @@ include/rclcpp/rclcpp/message_memory_strategy.hpp
 include/rclcpp/rclcpp/network_flow_endpoint.hpp
 include/rclcpp/rclcpp/node.hpp
 include/rclcpp/rclcpp/node_impl.hpp
+include/rclcpp/rclcpp/node_interfaces/detail/node_interfaces_helpers.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_clock_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_graph_interface.hpp
@@ -80,6 +99,7 @@ include/rclcpp/rclcpp/node_interfaces/get_node_services_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_time_source_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_timers_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_topics_interface.hpp
+include/rclcpp/rclcpp/node_interfaces/get_node_type_descriptions_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/get_node_waitables_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/node_base.hpp
 include/rclcpp/rclcpp/node_interfaces/node_base_interface.hpp
@@ -90,6 +110,7 @@ include/rclcpp/rclcpp/node_interfaces/node_clock_interface_traits.hpp
 include/rclcpp/rclcpp/node_interfaces/node_graph.hpp
 include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/node_graph_interface_traits.hpp
+include/rclcpp/rclcpp/node_interfaces/node_interfaces.hpp
 include/rclcpp/rclcpp/node_interfaces/node_logging.hpp
 include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/node_logging_interface_traits.hpp
@@ -108,6 +129,9 @@ include/rclcpp/rclcpp/node_interfaces/node_timers_interface_traits.hpp
 include/rclcpp/rclcpp/node_interfaces/node_topics.hpp
 include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp
+include/rclcpp/rclcpp/node_interfaces/node_type_descriptions.hpp
+include/rclcpp/rclcpp/node_interfaces/node_type_descriptions_interface.hpp
+include/rclcpp/rclcpp/node_interfaces/node_type_descriptions_interface_traits.hpp
 include/rclcpp/rclcpp/node_interfaces/node_waitables.hpp
 include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp
 include/rclcpp/rclcpp/node_interfaces/node_waitables_interface_traits.hpp
@@ -124,11 +148,9 @@ include/rclcpp/rclcpp/publisher_base.hpp
 include/rclcpp/rclcpp/publisher_factory.hpp
 include/rclcpp/rclcpp/publisher_options.hpp
 include/rclcpp/rclcpp/qos.hpp
-include/rclcpp/rclcpp/qos_event.hpp
 include/rclcpp/rclcpp/qos_overriding_options.hpp
 include/rclcpp/rclcpp/rate.hpp
 include/rclcpp/rclcpp/rclcpp.hpp
-include/rclcpp/rclcpp/scope_exit.hpp
 include/rclcpp/rclcpp/serialization.hpp
 include/rclcpp/rclcpp/serialized_message.hpp
 include/rclcpp/rclcpp/service.hpp

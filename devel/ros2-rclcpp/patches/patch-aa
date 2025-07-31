@@ -1,20 +1,18 @@
 stdc++fs is needed for gcc<9.1
 https://en.cppreference.com/w/cpp/filesystem#Notes
 
-However, it seems that it is not needed after all ... (and may not be
-available).
-
---- rclcpp_components/CMakeLists.txt~	2022-04-09 01:27:59.000000000 +0200
-+++ rclcpp_components/CMakeLists.txt	2022-04-22 11:38:48.677954203 +0200
-@@ -81,9 +81,11 @@
- 
+--- rclcpp_components/CMakeLists.txt~	2025-07-30 22:48:39.543205642 +0200
++++ rclcpp_components/CMakeLists.txt	2025-07-30 22:51:16.213926602 +0200
+@@ -80,10 +80,12 @@
+ target_link_libraries(component_container_isolated component_manager rclcpp::rclcpp)
  
  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-+ if(FALSE AND (CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1"))
++if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1")
    target_link_libraries(component_container "stdc++fs")
    target_link_libraries(component_container_mt "stdc++fs")
    target_link_libraries(component_container_isolated "stdc++fs")
-+ endif()
  endif()
++endif()
  
  if(BUILD_TESTING)
+   find_package(ament_lint_auto REQUIRED)

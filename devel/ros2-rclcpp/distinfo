@@ -1,7 +1,5 @@
-SHA1 (rclcpp-16.0.0.tar.gz) = 2b0b77fd9b4ce15b17f5d33bb2ca281f78e3f2bc
-RMD160 (rclcpp-16.0.0.tar.gz) = 39031194aadb214b4d63d38cb2f29f19af0c7bef
-Size (rclcpp-16.0.0.tar.gz) = 559049 bytes
-SHA1 (patch-aa) = 47921f568ac888d97bbbc217cda67774241e9abe
-SHA1 (patch-ab) = 0cfb383c34daffe47d9fe2da46e47827f31170bb
-SHA1 (patch-ac) = 863a1d3789259cc56ff71629c62a070d7a59b7b5
-SHA1 (patch-ad) = 78e4c4a35654be783285b2c7d1385eed69618692
+SHA1 (rclcpp-28.1.10.tar.gz) = 3aee6e4e513d0e91a58885a7fde29374a292f400
+RMD160 (rclcpp-28.1.10.tar.gz) = 8bcb2450ac8c522fc2cae554f5b2c80a726290fb
+Size (rclcpp-28.1.10.tar.gz) = 845378 bytes
+SHA1 (patch-aa) = d13be6abea28495a37e6f16c90d3dcb72a3f63ec
+SHA1 (patch-ac) = 49ba897f72861fcfd41037561636cee8d73a26cf
