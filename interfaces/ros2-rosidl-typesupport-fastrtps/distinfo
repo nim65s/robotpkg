@@ -1,3 +1,4 @@
-SHA1 (rosidl_typesupport_fastrtps-3.2.0.tar.gz) = 8b1e02f474788f86d1457b40a89df59079a7ac05
-RMD160 (rosidl_typesupport_fastrtps-3.2.0.tar.gz) = 520de1536b5308a3ea2380db4c1d2c1cd381b50e
-Size (rosidl_typesupport_fastrtps-3.2.0.tar.gz) = 48315 bytes
+SHA1 (rosidl_typesupport_fastrtps-3.7.1.tar.gz) = fffc62252098b60e634b117bef472a761366cae9
+RMD160 (rosidl_typesupport_fastrtps-3.7.1.tar.gz) = b397c0c924361b968a8ef891d3cfa38b9813334f
+Size (rosidl_typesupport_fastrtps-3.7.1.tar.gz) = 54353 bytes
+SHA1 (patch-aa) = d10cd19612c7e4b79aacf06c65e6de4ac10aff94
