@@ -8,46 +8,84 @@ through ament_target_dependencies() are escaping to dependent packages, but
 this is even more an issue with libyaml as this is a system package and thus
 needs some linker flags).
 
---- rcl_yaml_param_parser/CMakeLists.txt~	2022-04-07 17:39:03.082353703 +0200
-+++ rcl_yaml_param_parser/CMakeLists.txt	2022-04-07 17:39:44.250639530 +0200
+--- rcl/CMakeLists.txt~	2025-06-23 17:27:55.000000000 +0200
++++ rcl/CMakeLists.txt	2025-07-31 02:13:49.661570074 +0200
 @@ -5,7 +5,6 @@
  find_package(ament_cmake_ros REQUIRED)
+ find_package(ament_cmake_gen_version_h REQUIRED)
+ 
+-find_package(libyaml_vendor REQUIRED)
+ find_package(rcl_interfaces REQUIRED)
+ find_package(rcl_logging_interface REQUIRED)
+ find_package(rcl_yaml_param_parser REQUIRED)
+@@ -16,7 +15,8 @@
+ find_package(service_msgs REQUIRED)
+ find_package(tracetools REQUIRED)
+ find_package(type_description_interfaces REQUIRED)
+-find_package(yaml REQUIRED)
++find_package(PkgConfig)
++pkg_check_modules(LIBYAML REQUIRED yaml-0.1)
+ 
+ include(cmake/rcl_set_symbol_visibility_hidden.cmake)
+ include(cmake/get_default_rcl_logging_implementation.cmake)
+@@ -96,11 +96,13 @@
+   rosidl_runtime_c::rosidl_runtime_c
+   ${type_description_interfaces_TARGETS}
+ )
++target_include_directories(${PROJECT_NAME} PRIVATE ${LIBYAML_INCLUDE_DIRS})
++target_link_options(${PROJECT_NAME} PRIVATE ${LIBYAML_LDFLAGS})
+ target_link_libraries(${PROJECT_NAME} PRIVATE
+   ${RCL_LOGGING_IMPL}::${RCL_LOGGING_IMPL}
+   ${service_msgs_TARGETS}
+   tracetools::tracetools
+-  yaml
++  ${LIBYAML_LIBRARIES}
+ )
+ 
+ # Allow configuring the default discovery range
+--- rcl/package.xml~	2025-06-23 17:27:55.000000000 +0200
++++ rcl/package.xml	2025-07-31 02:13:54.663812352 +0200
+@@ -20,7 +20,6 @@
+ 
+   <build_export_depend>rmw</build_export_depend>
+ 
+-  <depend>libyaml_vendor</depend>
+   <depend>rcl_interfaces</depend>
+   <depend>rcl_logging_interface</depend>
+   <depend>rcl_logging_spdlog</depend> <!-- the default logging impl -->
+--- rcl_yaml_param_parser/CMakeLists.txt~	2025-07-31 02:12:33.828789219 +0200
++++ rcl_yaml_param_parser/CMakeLists.txt	2025-07-31 02:14:43.377802468 +0200
+@@ -6,8 +6,8 @@
+ find_package(ament_cmake_gen_version_h REQUIRED)
  find_package(rcutils REQUIRED)
  find_package(rmw REQUIRED)
 -find_package(libyaml_vendor REQUIRED)
- 
- # Default to C++14
- if(NOT CMAKE_CXX_STANDARD)
-@@ -34,7 +34,12 @@
- target_include_directories(${PROJECT_NAME} PUBLIC
-   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-   "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
--ament_target_dependencies(${PROJECT_NAME} "libyaml_vendor" "rcutils" "rmw")
-+ament_target_dependencies(${PROJECT_NAME} PUBLIC "rcutils" "rmw")
+-find_package(yaml REQUIRED)
 +find_package(PkgConfig)
 +pkg_check_modules(LIBYAML REQUIRED yaml-0.1)
+ 
+ # Default to C++17
+ if(NOT CMAKE_CXX_STANDARD)
+@@ -37,9 +37,11 @@
+ target_link_libraries(${PROJECT_NAME} PUBLIC
+   rcutils::rcutils
+ )
 +target_include_directories(${PROJECT_NAME} PRIVATE ${LIBYAML_INCLUDE_DIRS})
 +target_link_options(${PROJECT_NAME} PRIVATE ${LIBYAML_LDFLAGS})
-+target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBYAML_LIBRARIES})
+ target_link_libraries(${PROJECT_NAME} PRIVATE
+   rmw::rmw
+-  yaml
++  ${LIBYAML_LIBRARIES}
+ )
  
  # Set the visibility to hidden by default if possible
- if(CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
-@@ -192,7 +192,7 @@
- # Export modern CMake targets
- ament_export_targets(${PROJECT_NAME})
- 
--ament_export_dependencies(ament_cmake libyaml_vendor)
-+ament_export_dependencies(ament_cmake)
- ament_export_dependencies(rmw)
- install(
-   DIRECTORY include/
---- rcl_yaml_param_parser/package.xml~	2022-04-05 23:19:53.000000000 +0200
-+++ rcl_yaml_param_parser/package.xml	2022-04-07 17:45:15.448981008 +0200
-@@ -15,7 +15,6 @@
- 
+--- rcl_yaml_param_parser/package.xml~	2025-07-31 02:12:33.828977534 +0200
++++ rcl_yaml_param_parser/package.xml	2025-07-31 02:14:49.017494973 +0200
+@@ -17,7 +17,6 @@
    <buildtool_depend>ament_cmake_ros</buildtool_depend>
+   <buildtool_depend>ament_cmake_gen_version_h</buildtool_depend>
  
 -  <depend>libyaml_vendor</depend>
-   <depend>yaml</depend>
+   <depend>rcutils</depend>
    <depend>rmw</depend>
-   <build_depend>rcutils</build_depend>
+   <depend>yaml</depend>
