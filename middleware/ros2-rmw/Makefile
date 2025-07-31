@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rmw
-ROS2_VERSION=	7.2.1
+ROS2_VERSION=	7.3.2
 
 CATEGORIES=	middleware
 ROS2_COMMENT=	middleware interface.
