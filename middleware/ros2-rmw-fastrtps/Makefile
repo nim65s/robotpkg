@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rmw_fastrtps
-ROS2_VERSION=	7.4.0
+ROS2_VERSION=	8.4.2
 
 CATEGORIES=	middleware
 ROS2_COMMENT=	Middleware interface using Fast RTPS
