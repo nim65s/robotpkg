@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue,  5 Apr 2022
 #
 
-VERSION=	1.1.1
+VERSION=	2.3.0
 PKGNAME=	fastcdr-${VERSION}
 DISTNAME=	Fast-CDR-${VERSION}
 MASTER_SITES=	${MASTER_SITE_GITHUB:=eProsima/}

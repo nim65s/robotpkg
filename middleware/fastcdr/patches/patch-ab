@@ -1,0 +1,13 @@
+Don't require too much cmake for no reason
+
+--- CMakeLists.txt~	2025-03-20 09:14:09.000000000 +0100
++++ CMakeLists.txt	2025-07-31 11:45:32.232582555 +0200
+@@ -15,7 +15,7 @@
+ ###############################################################################
+ # CMake build rules for FastCDR                                               #
+ ###############################################################################
+-cmake_minimum_required(VERSION 3.20)
++cmake_minimum_required(VERSION 3.16.3)
+ 
+ # Set CMAKE_BUILD_TYPE to Release by default.
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)

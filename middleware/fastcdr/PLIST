@@ -1,18 +1,29 @@
-@comment Tue Sep 5 18:24:34 CEST 2023
+@comment Thu Jul 31 00:11:49 CEST 2025
 include/fastcdr/Cdr.h
+include/fastcdr/CdrEncoding.hpp
+include/fastcdr/CdrSizeCalculator.hpp
 include/fastcdr/FastBuffer.h
 include/fastcdr/FastCdr.h
+include/fastcdr/cdr/fixed_size_string.hpp
 include/fastcdr/config.h
+include/fastcdr/config/doxygen_modules.h
+include/fastcdr/detail/container_recursive_inspector.hpp
 include/fastcdr/eProsima_auto_link.h
+include/fastcdr/exceptions/BadOptionalAccessException.hpp
 include/fastcdr/exceptions/BadParamException.h
 include/fastcdr/exceptions/Exception.h
+include/fastcdr/exceptions/LockedExternalAccessException.hpp
 include/fastcdr/exceptions/NotEnoughMemoryException.h
 include/fastcdr/fastcdr_dll.h
+include/fastcdr/xcdr/MemberId.hpp
+include/fastcdr/xcdr/detail/optional.hpp
+include/fastcdr/xcdr/external.hpp
+include/fastcdr/xcdr/optional.hpp
 lib/cmake/fastcdr/fastcdr-config-version.cmake
 lib/cmake/fastcdr/fastcdr-config.cmake
 lib/cmake/fastcdr/fastcdr-shared-targets-release.cmake
 lib/cmake/fastcdr/fastcdr-shared-targets.cmake
 lib/libfastcdr.so
-lib/libfastcdr.so.1
+lib/libfastcdr.so.2
 lib/libfastcdr.so.${PKGVERSION}
 share/fastcdr/LICENSE
