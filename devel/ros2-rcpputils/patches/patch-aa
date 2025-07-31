@@ -1,0 +1,18 @@
+stdc++fs is needed for gcc<9.1
+https://en.cppreference.com/w/cpp/filesystem#Notes
+
+--- CMakeLists.txt~	2025-04-18 21:09:18.000000000 +0200
++++ CMakeLists.txt	2025-07-31 15:36:59.741897513 +0200
+@@ -40,6 +40,12 @@
+ endif()
+ target_link_libraries(${PROJECT_NAME} PUBLIC rcutils::rcutils)
+ 
++if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++  if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1")
++    target_link_libraries(${PROJECT_NAME} PRIVATE "stdc++fs")
++  endif()
++endif()
++
+ # Export old-style CMake variables
+ ament_export_include_directories("include/${PROJECT_NAME}")
+ ament_export_libraries(${PROJECT_NAME})
