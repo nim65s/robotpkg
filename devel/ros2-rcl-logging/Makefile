@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rcl_logging
-ROS2_VERSION=	2.3.0
+ROS2_VERSION=	3.3.0
 
 CATEGORIES=	devel
 ROS2_COMMENT=	logging implementations.
