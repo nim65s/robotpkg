@@ -2,9 +2,8 @@
 # Created:			Anthony Mallet on Thu, 14 Apr 2022
 #
 
-PKGREVISION=	1
 ROS2_PKG=	ros_environment
-ROS2_VERSION=	3.2.0
+ROS2_VERSION=	4.4.0
 ROS2_REPO=	ros
 PKGNAME=	ros2-environment-${ROS2_VERSION}
 
