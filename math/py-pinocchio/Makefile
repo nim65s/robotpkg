@@ -22,6 +22,9 @@ CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_RELEASE=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_DEBUG=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBUILD_WITH_LIBPYTHON=OFF
 
+# already set in math/pinocchio, this is conflicting
+CMAKE_ARGS+=		-DBUILDING_ROS2_PACKAGE=OFF
+
 DEPEND_ABI.pinocchio=	pinocchio>=${VERSION}
 USE_PYTHON_ONLY=	true
 USE_MASTER_GITHUB=	true
@@ -41,6 +44,10 @@ ifeq (Debian,${OPSYS})
   endif
 endif
 
+DEPEND_ABI.boost-headers+=	boost-headers>=1.55
+DEPEND_ABI.py-eigenpy+=		${PKGTAG.python-}eigenpy>=3.4
+DEPEND_ABI.python+=		python>=3
+
 include ../../math/pinocchio/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../path/coal/depend.mk
@@ -54,8 +61,4 @@ include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk
-
-DEPEND_ABI.boost-headers +=	boost-headers>=1.55
-DEPEND_ABI.python=		python>=3
-
 include ../../mk/robotpkg.mk
