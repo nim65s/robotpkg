@@ -1,7 +1,8 @@
 Don't install files already installed by pinocchio
+Add pinocchio dependency
 
---- CMakeLists.txt.orig	2025-03-12 23:35:15.599978402 +0100
-+++ CMakeLists.txt	2025-03-12 23:35:52.565561685 +0100
+--- CMakeLists.txt~	2025-08-12 16:55:44.130129334 +0200
++++ CMakeLists.txt	2025-08-12 16:55:56.513226916 +0200
 @@ -11,7 +11,6 @@
  )
  set(PROJECT_URL "http://github.com/stack-of-tasks/pinocchio")
@@ -10,7 +11,15 @@ Don't install files already installed by pinocchio
  set(PROJECT_USE_KEYWORD_LINK_LIBRARIES TRUE)
  set(PROJECT_COMPATIBILITY_VERSION AnyNewerVersion)
  set(PINOCCHIO_PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR})
-@@ -518,7 +517,4 @@
+@@ -210,6 +209,7 @@
+ # ----------------------------------------------------
+ set(CMAKE_MODULE_PATH "${JRL_CMAKE_MODULES}/find-external/CppAD/" ${CMAKE_MODULE_PATH})
+ add_project_dependency(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.0.5")
++add_project_dependency(${PROJECT_NAME} REQUIRED)
+ 
+ if(BUILD_WITH_URDF_SUPPORT)
+   add_project_dependency(urdfdom_headers REQUIRED)
+@@ -518,7 +518,4 @@
  pkg_config_append_cflags("${CFLAGS_DEPENDENCIES}")
  pkg_config_append_cflags("${CFLAGS_OPTIONS}")
  
@@ -18,20 +27,3 @@ Don't install files already installed by pinocchio
 -install(FILES package.xml DESTINATION share/${PROJECT_NAME})
 -
  setup_project_finalize()
---- bindings/python/CMakeLists.txt.orig	2025-03-12 23:35:31.865235101 +0100
-+++ bindings/python/CMakeLists.txt	2025-03-12 23:36:21.038010697 +0100
-@@ -299,14 +299,6 @@
-     set(_PKG_CONFIG_PYWRAP_CFLAGS "${_PKG_CONFIG_PYWRAP_CFLAGS} ${cflags}")
-   endforeach()
- 
--  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/pinocchiopy.pc.cmake"
--                 "${CMAKE_CURRENT_BINARY_DIR}/pinocchiopy.pc")
--
--  install(
--    FILES "${CMAKE_CURRENT_BINARY_DIR}/pinocchiopy.pc"
--    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
--    PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE)
--
-   if(DOXYGEN_FOUND AND DOXYGEN_VERSION VERSION_GREATER 1.8.17)
-     set(DOXYGEN_GENERATE_HTML YES)
-     set(DOXYGEN_GENERATE_LATEX NO)

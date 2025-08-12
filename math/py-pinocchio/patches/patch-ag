@@ -1,15 +1,5 @@
 py-pinocchio needs pinocchio
 
---- CMakeLists.txt.orig	2024-12-13 15:26:59.000000000 +0100
-+++ CMakeLists.txt	2024-12-18 21:57:22.735116788 +0100
-@@ -211,6 +211,7 @@
- # ----------------------------------------------------
- set(CMAKE_MODULE_PATH "${JRL_CMAKE_MODULES}/find-external/CppAD/" ${CMAKE_MODULE_PATH})
- add_project_dependency(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.0.5")
-+add_project_dependency(${PROJECT_NAME} REQUIRED)
- 
- if(BUILD_WITH_URDF_SUPPORT)
-   add_project_dependency(urdfdom_headers REQUIRED)
 --- bindings/python/CMakeLists.txt.orig	2024-12-13 15:26:59.000000000 +0100
 +++ bindings/python/CMakeLists.txt	2024-12-18 21:58:36.608002007 +0100
 @@ -84,7 +84,7 @@
