@@ -15,6 +15,7 @@ ROS2_SUBPKGS=\
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 
+DEPEND_ABI.fastrtps=fastrtps>=2.13
 DEPEND_ABI.ros2-tracing= ros2-tracing>=7
 
 include ../../devel/ament-cmake-ros/depend.mk
