@@ -43,11 +43,14 @@ CMAKE_ARGS+=	-DOpenGL_GL_PREFERENCE=LEGACY
 
 include ../../archivers/zlib/depend.mk
 include ../../mk/sysdep/cmake.mk
+include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/freeimage.mk
 include ../../mk/sysdep/freetype2.mk
 include ../../mk/sysdep/glu.mk
+include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/libX11.mk
 include ../../mk/sysdep/libXaw.mk
+include ../../mk/sysdep/libXrandr.mk
 include ../../mk/sysdep/libXt.mk
 include ../../mk/sysdep/rapidjson.mk
 include ../../mk/sysdep/mesa.mk

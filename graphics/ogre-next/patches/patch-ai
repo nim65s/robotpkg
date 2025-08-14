@@ -1,0 +1,24 @@
+Missing cast
+
+--- OgreMain/src/OgreDefaultSceneQueries.cpp~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/src/OgreDefaultSceneQueries.cpp	2025-08-14 17:36:51.302899416 +0200
+@@ -537,7 +537,7 @@
+             {
+                 //For each volume test all planes and AND the dot product.
+                 //If one is false, then we dont intersect with this volume
+-                ArrayMaskR singleVolumeMask = CastIntToReal( Mathlib::SetAll( 0xffffffff ) );
++                ArrayMaskR singleVolumeMask = (ArrayMaskR)CastIntToReal( Mathlib::SetAll( 0xffffffff ) );
+                 ArrayReal dotResult;
+                 ArrayVector3 centerPlusFlippedHS;
+     
+--- OgreMain/src/OgreMovableObject.cpp~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/src/OgreMovableObject.cpp	2025-08-14 17:42:56.624127184 +0200
+@@ -500,7 +500,7 @@
+             planes[i].planeNegD = Mathlib::SetAll( -frustumPlanes[i].d );
+         }
+         
+-        const ArrayMaskR ignoreRenderingDistance = CastIntToReal(
++        const ArrayMaskR ignoreRenderingDistance = (ArrayMaskR)CastIntToReal(
+                     Mathlib::SetAll( lodCamera->getUseRenderingDistance() ? 0 : 0xffffffff ) );
+ 
+         //TODO: Profile whether we should use XOR to flip the sign or simple multiplication.

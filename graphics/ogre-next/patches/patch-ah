@@ -1,0 +1,13 @@
+Missing cast
+
+--- OgreMain/include/Math/Array/NEON/Single/OgreMathlibNEON.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/Math/Array/NEON/Single/OgreMathlibNEON.h	2025-08-14 17:31:33.907950447 +0200
+@@ -601,7 +601,7 @@
+             //Netwon-Raphson, 2 iterations.
+             ArrayReal fStep0 = vrsqrteq_f32( f );
+             //Nuke NaN when f == 0
+-            fStep0 = vreinterpretq_f32_u32( vandq_u32( vtstq_u32( f, f ),
++            fStep0 = vreinterpretq_f32_u32( vandq_u32( vtstq_u32( vreinterpretq_u32_f32( f ), vreinterpretq_u32_f32( f ) ),
+                                                        vreinterpretq_u32_f32( fStep0 ) ) );
+             // step fStep0 = 1 / sqrt(x)
+             const ArrayReal fStepParm0  = vmulq_f32( f, fStep0 );

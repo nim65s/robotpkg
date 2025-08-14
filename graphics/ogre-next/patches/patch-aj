@@ -1,0 +1,13 @@
+Missing header
+
+--- OgreMain/include/Math/Array/NEON/Single/OgreBooleanMask.h~	2023-11-05 22:38:38.000000000 +0100
++++ OgreMain/include/Math/Array/NEON/Single/OgreBooleanMask.h	2025-08-14 18:15:01.329388589 +0200
+@@ -33,6 +33,8 @@
+     #error "Don't include this file directly. include Math/Array/OgreBooleanMask.h"
+ #endif
+ 
++#include "Math/Array/OgreMathlib.h"
++
+ namespace Ogre
+ {
+     class _OgreExport BooleanMask4
