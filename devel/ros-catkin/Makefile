@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	catkin
-ROS_VERSION=	0.7.29
+ROS_VERSION=	0.8.12
 PKGNAME=	${PKGTAG.python}-ros-$(subst _,-,${ROS_PKG})-${ROS_VERSION}
 
 CATEGORIES=	devel
@@ -19,8 +19,7 @@ MESSAGE_SUBST+=	PYTHON_VERSION=${PYTHON_VERSION}
 
 DEPEND_ABI.cmake+= cmake>=2.8.3
 
-CMAKE_ARGS+=-DGTEST_ROOT=${PREFIX.googletest}
-CMAKE_ARGS+=-DNOSETESTS=${NOSETESTS}
+CMAKE_ARGS+=-DCATKIN_ENABLE_TESTING=OFF
 CMAKE_ARGS+=-DCMAKE_PREFIX_PATH=${PREFIX}
 CMAKE_ARGS+=-DSETUPTOOLS_DEB_LAYOUT=OFF
 CMAKE_ARGS+=-DEMPY_SCRIPT=$(filter %/em.py,${SYSTEM_FILES.py-empy})
@@ -52,10 +51,8 @@ DEPEND_ABI.py-catkin-pkg+= ${PKGTAG.python}-catkin-pkg>=0.4.3
 include ../../sysutils/py-catkin-pkg/depend.mk
 include ../../mk/sysdep/bash.mk
 include ../../mk/sysdep/cmake.mk
-include ../../mk/sysdep/googletest.mk
 include ../../mk/sysdep/py-argparse.mk
 include ../../mk/sysdep/py-empy.mk
-include ../../mk/sysdep/py-nose.mk
 include ../../mk/sysdep/py-pyparsing.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/robotpkg.mk

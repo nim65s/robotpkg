@@ -1,4 +1,4 @@
-@comment Fri Jan 6 12:03:19 CET 2023
+@comment Thu Sep 4 16:06:53 CEST 2025
 .rosinstall
 bin/catkin_find
 bin/catkin_init_workspace
@@ -11,9 +11,11 @@ etc/catkin/profile.d/05.catkin_make_isolated.bash
 etc/ros/_setup_util.py
 etc/ros/env.sh
 etc/ros/local_setup.bash
+etc/ros/local_setup.fish
 etc/ros/local_setup.sh
 etc/ros/local_setup.zsh
 etc/ros/setup.bash
+etc/ros/setup.fish
 etc/ros/setup.sh
 etc/ros/setup.zsh
 lib/pkgconfig/catkin.pc
@@ -95,6 +97,7 @@ share/catkin/cmake/templates/env.sh.in
 share/catkin/cmake/templates/generate_cached_setup.py.in
 share/catkin/cmake/templates/local_setup.bash.in
 share/catkin/cmake/templates/local_setup.bat.in
+share/catkin/cmake/templates/local_setup.fish.in
 share/catkin/cmake/templates/local_setup.sh.in
 share/catkin/cmake/templates/local_setup.zsh.in
 share/catkin/cmake/templates/order_packages.context.py.in
@@ -114,6 +117,7 @@ share/catkin/cmake/templates/script.py.in
 share/catkin/cmake/templates/script.sh.in
 share/catkin/cmake/templates/setup.bash.in
 share/catkin/cmake/templates/setup.bat.in
+share/catkin/cmake/templates/setup.fish.in
 share/catkin/cmake/templates/setup.sh.in
 share/catkin/cmake/templates/setup.zsh.in
 share/catkin/cmake/test/catkin_download_test_data.cmake
