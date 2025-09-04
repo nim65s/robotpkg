@@ -1,13 +1,13 @@
 Fix etc/ros prefix
 
---- src/rosdep2/sources_list.py~	2013-06-07 22:15:40.000000000 +0200
-+++ src/rosdep2/sources_list.py	2013-06-25 14:27:53.514188585 +0200
-@@ -79,7 +79,7 @@
+--- src/rosdep2/sources_list.py~	2025-06-26 21:00:50.000000000 +0200
++++ src/rosdep2/sources_list.py	2025-09-04 16:22:47.373272266 +0200
+@@ -94,7 +94,7 @@
          # we can't use etc/ros because environment config does not carry over under sudo
          etc_ros = rospkg.get_etc_ros_dir()
      else:
 -        etc_ros = '/etc/ros'
 +        etc_ros = '@PREFIX@/etc/ros'
-     # compute cache directory
-     return os.path.join(etc_ros, 'rosdep', SOURCES_LIST_DIR)
- 
+     # compute default system wide sources directory
+     sys_sources_list_dir = os.path.join(etc_ros, 'rosdep', SOURCES_LIST_DIR)
+     sources_list_dirs = get_sources_list_dirs(sys_sources_list_dir, strip_missing_dirs)
