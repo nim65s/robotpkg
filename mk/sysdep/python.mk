@@ -142,8 +142,10 @@ include ../../mk/robotpkg.prefs.mk # for OPSYS
 ifeq (Debian,${OPSYS})
   ifneq (,$(filter 11,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python39
+  else ifneq (,$(filter 12,${OS_VERSION}))
+    PREFER_ALTERNATIVE.python?=	python311
   endif
-  PREFER_ALTERNATIVE.python?=	python311
+  PREFER_ALTERNATIVE.python?=	python313
 else ifeq (Fedora,${OPSYS})
   ifneq (,$(filter 37,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python311 python27
