@@ -1,0 +1,7 @@
+prefix=@PREFIX@
+includedir=${prefix}/include
+
+Name: SIMDe
+Description: Portable SIMD wrapper library
+Version: @PKGVERSION_NOREV@
+Cflags: -I${includedir}

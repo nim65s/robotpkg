@@ -46,6 +46,9 @@ include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
 
+post-extract:
+	${RUN}${CP} ${FILESDIR}/simde.pc ${WRKSRC}/.
+
 do-install:
 	${RUN}for dir in $(filter include/%,${INSTALLATION_DIRS}); do	\
 	  ${INSTALL_DATA}						\
