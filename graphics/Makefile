@@ -17,7 +17,6 @@ SUBDIR+=	laaswm
 SUBDIR+=	laaswm-libs
 SUBDIR+=	ogre-next
 SUBDIR+=	openscenegraph
-SUBDIR+=	openvrml-libs
 SUBDIR+=	pqp
 SUBDIR+=	primitiveShapes-libs
 SUBDIR+=	py-pythonqt
