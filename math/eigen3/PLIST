@@ -318,7 +318,6 @@ include/eigen3/Eigen/src/StlSupport/StdDeque.h
 include/eigen3/Eigen/src/StlSupport/StdList.h
 include/eigen3/Eigen/src/StlSupport/StdVector.h
 include/eigen3/Eigen/src/StlSupport/details.h
-include/eigen3/Eigen/src/StlSupport/details.h.orig
 include/eigen3/Eigen/src/SuperLUSupport/SuperLUSupport.h
 include/eigen3/Eigen/src/UmfPackSupport/UmfPackSupport.h
 include/eigen3/Eigen/src/misc/Image.h
