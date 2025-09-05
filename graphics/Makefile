@@ -43,6 +43,5 @@ SUBDIR+=	simple-humanoid-description
 SUBDIR+=	sun-java3d
 SUBDIR+=	urdfdom
 SUBDIR+=	urdfdom-headers
-SUBDIR+=	vcglib
 
 include ../mk/robotpkg.subdir.mk
