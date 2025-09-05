@@ -1,8 +1,11 @@
-echo or sed cannot reliably print "\n": use awk or a sequence of echo instead.
+* echo or sed cannot reliably print "\n": use awk or a sequence of echo instead.
+* install -t in not portable. This is useless anyway.
+* don't build the doc if not asked to
+* don't link nonexistent URL in the doc
 
---- Makefile~	2011-10-24 11:02:14.000000000 +0200
-+++ Makefile	2012-07-20 11:25:10.980857932 +0200
-@@ -47,10 +47,10 @@
+--- Makefile~	2025-09-05 14:26:09.384359088 +0200
++++ Makefile	2025-09-05 14:26:29.529503087 +0200
+@@ -47,21 +47,21 @@
  all : oro-server
  
  oro-server: oro-jar
@@ -16,7 +19,10 @@ echo or sed cannot reliably print "\n": use awk or a sequence of echo instead.
  	sed 's*@PLUGINS_PATH@*$(PLUGINS_DIR)*' etc/oro-server/oro.conf.in > etc/oro-server/oro.conf.in2
  	sed 's*@ONTOLOGIES_PATH@*$(ONTOLOGIES_DIR)*' etc/oro-server/oro.conf.in2 > etc/oro-server/oro.conf
  	$(CLEAN) etc/oro-server/oro.conf.in2
-@@ -61,7 +61,8 @@
+ 	sed 's*@PLUGINS_PATH@*$(PLUGINS_DIR)*' etc/oro-server/oro_test.conf.in > etc/oro-server/oro_test.conf.in2
+ 	sed 's*@ONTOLOGIES_PATH@*$(ONTOLOGIES_DIR)*' etc/oro-server/oro_test.conf.in2 > etc/oro-server/oro_test.conf
+ 	$(CLEAN) etc/oro-server/oro_test.conf.in2
+-	
  	echo "If you have the test ontology oro_test.owl, you can now run 'make test' to run the unit tests"
  
  oro-jar: oro-build
@@ -26,3 +32,25 @@ echo or sed cannot reliably print "\n": use awk or a sequence of echo instead.
  	$(JAR) cfme oro-server.jar MANIFEST.MF $(ENTRYPOINT) -C $(BUILD_DIR) .
  	$(CLEAN) MANIFEST.MF
  
+@@ -69,7 +69,7 @@
+ 	$(INSTALL) -d $(BUILD_DIR)
+ 	$(JAVAC) -classpath $(CLASSPATH) -d $(BUILD_DIR) `find $(SRC_DIR)/laas -name "*.java"`
+ 
+-install: oro-server install-doc
++install: oro-server
+ 	$(INSTALL) -d ${PREFIX}/java/oro-server/lib
+ 	$(INSTALL) oro-server.jar ${PREFIX}/java/oro-server/lib
+ 	$(INSTALL) -d ${PREFIX}/etc/oro-server
+@@ -108,11 +108,10 @@
+ 	-group $(GROUPCORE) \
+ 	-group $(GROUPMODULES) \
+ 	-group $(GROUPTESTS) \
+-	-link http://jena.sourceforge.net/javadoc \
+ 	-J-Xmx180m \
+ 	-stylesheetfile $(MEDIA_DIR)/javadoc.css \
+ 	-subpackages $(BASE_PACKAGE)
+-	$(INSTALL) -t $(DOC_DIR) $(MEDIA_DIR)/*
++	$(INSTALL) $(MEDIA_DIR)/* $(DOC_DIR)
+ 
+ doc-clean:
+ 	$(CLEAN) $(DOC_DIR)
