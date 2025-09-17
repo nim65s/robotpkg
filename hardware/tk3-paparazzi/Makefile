@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue, 18 May 2021
 #
 
-DISTNAME=	tk3-paparazzi-1.5
+DISTNAME=	tk3-paparazzi-1.6
 CATEGORIES=	hardware
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}telekyb3/${PKGBASE}
@@ -27,6 +27,11 @@ PATH.clang+=			bin
 C_COMPILER_FLAGS_NDEBUG=	-DNDEBUG
 
 DEPEND_ABI.arm-none-eabi-gcc+=	arm-none-eabi-gcc>=4.9
+
+include ../../mk/robotpkg.prefs.mk
+ifeq (${OS_KERNEL},Linux)
+  include ../../mk/sysdep/libudev.mk
+endif
 
 include ../../mk/sysdep/arm-none-eabi-gcc.mk
 include ../../mk/language/c.mk
