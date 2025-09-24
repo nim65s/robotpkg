@@ -22,6 +22,7 @@ ifeq (Fedora,${OPSYS})
   DEPEND_ABI.gazebo+= gazebo>=11.11
 endif
 
+include ../../interfaces/camera-libgenom3/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../mk/sysdep/gazebo.mk
 include ../../mk/sysdep/pkg-config.mk
