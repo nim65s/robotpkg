@@ -101,9 +101,7 @@ PREFER_ALTERNATIVE.tcl?=	tcl8 tcl9
 # define some variables for use in the packages
 export TCLSH=		$(word 1,${SYSTEM_FILES.tcl})
 TCL_CONFIG_SH=		$(word 2,${SYSTEM_FILES.tcl})
-TCL_VERSION=\
-  $(subst $  ,.,$(words 1 2,$(subst ., ,${PKG_VERSION.tcl} 0 0)))
-TCL_MAJOR=$(subst tcl,,${PKGTAG.tcl})
+TCL_VERSION=		$(patsubst tcl-%,%,${PKGVERSION.tcl})
 
 # TCLPATH.<pkg> is a list of subdirectories of PREFIX.<pkg> (or absolute
 # directories) that should be added to the tcl search paths.
