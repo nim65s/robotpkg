@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue,  8 Apr 2025
 #
 
-DISTNAME=		realsense-genom3-2.0
+DISTNAME=		realsense-genom3-2.0.1
 CATEGORIES=		hardware
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}${PKGBASE}
@@ -13,6 +13,7 @@ LICENSE=		2-clause-bsd
 
 include ../../architecture/genom3/module.mk
 
+DEPEND_ABI.genom3=		genom3>=2.99.46
 DEPEND_ABI.openrobots2-idl=	openrobots2-idl>=2.3.1
 
 include ../../interfaces/camera-libgenom3/depend.mk
