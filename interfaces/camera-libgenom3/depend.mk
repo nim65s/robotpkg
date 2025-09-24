@@ -22,6 +22,9 @@ SYSTEM_SEARCH.camera-libgenom3=\
 DEPEND_ABI.camera-libgenom3?=	camera-libgenom3>=1.0
 DEPEND_DIR.camera-libgenom3?=	../../interfaces/camera-libgenom3
 
+DEPEND_ABI.genom3+=		genom3>=2.99.46
+DEPEND_ABI.openrobots2-idl+=	openrobots2-idl>=2.3.2
+
 endif # CAMERA_LIBGENOM3_DEPEND_MK -----------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
