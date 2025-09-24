@@ -13,8 +13,9 @@ LICENSE=		2-clause-bsd
 
 include ../../architecture/genom3/module.mk
 
-CONFIGURE_ARGS+=	--with-gz-transport=$(call gz_pkgbase, gz-transport)
+CONFIGURE_ARGS..+=	--with-gz-transport=$(call gz_pkgbase, gz-transport)
 
+include ../../interfaces/camera-libgenom3/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../net/gz-transport/depend.mk
 include ../../mk/sysdep/pkg-config.mk
