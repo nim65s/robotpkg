@@ -14,13 +14,18 @@ else
 endif
 
 _vregex.libarchive:=\
-	/VERSION_STR.*libarchive/{s/.*archive[ ]*//;s/[^.0-9]//g;p;}
-SYSTEM_SEARCH.libarchive:=				\
-	'include/archive.h:${_vregex.libarchive}'	\
-	'lib/libarchive.*'
+  /VERSION_ONLY_STRING/{s/[^0-9.]//gp;q;};				\
+  /VERSION_STRING.*libarchive/{s/.*archive[ ]*//;s/[^.0-9]//g;p;}
+SYSTEM_SEARCH.libarchive:=			\
+  'include/archive.h:${_vregex.libarchive}'	\
+  'lib/libarchive.*'
 
 DEPEND_ABI.libarchive?=	libarchive>=2.5.5
 DEPEND_DIR.libarchive?=	../../archivers/libarchive
+
+SYSTEM_PKG.Debian.libarchive=libarchive-dev
+SYSTEM_PKG.NetBSD.libarchive=archivers/libarchive
+SYSTEM_PKG.RedHat.libarchive=libarchive-devel
 
   # pull-in the user preferences for libarchive now
   include ../../mk/robotpkg.prefs.mk
