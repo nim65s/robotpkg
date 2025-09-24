@@ -2,8 +2,7 @@
 # Created:			Anthony Mallet on Tue,  1 Apr 2025
 #
 
-PKGREVISION=		2
-DISTNAME=		camera-libgenom3-1.0
+DISTNAME=		camera-libgenom3-1.1
 CATEGORIES=		intefaces image
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}${PKGBASE}
@@ -16,8 +15,9 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	MAKE=${MAKE}
 CONFIGURE_ARGS+=	--with-opencv=${PKG_ALTERNATIVE.opencv:3=}
 
+DEPEND_ABI.genom3+=		genom3>=2.99.46
 DEPEND_ABI.opencv+=		opencv>=3
-DEPEND_ABI.openrobots2-idl+=	openrobots2-idl>=2.3.1
+DEPEND_ABI.openrobots2-idl+=	openrobots2-idl>=2.3.2
 
 include ../../architecture/genom3/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
