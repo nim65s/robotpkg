@@ -20,6 +20,7 @@ DEPEND_ABI.opencv+=		opencv>=3
 DEPEND_ABI.openrobots2-idl+=	openrobots2-idl>=2.3.2
 
 include ../../architecture/genom3/depend.mk
+include ../../archivers/libarchive/depend.mk
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../image/opencv/depend.mk
 include ../../mk/sysdep/pkg-config.mk
