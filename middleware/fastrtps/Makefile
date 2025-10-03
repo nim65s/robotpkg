@@ -52,3 +52,7 @@ include ../../mk/sysdep/tinyxml2.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
+
+post-extract:
+	${RUN}${CP} ${FILESDIR}/bsd.hpp	\
+	  ${WRKSRC}/thirdparty/boost/include/boost/config/platform/.
