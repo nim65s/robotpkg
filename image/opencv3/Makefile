@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Wed, 12 Sep 2018
 #
 
-PKGREVISION=		1
+PKGREVISION=		2
 VERSION=		3.4.3
 PKGNAME=		opencv3-${VERSION}
 DISTNAME=		opencv-${VERSION}
