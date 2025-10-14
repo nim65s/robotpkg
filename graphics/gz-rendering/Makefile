@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Wed, 12 Feb 2025
 #
 
+PKGREVISION=	1
 DISTNAME=	gz-rendering-9.0.0
 
 GZ_COMMENT=	rendering library for robot applications
@@ -22,7 +23,7 @@ DEPEND_ABI.gz-common+=	gz-common>=6<7
 DEPEND_ABI.gz-math+=	gz-math>=8<9
 DEPEND_ABI.gz-plugin+=	gz-plugin>=3<4
 DEPEND_ABI.gz-utils+=	gz-utils>=3<4
-DEPEND_ABI.libavdevice+=libavdevice>=56.4.100
+DEPEND_ABI.libavdevice+=libavdevice>=2.8.22 # 56.4.100
 DEPEND_ABI.ogre-next+=	ogre-next>=2.3.1
 
 include ../../devel/gz-plugin/depend.mk
