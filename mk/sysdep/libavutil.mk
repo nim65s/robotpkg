@@ -12,16 +12,17 @@ ifeq (+,$(LIBAVUTIL_DEPEND_MK)) # ------------------------------------------
 
 PREFER.libavutil?=		system
 DEPEND_USE+=			libavutil
-DEPEND_ABI.libavutil?=		libavutil>=49
+DEPEND_ABI.libavutil?=		libavutil>=2.8
 
 SYSTEM_SEARCH.libavutil=\
-	'include/{,ffmpeg*/}libavutil/avutil.h'			\
-	'lib/{,ffmpeg*/}libavutil.{so,a}'			\
-	'lib/{,ffmpeg*/}pkgconfig/libavutil.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavutil/ffversion.h:/FFMPEG_VERSION/s/[^0-9.]//gp' \
+  'include/{,ffmpeg*/}libavutil/avutil.h'	\
+  'lib/{,ffmpeg*/}libavutil.{so,a}'		\
+  'lib/{,ffmpeg*/}pkgconfig/libavutil.pc'
 
-SYSTEM_PKG.Fedora.libavutil=ffmpeg-devel
-SYSTEM_DEP.Debian.libavutil=libavutil-dev (>= 4:0.5)
+SYSTEM_PKG.Debian.libavutil=libavutil-dev
 SYSTEM_PKG.NetBSD.libavutil=multimedia/ffmpeg
+SYSTEM_PKG.RedHat.libavutil=ffmpeg-devel
 
 endif # LIBAVUTIL_DEPEND_MK ------------------------------------------------
 

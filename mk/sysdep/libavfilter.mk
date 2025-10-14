@@ -12,17 +12,19 @@ ifeq (+,$(LIBAVFILTER_DEPEND_MK)) # ----------------------------------------
 
 PREFER.libavfilter?=		system
 DEPEND_USE+=			libavfilter
-DEPEND_ABI.libavfilter?=	libavfilter>=1
+DEPEND_ABI.libavfilter?=	libavfilter>=2.8
 
 SYSTEM_SEARCH.libavfilter=\
-	'include/{,ffmpeg/}libavfilter/avfilter.h'		\
-	'lib/libavfilter.{so,a}'				\
-	'lib/pkgconfig/libavfilter.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavutil/ffversion.h:/FFMPEG_VERSION/s/[^0-9.]//gp' \
+  'include/{,ffmpeg/}libavfilter/avfilter.h'	\
+  'lib/libavfilter.{so,a}'			\
+  'lib/pkgconfig/libavfilter.pc'
 
-SYSTEM_PKG.Fedora.libavfilter=ffmpeg-devel
-SYSTEM_PKG.Ubuntu.libavfilter=libavfilter-dev
 SYSTEM_PKG.Debian.libavfilter=libavfilter-dev
 SYSTEM_PKG.NetBSD.libavfilter=multimedia/ffmpeg
+SYSTEM_PKG.Fedora.libavfilter=ffmpeg-devel
+
+include ../../mk/sysdep/libavutil.mk
 
 endif # LIBAVFILTER_DEPEND_MK ----------------------------------------------
 

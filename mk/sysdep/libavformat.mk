@@ -12,16 +12,19 @@ ifeq (+,$(LIBAVFORMAT_DEPEND_MK)) # ----------------------------------------
 
 PREFER.libavformat?=		system
 DEPEND_USE+=			libavformat
-DEPEND_ABI.libavformat?=	libavformat>=52
+DEPEND_ABI.libavformat?=	libavformat>=2.8
 
 SYSTEM_SEARCH.libavformat=\
-	'include/{,ffmpeg*/}libavformat/avformat.h'		\
-	'lib/{,ffmpeg*/}libavformat.{so,a}'				\
-	'lib/{,ffmpeg*/}pkgconfig/libavformat.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavutil/ffversion.h:/FFMPEG_VERSION/s/[^0-9.]//gp' \
+  'include/{,ffmpeg*/}libavformat/avformat.h'		\
+  'lib/{,ffmpeg*/}libavformat.{so,a}'			\
+  'lib/{,ffmpeg*/}pkgconfig/libavformat.pc'
 
-SYSTEM_PKG.Fedora.libavformat=ffmpeg-devel
-SYSTEM_DEP.Debian.libavformat=libavformat-dev (>=4:0.5)
+SYSTEM_PKG.Debian.libavformat=libavformat-dev
 SYSTEM_PKG.NetBSD.libavformat=multimedia/ffmpeg
+SYSTEM_PKG.RedHat.libavformat=ffmpeg-devel
+
+include ../../mk/sysdep/libavutil.mk
 
 endif # LIBAVFORMAT_DEPEND_MK ----------------------------------------------
 

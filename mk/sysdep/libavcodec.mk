@@ -12,16 +12,19 @@ ifeq (+,$(LIBAVCODEC_DEPEND_MK)) # -----------------------------------------
 
 PREFER.libavcodec?=		system
 DEPEND_USE+=			libavcodec
-DEPEND_ABI.libavcodec?=		libavcodec>=52
+DEPEND_ABI.libavcodec?=		libavcodec>=2.8
 
 SYSTEM_SEARCH.libavcodec=\
-	'include/{,ffmpeg*/}libavcodec/avcodec.h'		\
-	'lib/{,ffmpeg*/}libavcodec.{so,a}'			\
-	'lib/{,ffmpeg*/}pkgconfig/libavcodec.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavutil/ffversion.h:/FFMPEG_VERSION/s/[^0-9.]//gp' \
+  'include/{,ffmpeg*/}libavcodec/avcodec.h'	\
+  'lib/{,ffmpeg*/}libavcodec.{so,a}'		\
+  'lib/{,ffmpeg*/}pkgconfig/libavcodec.pc'
 
-SYSTEM_PKG.Fedora.libavcodec=ffmpeg-devel
-SYSTEM_DEP.Debian.libavcodec=libavcodec-dev (>= 4:0.5)
+SYSTEM_PKG.Debian.libavcodec=libavcodec-dev
 SYSTEM_PKG.NetBSD.libavcodec=multimedia/ffmpeg
+SYSTEM_PKG.RedHat.libavcodec=ffmpeg-devel
+
+include ../../mk/sysdep/libavutil.mk
 
 endif # LIBAVCODEC_DEPEND_MK -----------------------------------------------
 

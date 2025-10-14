@@ -12,16 +12,19 @@ ifeq (+,$(LIBAVRESAMPLE_DEPEND_MK)) # --------------------------------------
 
 PREFER.libavresample?=		system
 DEPEND_USE+=			libavresample
-DEPEND_ABI.libavresample?=	libavresample>=1
+DEPEND_ABI.libavresample?=	libavresample>=2.8
 
 SYSTEM_SEARCH.libavresample=\
-  'include/{,ffmpeg*/}libavresample/avresample.h'			\
-  'lib/{,ffmpeg*/}libavresample.{so,a}'					\
-  'lib/{,ffmpeg*/}pkgconfig/libavresample.pc:/Version/s/[^0-9.]//gp'
+  'include/{,ffmpeg*/}libavutil/ffversion.h:/FFMPEG_VERSION/s/[^0-9.]//gp' \
+  'include/{,ffmpeg*/}libavresample/avresample.h'	\
+  'lib/{,ffmpeg*/}libavresample.{so,a}'			\
+  'lib/{,ffmpeg*/}pkgconfig/libavresample.pc'
 
-SYSTEM_PKG.Fedora.libavresample=ffmpeg-devel
-SYSTEM_DEP.Debian.libavresample=libavresample-dev (>= 6:9.11)
+SYSTEM_PKG.Debian.libavresample=libavresample-dev
 SYSTEM_PKG.NetBSD.libavresample=multimedia/ffmpeg
+SYSTEM_PKG.RedHat.libavresample=ffmpeg-devel
+
+include ../../mk/sysdep/libavutil.mk
 
 endif # LIBAVRESAMPLE_DEPEND_MK --------------------------------------------
 
