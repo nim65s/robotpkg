@@ -24,7 +24,7 @@ SYSTEM_SEARCH.gz-common=\
     av events geospatial graphics io profiler)
 
 # transitive dependencies
-DEPEND_ABI.libavdevice+=libavdevice>=56.4.100
+DEPEND_ABI.libavdevice+=libavdevice>=2.8.22 # 56.4.100
 
 include ../../devel/gz-utils/depend.mk
 include ../../mk/sysdep/libavcodec.mk

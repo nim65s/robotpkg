@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Mon, 10 Feb 2025
 #
 
+PKGREVISION=	1
 DISTNAME=	gz-common-6.0.0
 
 GZ_COMMENT=	AV, Graphics, Events, and much more
@@ -14,7 +15,7 @@ CMAKE_ARGS+=	-DGZ_PROFILER_REMOTERY=OFF
 DEPEND_ABI.g++ +=	g++>=9
 DEPEND_ABI.gz-math+=	gz-math>=8<9
 DEPEND_ABI.gz-utils+=	gz-utils>=3<4
-DEPEND_ABI.libavdevice+=libavdevice>=56.4.100
+DEPEND_ABI.libavdevice+=libavdevice>=2.8.22 # 56.4.100
 
 include ../../devel/gz-utils/depend.mk
 include ../../devel/spdlog/depend.mk
