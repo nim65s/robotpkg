@@ -2,6 +2,7 @@
 # Created:			Guilhem Saurel on Tue,  8 Dec 2020
 #
 
+PKGREVISION=		1
 VERSION=		4.7.0
 PKGNAME=		opencv4-${VERSION}
 DISTNAME=		opencv-${VERSION}
