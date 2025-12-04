@@ -4,8 +4,8 @@
 
 DISTNAME=		tk3-flash-1.6
 CATEGORIES=		sysutils
-MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=tk3-flash/}
-MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}tk3-flash
+MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
+MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}telekyb3/${PKGBASE}
 
 COMMENT=	Programming utility for Mikrokopter hardware
 HOMEPAGE=	http://git.openrobots.org/projects/tk3-flash
