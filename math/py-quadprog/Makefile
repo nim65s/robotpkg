@@ -2,10 +2,9 @@
 # Created:			Guilhem Saurel on Tue, 14 Apr 2020
 #
 
-PKGREVISION=		2
 ORG=			rmcgibbo
-PYPI_PATH=		24/fb/816f87f1b9648231b51012758b1d8fa3043ee1a428e3dbb64c6e6a42b6b9/
-VERSION=		0.1.6
+PYPI_PATH=		9e/60/fb9b56d425c5b3495bb92683c28f954aedb609ae62f14c81a1b5621ad759/
+VERSION=		0.1.13
 DISTNAME=		quadprog-${VERSION}
 PKGNAME=		${PKGTAG.python-}quadprog-${VERSION}
 MASTER_SITES=		https://files.pythonhosted.org/packages/${PYPI_PATH}
