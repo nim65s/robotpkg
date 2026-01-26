@@ -1,0 +1,13 @@
+Project is C code, not C++. Fixes undefined reference to qpgen2 #453
+
+--- setup.py~	2015-10-12 04:46:24.000000000 +0200
++++ setup.py	2026-01-26 20:48:50.070300066 +0100
+@@ -39,7 +39,7 @@
+                            'quadprog/util.c', 'quadprog/dpofa.c',
+                            'quadprog/daxpy.c', 'quadprog/ddot.c',
+                            'quadprog/dscal.c', 'quadprog/f2c_lite.c'],
+-             include_dirs=['quadprog'], language='c++')
++             include_dirs=['quadprog'], language='c')
+ ]
+ 
+ setup(

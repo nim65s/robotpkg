@@ -2,7 +2,7 @@
 # Created:			Guilhem Saurel on Tue, 14 Apr 2020
 #
 
-PKGREVISION=		2
+PKGREVISION=		3
 ORG=			rmcgibbo
 PYPI_PATH=		24/fb/816f87f1b9648231b51012758b1d8fa3043ee1a428e3dbb64c6e6a42b6b9/
 VERSION=		0.1.6
