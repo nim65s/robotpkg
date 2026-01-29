@@ -1,0 +1,25 @@
+From 89954431ff8edee8d904f08b302bc846efc98f67 Mon Sep 17 00:00:00 2001
+From: Guilhem Saurel <guilhem.saurel@laas.fr>
+Date: Sun, 14 Sep 2025 10:40:27 +0200
+Subject: [PATCH] CMake: update minimum required
+
+to fix build with CMake v4
+
+Signed-off-by: Guilhem Saurel <guilhem.saurel@laas.fr>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 24c1a81..4ec78e3 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@
+ ##     Date:      2007-2017
+ ##
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.18)
+ 
+ PROJECT(qpOASES CXX)
+ SET(PACKAGE_NAME "qpOASES")

@@ -2,22 +2,22 @@
 # Created:			Rohan Budhiraja on Fri, 8 Apr 2016
 #
 
-PKGREVISION=	1
-VERSION=	3.2.1
+VERSION=	3.2.2
 PKGNAME=	qpoases-${VERSION}
 DISTNAME=	qpOASES-${VERSION}
-EXTRACT_SUFX=	.zip
 
 CATEGORIES=	optimization
-MASTER_SITES=	https://www.coin-or.org/download/source/qpOASES/
+MASTER_SITES=	${MASTER_SITE_GITHUB:=coin-or/}
+GITHUB_TAG=	refs/tags/releases/${VERSION}
 
 HOMEPAGE=	https://projects.coin-or.org/qpOASES
 COMMENT=	C++ implementation of the online active set strategy
 LICENSE=	gnu-lgpl-v2.1
 MAINTAINER=	gepetto@laas.fr
 
-WRKSRC=		${WRKDIR}/qpOASES-${VERSION}
+WRKSRC=		${WRKDIR}/qpOASES-releases-${VERSION}
 
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON
 CMAKE_ARGS+=	-DQPOASES_BUILD_EXAMPLES=OFF
 CMAKE_ARGS+=	'-DLAPACK_LIB=${LAPACK_LIB}'
 CMAKE_ARGS+=	'-DBLAS_LIB=${BLAS_LIB}'
