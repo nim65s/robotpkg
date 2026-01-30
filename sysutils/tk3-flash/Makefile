@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue, 27 Jan 2015
 #
 
-DISTNAME=		tk3-flash-1.6
+DISTNAME=		tk3-flash-1.7
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}telekyb3/${PKGBASE}
