@@ -7,9 +7,14 @@ include/eiquadprog/eiquadprog-rt.hxx
 include/eiquadprog/eiquadprog-utils.hxx
 include/eiquadprog/eiquadprog.hpp
 include/eiquadprog/warning.hpp
+lib/cmake/eiquadprog/cxx-standard.cmake
 lib/cmake/eiquadprog/eiquadprogConfig.cmake
 lib/cmake/eiquadprog/eiquadprogConfigVersion.cmake
 lib/cmake/eiquadprog/eiquadprogTargets-release.cmake
 lib/cmake/eiquadprog/eiquadprogTargets.cmake
 lib/libeiquadprog.so
 lib/pkgconfig/eiquadprog.pc
+share/ament_index/resource_index/packages/eiquadprog
+share/eiquadprog/hook/ament_prefix_path.dsv
+share/eiquadprog/hook/python_path.dsv
+share/eiquadprog/package.xml
