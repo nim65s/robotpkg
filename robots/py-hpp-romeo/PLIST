@@ -11,4 +11,7 @@ ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/romeo/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/romeo/robot.py
 ${PYTHON_SITELIB}/hpp/corbaserver/romeo/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/romeo/robot.py
+share/ament_index/resource_index/packages/hpp_romeo
+share/hpp_romeo/hook/ament_prefix_path.dsv
+share/hpp_romeo/hook/python_path.dsv
 share/hpp_romeo/package.xml
