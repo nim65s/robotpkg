@@ -19,6 +19,8 @@ DEPEND_ABI.ffmpeg?=	ffmpeg>=2.8
 SYSTEM_SEARCH.ffmpeg=\
   'bin/ffmpeg{,[0-9]}:/ffmpeg version[^0-9]*/{s///;s/[^0-9.].*//p;}'
 
+SYSTEM_PKG.Debian.ffmpeg=	ffmpeg
+
 endif # FFMPEG_DEPEND_MK -----------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
