@@ -75,5 +75,8 @@ lib/pkgconfig/gepetto-viewer.pc
 ${PYTHON_SITELIB}/gepetto/gui/__init__.py
 ${PYTHON_SITELIB}/gepetto/gui/blenderexport.py
 ${PYTHON_SITELIB}/gepetto/gui/intersection.py
+share/ament_index/resource_index/packages/gepetto-viewer
 share/gepetto-viewer/fonts/arial.ttf
+share/gepetto-viewer/hook/ament_prefix_path.dsv
+share/gepetto-viewer/hook/python_path.dsv
 share/gepetto-viewer/package.xml
