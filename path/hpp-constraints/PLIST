@@ -49,4 +49,7 @@ lib/cmake/hpp-constraints/hpp-constraintsTargets-release.cmake
 lib/cmake/hpp-constraints/hpp-constraintsTargets.cmake
 lib/libhpp-constraints.so
 lib/pkgconfig/hpp-constraints.pc
+share/ament_index/resource_index/packages/hpp-constraints
+share/hpp-constraints/hook/ament_prefix_path.dsv
+share/hpp-constraints/hook/python_path.dsv
 share/hpp-constraints/package.xml
