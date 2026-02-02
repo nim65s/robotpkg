@@ -13,6 +13,9 @@ ${PYTHON_SITELIB}/hpp/corbaserver/practicals/manipulation/ur5/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/practicals/manipulation/ur5/robot.py
 ${PYTHON_SITELIB}/hpp/corbaserver/practicals/ur5/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/practicals/ur5/robot.py
+share/ament_index/resource_index/packages/hpp_practicals
+share/hpp_practicals/hook/ament_prefix_path.dsv
+share/hpp_practicals/hook/python_path.dsv
 share/hpp_practicals/meshes/ur5/collision/base.stl
 share/hpp_practicals/meshes/ur5/collision/forearm.stl
 share/hpp_practicals/meshes/ur5/collision/shoulder.stl

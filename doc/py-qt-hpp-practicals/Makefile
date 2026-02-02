@@ -2,10 +2,10 @@
 # Created:			Florent Lamiraux on Wed, 29 May 2019
 #
 
-HPP_PACKAGE=		hpp_practicals
+HPP_PACKAGE=		hpp-practicals
 HPP_COMMENT=		Practicals for hpp software
 
-PKGNAME=		${PKGTAG.python-}${PKGTAG.qt-}$(subst _,-,${DISTNAME})
+PKGNAME=		${PKGTAG.python-}${PKGTAG.qt-}${DISTNAME}
 
 CATEGORIES=		doc
 
