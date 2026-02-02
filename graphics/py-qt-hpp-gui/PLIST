@@ -21,4 +21,7 @@ ${PYTHON_SITELIB}/hpp/gui/graphutility.py
 ${PYTHON_SITELIB}/hpp/gui/inspector.py
 ${PYTHON_SITELIB}/hpp/gui/parameters.py
 ${PYTHON_SITELIB}/hpp/gui/plugin.py
+share/ament_index/resource_index/packages/hpp-gui
+share/hpp-gui/hook/ament_prefix_path.dsv
+share/hpp-gui/hook/python_path.dsv
 share/hpp-gui/package.xml
