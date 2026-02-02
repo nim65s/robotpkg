@@ -13,4 +13,7 @@ lib/cmake/hpp-plot/hpp-plotTargets.cmake
 lib/gepetto-gui-plugins/hppmonitoringplugin.so
 lib/libhpp-plot.so
 lib/pkgconfig/hpp-plot.pc
+share/ament_index/resource_index/packages/hpp-plot
+share/hpp-plot/hook/ament_prefix_path.dsv
+share/hpp-plot/hook/python_path.dsv
 share/hpp-plot/package.xml
