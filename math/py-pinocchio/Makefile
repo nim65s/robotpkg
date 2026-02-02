@@ -4,7 +4,7 @@
 
 ORG=			stack-of-tasks
 NAME=			pinocchio
-VERSION=		3.4.0
+VERSION=		3.9.0
 
 CATEGORIES=		math
 COMMENT=		Efficient rigid body dynamics (python bindings)
@@ -32,7 +32,7 @@ USE_MASTER_GITHUB=	true
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
 
 # On Debian 9, the combination of GCC version / default args
 # and Boost version raises:

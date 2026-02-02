@@ -4,7 +4,7 @@
 
 ORG=			stack-of-tasks
 NAME=			pinocchio
-VERSION=		3.4.0
+VERSION=		3.9.0
 
 CATEGORIES=		math
 COMMENT=		Efficient rigid body dynamics
@@ -22,7 +22,7 @@ CMAKE_ARGS+=		-DINSTALL_DOCUMENTATION=OFF
 USE_BOOST_LIBS=		system filesystem
 USE_MASTER_GITHUB=	true
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
 
 # On Debian 9, the combination of GCC version / default args
 # and Boost version raises:
@@ -37,6 +37,7 @@ endif
 include ../../graphics/urdfdom/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../path/coal/depend.mk
+include ../../robots/example-robot-data/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../optimization/casadi/depend.mk
 include ../../sysutils/console-bridge/depend.mk

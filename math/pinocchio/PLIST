@@ -19,8 +19,12 @@ include/pinocchio/algorithm/centroidal-derivatives.txx
 include/pinocchio/algorithm/centroidal.hpp
 include/pinocchio/algorithm/centroidal.hxx
 include/pinocchio/algorithm/centroidal.txx
+include/pinocchio/algorithm/check-base.hpp
+include/pinocchio/algorithm/check-data.hpp
+include/pinocchio/algorithm/check-data.hxx
+include/pinocchio/algorithm/check-model.hpp
+include/pinocchio/algorithm/check-model.hxx
 include/pinocchio/algorithm/check.hpp
-include/pinocchio/algorithm/check.hxx
 include/pinocchio/algorithm/cholesky.hpp
 include/pinocchio/algorithm/cholesky.hxx
 include/pinocchio/algorithm/cholesky.txx
@@ -174,7 +178,9 @@ include/pinocchio/bindings/python/multibody/joint/joints-models.hpp
 include/pinocchio/bindings/python/multibody/joint/joints-variant.hpp
 include/pinocchio/bindings/python/multibody/liegroups.hpp
 include/pinocchio/bindings/python/multibody/model.hpp
+include/pinocchio/bindings/python/parsers/graph/model-configuration-converter.hpp
 include/pinocchio/bindings/python/parsers/mjcf.hpp
+include/pinocchio/bindings/python/parsers/model-graph.hpp
 include/pinocchio/bindings/python/parsers/sdf.hpp
 include/pinocchio/bindings/python/parsers/srdf.hpp
 include/pinocchio/bindings/python/parsers/urdf.hpp
@@ -200,6 +206,7 @@ include/pinocchio/bindings/python/utils/deprecation.hpp
 include/pinocchio/bindings/python/utils/eigen.hpp
 include/pinocchio/bindings/python/utils/list.hpp
 include/pinocchio/bindings/python/utils/macros.hpp
+include/pinocchio/bindings/python/utils/model-checker.hpp
 include/pinocchio/bindings/python/utils/namespace.hpp
 include/pinocchio/bindings/python/utils/path.hpp
 include/pinocchio/bindings/python/utils/pickle-map.hpp
@@ -211,6 +218,7 @@ include/pinocchio/bindings/python/utils/std-aligned-vector.hpp
 include/pinocchio/bindings/python/utils/std-map.hpp
 include/pinocchio/bindings/python/utils/std-vector.hpp
 include/pinocchio/bindings/python/utils/version.hpp
+include/pinocchio/bindings/python/visualizers/visualizer-visitor.hpp
 include/pinocchio/codegen/code-generator-algo.hpp
 include/pinocchio/codegen/code-generator-base.hpp
 include/pinocchio/codegen/cppadcg.hpp
@@ -298,6 +306,7 @@ include/pinocchio/multibody/joint/joint-common-operations.hpp
 include/pinocchio/multibody/joint/joint-composite.hpp
 include/pinocchio/multibody/joint/joint-composite.hxx
 include/pinocchio/multibody/joint/joint-data-base.hpp
+include/pinocchio/multibody/joint/joint-ellipsoid.hpp
 include/pinocchio/multibody/joint/joint-free-flyer.hpp
 include/pinocchio/multibody/joint/joint-generic.hpp
 include/pinocchio/multibody/joint/joint-helical-unaligned.hpp
@@ -347,6 +356,16 @@ include/pinocchio/multibody/visitor/fusion.hpp
 include/pinocchio/multibody/visitor/joint-binary-visitor.hpp
 include/pinocchio/multibody/visitor/joint-unary-visitor.hpp
 include/pinocchio/parsers/config.hpp
+include/pinocchio/parsers/graph/frames.hpp
+include/pinocchio/parsers/graph/fwd.hpp
+include/pinocchio/parsers/graph/geometries.hpp
+include/pinocchio/parsers/graph/graph-visitor.hpp
+include/pinocchio/parsers/graph/joints.hpp
+include/pinocchio/parsers/graph/model-configuration-converter.hpp
+include/pinocchio/parsers/graph/model-configuration-converter.hxx
+include/pinocchio/parsers/graph/model-graph-algo-geometry.hpp
+include/pinocchio/parsers/graph/model-graph-algo.hpp
+include/pinocchio/parsers/graph/model-graph.hpp
 include/pinocchio/parsers/meshloader-fwd.hpp
 include/pinocchio/parsers/mjcf.hpp
 include/pinocchio/parsers/mjcf/geometry.hxx
@@ -430,6 +449,8 @@ include/pinocchio/utils/string.hpp
 include/pinocchio/utils/timer.hpp
 include/pinocchio/utils/timer2.hpp
 include/pinocchio/utils/version.hpp
+include/pinocchio/visualizers/base-visualizer.hpp
+include/pinocchio/visualizers/config.hpp
 include/pinocchio/warning.hpp
 lib/cmake/pinocchio/cxx-standard.cmake
 lib/cmake/pinocchio/pinocchioConfig.cmake
@@ -444,8 +465,9 @@ lib/libpinocchio_default.so
 lib/libpinocchio_default.so.${PKGVERSION}
 lib/libpinocchio_parsers.so
 lib/libpinocchio_parsers.so.${PKGVERSION}
+lib/libpinocchio_visualizers.so
+lib/libpinocchio_visualizers.so.${PKGVERSION}
 lib/pkgconfig/pinocchio.pc
 share/ament_index/resource_index/packages/pinocchio
 share/pinocchio/hook/ament_prefix_path.dsv
-share/pinocchio/hook/python_path.dsv
 share/pinocchio/package.xml
