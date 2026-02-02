@@ -37,4 +37,6 @@ lib/cmake/ndcurves/ndcurvesConfig.cmake
 lib/cmake/ndcurves/ndcurvesConfigVersion.cmake
 lib/cmake/ndcurves/ndcurvesTargets.cmake
 lib/pkgconfig/ndcurves.pc
+share/ament_index/resource_index/packages/ndcurves
+share/ndcurves/hook/ament_prefix_path.dsv
 share/ndcurves/package.xml

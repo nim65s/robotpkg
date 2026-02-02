@@ -4,12 +4,14 @@
 
 ORG=			loco-3d
 NAME=			ndcurves
-VERSION=		2.0.0
+VERSION=		2.1.0
 
 CATEGORIES=		math
 COMMENT=		Library for creating curves (python bindings)
 LICENSE=		2-clause-bsd
 MAINTAINER=		gepetto@laas.fr
+
+USE_MASTER_GITHUB=	true
 
 USE_BOOST_LIBS=		python
 USE_PYTHON_ONLY=	yes
