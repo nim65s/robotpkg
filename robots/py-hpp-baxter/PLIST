@@ -10,6 +10,9 @@ ${PYTHON_SITELIB}/hpp/corbaserver/baxter/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/baxter/robot.py
 ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/baxter/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/baxter/robot.py
+share/ament_index/resource_index/packages/hpp-baxter
+share/hpp-baxter/hook/ament_prefix_path.dsv
+share/hpp-baxter/hook/python_path.dsv
 share/hpp-baxter/package.xml
 share/hpp-baxter/srdf/baxter.srdf
 share/hpp-baxter/srdf/baxter_manipulation.srdf
