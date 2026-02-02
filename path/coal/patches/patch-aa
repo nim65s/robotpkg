@@ -7,16 +7,19 @@ reason, thus risking to link with the wrong octomap version.
 
 --- src/CMakeLists.txt~	2024-11-20 14:19:37.000000000 +0100
 +++ src/CMakeLists.txt	2024-11-26 14:50:59.093379157 +0100
-@@ -267,10 +266,8 @@
-   )
+@@ -233,13 +233,8 @@
+ )
  
- IF(octomap_FOUND)
--  MODERNIZE_TARGET_LINK_LIBRARIES(${PROJECT_NAME} SCOPE PUBLIC
+ if(octomap_FOUND)
+-  MODERNIZE_TARGET_LINK_LIBRARIES(
+-    ${PROJECT_NAME}
+-    SCOPE PUBLIC
 -    TARGETS octomap
 -    LIBRARIES ${OCTOMAP_LIBRARIES}
--    INCLUDE_DIRS ${OCTOMAP_INCLUDE_DIRS})
+-    INCLUDE_DIRS ${OCTOMAP_INCLUDE_DIRS}
+-  )
 +  target_link_libraries (${LIBRARY_NAME} PUBLIC ${OCTOMAP_LIBRARIES})
 +  target_include_directories (${LIBRARY_NAME} PUBLIC ${OCTOMAP_INCLUDE_DIRS})
-   target_compile_definitions (${LIBRARY_NAME} PUBLIC
-     -DCOAL_HAS_OCTOMAP
-     -DCOAL_HAVE_OCTOMAP
+   target_compile_definitions(
+     ${LIBRARY_NAME}
+     PUBLIC

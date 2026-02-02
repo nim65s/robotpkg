@@ -4,7 +4,7 @@
 
 ORG=			coal-library
 NAME=			coal
-VERSION=		3.0.1
+VERSION=		3.0.2
 
 CATEGORIES=		path
 HPP_COMMENT=		collision detection and distance computations (python bindingss)
@@ -17,20 +17,11 @@ USE_MASTER_GITHUB=	true
 USE_PYTHON_ONLY=	yes
 
 CMAKE_ARGS+=		-DCOAL_BACKWARD_COMPATIBILITY_WITH_HPP_FCL=ON
-
-# this currently install files conflicting with path/coal
-CMAKE_ARGS+=		-DBUILDING_ROS2_PACKAGE=OFF
-
-include ../../devel/jrl-cmakemodules/Makefile.common
-
-include ../../mk/robotpkg.prefs.mk
-ifeq (,$(filter Ubuntu-16.04 Debian-9,${OPSYS}-${OS_VERSION}))
-  CMAKE_ARGS+=		-DHPP_FCL_HAS_QHULL=ON
-  include ../../mk/sysdep/qhull.mk
-endif
+CMAKE_ARGS+=		-DHPP_FCL_HAS_QHULL=ON
 
 DEPEND_ABI.assimp+=	assimp>=5
 
+include ../../devel/jrl-cmakemodules/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../path/coal/depend.mk
@@ -40,6 +31,7 @@ include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/python.mk
+include ../../mk/sysdep/qhull.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
