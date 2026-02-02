@@ -4,7 +4,7 @@
 
 ORG=			gepetto
 NAME=			qgv
-VERSION=		1.3.5
+VERSION=		1.3.6
 
 PKGNAME=		${PKGTAG.qt-}${DISTNAME}
 
@@ -12,6 +12,8 @@ CATEGORIES=		graphics
 COMMENT=		Interactive Qt graphViz display
 LICENSE=		gnu-lgpl-v3
 MAINTAINER=		gsaurel@laas.fr
+
+USE_MASTER_GITHUB=	yes
 
 CONFLICTS+=		qt[0-9]-qgv-[0-9]*
 
@@ -23,7 +25,7 @@ CMAKE_ARGS+=		-DBINDINGS_$(subst qt,QT,${PKG_ALTERNATIVE.qt})=ON
 CMAKE_ARGS+=		-DQT_QMAKE_EXECUTABLE=${QMAKE}
 CMAKE_ARGS+=		-DGraphviz_INCLUDE_DIR=${PREFIX.graphviz}/include/graphviz
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/libgraphviz.mk
