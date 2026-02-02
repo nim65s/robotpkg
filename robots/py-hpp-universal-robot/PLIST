@@ -10,4 +10,7 @@ ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/ur5/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/manipulation/ur5/robot.py
 ${PYTHON_SITELIB}/hpp/corbaserver/ur5/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/ur5/robot.py
+share/ament_index/resource_index/packages/hpp-universal-robot
+share/hpp-universal-robot/hook/ament_prefix_path.dsv
+share/hpp-universal-robot/hook/python_path.dsv
 share/hpp-universal-robot/package.xml
