@@ -69,6 +69,7 @@ include/hpp/core/path-validation/discretized.hh
 include/hpp/core/path-validations.hh
 include/hpp/core/path-vector.hh
 include/hpp/core/path.hh
+include/hpp/core/path/cost.hh
 include/hpp/core/path/hermite.hh
 include/hpp/core/path/math.hh
 include/hpp/core/path/spline.hh
@@ -112,7 +113,9 @@ lib/cmake/hpp-core/spline-gradient-basedConfig.cmake
 lib/cmake/hpp-core/spline-gradient-basedTargets-release.cmake
 lib/cmake/hpp-core/spline-gradient-basedTargets.cmake
 lib/hppPlugins/spline-gradient-based.so
-lib/libhpp-core-gpl.so
 lib/libhpp-core.so
 lib/pkgconfig/hpp-core.pc
+share/ament_index/resource_index/packages/hpp-core
+share/hpp-core/hook/ament_prefix_path.dsv
+share/hpp-core/hook/python_path.dsv
 share/hpp-core/package.xml
