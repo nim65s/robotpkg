@@ -1,3 +1,4 @@
-SHA1 (hpp-pinocchio-6.0.0.tar.gz) = 8d3aef7fde6dd3754c98b2e3f9c517af5f0c2e82
-RMD160 (hpp-pinocchio-6.0.0.tar.gz) = e2541ff57b089a04538544c55fa2bb00aee76b29
-Size (hpp-pinocchio-6.0.0.tar.gz) = 996053 bytes
+SHA1 (hpp-pinocchio-v6.1.0.tar.gz) = 41e27727b5e507d4a83325e2ad35d103b6f4c600
+RMD160 (hpp-pinocchio-v6.1.0.tar.gz) = a7b29a2cdfa1c21c561dcfc14bf041df2578ec6d
+Size (hpp-pinocchio-v6.1.0.tar.gz) = 146314 bytes
+SHA1 (patch-282) = 3025e31c32b8b22f714bec8f068ff953cfe119ba
