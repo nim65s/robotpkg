@@ -4,7 +4,7 @@
 
 ORG=			gepetto
 NAME=			example-robot-data
-VERSION=		4.2.0
+VERSION=		4.4.0
 
 CATEGORIES=		robots
 COMMENT=		Robot URDFs for benchmarking and developed examples
@@ -13,7 +13,9 @@ MAINTAINER=		gepetto@laas.fr
 
 USE_PYTHON_ONLY=	true
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+USE_MASTER_GITHUB=	true
+
+include ../../devel/jrl-cmakemodules/depend.mk
 
 include ../../graphics/urdfdom-headers/depend.mk
 include ../../graphics/urdfdom/depend.mk
