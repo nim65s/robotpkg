@@ -5,3 +5,4 @@ ${PYTHON_SITELIB}/coal/viewer.py
 ${PYTHON_SITELIB}/coal/windows_dll_manager.py
 ${PYTHON_SITELIB}/hppfcl/__init__.py
 ${PYTHON_SITELIB}/hppfcl/viewer.py
+share/coal/hook/python_path.dsv

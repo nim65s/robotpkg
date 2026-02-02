@@ -27,6 +27,9 @@ SYSTEM_SEARCH.coal=\
 
 include ../../math/eigen3/depend.mk
 
+CPPFLAGS+=		-DCOAL_DISABLE_HPP_FCL_WARNINGS
+CMAKE_ARGS+=		-DCOAL_DISABLE_HPP_FCL_WARNINGS=ON
+
 endif # COAL_DEPEND_MK --------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

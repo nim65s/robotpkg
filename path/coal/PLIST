@@ -260,5 +260,4 @@ lib/libcoal.so.${PKGVERSION}
 lib/pkgconfig/coal.pc
 share/ament_index/resource_index/packages/coal
 share/coal/hook/ament_prefix_path.dsv
-share/coal/hook/python_path.dsv
 share/coal/package.xml

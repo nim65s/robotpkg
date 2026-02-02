@@ -4,7 +4,7 @@
 
 ORG=			coal-library
 NAME=			coal
-VERSION=		3.0.1
+VERSION=		3.0.2
 
 CATEGORIES=		path
 COMMENT=		collision detection and distance computations
@@ -19,7 +19,7 @@ CMAKE_ARGS+=		-DCXX_DISABLE_WERROR=yes
 CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 CMAKE_ARGS+=		-DCOAL_BACKWARD_COMPATIBILITY_WITH_HPP_FCL=ON
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
 
 include ../../mk/robotpkg.prefs.mk
 ifeq (,$(filter Ubuntu-16.04 Debian-9,${OPSYS}-${OS_VERSION}))
