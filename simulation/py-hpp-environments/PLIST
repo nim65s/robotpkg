@@ -1,3 +1,4 @@
 @comment Fri Oct 19 16:39:15 CEST 2018
 ${PYTHON_SITELIB}/hpp/environments/__init__.py
 ${PYTHON_SITELIB}/hpp/environments/robot.py
+share/hpp-environments/hook/python_path.dsv
