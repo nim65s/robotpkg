@@ -13,10 +13,15 @@ include/hpp/manipulation/urdf/config.hh
 include/hpp/manipulation/urdf/deprecated.hh
 include/hpp/manipulation/urdf/warning.hh
 lib/cmake/hpp-manipulation-urdf/cxx-standard.cmake
+lib/cmake/hpp-manipulation-urdf/find-external/TinyXML/FindTinyXML.cmake
+lib/cmake/hpp-manipulation-urdf/find-external/TinyXML/FindTinyXML2.cmake
 lib/cmake/hpp-manipulation-urdf/hpp-manipulation-urdfConfig.cmake
 lib/cmake/hpp-manipulation-urdf/hpp-manipulation-urdfConfigVersion.cmake
 lib/cmake/hpp-manipulation-urdf/hpp-manipulation-urdfTargets-release.cmake
 lib/cmake/hpp-manipulation-urdf/hpp-manipulation-urdfTargets.cmake
 lib/libhpp-manipulation-urdf.so
 lib/pkgconfig/hpp-manipulation-urdf.pc
+share/ament_index/resource_index/packages/hpp-manipulation-urdf
+share/hpp-manipulation-urdf/hook/ament_prefix_path.dsv
+share/hpp-manipulation-urdf/hook/python_path.dsv
 share/hpp-manipulation-urdf/package.xml

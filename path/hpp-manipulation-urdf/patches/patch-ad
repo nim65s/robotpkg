@@ -2,8 +2,14 @@ Missing a dependency on class_loader - disable it by lazyness
 
 --- tests/CMakeLists.txt.orig	2022-10-06 12:05:55.000000000 +0200
 +++ tests/CMakeLists.txt	2022-10-06 16:36:16.981914713 +0200
-@@ -42,4 +42,3 @@
+@@ -45,10 +45,3 @@
  endmacro(ADD_TESTCASE)
- 
+
  config_files(srdfparser.cc)
 -add_testcase(srdfparser TRUE)
+-target_link_libraries(srdfparser example-robot-data::example-robot-data)
+-get_target_property(_erd example-robot-data::example-robot-data
+-                    INTERFACE_INCLUDE_DIRECTORIES)
+-set_tests_properties(
+-  srdfparser PROPERTIES ENVIRONMENT_MODIFICATION
+-                        "ROS_PACKAGE_PATH=path_list_prepend:${_erd}/../share")
