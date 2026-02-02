@@ -15,7 +15,6 @@ PREFER.proxsuite?=		robotpkg
 
 SYSTEM_SEARCH.proxsuite=\
   'include/proxsuite/config.hpp:/PROXSUITE_VERSION /s/[^0-9.]//gp'	\
-  'lib/cmake/proxsuite/proxsuiteConfigVersion.cmake:/PACKAGE_VERSION/s/[^0-9.]//gp' \
   'lib/pkgconfig/proxsuite.pc:/Version/s/[^0-9.]//gp'
 
 DEPEND_USE+=			proxsuite

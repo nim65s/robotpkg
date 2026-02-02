@@ -4,10 +4,11 @@
 
 ORG=			Simple-Robotics
 NAME=			proxsuite
-VERSION=		0.6.5
+VERSION=		0.7.2
 
 DISTNAME=		${NAME}-${VERSION}
 GITHUB_RELEASE=		v${VERSION}
+GITHUB_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES=		${MASTER_SITE_GITHUB:=${ORG}/}
 
@@ -27,12 +28,13 @@ CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 
 BUILD_DIRS=		bindings/python
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+include ../../devel/jrl-cmakemodules/depend.mk
 
 include ../../devel/visit-struct/depend.mk
 include ../../hardware/simde/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../optimization/proxsuite/depend.mk
+include ../../mk/sysdep/cereal.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/matio.mk
 include ../../mk/sysdep/python.mk
