@@ -16,6 +16,10 @@ ${PYTHON_SITELIB}/hpp/gepetto/manipulation/__init__.py
 ${PYTHON_SITELIB}/hpp/gepetto/manipulation/viewer.py
 ${PYTHON_SITELIB}/hpp/gepetto/manipulation/viewer_factory.py
 ${PYTHON_SITELIB}/hpp/gepetto/path_player.py
+${PYTHON_SITELIB}/hpp/gepetto/types.py
 ${PYTHON_SITELIB}/hpp/gepetto/viewer.py
 ${PYTHON_SITELIB}/hpp/gepetto/viewer_factory.py
+share/ament_index/resource_index/packages/hpp-gepetto-viewer
+share/hpp-gepetto-viewer/hook/ament_prefix_path.dsv
+share/hpp-gepetto-viewer/hook/python_path.dsv
 share/hpp-gepetto-viewer/package.xml
