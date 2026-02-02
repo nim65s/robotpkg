@@ -13,3 +13,7 @@ lib/cmake/qgv/qgvTargets-release.cmake
 lib/cmake/qgv/qgvTargets.cmake
 lib/libqgvcore.so
 lib/pkgconfig/qgv.pc
+share/ament_index/resource_index/packages/qgv
+share/qgv/hook/ament_prefix_path.dsv
+share/qgv/hook/python_path.dsv
+share/qgv/package.xml
