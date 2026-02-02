@@ -29,6 +29,8 @@ SYSTEM_SEARCH.octomap= \
 	lib/liboctomap.so					\
 	'lib/pkgconfig/octomap.pc:/Version/s/[^0-9.]//gp'
 
+SYSTEM_PKG.Debian.octomap=liboctomap-dev
+
 endif # OCTOMAP_DEPEND_MK --------------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
