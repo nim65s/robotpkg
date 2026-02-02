@@ -21,6 +21,9 @@ ${PYTHON_SITELIB}/hpp/corbaserver/affordance/robot.py
 ${PYTHON_SITELIB}/hpp_idl/hpp/corbaserver/affordance/__init__.py
 ${PYTHON_SITELIB}/hpp_stubs/affordance/__init__.py
 ${PYTHON_SITELIB}/hpp_stubs/affordance/affordance_idl.py
+share/ament_index/resource_index/packages/hpp-affordance-corba
+share/hpp-affordance-corba/hook/ament_prefix_path.dsv
+share/hpp-affordance-corba/hook/python_path.dsv
 share/hpp-affordance-corba/meshes/box.stl
 share/hpp-affordance-corba/meshes/darpareduced.stl
 share/hpp-affordance-corba/meshes/hyq/hyq_all.stl
