@@ -58,6 +58,9 @@ ${PYTHON_SITELIB}/hpp_stubs/manipulation/_path_planners_idl.py
 ${PYTHON_SITELIB}/hpp_stubs/manipulation/_problem_idl.py
 ${PYTHON_SITELIB}/hpp_stubs/manipulation/device_idl.py
 ${PYTHON_SITELIB}/hpp_stubs/manipulation/steering_methods_idl.py
+share/ament_index/resource_index/packages/hpp-manipulation-corba
+share/hpp-manipulation-corba/hook/ament_prefix_path.dsv
+share/hpp-manipulation-corba/hook/python_path.dsv
 share/hpp-manipulation-corba/package.xml
 share/idl/hpp/corbaserver/manipulation/gcommon.idl
 share/idl/hpp/corbaserver/manipulation/graph.idl
