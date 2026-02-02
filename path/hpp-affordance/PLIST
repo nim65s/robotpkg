@@ -12,4 +12,7 @@ lib/cmake/hpp-affordance/hpp-affordanceTargets-release.cmake
 lib/cmake/hpp-affordance/hpp-affordanceTargets.cmake
 lib/libhpp-affordance.so
 lib/pkgconfig/hpp-affordance.pc
+share/ament_index/resource_index/packages/hpp-affordance
+share/hpp-affordance/hook/ament_prefix_path.dsv
+share/hpp-affordance/hook/python_path.dsv
 share/hpp-affordance/package.xml
