@@ -28,6 +28,9 @@ SYSTEM_SEARCH.py-hpp-centroidal-dynamics=										\
 	'lib/pkgconfig/hpp-centroidal-dynamics.pc:/Version/s/[^0-9.]//gp'						\
 	'share/hpp-centroidal-dynamics/package.xml:/<version>/s/[^0-9.]//gp'
 
+include ../../optimization/qpoases/depend.mk
+CMAKE_ARGS+=		-DqpOASES_PREFIX=${PREFIX.qpoases}
+
 endif # PY_HPP_CENTROIDAL_DYNAMICS_DEPEND_MK --------------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
