@@ -113,6 +113,9 @@ ${PYTHON_SITELIB}/hpp_stubs/core/paths_idl.py
 ${PYTHON_SITELIB}/hpp_stubs/core/steering_methods_idl.py
 ${PYTHON_SITELIB}/hpp_stubs/pinocchio/__init__.py
 ${PYTHON_SITELIB}/hpp_stubs/pinocchio/robots_idl.py
+share/ament_index/resource_index/packages/hpp-corbaserver
+share/hpp-corbaserver/hook/ament_prefix_path.dsv
+share/hpp-corbaserver/hook/python_path.dsv
 share/hpp-corbaserver/omniidl/cxx_impl/__init__.py
 share/hpp-corbaserver/omniidl/cxx_impl/main.py
 share/hpp-corbaserver/omniidl/cxx_impl/template.py
