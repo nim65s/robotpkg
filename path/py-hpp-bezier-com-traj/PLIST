@@ -34,4 +34,7 @@ lib/cmake/hpp-bezier-com-traj/hpp-bezier-com-trajTargets.cmake
 lib/libhpp-bezier-com-traj.so
 lib/pkgconfig/hpp-bezier-com-traj.pc
 ${PYTHON_SITELIB}/hpp_bezier_com_traj.so
+share/ament_index/resource_index/packages/hpp-bezier-com-traj
+share/hpp-bezier-com-traj/hook/ament_prefix_path.dsv
+share/hpp-bezier-com-traj/hook/python_path.dsv
 share/hpp-bezier-com-traj/package.xml
