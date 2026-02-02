@@ -15,6 +15,7 @@ ${PYTHON_SITELIB}/hpp/corbaserver/pr2/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/pr2/robot.py
 ${PYTHON_SITELIB}/hpp/corbaserver/rod/__init__.py
 ${PYTHON_SITELIB}/hpp/corbaserver/rod/robot.py
+share/ament_index/resource_index/packages/hpp_tutorial
 share/hpp_tutorial/Media/materials/textures/auf_saeule_bei_shop.png
 share/hpp_tutorial/Media/materials/textures/ganz_links_neben_roboterplakat.png
 share/hpp_tutorial/Media/materials/textures/ganz_links_vorn_bei_biolab.png
@@ -28,6 +29,8 @@ share/hpp_tutorial/Media/materials/textures/wallpaper2.png
 share/hpp_tutorial/Media/materials/textures/wallpaper_ai_unihb.png
 share/hpp_tutorial/Media/materials/textures/wallpaper_project_logos.png
 share/hpp_tutorial/Media/models/meshes/glasses/__Color_A05_4.png
+share/hpp_tutorial/hook/ament_prefix_path.dsv
+share/hpp_tutorial/hook/python_path.dsv
 share/hpp_tutorial/meshes/box.dae
 share/hpp_tutorial/package.xml
 share/hpp_tutorial/srdf/box.srdf
