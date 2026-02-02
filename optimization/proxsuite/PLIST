@@ -108,4 +108,5 @@ lib/cmake/proxsuite/proxsuiteTargets.cmake
 lib/pkgconfig/proxsuite.pc
 share/ament_index/resource_index/packages/proxsuite
 share/proxsuite/hook/ament_prefix_path.dsv
+share/proxsuite/hook/python_path.dsv
 share/proxsuite/package.xml
