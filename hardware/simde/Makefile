@@ -2,10 +2,9 @@
 # Created:			Guilhem Saurel on Mon, 10 Oct 2022
 #
 
-PKGREVISION=	1
 ORG=		simd-everywhere
 NAME=		simde
-VERSION=	0.8.0
+VERSION=	0.8.2
 
 GITHUB_TAG=	v${VERSION}
 DISTNAME=	${NAME}-${VERSION}
