@@ -1,2 +1,9 @@
 @comment Thu Mar 4 21:25:42 CET 2010
+include/hpp/doc/config.hh
+include/hpp/doc/deprecated.hh
+include/hpp/doc/warning.hh
 lib/pkgconfig/hpp-doc.pc
+share/ament_index/resource_index/packages/hpp-doc
+share/hpp-doc/hook/ament_prefix_path.dsv
+share/hpp-doc/hook/python_path.dsv
+share/hpp-doc/package.xml
