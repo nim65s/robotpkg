@@ -20,4 +20,7 @@ lib/cmake/hpp-centroidal-dynamics/hpp-centroidal-dynamicsTargets.cmake
 lib/libhpp-centroidal-dynamics.so
 lib/pkgconfig/hpp-centroidal-dynamics.pc
 ${PYTHON_SITELIB}/hpp_centroidal_dynamics.so
+share/ament_index/resource_index/packages/hpp-centroidal-dynamics
+share/hpp-centroidal-dynamics/hook/ament_prefix_path.dsv
+share/hpp-centroidal-dynamics/hook/python_path.dsv
 share/hpp-centroidal-dynamics/package.xml
