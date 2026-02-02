@@ -6,6 +6,9 @@ lib/cmake/hpp-environments/hpp-environmentsConfig.cmake
 lib/cmake/hpp-environments/hpp-environmentsConfigVersion.cmake
 lib/cmake/hpp-environments/hpp-environmentsTargets.cmake
 lib/pkgconfig/hpp-environments.pc
+share/ament_index/resource_index/packages/hpp-environments
+share/hpp-environments/hook/ament_prefix_path.dsv
+share/hpp-environments/package.xml
 share/hpp_environments/meshes/CMakeLists.txt
 share/hpp_environments/meshes/buggy/buggy.dae
 share/hpp_environments/meshes/buggy/buggyBB.dae
@@ -126,7 +129,7 @@ share/hpp_environments/meshes/ori/slalom1.stl
 share/hpp_environments/meshes/ori/slalom2.stl
 share/hpp_environments/meshes/tests/baxter_simple/torso.dae
 share/hpp_environments/meshes/ur_benchmark/pokeball.dae
-share/hpp_environments/package.xml
+share/hpp_environments/srdf/baxter_benchmark/box.srdf
 share/hpp_environments/srdf/beam.srdf
 share/hpp_environments/srdf/beam_support.srdf
 share/hpp_environments/srdf/buggy.srdf
@@ -212,6 +215,7 @@ share/hpp_environments/srdf/ur_benchmark/box.srdf
 share/hpp_environments/srdf/ur_benchmark/ground.srdf
 share/hpp_environments/srdf/ur_benchmark/pokeball.srdf
 share/hpp_environments/texture/logo_romeo.jpg
+share/hpp_environments/urdf/baxter_benchmark/box.urdf
 share/hpp_environments/urdf/beam.urdf
 share/hpp_environments/urdf/beam_support.urdf
 share/hpp_environments/urdf/buggy.urdf
