@@ -4,7 +4,7 @@
 
 ORG=			stack-of-tasks
 NAME=			eigenpy
-VERSION=		3.10.3
+VERSION=		3.12.0
 
 CATEGORIES=		math
 COMMENT=		Eigen bindings to python
@@ -30,11 +30,10 @@ USE_MASTER_GITHUB=	true
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
-include ../../devel/jrl-cmakemodules/Makefile.common
-
 DEPEND_METHOD.eigen3+=	full
 DEPEND_ABI.python=	python>=3
 
+include ../../devel/jrl-cmakemodules/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
