@@ -19,7 +19,7 @@ DEPEND_ABI.py-ndcurves?=	${PKGTAG.python-}ndcurves>=1.0.0
 DEPEND_DIR.py-ndcurves?=	../../math/py-ndcurves
 
 SYSTEM_SEARCH.py-ndcurves=\
-  '${PYTHON_SYSLIBSEARCH}/{nd,}curves/{nd,}curves.so'
+  '${PYTHON_SYSLIBSEARCH}/{nd,}curves/{nd,}curves*.so'
 
 include ../../mk/sysdep/python.mk
 
