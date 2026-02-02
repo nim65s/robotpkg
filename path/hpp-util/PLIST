@@ -27,4 +27,7 @@ lib/cmake/hpp-util/hpp-utilTargets.cmake
 lib/libhpp-util.so
 lib/libhpp-util.so.${PKGVERSION}
 lib/pkgconfig/hpp-util.pc
+share/ament_index/resource_index/packages/hpp-util
+share/hpp-util/hook/ament_prefix_path.dsv
+share/hpp-util/hook/python_path.dsv
 share/hpp-util/package.xml
