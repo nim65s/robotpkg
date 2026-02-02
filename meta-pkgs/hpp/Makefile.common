@@ -8,15 +8,15 @@ ifndef HPP_COMMENT
   PKG_FAIL_REASON+="Dependency on hpp/Makefile.common requires HPP_COMMENT"
 endif
 
-HPP_VERSION?=		6.0.0
+HPP_VERSION?=		6.1.0
 HPP_NAMESPACE?=		humanoid-path-planner
 HPP_DOC?=		yes
 LICENSE?=		gnu-lgpl-v3
 
-MAINTAINER?=	hpp@laas.fr
-COMMENT?=	Humanoid Path Planner (${HPP_COMMENT})
+MAINTAINER?=		hpp@laas.fr
+COMMENT?=		Humanoid Path Planner (${HPP_COMMENT})
 
-BUILD_TARGET=	all
+BUILD_TARGET=		all
 
 ORG=			${HPP_NAMESPACE}
 NAME=			${HPP_PACKAGE}
@@ -28,7 +28,9 @@ else
   PYTHON_SELF_CONFLICT=	no
 endif
 
-include ../../devel/jrl-cmakemodules/Makefile.common
+USE_MASTER_GITHUB=	yes
+
+include ../../devel/jrl-cmakemodules/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
