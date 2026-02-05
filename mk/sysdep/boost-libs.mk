@@ -57,6 +57,7 @@ endef
 
 # specific library files and packages (overrides default)
 _boost_libs_files_math=		math_c99 math_tr1
+_boost_libs_files_test=		unit_test_framework
 
 _boost_libs_files_python=\
   python{{,-py}$(subst .,,${PYTHON_VERSION}),$(subst 2,,${PYTHON_MAJOR})}
