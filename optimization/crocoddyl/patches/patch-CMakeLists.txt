@@ -1,0 +1,15 @@
+Link with full IPOPT_LIBRARIES.
+
+There may me more libs than just -lipopt and pkg-config knows what to do.
+
+--- CMakeLists.txt~	2025-12-09 15:23:09.000000000 +0100
++++ CMakeLists.txt	2026-02-08 14:20:31.091194727 +0100
+@@ -303,7 +303,7 @@
+   endif()
+ 
+   if(BUILD_WITH_IPOPT AND IPOPT_FOUND)
+-    target_link_libraries(${PROJECT_NAME} ipopt)
++    target_link_libraries(${PROJECT_NAME} ${IPOPT_LIBRARIES})
+     target_include_directories(${PROJECT_NAME} PUBLIC ${IPOPT_INCLUDE_DIRS})
+   endif()
+ 

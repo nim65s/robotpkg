@@ -1,3 +1,4 @@
 SHA1 (crocoddyl-v3.2.0.tar.gz) = 6693d57516b656c41a1d7ab1074e6b780ba51798
 RMD160 (crocoddyl-v3.2.0.tar.gz) = 066adf25f91e6c77f2156848337c2e638fef753e
 Size (crocoddyl-v3.2.0.tar.gz) = 741686 bytes
+SHA1 (patch-CMakeLists.txt) = af6bbe457933e50da8747a4bac142330a7830a04
