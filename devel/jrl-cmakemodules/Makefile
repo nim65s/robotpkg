@@ -13,7 +13,7 @@ USE_MASTER_GITHUB=	true
 
 include Makefile.common
 
-DEPEND_ABI.cmake+=	cmake>=3.10
+DEPEND_ABI.cmake+=	cmake>=3.22
 
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
