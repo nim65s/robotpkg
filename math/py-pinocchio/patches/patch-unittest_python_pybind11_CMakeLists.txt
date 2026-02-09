@@ -1,0 +1,12 @@
+Don't bother with this additional dependency (failing with some versions) in
+robotpkg since BUILD_TESTING is OFF.
+
+--- unittest/python/pybind11/CMakeLists.txt~	2026-01-05 14:49:50.000000000 +0100
++++ unittest/python/pybind11/CMakeLists.txt	2026-02-09 18:29:19.246766452 +0100
+@@ -1,3 +1,6 @@
++if(NOT BUILD_TESTING)
++  return()
++endif()
+ find_package(pybind11 CONFIG QUIET)
+ if(NOT TARGET pybind11::module)
+   include(FetchContent)
