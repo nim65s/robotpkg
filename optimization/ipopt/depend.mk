@@ -20,6 +20,7 @@ DEPEND_DIR.ipopt?=		../../optimization/ipopt
 
 SYSTEM_SEARCH.ipopt=\
   'include/coin{,-or}/IpoptConfig.h:/IPOPT_VERSION/s/[^0-9.]//gp'	\
+  'lib/pkgconfig/ipopt.pc:/^Version/s/[^0-9.]//gp'				\
   'lib/libipopt.so'
 
 endif # --------------------------------------------------------------------
