@@ -14,6 +14,8 @@ CATEGORIES=		motion
 CONFLICTS+=		$(subst _,-,${NAME})-[0-9]*
 
 USE_MASTER_GITHUB=	yes
+GITHUB_TAG=		${VERSION}
+GITHUB_RELEASE=		v${VERSION}
 USE_PYTHON=		yes
 include ../../devel/jrl-cmakemodules/Makefile.common
 
