@@ -1,0 +1,13 @@
+robotpkg
+
+--- pkgin.h~	2026-02-10 09:28:26.000000000 +0100
++++ pkgin.h	2026-02-10 18:15:14.260539274 +0100
+@@ -55,7 +55,7 @@
+ 
+ #define PKG_SUMMARY "pkg_summary"
+ #define PKG_EXT ".tgz"
+-#define PKGIN_CONF PKG_SYSCONFDIR"/pkgin"
++#define PKGIN_CONF PKG_SYSCONFDIR"/robotpkgin"
+ #define REPOS_FILE "repositories.conf"
+ #define PREF_FILE "preferred.conf"
+ 

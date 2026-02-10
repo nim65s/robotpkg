@@ -2,20 +2,18 @@
 # Created:			Anthony Mallet on Mon, 5 Aug 2013
 #
 
-PKGREVISION=		2
-DISTNAME=		pkgin-0.6.4
+DISTNAME=		pkgin-26.2.0
 CATEGORIES=		pkgtools
-MASTER_SITES=		ftp://ftp.NetBSD.org/pub/NetBSD/misc/imil/
+MASTER_SITES=		${MASTER_SITE_GITHUB:=NetBSDfr/}
+GITHUB_TAG=		v${PKGVERSION_NOREV}
 
 MAINTAINER=		mallet@laas.fr
-HOMEPAGE=		http://pkgin.net/
+HOMEPAGE=		https://pkgin.net/
 COMMENT=		Apt / yum like tool for managing pkgsrc binary packages
 LICENSE=		modified-bsd
 
 CONF_DIR=		${PKG_SYSCONFDIR}/robot${PKGBASE}
 INSTALLATION_DIRS+=	bin ${PKGMANDIR}/man1 ${CONF_DIR}
-
-WRKSRC=			${WRKDIR}/pkgin-3859170568fbe4fe21b5660dbaeca8d65ac10f1b
 
 SUBST_CLASSES+=		path
 SUBST_STAGE.path=	pre-configure
@@ -26,33 +24,41 @@ SUBST_SED.path+=	-e "s|pkgin|robotpkgin|g" -e "s|PKGIN|ROBOTPKGIN|g"
 SUBST_SED.path+=	-e "s|pkg_|robotpkg_|g"
 
 GNU_CONFIGURE=		yes
-MAKE_ENV+=		UNAME=$(or ${UNAME},uname)
-MAKE_ENV+=		PKGTOOLS=${PREFIX}/sbin
-MAKE_ENV+=		VARBASE=${PREFIX}/var
+CONFIGURE_ARGS+=	--disable-maintainer-mode
+CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
+CONFIGURE_ARGS+=	--with-dbdir=${PREFIX}/var/db/robotpkgin
+CONFIGURE_ARGS+=	--with-machine-arch=${MACHINE_ARCH}
+CONFIGURE_ARGS+=	--with-pkg-install=$(PREFIX.pkg_install)
+CONFIGURE_ARGS+=	--with-libarchive=${PREFIX.libarchive}
+CONFIGURE_ARGS+=	--with-libfetch=${PREFIX.libfetch}
+CONFIGURE_ARGS+=	--with-sqlite3=${PREFIX.libsqlite3}
 
-LIBARCHIVE_STYLE=	inplace
-LIBFETCH_STYLE=		inplace
 LIBNBCOMPAT_STYLE=	inplace
+CPPFLAGS+=		-DHAVE_NBCOMPAT_H=1
 
-include ../../pkgtools/install-sh/depend.mk
-include ../../pkgtools/libnbcompat/depend.mk
 include ../../archivers/libarchive/depend.mk
 include ../../net/libfetch/depend.mk
-include ../../mk/language/c.mk
+include ../../pkgtools/install-sh/depend.mk
+include ../../pkgtools/libnbcompat/depend.mk
 include ../../mk/sysdep/libsqlite3.mk
-include ../../mk/sysdep/openssl.mk
+include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk
 
 # These files are included in pkgin source. However, our pkg_install is patched
 # to handle ~options suffix, so get the locally patched source instead of the
 # bundled versions.
-PKG_INSTALL_SRC=	opattern.c dewey.c xwrapper.c
+PKG_INSTALL_SRC=	defs.h opattern.c dewey.c xwrapper.c
 
 post-extract:
 	${RUN}for f in ${PKG_INSTALL_SRC}; do				\
 	  ${CP} ${ROBOTPKG_DIR}/pkgtools/pkg_install/dist/lib/$$f	\
 	   ${WRKSRC}/external/.;					\
-	done
+	done;								\
+									\
+	{ echo 'static const char robotpkg_opsys[] =';			\
+	  ${SED} -e /^#/d -e 's/"/\\"/g' -e 's/^/"/' -e 's/$$/\\n"/'	\
+	    <${ROBOTPKG_DIR}/mk/platform/opsys.sh;			\
+	  echo ';'; }  >${WRKSRC}/opsys.h;
 
 do-install:
 	${RUN}								\

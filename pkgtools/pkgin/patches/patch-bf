@@ -1,19 +1,13 @@
 Update manual with robotpkg examples.
 
---- pkgin.1~	2013-08-03 16:39:19.000000000 +0200
-+++ pkgin.1	2013-08-03 16:41:21.000000000 +0200
-@@ -213,12 +213,12 @@
- .Pp
+--- pkgin.1.in~	2026-02-10 09:28:26.000000000 +0100
++++ pkgin.1.in	2026-02-10 14:18:03.566908920 +0100
+@@ -255,7 +255,7 @@
  Setup the initial database:
- .Bd -literal
--# echo ftp://ftp.fr.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/5.0/All > /usr/pkg/etc/pkgin/repositories.conf
-+# echo http://robotpkg.openrobots.org/packages/bsd/$osname-$osrelease-$arch/pub > /usr/pkg/etc/pkgin/repositories.conf
- # pkgin update
- processing local summary...
- updating database: 100%
- downloading pkg_summary.bz2: 100%
--processing remote summary (ftp://ftp.fr.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/5.0/All)...
-+processing remote summary (http://robotpkg.openrobots.org/packages/bsd/NetBSD-6.1-i386/pub)...
- updating database: 100%
- .Ed
+ .Pp
+ .Dl # vi /usr/pkg/etc/pkgin/repositories.conf
+-.Dl https://cdn.netbsd.org/pub/pkgsrc/packages/NetBSD/$arch/9.0/All
++.Dl echo http://robotpkg.openrobots.org/packages/bsd/$osname-$osrelease-$arch/pub > /usr/pkg/etc/robotpkgin/repositories.conf
+ .Pp
+ .Dl # pkgin update
  .Pp

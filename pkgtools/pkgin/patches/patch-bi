@@ -1,25 +1,38 @@
 robotpkg package names may have a ~options suffix.
 
---- summary.c.orig	2013-06-16 16:00:45.000000000 +0200
-+++ summary.c	2013-08-04 22:52:10.000000000 +0200
-@@ -403,7 +403,7 @@
+--- summary.c~	2026-02-10 09:28:26.000000000 +0100
++++ summary.c	2026-02-10 14:14:33.869846345 +0100
+@@ -282,7 +282,7 @@
  {
- 	int			i;
- 	static int	pkgid = 1;
--	char		*pkgname, *pkgvers, **psum, query[BUFSIZ], tmpname[BUFSIZ];
-+	char		*pkgname, *pkgvers, *pkgopts, **psum, query[BUFSIZ], tmpname[BUFSIZ];
- 	const char	*alnum = ALNUM;
+ 	static uint8_t	check_machine_arch = 1;
+ 	int		i;
+-	char		*val, *v, buf[BUFSIZ];
++	char		*val, *v, *o, buf[BUFSIZ];
  
- 	if (summary == NULL) {
-@@ -455,8 +452,11 @@
- 			add_to_slist("FULLPKGNAME", pkgname);
+ 	if ((val = strchr(line, '=')) == NULL)
+ 		errx(EXIT_FAILURE, "Invalid pkg_info entry: %s", line);
+@@ -373,7 +373,10 @@
+ 				add_to_slist("FULLPKGNAME", val);
  
- 			/* split PKGNAME and VERSION */
-+			pkgopts = strrchr(pkgname, '~');
-+                        if (pkgopts) *pkgopts = '\0';
- 			pkgvers = strrchr(pkgname, '-');
- 			*pkgvers++ = '\0';
-+                        if (pkgopts) *pkgopts = '~';
+ 				/* split PKGNAME and VERSION */
++				o = strrchr(val, '~');
++				if (o != NULL) *o = '\0';
+ 				v = strrchr(val, '-');
++				if (o != NULL) *o = '~';
+ 				if (v != NULL)
+ 					*v++ = '\0';
+ 				add_to_slist("PKGNAME", val);
+@@ -717,9 +714,11 @@
+ 	if (verbose)
+ 		printf(MSG_READING_LOCAL_SUMMARY);
  
- 			add_to_slist("PKGNAME", pkgname);
- 			add_to_slist("PKGVERS", pkgvers);
+-	if ((pinfo = popen(PKG_INSTALL_DIR "/pkg_info -Xa", "r")) == NULL)
++        { char *i = xasprintf("%s -Xa", pkg_info);
++	if (!i || (pinfo = popen(i, "r")) == NULL)
+ 		errx(EXIT_FAILURE, "Couldn't run pkg_info");
+-
++        free(i);
++        }
+ 	if (verbose)
+ 		printf(MSG_PROCESSING_LOCAL_SUMMARY);
+ 

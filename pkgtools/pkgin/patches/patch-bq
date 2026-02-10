@@ -1,0 +1,21 @@
+robotpkg
+
+--- pkg_install.c~	2026-02-10 09:28:26.000000000 +0100
++++ pkg_install.c	2026-02-10 18:00:30.855551338 +0100
+@@ -47,11 +47,11 @@
+ 	size_t len;
+ 	ssize_t llen;
+ 
+-	p = getenv("PKG_INSTALL_DIR");
+-	pkg_add = xasprintf("%s/pkg_add", p ? p : PKG_INSTALL_DIR);
+-	pkg_admin = xasprintf("%s/pkg_admin", p ? p : PKG_INSTALL_DIR);
+-	pkg_info = xasprintf("%s/pkg_info", p ? p : PKG_INSTALL_DIR);
+-	pkg_delete = xasprintf("%s/pkg_delete", p ? p : PKG_INSTALL_DIR);
++	p = getenv("ROBOTPKG_BASE");
++	pkg_add = xasprintf("%s/sbin/robotpkg_add", p ? p : PKG_INSTALL_DIR);
++	pkg_admin = xasprintf("%s/sbin/robotpkg_admin", p ? p : PKG_INSTALL_DIR);
++	pkg_info = xasprintf("%s/sbin/robotpkg_info", p ? p : PKG_INSTALL_DIR);
++	pkg_delete = xasprintf("%s/sbin/robotpkg_delete", p ? p : PKG_INSTALL_DIR);
+ 
+ 	/* Sanity check */
+ 	if (access(pkg_admin, X_OK) != 0)

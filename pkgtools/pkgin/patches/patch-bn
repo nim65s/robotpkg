@@ -1,35 +1,37 @@
 robotpkg package names may have a ~options suffix.
 
---- pkg_str.c.orig	2013-08-05 14:35:37.174776076 +0200
-+++ pkg_str.c	2013-08-05 14:35:42.502762315 +0200
-@@ -32,7 +32,7 @@
+--- pkg_str.c~	2026-02-10 09:28:26.000000000 +0100
++++ pkg_str.c	2026-02-10 14:08:05.032982944 +0100
+@@ -29,7 +29,7 @@
  
  #include "pkgin.h"
  
 -#define GLOBCHARS "{<>[]?*"
 +#define GLOBCHARS "{<>[]?*~"
  
- /**
-  * \fn unique_pkg
-@@ -58,7 +58,7 @@
- 
- 	best_match = SLIST_FIRST(plist->P_Plisthead);
- 	SLIST_FOREACH(current, plist->P_Plisthead, next) 
--		if (dewey_cmp(current->version, DEWEY_GT, best_match->version))
-+		if (pkg_order("*", current->full, best_match->full) == 1)
+ /*
+  * Return best candidate for a remote package, taking into consideration any
+@@ -111,8 +111,8 @@
+ 		if (best_match == NULL)
  			best_match = current;
+ 		else
+-			if (dewey_cmp(current->version, DEWEY_GT,
+-					best_match->version))
++			if (pkg_order("*", current->full,
++                                best_match->full) == 1)
+ 				best_match = current;
+ 	}
  
- 	XSTRDUP(u_pkg, best_match->full);
-@@ -88,17 +88,25 @@
+@@ -217,37 +217,32 @@
  int
  exact_pkgfmt(const char *pkgname)
  {
 -	char	*p;
 +	char	*p, *tmp;
-+	int	n;
++	int n;
  
 -	if ((p = strrchr(pkgname, '-')) == NULL)
-+	XSTRDUP(tmp, pkgname);
++	tmp = xstrdup(pkgname);
 +	trunc_str(tmp, '~', STR_BACKWARD);
 +
 +	if ((p = strrchr(tmp, '-')) == NULL) {
@@ -48,16 +50,7 @@ robotpkg package names may have a ~options suffix.
 +	return n;
  }
  
- /* 
-@@ -126,6 +134,7 @@
- 			 * foo-bar-1.0 -> foo-bar
- 			 * and set len to tmppkg
- 			 */
-+			trunc_str(tmppkg, '~', STR_BACKWARD);
- 			trunc_str(tmppkg, '-', STR_BACKWARD);
- 		}
- 		/* tmplen = strlen("foo-1{.vers}") */
-@@ -148,20 +157,7 @@
+ /* similar to opattern.c's pkg_order but without pattern */
  int
  version_check(char *first_pkg, char *second_pkg)
  {
@@ -78,14 +71,4 @@ robotpkg package names may have a ~options suffix.
 +	return pkg_order("*", first_pkg, second_pkg);
  }
  
- static void
-@@ -179,6 +175,9 @@
- {
- 	char	*exten;
- 
-+	/* have we got foo~something ? */
-+	trunc_str(pkgname, '~', STR_BACKWARD);
-+
- 	/* have we got foo-something ? */
- 	if ((exten = strrchr(pkgname, '-')) == NULL)
- 		return;
+ /*
