@@ -20,7 +20,9 @@ DEPEND_ABI.ament-cmake-ros?=	ament-cmake-ros>=0
 DEPEND_DIR.ament-cmake-ros?=	../../devel/ament-cmake-ros
 
 SYSTEM_SEARCH.ament-cmake-ros=\
-  $(call ros2_system_search, ament_cmake_ros)
+  $(call ros2_system_search,	\
+    ament_cmake_ros		\
+    ament_cmake_ros_core)
 
 endif # AMENT_CMAKE_ROS_DEPEND_MK ------------------------------------------
 
