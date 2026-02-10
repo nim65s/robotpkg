@@ -25,7 +25,6 @@ DEPEND_ABI.ros2-rosidl-typesupport-fastrtps?=\
 
 SYSTEM_SEARCH.ros2-rosidl-typesupport-fastrtps=\
   $(call ros2_system_search,			\
-    fastrtps_cmake_module			\
     rosidl_typesupport_fastrtps_c		\
     rosidl_typesupport_fastrtps_cpp)
 
