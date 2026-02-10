@@ -28,7 +28,7 @@ ifdef USE_PYTHON_ONLY
 endif
 
 DISTNAME?=		${NAME}-${VERSION}
-GITHUB_TAG=		v${VERSION}
+GITHUB_TAG?=		v${VERSION}
 ifdef USE_PYTHON
   PKGNAME?=		${PKGTAG.python-}$(subst _,-,${DISTNAME})
 else
