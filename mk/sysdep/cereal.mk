@@ -20,7 +20,7 @@ DEPEND_ABI.cereal?=		cereal>=1
 
 SYSTEM_SEARCH.cereal=		\
   'include/cereal/cereal.hpp'	\
-  'lib/cmake/cereal/cerealConfigVersion.cmake:/set.PACKAGE_VERSION/s/[^0-9.]//gp'
+  '{lib,share}/cmake/cereal/cerealConfigVersion.cmake:/set.PACKAGE_VERSION/s/[^0-9.]//gp'
 
 SYSTEM_PKG.Debian.cereal=	libcereal-dev
 SYSTEM_PKG.NetBSD.cereal=	wip/cereal
