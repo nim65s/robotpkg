@@ -18,15 +18,16 @@ PREFER.py-hpp-tutorial?=	robotpkg
 DEPEND_USE+=			py-hpp-tutorial
 
 include ../../meta-pkgs/hpp/depend.common
-DEPEND_ABI.py-hpp-tutorial?=	${PKGTAG.python-}hpp_tutorial>=${HPP_MIN_VERSION}
+DEPEND_ABI.py-hpp-tutorial?=\
+  ${PKGTAG.python-}hpp-tutorial>=${HPP_MIN_VERSION}
 DEPEND_DIR.py-hpp-tutorial?=	../../doc/py-hpp-tutorial
 
-SYSTEM_SEARCH.py-hpp-tutorial=									\
-	'include/hpp/tutorial/config.hh:/HPP_TUTORIAL_VERSION /s/[^0-9.]//gp'			\
-	'bin/hpp-tutorial-server'								\
-	'lib/cmake/hpp-tutorial/hpp-tutorialConfigVersion.cmake:/PACKAGE_VERSION/s/[^0-9.]//gp'	\
-	'lib/pkgconfig/hpp_tutorial.pc:/Version/s/[^0-9.]//gp'					\
-	'share/hpp_tutorial/package.xml:/<version>/s/[^0-9.]//gp'
+SYSTEM_SEARCH.py-hpp-tutorial=\
+  'include/hpp/tutorial/config.hh:/HPP_TUTORIAL_VERSION /s/[^0-9.]//gp'	\
+  'bin/hpp-tutorial-1'							\
+  'lib/cmake/hpp_tutorial/hpp_tutorialConfigVersion.cmake:/PACKAGE_VERSION/s/[^0-9.]//gp'\
+  'lib/pkgconfig/hpp_tutorial.pc:/Version/s/[^0-9.]//gp'		\
+  'share/hpp_tutorial/package.xml:/<version>/s/[^0-9.]//gp'
 
 endif # PY_HPP_TUTORIAL_DEPEND_MK --------------------------------------------
 
