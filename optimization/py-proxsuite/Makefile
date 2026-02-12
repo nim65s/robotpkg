@@ -21,14 +21,15 @@ USE_PYTHON_ONLY=	true
 
 CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 
-DEPEND_ABI.cmake=	cmake>=3.12
-DEPEND_ABI.python=	python>=3.6
 CMAKE_ARGS+=		-DEigen3_INCLUDE_DIR=${PREFIX.eigen3}/include/eigen3
 CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 
 BUILD_DIRS=		bindings/python
 
 include ../../devel/jrl-cmakemodules/depend.mk
+
+DEPEND_ABI.cmake=	cmake>=3.12
+DEPEND_ABI.python=	python>=3.8
 
 include ../../devel/visit-struct/depend.mk
 include ../../hardware/simde/depend.mk

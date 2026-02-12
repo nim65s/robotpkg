@@ -1,0 +1,38 @@
+Fix broken cerealTarget.cmake on unbutu-22.04 specifying non existent include
+directory.
+While here, disable download of cereal, this is not supposed to happen in
+robotpkg
+
+--- CMakeLists.txt~	2026-02-12 14:54:28.000000000 +0100
++++ CMakeLists.txt	2026-02-12 15:11:21.826778123 +0100
+@@ -222,16 +222,20 @@
+ if(BUILD_TESTING OR BUILD_PYTHON_INTERFACE)
+   # Download cereal for pything bindings and unittests
+   find_package(cereal QUIET CONFIG)
+-  if(NOT cereal_FOUND)
+-    set(cereal_dir ${PROJECT_SOURCE_DIR}/external/cereal)
+-    set(cereal ${cereal_dir}/README.md)
+-    find_package(Git REQUIRED)
+-    if(NOT EXISTS ${cereal})
+-      execute_process(
+-        COMMAND ${GIT_EXECUTABLE} submodule update --init ${cereal_dir}
+-        WORKING_DIRECTORY ${cereal_dir}
+-        COMMAND_ERROR_IS_FATAL ANY
+-      )
++  # Fix broken cerealTarget.cmake on unbutu-22.04
++  if(cereal_FOUND)
++    get_target_property(_CEREAL_DIR cereal::cereal INTERFACE_INCLUDE_DIRECTORIES)
++    if(NOT EXISTS ${_CEREAL_DIR})
++      set(_CEREAL_DIR ${cereal_DIR})
++      while(NOT EXISTS "${_CEREAL_DIR}/include/cereal")
++        get_filename_component(parent_dir "${_CEREAL_DIR}" DIRECTORY)
++        if(${parent_dir} STREQUAL ${_CEREAL_DIR})
++          break()
++        endif()
++        set(_CEREAL_DIR ${parent_dir})
++      endwhile()
++      set_target_properties(cereal::cereal PROPERTIES
++        INTERFACE_INCLUDE_DIRECTORIES ${_CEREAL_DIR})
+     endif()
+   endif()
+ endif()
