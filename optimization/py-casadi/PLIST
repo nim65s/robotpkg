@@ -1,4 +1,4 @@
-@comment Tue Oct 15 12:36:57 CEST 2024
+@comment Thu Feb 12 12:01:27 CET 2026
 include/casadi/casadi.i
 include/casadi/casadi_numpy.hpp
 include/casadi/doc.i
@@ -13,4 +13,4 @@ ${PYTHON_SITELIB}/casadi/tools/bounds.py
 ${PYTHON_SITELIB}/casadi/tools/graph/__init__.py
 ${PYTHON_SITELIB}/casadi/tools/graph/graph.py
 ${PYTHON_SITELIB}/casadi/tools/in_out.py
-${PYTHON_SITELIB}/casadi/tools/structure3.py
+${PYTHON_SITELIB}/casadi/tools/structure${PYTHON_MAJOR3}.py
