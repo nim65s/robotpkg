@@ -18,8 +18,9 @@ DEPEND_USE+=			cereal
 DEPEND_METHOD.cereal?=		build
 DEPEND_ABI.cereal?=		cereal>=1
 
-SYSTEM_SEARCH.cereal=		\
-  'include/cereal/cereal.hpp'	\
+SYSTEM_SEARCH.cereal=\
+  'include/cereal/cereal.hpp'			\
+  '{lib,share}/cmake/cereal/cerealConfig.cmake'	\
   '{lib,share}/cmake/cereal/cerealConfigVersion.cmake:/set.PACKAGE_VERSION/s/[^0-9.]//gp'
 
 SYSTEM_PKG.Debian.cereal=	libcereal-dev
