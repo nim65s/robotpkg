@@ -18,6 +18,8 @@ USE_PYTHON_ONLY=	yes
 
 include ../../devel/jrl-cmakemodules/Makefile.common
 
+DEPEND_ABI.cmake+=	cmake>=3.22
+
 include ../../math/ndcurves/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../math/pinocchio/depend.mk
