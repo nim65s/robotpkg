@@ -37,6 +37,8 @@ define PKG_OPTION_SET.doc
   include ../../mk/sysdep/doxygen.mk
 endef
 
+DEPEND_ABI.cmake+=	cmake>=3.18
+
 include ../../math/lapack/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/language/c.mk
