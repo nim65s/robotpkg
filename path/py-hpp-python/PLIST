@@ -1,8 +1,22 @@
-@comment Fri Dec 20 10:12:44 CET 2024
+@comment Fri Feb 13 11:19:23 CET 2026
 include/hpp/python/config.hh
 include/hpp/python/deprecated.hh
 include/hpp/python/warning.hh
+include/pyhpp/constraints/fwd.hh
 include/pyhpp/core/fwd.hh
+include/pyhpp/core/path-planner.hh
+include/pyhpp/core/path/fwd.hh
+include/pyhpp/core/pathOptimization/fwd.hh
+include/pyhpp/core/problem.hh
+include/pyhpp/core/problemTarget/fwd.hh
+include/pyhpp/manipulation/fwd.hh
+include/pyhpp/manipulation/urdf/fwd.hh
+include/pyhpp/pinocchio/fwd.hh
+include/pyhpp/pinocchio/urdf/fwd.hh
+include/pyhpp/ref.hh
+include/pyhpp/stl-pair.hh
+include/pyhpp/util.hh
+include/pyhpp/vector-indexing-suite.hh
 lib/cmake/hpp-python/cxx-standard.cmake
 lib/cmake/hpp-python/hpp-pythonConfig.cmake
 lib/cmake/hpp-python/hpp-pythonConfigVersion.cmake
@@ -19,8 +33,18 @@ ${PYTHON_SITELIB}/pyhpp/core/path/__init__.py
 ${PYTHON_SITELIB}/pyhpp/core/path/bindings.so
 ${PYTHON_SITELIB}/pyhpp/core/path_optimization/__init__.py
 ${PYTHON_SITELIB}/pyhpp/core/path_optimization/bindings.so
+${PYTHON_SITELIB}/pyhpp/core/problem_target/__init__.py
+${PYTHON_SITELIB}/pyhpp/core/problem_target/bindings.so
+${PYTHON_SITELIB}/pyhpp/manipulation/__init__.py
+${PYTHON_SITELIB}/pyhpp/manipulation/bindings.so
+${PYTHON_SITELIB}/pyhpp/manipulation/constraint_graph_factory.py
+${PYTHON_SITELIB}/pyhpp/manipulation/urdf/__init__.py
+${PYTHON_SITELIB}/pyhpp/manipulation/urdf/bindings.so
 ${PYTHON_SITELIB}/pyhpp/pinocchio/__init__.py
 ${PYTHON_SITELIB}/pyhpp/pinocchio/bindings.so
 ${PYTHON_SITELIB}/pyhpp/pinocchio/urdf/__init__.py
 ${PYTHON_SITELIB}/pyhpp/pinocchio/urdf/bindings.so
+share/ament_index/resource_index/packages/hpp-python
+share/hpp-python/hook/ament_prefix_path.dsv
+share/hpp-python/hook/python_path.dsv
 share/hpp-python/package.xml

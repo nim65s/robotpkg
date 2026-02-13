@@ -2,6 +2,7 @@
 # Created:			Guilhem Saurel on Thu, 19 Dec 2024
 #
 
+PKGREVISION=		1
 HPP_PACKAGE=		hpp-python
 HPP_COMMENT=		Python bindings for Humanoid Path Planner
 
@@ -30,9 +31,10 @@ include ../../path/hpp-core/depend.mk
 include ../../path/hpp-manipulation-urdf/depend.mk
 include ../../path/hpp-manipulation/depend.mk
 include ../../path/py-hpp-corbaserver/depend.mk
+include ../../mk/sysdep/doxygen.mk
 include ../../mk/sysdep/pkg-config.mk
+include ../../mk/sysdep/py-lxml.mk
+include ../../mk/sysdep/py-numpy.mk
 include ../../mk/language/c++.mk
 include ../../mk/language/c.mk
-include ../../mk/sysdep/py-numpy.mk
-include ../../mk/sysdep/doxygen.mk
 include ../../mk/robotpkg.mk
