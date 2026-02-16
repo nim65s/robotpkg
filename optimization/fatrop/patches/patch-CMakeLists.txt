@@ -1,0 +1,13 @@
+Install *.cmake to more standard location
+
+--- CMakeLists.txt~	2026-02-12 12:27:49.000000000 +0100
++++ CMakeLists.txt	2026-02-25 11:25:17.971703040 +0100
+@@ -28,7 +28,7 @@
+ set(ARCHIVE_INSTALL_DIR lib)
+ set(RUNTIME_INSTALL_DIR bin)
+ set(INCLUDE_INSTALL_DIR include)
+-set(CMAKE_INSTALL_DIR cmake)
++set(CMAKE_INSTALL_DIR lib/cmake/${PROJECT_NAME})
+ 
+ # Add the external directory
+ add_subdirectory(external)
