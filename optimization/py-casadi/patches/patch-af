@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-02-16 18:46:34.631423203 +0100
++++ CMakeLists.txt	2026-02-16 18:46:51.722734360 +0100
+@@ -1219,6 +1219,7 @@
+     )
+     create_import_library(blasfeo blasfeo)
+   else()
++    find_package(blasfeo REQUIRED CONFIG)
+     #add_library(lapack INTERFACE)
+     #target_link_libraries(lapack INTERFACE ${LAPACK_LIBRARIES})
+   endif()

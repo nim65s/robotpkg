@@ -1,0 +1,13 @@
+if we don't look for blasfeoConfig.cmake, linking to fatrop add -lblasfeo,
+in cases where the -L may not be provided
+
+--- CMakeLists.txt.orig	2026-02-16 18:10:50.060357920 +0100
++++ CMakeLists.txt	2026-02-16 18:10:52.788407567 +0100
+@@ -1237,6 +1237,7 @@
+       "${CMAKE_BINARY_DIR}/external_projects/include/"
+       DESTINATION "${INCLUDE_PREFIX}")
+   else()
++    find_package(blasfeo REQUIRED CONFIG)
+     #add_library(lapack INTERFACE)
+     #target_link_libraries(lapack INTERFACE ${LAPACK_LIBRARIES})
+   endif()

@@ -162,6 +162,8 @@ lib/cmake/casadi/casadi-targets-release.cmake
 lib/cmake/casadi/casadi-targets.cmake
 lib/libcasadi.so
 lib/libcasadi.so.3.7
+lib/libcasadi_conic_fatrop.so
+lib/libcasadi_conic_fatrop.so.3.7
 lib/libcasadi_conic_ipqp.so
 lib/libcasadi_conic_ipqp.so.3.7
 lib/libcasadi_conic_nlpsol.so
@@ -204,6 +206,8 @@ lib/libcasadi_linsol_symbolicqr.so
 lib/libcasadi_linsol_symbolicqr.so.3.7
 lib/libcasadi_linsol_tridiag.so
 lib/libcasadi_linsol_tridiag.so.3.7
+lib/libcasadi_nlpsol_fatrop.so
+lib/libcasadi_nlpsol_fatrop.so.3.7
 lib/libcasadi_nlpsol_feasiblesqpmethod.so
 lib/libcasadi_nlpsol_feasiblesqpmethod.so.3.7
 lib/libcasadi_nlpsol_ipopt.so

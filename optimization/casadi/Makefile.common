@@ -22,6 +22,8 @@ CMAKE_ARGS+=		-DWITH_PROXQP=ON
 CMAKE_ARGS+=		-DWITH_QPOASES=ON
 CMAKE_ARGS+=		-DWITH_THREAD=ON
 CMAKE_ARGS+=		-DWITH_IPOPT=ON
+CMAKE_ARGS+=		-DWITH_BLASFEO=ON
+CMAKE_ARGS+=		-DWITH_FATROP=ON
 
 CMAKE_ARGS+=		-DWITH_BUILD_TINYXML=NO
 CMAKE_ARGS+=		-DBLA_PREFER_PKGCONFIG=ON
@@ -35,6 +37,8 @@ pre-configure:
 DEPEND_ABI.cmake=	cmake>=3.15
 
 include ../../math/lapack/depend.mk
+include ../../optimization/blasfeo/depend.mk
+include ../../optimization/fatrop/depend.mk
 include ../../optimization/ipopt/depend.mk
 include ../../optimization/proxsuite/depend.mk
 include ../../optimization/qpoases/depend.mk
