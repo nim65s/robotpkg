@@ -1,0 +1,39 @@
+Default to OS_LINUX for anything else than Darwin/Windows.
+Install *.cmake to more standard location.
+
+--- CMakeLists.txt~	2025-02-20 10:38:50.000000000 +0100
++++ CMakeLists.txt	2026-02-25 14:34:04.494468782 +0100
+@@ -319,20 +319,18 @@
+ endif()
+ 
+ # Detect the system
+-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_LINUX")
+-	set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -DOS_LINUX")
+-endif()
+ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_MAC")
+ 	set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -DOS_MAC")
+-endif()
+-if(CMAKE_SYSTEM_NAME MATCHES "Windows" OR CMAKE_SYSTEM_NAME MATCHES "CYGWIN")
++elseif(CMAKE_SYSTEM_NAME MATCHES "Windows" OR CMAKE_SYSTEM_NAME MATCHES "CYGWIN")
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_WINDOWS")
+ 	set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -DOS_WINDOWS")
+ 	if(${BUILD_SHARED_LIBS} MATCHES ON)
+ 		set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+ 	endif()
++else()
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_LINUX")
++	set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} -DOS_LINUX")
+ endif()
+ 
+ # External BLAS flags
+@@ -1288,7 +1286,7 @@
+ 	RUNTIME DESTINATION bin)
+ 
+ 
+-install(EXPORT blasfeoConfig DESTINATION cmake)
++install(EXPORT blasfeoConfig DESTINATION lib/cmake/${PROJECT_NAME})
+ 
+ file(GLOB_RECURSE BLASFEO_HEADERS "include/*.h")
+ install(FILES ${BLASFEO_HEADERS} DESTINATION ${BLASFEO_HEADERS_INSTALLATION_DIRECTORY})
