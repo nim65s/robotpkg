@@ -13,7 +13,8 @@ CMAKE_ARGS+=		-DWITH_PYTHON3=$(if $(filter 3,${PYTHON_MAJOR}),ON,OFF)
 
 PLIST_SUBST+=		PYTHON_MAJOR3=$(subst 2,,${PYTHON_MAJOR})
 
-DEPEND_ABI.casadi=	casadi-${PKGVERSION_NOREV}
+DEPEND_ABI.casadi=\
+  casadi-${PKGVERSION$(if $(filter system,${PREFER.casadi}),_NOREV)}
 DEPEND_ABI.swig=	swig>=3
 
 include ../../optimization/casadi/depend.mk
