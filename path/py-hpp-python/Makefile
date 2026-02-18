@@ -2,7 +2,7 @@
 # Created:			Guilhem Saurel on Thu, 19 Dec 2024
 #
 
-PKGREVISION=		1
+PKGREVISION=		2
 HPP_PACKAGE=		hpp-python
 HPP_COMMENT=		Python bindings for Humanoid Path Planner
 
@@ -26,6 +26,7 @@ pre-configure:
 include ../../doc/py-hpp-tutorial/depend.mk
 include ../../math/hpp-pinocchio/depend.mk
 include ../../math/py-eigenpy/depend.mk
+include ../../math/py-pinocchio/depend.mk
 include ../../path/hpp-constraints/depend.mk
 include ../../path/hpp-core/depend.mk
 include ../../path/hpp-manipulation-urdf/depend.mk
