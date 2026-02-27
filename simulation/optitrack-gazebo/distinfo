@@ -1,3 +1,4 @@
 SHA1 (optitrack-gazebo-2.0.tar.gz) = acde2a782d95b159a9400063b1151ec175339704
 RMD160 (optitrack-gazebo-2.0.tar.gz) = 360ce32a539326ca012e24dbd3bf58d1b557820a
 Size (optitrack-gazebo-2.0.tar.gz) = 380710 bytes
+SHA1 (patch-src_plugin.cc) = ea4980e91cef07adfc28d9cb6756f356ac6f958b
