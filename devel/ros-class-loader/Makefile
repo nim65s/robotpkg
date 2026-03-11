@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	class_loader
-ROS_VERSION=	0.4.1
+ROS_VERSION=	0.5.2
 
 CATEGORIES=	devel
 ROS_COMMENT=	package for dynamically loading C++ classes at runtime
@@ -16,6 +16,8 @@ CMAKE_ARGS+=	-DPoco_LIBRARIES=$(filter %.so,${SYSTEM_FILES.poco})
 
 LIBRARY_DIRS.poco+=	lib
 RPATH_DIRS.poco+=	lib
+
+DEPEND_ABI.console-bridge += console-bridge>=0.4
 
 include ../../devel/ros-catkin/depend.mk
 include ../../devel/ros-cmake-modules/depend.mk
