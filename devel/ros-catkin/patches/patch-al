@@ -1,0 +1,13 @@
+Fix compatibility with cmake>=4.
+
+--- cmake/toplevel.cmake~	2025-04-26 01:25:12.000000000 +0200
++++ cmake/toplevel.cmake	2026-03-12 00:49:18.924098773 +0100
+@@ -1,7 +1,7 @@
+ # toplevel CMakeLists.txt for a catkin workspace
+ # catkin/cmake/toplevel.cmake
+ 
+-cmake_minimum_required(VERSION 3.0.2)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(Project)
+ 
