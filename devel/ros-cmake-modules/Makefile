@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	cmake_modules
-ROS_VERSION=	0.4.1
+ROS_VERSION=	0.5.2
 
 CATEGORIES=	devel
 ROS_COMMENT=	cmake modules commonly used by ROS packages
