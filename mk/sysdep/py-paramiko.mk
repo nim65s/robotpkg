@@ -13,10 +13,10 @@ ifeq (+,$(PYPARAMIKO_DEPEND_MK)) # -----------------------------------------
 PREFER.py-paramiko?=	system
 
 DEPEND_USE+=		py-paramiko
-DEPEND_ABI.py-paramiko?=${PKGTAG.python-}paramiko>=1
+DEPEND_ABI.py-paramiko?=${PKGTAG.python-}paramiko
 
 SYSTEM_SEARCH.py-paramiko=\
-  '${PYTHON_SYSLIBSEARCH}/paramiko/__init__.py:/^__version__/s/[^0-9.]//gp'
+  '${PYTHON_SYSLIBSEARCH}/paramiko/__init__.py'
 
 SYSTEM_PKG.Ubuntu.py-paramiko=	python$(subst 2,,${PYTHON_MAJOR})-paramiko
 SYSTEM_PKG.RedHat.py-paramiko=	python-paramiko
