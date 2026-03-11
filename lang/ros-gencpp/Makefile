@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=		gencpp
-ROS_VERSION=		0.6.5
+ROS_VERSION=		0.7.2
 
 CATEGORIES=		lang
 ROS_COMMENT=		C++ code generator for ROS .msg format
