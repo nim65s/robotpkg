@@ -2,9 +2,8 @@
 # Created:			Anthony Mallet on Tue,  4 Sep 2018
 #
 
-PKGREVISION=	1
 ROS_PKG=	rosconsole
-ROS_VERSION=	1.13.7
+ROS_VERSION=	1.14.4
 PKGNAME=	ros-console-${ROS_VERSION}
 
 CATEGORIES=	sysutils
