@@ -1,4 +1,4 @@
-@comment Fri Sep 7 18:11:33 CEST 2018
+@comment Thu Mar 12 12:03:12 CET 2026
 include/nodelet/NodeletList.h
 include/nodelet/NodeletListRequest.h
 include/nodelet/NodeletListResponse.h
@@ -13,6 +13,8 @@ include/nodelet/detail/callback_queue_manager.h
 include/nodelet/exception.h
 include/nodelet/loader.h
 include/nodelet/nodelet.h
+include/nodelet/nodeletdecl.h
+include/nodelet/version.h
 include/nodelet_topic_tools/NodeletThrottleConfig.h
 include/nodelet_topic_tools/nodelet_demux.h
 include/nodelet_topic_tools/nodelet_lazy.h
