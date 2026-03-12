@@ -40,6 +40,11 @@ CMAKE_ARGS+=	-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDE}
 CMAKE_ARGS+=	-DPYTHON_LIBRARY=${PYTHON_LIB}
 CMAKE_ARGS+=	-DPYTHON_PACKAGES_DIR=site-packages
 
+# compatibility with cmake>=4
+CMAKE_ARGS+=\
+  $(if $(filter cmake-4.%,${PKGVERSION.cmake}),	\
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5)
+
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/sysdep/python.mk
