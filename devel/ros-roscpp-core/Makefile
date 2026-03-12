@@ -4,12 +4,14 @@
 
 ROS_PKG=	roscpp_core
 ROS_METAPKG=	yes
-ROS_VERSION=	0.6.11
+ROS_VERSION=	0.7.3
 
 CATEGORIES=	devel
 ROS_COMMENT=	underlying data libraries for roscpp messages
 
 include ../../meta-pkgs/ros-base/Makefile.common
+
+DEPEND_ABI.console-bridge += console-bridge>=0.4
 
 include ../../devel/ros-catkin/depend.mk
 include ../../sysutils/console-bridge/depend.mk
