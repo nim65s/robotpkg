@@ -2,15 +2,15 @@
 # Created:			Anthony Mallet on Wed, 13 Aug 2014
 #
 
-PKGREVISION=	1
 ROS_PKG=	ros_comm_msgs
-ROS_VERSION=	1.11.2
+ROS_VERSION=	1.11.4
 ROS_METAPKG=	yes
 
 PKGNAME=	$(subst _,-,${ROS_PKG})-${ROS_VERSION}
 
 CATEGORIES=	interfaces
 ROS_COMMENT=	standard messages definition
+CONFLICTS+=	ros2-rcl-interfaces-[0-9]*
 
 include ../../meta-pkgs/ros-base/Makefile.common
 
