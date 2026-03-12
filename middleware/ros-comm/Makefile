@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=		ros_comm
-ROS_VERSION=		1.17.0
+ROS_VERSION=		1.17.4
 ROS_METAPKG=		yes
 
 PKGNAME=		$(subst _,-,${ROS_PKG})-${ROS_VERSION}
@@ -41,6 +41,8 @@ SUBST_FILES.py-interp+=	test/test_rospy/nodes/talker
 
 # patch-ap for boost::placeholders requires this
 DEPEND_ABI.boost-headers+=	boost-headers>=1.60
+
+DEPEND_ABI.console-bridge+= console-bridge>=0.4
 
 include ../../archivers/bzip2/depend.mk
 include ../../archivers/lz4/depend.mk
