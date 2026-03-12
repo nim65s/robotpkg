@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	std_msgs
-ROS_VERSION=	0.5.11
+ROS_VERSION=	0.5.14
 
 CATEGORIES=	interfaces
 ROS_COMMENT=	standard messages definition
