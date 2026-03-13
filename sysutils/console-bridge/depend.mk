@@ -20,8 +20,8 @@ else ifeq (Debian,${OPSYS})
   ifneq (,$(filter 8,${OS_VERSION}))
     PREFER.console-bridge?=	robotpkg
   endif
-else ifeq (Ubuntu,${OPSYS})
-  ifneq (,$(filter 14.04,${OS_VERSION}))
+else ifeq (Rocky,${OPSYS})
+  ifneq (,$(filter 8,${OS_VERSION}))
     PREFER.console-bridge?=	robotpkg
   endif
 endif
