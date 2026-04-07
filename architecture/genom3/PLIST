@@ -1,6 +1,6 @@
-@comment Tue Apr 22 18:54:46 CEST 2025
-bin/genom${PKGVERSION}
+@comment Tue Apr 7 11:50:20 CEST 2026
 bin/genom3
+bin/genom${PKGVERSION}
 bin/profundis
 include/genom3/c++/event.h
 include/genom3/c++/idloptional.h
@@ -127,13 +127,30 @@ share/genom/engines/tcl/object.tcl
 share/genom/engines/tcl/pkgIndex.tcl
 share/genom/engines/tcl/template.tcl
 share/genom/engines/tcl/version.tcl
+share/genom/templates/common/activity.c
+share/genom/templates/common/activity.h
+share/genom/templates/common/build-date.c
 share/genom/templates/common/c-client-uninstalled.pc.in
 share/genom/templates/common/c-client.pc.in
+share/genom/templates/common/client-data.c
+share/genom/templates/common/client-info.c
+share/genom/templates/common/client-json.c
+share/genom/templates/common/client-plugin.c
 share/genom/templates/common/client.h
+share/genom/templates/common/component.c
+share/genom/templates/common/component.h
+share/genom/templates/common/control-codels.c
+share/genom/templates/common/docutil.tcl
+share/genom/templates/common/exception.h
+share/genom/templates/common/exec-codels.c
 share/genom/templates/common/genom.gen
 share/genom/templates/common/json-types.h
+share/genom/templates/common/jsonops-c.h
+share/genom/templates/common/log.c
+share/genom/templates/common/parameters-c.h
 share/genom/templates/common/prof.c
 share/genom/templates/common/prof.h
+share/genom/templates/common/typeops-c.h
 share/genom/templates/example/example.Makefile.am
 share/genom/templates/example/example.c
 share/genom/templates/example/example.configure.ac

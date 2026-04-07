@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Fri, 19 Oct 2012
 #
 
-VERSION=	2.99.46
+VERSION=	3.1
 DISTNAME=	genom-${VERSION}
 PKGNAME=	genom3-${VERSION}
 CATEGORIES=	architecture
@@ -28,4 +28,5 @@ include ../../mk/sysdep/flex.mk
 include ../../mk/sysdep/pkg-config.mk
 include ../../mk/sysdep/tcl.mk
 include ../../mk/language/c.mk
+include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
