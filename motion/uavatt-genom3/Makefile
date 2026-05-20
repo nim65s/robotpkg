@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Fri, 8 Mar 2019
 #
 
-DISTNAME=		uavatt-genom3-1.2.1
+DISTNAME=		uavatt-genom3-1.3
 CATEGORIES=		motion
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=${PKGBASE}/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}telekyb3/${PKGBASE}
@@ -13,8 +13,11 @@ LICENSE=		2-clause-bsd
 
 include ../../architecture/genom3/module.mk
 
+DEPEND_ABI.proxsuite+=  proxsuite>=0.6.4
+
 include ../../interfaces/openrobots2-idl/depend.mk
 include ../../math/eigen3/depend.mk
+include ../../optimization/proxsuite/depend.mk
 include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
