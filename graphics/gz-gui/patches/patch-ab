@@ -1,0 +1,33 @@
+From e1eb227411f605577c4eb6de2f4df627d72d1ade Mon Sep 17 00:00:00 2001
+From: bill <84451962+bill997@users.noreply.github.com>
+Date: Sat, 2 Aug 2025 03:07:52 +1000
+Subject: [PATCH] Fix compatibility with protobuf v30 (cpp 6.30.0) (#677)
+
+Signed-off-by: bill ross <4451962+bill997@users.noreply.github.com>
+Co-authored-by: bill ross <4451962+bill997@users.noreply.github.com>
+Co-authored-by: Ian Chen <ichen@openrobotics.org>
+---
+ src/plugins/topic_viewer/TopicViewer.cc | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git src/plugins/topic_viewer/TopicViewer.cc src/plugins/topic_viewer/TopicViewer.cc
+index 73621d278..b70063153 100644
+--- src/plugins/topic_viewer/TopicViewer.cc
++++ src/plugins/topic_viewer/TopicViewer.cc
+@@ -268,12 +268,13 @@ void TopicViewer::Implementation::AddField(QStandardItem *_parentItem,
+     auto messageType = msgField->message_type();
+ 
+     if (messageType)
+-      this->AddField(msgItem, msgField->name(), messageType->full_name());
++      this->AddField(msgItem, std::string(msgField->name()),
++          std::string(messageType->full_name()));
+ 
+     else
+     {
+-      auto msgFieldItem = this->FactoryItem(msgField->name(),
+-                                            msgField->type_name());
++      auto msgFieldItem = this->FactoryItem(std::string(msgField->name()),
++                                            std::string(msgField->type_name()));
+       msgItem->appendRow(msgFieldItem);
+ 
+       this->SetItemPath(msgFieldItem);
