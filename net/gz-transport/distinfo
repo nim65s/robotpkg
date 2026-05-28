@@ -2,3 +2,5 @@ SHA1 (gz-transport-gz-transport14_14.0.0.tar.gz) = 02eed3ec0f12525e0247fadc48256
 RMD160 (gz-transport-gz-transport14_14.0.0.tar.gz) = 00ff01a6b94168e0364fed90123bb74dc25163e5
 Size (gz-transport-gz-transport14_14.0.0.tar.gz) = 618194 bytes
 SHA1 (patch-aa) = 648cd67bddb17f6eaf7257eb2efb679d7a8d9ceb
+SHA1 (patch-ab) = 218cb23c1dfd3fad917dcf2b5274ea8e83b3a7c8
+SHA1 (patch-ac) = 8d11f4ed25244d998bcd912916ad0c85e392c6d5
