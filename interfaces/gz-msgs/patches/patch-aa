@@ -6,7 +6,7 @@ Fix compatibility with protobuf < 3.15
  //////////////////////////////////////////////////
  void DynamicFactory::Types(std::vector<std::string> &_types)
  {
-+#if 1 || GOOGLE_PROTOBUF_VERSION < 3015000
++#if GOOGLE_PROTOBUF_VERSION < 3015000
 +  std::vector<std::string> files;
 +  if (!this->db.FindAllFileNames(&files)) return;
 +
