@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Tue,  5 Apr 2022
 #
 
-VERSION=	2.3.0
+VERSION=	2.3.6
 PKGNAME=	fastcdr-${VERSION}
 DISTNAME=	Fast-CDR-${VERSION}
 MASTER_SITES=	${MASTER_SITE_GITHUB:=eProsima/}
@@ -15,6 +15,8 @@ LICENSE=	apache-2.0
 
 ROS2_AMENTPKG=	no
 include ../../meta-pkgs/ros2-core/Makefile.common
+
+CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=lib
 
 PKG_SUPPORTED_OPTIONS+=	doc
 PKG_OPTION_DESCR.doc=	Enable documentation generation and installation
