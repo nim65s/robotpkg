@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Wed, 30 Mar 2022
 #
 
-DISTNAME=	ament_cmake-1.5.2
+DISTNAME=	ament_cmake-2.9.0
 PKGNAME=	$(subst _,-,${DISTNAME})
 ROS2_REPO=	ament
 
@@ -17,7 +17,6 @@ ROS2_SUBPKGS=\
   ament_cmake_libraries			\
   ament_cmake_export_definitions	\
   ament_cmake_export_include_directories\
-  ament_cmake_export_interfaces		\
   ament_cmake_export_link_flags		\
   ament_cmake_export_targets		\
   ament_cmake_gtest			\
@@ -28,11 +27,13 @@ ROS2_SUBPKGS=\
   ament_cmake_include_directories	\
   ament_cmake_version			\
   ament_cmake_export_libraries		\
-  ament_cmake_auto			\
   ament_cmake_gmock			\
+  ament_cmake_auto			\
   ament_cmake_google_benchmark		\
-  ament_cmake_nose			\
-  ament_cmake_pytest
+  ament_cmake_pytest			\
+  ament_cmake_vendor_package		\
+  ament_cmake_python_test
+
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 
@@ -56,8 +57,8 @@ SUBST_SED.py-vers=\
 SUBST_FILES.py-vers=\
   ament_cmake_core/cmake/core/python.cmake
 
-# uses FindPython3
-DEPEND_ABI.cmake+=	cmake>=3.12
+# per the package decision
+DEPEND_ABI.cmake+=	cmake>=3.20
 
 include ../../sysutils/py-ament-package/depend.mk
 include ../../sysutils/py-catkin-pkg/depend.mk

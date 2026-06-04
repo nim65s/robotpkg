@@ -26,7 +26,6 @@ SYSTEM_SEARCH.ament-cmake=\
     ament_cmake_export_definitions		\
     ament_cmake_export_dependencies		\
     ament_cmake_export_include_directories	\
-    ament_cmake_export_interfaces		\
     ament_cmake_export_libraries		\
     ament_cmake_export_link_flags		\
     ament_cmake_export_targets			\
@@ -51,6 +50,9 @@ CMAKE_ARGS+=	-DBUILD_TESTING=OFF
 CMAKE_ARGS+=	-DAMENT_CMAKE_UNINSTALL_TARGET=OFF
 CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=lib
 CMAKE_ARGS+=	-DPYTHON_INSTALL_DIR=${PYTHON_SITELIB}
+
+# per the package decision
+DEPEND_ABI.cmake+=	cmake>=3.20
 
 # set ament prefix
 export AMENT_PREFIX_PATH=\
