@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	ros_workspace
-ROS2_VERSION=	1.0.2
+ROS2_VERSION=	1.0.3
 
 CATEGORIES=	sysutils
 ROS2_COMMENT=	environment files for packages.
