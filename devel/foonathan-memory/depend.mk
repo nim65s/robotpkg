@@ -20,7 +20,7 @@ DEPEND_ABI.foonathan-memory?=	foonathan-memory>=0
 DEPEND_DIR.foonathan-memory?=	../../devel/foonathan-memory
 
 SYSTEM_SEARCH.foonathan-memory=\
-  'include/foonathan_memory/foonathan/memory/config.hpp'		\
+  'include{,/foonathan_memory}/foonathan/memory/config.hpp'		\
   'lib/libfoonathan_memory-*.a:s/.*memory-//;s/.a$$//p:echo %'		\
   'lib/foonathan_memory/cmake/foonathan_memory-config.cmake'
 

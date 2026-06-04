@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Fri,  8 Apr 2022
 #
 
-VERSION=	0.7-1
+VERSION=	0.7-4
 DISTNAME=	memory-${subst -,.,${VERSION}}
 PKGNAME=	foonathan-${DISTNAME}
 MASTER_SITES=	${MASTER_SITE_GITHUB:=foonathan/}
