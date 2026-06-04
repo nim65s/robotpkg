@@ -1,4 +1,4 @@
-@comment Wed Jul 30 19:54:38 CEST 2025
+@comment Thu Jun 4 19:25:15 CEST 2026
 share/ament_cmake_ros/cmake/ament_add_ros_isolated_gmock.cmake
 share/ament_cmake_ros/cmake/ament_add_ros_isolated_gtest.cmake
 share/ament_cmake_ros/cmake/ament_add_ros_isolated_pytest.cmake
@@ -19,9 +19,12 @@ share/ament_cmake_ros/local_setup.zsh
 share/ament_cmake_ros/package.dsv
 share/ament_cmake_ros/package.xml
 share/ament_cmake_ros_core/cmake/ament_cmake_export_dependencies-extras.cmake
+share/ament_cmake_ros_core/cmake/ament_cmake_export_targets-extras.cmake
 share/ament_cmake_ros_core/cmake/ament_cmake_ros_core-extras.cmake
 share/ament_cmake_ros_core/cmake/ament_cmake_ros_coreConfig-version.cmake
 share/ament_cmake_ros_core/cmake/ament_cmake_ros_coreConfig.cmake
+share/ament_cmake_ros_core/cmake/ament_ros_core_targetsExport.cmake
+share/ament_cmake_ros_core/cmake/ament_ros_defaults.cmake
 share/ament_cmake_ros_core/cmake/build_shared_libs.cmake
 share/ament_cmake_ros_core/environment/ament_prefix_path.dsv
 share/ament_cmake_ros_core/environment/ament_prefix_path.sh

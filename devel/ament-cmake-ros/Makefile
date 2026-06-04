@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	ament_cmake_ros
-ROS2_VERSION=	0.15.1
+ROS2_VERSION=	0.16.0
 PKGNAME=	$(subst _,-,${DISTNAME})
 
 CATEGORIES=	devel
