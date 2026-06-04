@@ -1,0 +1,8 @@
+Install tools helpers to libexec (FHS)
+
+--- tools/fastdds/ros-discovery~	2022-03-17 07:49:49.000000000 +0100
++++ tools/fastdds/ros-discovery	2022-04-11 15:33:53.322730046 +0200
+@@ -1,2 +1,2 @@
+ dir="`dirname \"$0\"`"
+-python3 "$dir/../tools/fastdds/fastdds.py" discovery ${@}
++@PYTHON@ "$dir/../libexec/fastdds/fastdds.py" discovery ${@}

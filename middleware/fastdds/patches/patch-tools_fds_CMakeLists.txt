@@ -1,0 +1,22 @@
+* Don't require too much cmake for no reason
+* Fix useless bashism
+
+--- tools/fds/CMakeLists.txt~	2026-06-06 14:04:38.217051457 +0200
++++ tools/fds/CMakeLists.txt	2026-06-06 14:42:23.862859958 +0200
+@@ -12,7 +12,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-cmake_minimum_required(VERSION 3.22) # TODO 3.28
++cmake_minimum_required(VERSION 3.16) # TODO 3.28
+ 
+ project(fast-discovery-server VERSION 1.0.1 LANGUAGES CXX)
+ 
+@@ -100,6 +100,6 @@
+ else()
+     # Use ln to create the symbolic link. We remove the version from the file name but keep the debug suffix
+     install(
+-        CODE "execute_process(COMMAND bash -c \"if [[ -h ${PROJECT_NAME} ]]; then rm ${PROJECT_NAME}; fi;  ln -s $<TARGET_FILE_NAME:${PROJECT_NAME}> ${PROJECT_NAME}\" WORKING_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${BIN_INSTALL_DIR}${MSVCARCH_DIR_EXTENSION}\")"
++        CODE "execute_process(COMMAND /bin/sh -c \"if [ -h ${PROJECT_NAME} ]; then rm ${PROJECT_NAME}; fi;  ln -s $<TARGET_FILE_NAME:${PROJECT_NAME}> ${PROJECT_NAME}\" WORKING_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${BIN_INSTALL_DIR}${MSVCARCH_DIR_EXTENSION}\")"
+         COMPONENT discovery)
+ endif()

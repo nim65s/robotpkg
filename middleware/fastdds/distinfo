@@ -1,0 +1,13 @@
+SHA1 (Fast-DDS-v3.6.1.tar.gz) = d6380b12f74e67ec4d03b49f2bc63afe8a918c55
+RMD160 (Fast-DDS-v3.6.1.tar.gz) = ba2fff78c2cc5eba94979ab217c02514676206ff
+Size (Fast-DDS-v3.6.1.tar.gz) = 8200924 bytes
+SHA1 (patch-CMakeLists.txt) = 6d226e62fe368d68a5f18b93b48d3aff9fb2b03a
+SHA1 (patch-src_cpp_rtps_domain_RTPSDomain.cpp) = 67c7e2d2f1e6dd3111f6cff36e64523be6a629fb
+SHA1 (patch-src_cpp_rtps_reader_WriterProxy.cpp) = 40f2452dc680e7f984f67ae7fbed95a90206459c
+SHA1 (patch-src_cpp_xmlparser_XMLDynamicParser.cpp) = 254cef1d37ed79bc5306fd6f7c8f9d7277c293b3
+SHA1 (patch-thirdparty_filewatch_FileWatch.hpp) = 1112fa8814c00d63fdd50a85fc1c0c84bcdc86f5
+SHA1 (patch-thirdparty_optionparser_CMakeLists.txt) = 9908f0298ca58d99f283108583dc50ea9d8cd575
+SHA1 (patch-tools_fastdds_CMakeLists.txt) = 45fbd4dcd81de99f1fee1d5a59eb101648886499
+SHA1 (patch-tools_fastdds_fastdds) = 622888efd96d5bb2c94cd90f71ca82dff9b68aeb
+SHA1 (patch-tools_fastdds_ros-discovery) = b3480c5eff404aac5ec60fd2e71c5a19cebab9f7
+SHA1 (patch-tools_fds_CMakeLists.txt) = 03ff682949d9224abdffac28f878cae25f28c4c7

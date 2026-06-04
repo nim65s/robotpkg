@@ -2,14 +2,15 @@
 # Created:			Anthony Mallet on Mon, 11 Apr 2022
 #
 
-VERSION=	2.14.5
-PKGNAME=	fastrtps-${VERSION}
+VERSION=	3.6.1
+PKGNAME=	fastdds-${VERSION}
 DISTNAME=	Fast-DDS-${VERSION}
 MASTER_SITES=	${MASTER_SITE_GITHUB:=eProsima/}
 GITHUB_TAG=	v${VERSION}
 
 COMMENT=	Implementation of the Data Distribution Service (DDS) standard.
 CATEGORIES=	middleware
+CONFLICTS+=	fastrtps-[0-9]*
 
 ROS2_AMENTPKG=	no
 include ../../meta-pkgs/ros2-core/Makefile.common
@@ -19,8 +20,9 @@ CMAKE_ARGS+=	-DTHIRDPARTY_Asio=OFF
 CMAKE_ARGS+=	-DTHIRDPARTY_TinyXML2=OFF
 
 SUBST_CLASSES+=	py-interp
-SUBST_FILES.py_interp=\
+SUBST_FILES.py-interp=\
   tools/fastdds/fastdds		\
+  tools/fastdds/fastdds.py	\
   tools/fastdds/ros-discovery
 
 PYTHON_PLIST_COMPILE_PATTERN=\
@@ -39,7 +41,7 @@ define PKG_OPTION_SET.doc
 endef
 
 DEPEND_ABI.asio= asio>=1.13
-DEPEND_ABI.cmake= cmake>=3.16.3
+DEPEND_ABI.cmake= cmake>=3.22
 DEPEND_ABI.python+= python>=3.6
 
 include ../../devel/asio/depend.mk

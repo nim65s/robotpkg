@@ -1,0 +1,23 @@
+* Don't require too much cmake for no reason
+* Don't build with Werror in robotpkg
+
+--- CMakeLists.txt~	2026-06-06 14:04:38.215855858 +0200
++++ CMakeLists.txt	2026-06-06 14:44:44.068083105 +0200
+@@ -15,7 +15,7 @@
+ ###############################################################################
+ # CMake build rules for Fast DDS
+ ###############################################################################
+-cmake_minimum_required(VERSION 3.22) # TODO 3.28
++cmake_minimum_required(VERSION 3.16) # TODO 3.28
+ 
+ # Set CMAKE_BUILD_TYPE to Release by default.
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+@@ -177,8 +177,6 @@
+ ###############################################################################
+ string(FIND ${CMAKE_CXX_FLAGS} "-fsanitize=thread" SANITIZER_THREAD)
+ if (${SANITIZER_THREAD} EQUAL -1)
+-    message(STATUS "Setting warnings as errors...")
+-    set(CMAKE_COMPILE_WARNING_AS_ERROR ON)
+ endif()
+ 
+ ###############################################################################
