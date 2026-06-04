@@ -19,7 +19,7 @@ SYSTEM_SEARCH.py-lark-parser=\
   '${PYTHON_SYSLIBSEARCH}/lark/__init__.py:/^__version__/s/[^0-9.]//gp'	\
 
 SYSTEM_PKG.RedHat.py-lark-parser=	python${PYTHON_MAJOR}-lark
-SYSTEM_PKG.Debian.py-lark-parser=	python${PYTHON_MAJOR}-lark-parser
+SYSTEM_PKG.Debian.py-lark-parser=	python${PYTHON_MAJOR}-lark
 SYSTEM_PKG.NetBSD.py-lark-parser=	lang/${PKGTAG.python-}lark-parser
 
 include ../../mk/sysdep/python.mk
