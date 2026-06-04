@@ -26,8 +26,9 @@ SYSTEM_SEARCH.asio=\
   'include/asio.hpp'	\
   'include/asio/version.hpp:/^\#define ASIO_VERSION.*\/\//{s///;s/[^0-9.]//gp;}'
 
-SYSTEM_PKG.Debian.asio=	asio-dev
+SYSTEM_PKG.Debian.asio=	libasio-dev
 SYSTEM_PKG.Fedora.asio=	asio-devel
+SYSTEM_PKG.NetBSD.asio=	devel/asio
 
 endif # ASIO_DEPEND_MK -----------------------------------------------------
 
