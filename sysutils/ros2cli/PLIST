@@ -1,4 +1,4 @@
-@comment Tue May 7 18:52:40 CEST 2024
+@comment Wed Jun 10 00:46:54 CEST 2026
 @comment filtered by rosidl adapter.awk
 @comment filtered by rosidl generator.awk
 @comment filtered by rosidl-typesupport-fastrtps generator.awk
@@ -23,10 +23,14 @@ ${PYTHON_SITELIB}/ros2action/__init__.py
 ${PYTHON_SITELIB}/ros2action/api/__init__.py
 ${PYTHON_SITELIB}/ros2action/command/__init__.py
 ${PYTHON_SITELIB}/ros2action/command/action.py
+${PYTHON_SITELIB}/ros2action/py.typed
 ${PYTHON_SITELIB}/ros2action/verb/__init__.py
+${PYTHON_SITELIB}/ros2action/verb/echo.py
+${PYTHON_SITELIB}/ros2action/verb/find.py
 ${PYTHON_SITELIB}/ros2action/verb/info.py
 ${PYTHON_SITELIB}/ros2action/verb/list.py
 ${PYTHON_SITELIB}/ros2action/verb/send_goal.py
+${PYTHON_SITELIB}/ros2action/verb/type.py
 ${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -50,6 +54,8 @@ ${PYTHON_SITELIB}/ros2cli/node/direct.py
 ${PYTHON_SITELIB}/ros2cli/node/network_aware.py
 ${PYTHON_SITELIB}/ros2cli/node/strategy.py
 ${PYTHON_SITELIB}/ros2cli/plugin_system.py
+${PYTHON_SITELIB}/ros2cli/py.typed
+${PYTHON_SITELIB}/ros2cli/qos.py
 ${PYTHON_SITELIB}/ros2cli/verb/__init__.py
 ${PYTHON_SITELIB}/ros2cli/verb/daemon/__init__.py
 ${PYTHON_SITELIB}/ros2cli/verb/daemon/start.py
@@ -96,6 +102,7 @@ ${PYTHON_SITELIB}/ros2component/__init__.py
 ${PYTHON_SITELIB}/ros2component/api/__init__.py
 ${PYTHON_SITELIB}/ros2component/command/__init__.py
 ${PYTHON_SITELIB}/ros2component/command/component.py
+${PYTHON_SITELIB}/ros2component/py.typed
 ${PYTHON_SITELIB}/ros2component/verb/__init__.py
 ${PYTHON_SITELIB}/ros2component/verb/list.py
 ${PYTHON_SITELIB}/ros2component/verb/load.py
@@ -111,15 +118,19 @@ ${PYTHON_SITELIB}/ros2doctor-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/top_leve
 ${PYTHON_SITELIB}/ros2doctor-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/zip-safe
 ${PYTHON_SITELIB}/ros2doctor/__init__.py
 ${PYTHON_SITELIB}/ros2doctor/api/__init__.py
+${PYTHON_SITELIB}/ros2doctor/api/action.py
+${PYTHON_SITELIB}/ros2doctor/api/environment.py
 ${PYTHON_SITELIB}/ros2doctor/api/format.py
 ${PYTHON_SITELIB}/ros2doctor/api/network.py
 ${PYTHON_SITELIB}/ros2doctor/api/package.py
 ${PYTHON_SITELIB}/ros2doctor/api/platform.py
 ${PYTHON_SITELIB}/ros2doctor/api/qos_compatibility.py
 ${PYTHON_SITELIB}/ros2doctor/api/rmw.py
+${PYTHON_SITELIB}/ros2doctor/api/service.py
 ${PYTHON_SITELIB}/ros2doctor/api/topic.py
 ${PYTHON_SITELIB}/ros2doctor/command/__init__.py
 ${PYTHON_SITELIB}/ros2doctor/command/doctor.py
+${PYTHON_SITELIB}/ros2doctor/py.typed
 ${PYTHON_SITELIB}/ros2doctor/verb/__init__.py
 ${PYTHON_SITELIB}/ros2doctor/verb/hello.py
 ${PYTHON_SITELIB}/ros2interface-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
@@ -133,6 +144,7 @@ ${PYTHON_SITELIB}/ros2interface/__init__.py
 ${PYTHON_SITELIB}/ros2interface/api/__init__.py
 ${PYTHON_SITELIB}/ros2interface/command/__init__.py
 ${PYTHON_SITELIB}/ros2interface/command/interface.py
+${PYTHON_SITELIB}/ros2interface/py.typed
 ${PYTHON_SITELIB}/ros2interface/verb/__init__.py
 ${PYTHON_SITELIB}/ros2interface/verb/list.py
 ${PYTHON_SITELIB}/ros2interface/verb/package.py
@@ -150,6 +162,7 @@ ${PYTHON_SITELIB}/ros2lifecycle/__init__.py
 ${PYTHON_SITELIB}/ros2lifecycle/api/__init__.py
 ${PYTHON_SITELIB}/ros2lifecycle/command/__init__.py
 ${PYTHON_SITELIB}/ros2lifecycle/command/lifecycle.py
+${PYTHON_SITELIB}/ros2lifecycle/py.typed
 ${PYTHON_SITELIB}/ros2lifecycle/verb/__init__.py
 ${PYTHON_SITELIB}/ros2lifecycle/verb/get.py
 ${PYTHON_SITELIB}/ros2lifecycle/verb/list.py
@@ -166,6 +179,7 @@ ${PYTHON_SITELIB}/ros2multicast/__init__.py
 ${PYTHON_SITELIB}/ros2multicast/api/__init__.py
 ${PYTHON_SITELIB}/ros2multicast/command/__init__.py
 ${PYTHON_SITELIB}/ros2multicast/command/multicast.py
+${PYTHON_SITELIB}/ros2multicast/py.typed
 ${PYTHON_SITELIB}/ros2multicast/verb/__init__.py
 ${PYTHON_SITELIB}/ros2multicast/verb/receive.py
 ${PYTHON_SITELIB}/ros2multicast/verb/send.py
@@ -180,6 +194,7 @@ ${PYTHON_SITELIB}/ros2node/__init__.py
 ${PYTHON_SITELIB}/ros2node/api/__init__.py
 ${PYTHON_SITELIB}/ros2node/command/__init__.py
 ${PYTHON_SITELIB}/ros2node/command/node.py
+${PYTHON_SITELIB}/ros2node/py.typed
 ${PYTHON_SITELIB}/ros2node/verb/__init__.py
 ${PYTHON_SITELIB}/ros2node/verb/info.py
 ${PYTHON_SITELIB}/ros2node/verb/list.py
@@ -194,6 +209,7 @@ ${PYTHON_SITELIB}/ros2param/__init__.py
 ${PYTHON_SITELIB}/ros2param/api/__init__.py
 ${PYTHON_SITELIB}/ros2param/command/__init__.py
 ${PYTHON_SITELIB}/ros2param/command/param.py
+${PYTHON_SITELIB}/ros2param/py.typed
 ${PYTHON_SITELIB}/ros2param/verb/__init__.py
 ${PYTHON_SITELIB}/ros2param/verb/delete.py
 ${PYTHON_SITELIB}/ros2param/verb/describe.py
@@ -214,18 +230,24 @@ ${PYTHON_SITELIB}/ros2pkg/api/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/api/create.py
 ${PYTHON_SITELIB}/ros2pkg/command/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/command/pkg.py
+${PYTHON_SITELIB}/ros2pkg/py.typed
 ${PYTHON_SITELIB}/ros2pkg/resource/__init__.py
+${PYTHON_SITELIB}/ros2pkg/resource/ament_cargo/Cargo.toml.em
+${PYTHON_SITELIB}/ros2pkg/resource/ament_cargo/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_cmake/CMakeLists.txt.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_cmake/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/init.py.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/main.py.em
+${PYTHON_SITELIB}/ros2pkg/resource/ament_python/py.typed.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/resource_file.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/setup.cfg.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/setup.py.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/test_copyright.py.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/test_flake8.py.em
+${PYTHON_SITELIB}/ros2pkg/resource/ament_python/test_mypy.py.em
 ${PYTHON_SITELIB}/ros2pkg/resource/ament_python/test_pep257.py.em
+${PYTHON_SITELIB}/ros2pkg/resource/ament_python/test_xmllint.py.em
 ${PYTHON_SITELIB}/ros2pkg/resource/cmake/CMakeLists.txt.em
 ${PYTHON_SITELIB}/ros2pkg/resource/cmake/Config.cmake.in.em
 ${PYTHON_SITELIB}/ros2pkg/resource/cmake/ConfigVersion.cmake.in.em
@@ -237,6 +259,8 @@ ${PYTHON_SITELIB}/ros2pkg/resource/cpp/main.cpp.em
 ${PYTHON_SITELIB}/ros2pkg/resource/cpp/visibility_control.h.em
 ${PYTHON_SITELIB}/ros2pkg/resource/package_environment/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/resource/package_environment/package.xml.em
+${PYTHON_SITELIB}/ros2pkg/resource/rust/__init__.py
+${PYTHON_SITELIB}/ros2pkg/resource/rust/main.rs.em
 ${PYTHON_SITELIB}/ros2pkg/verb/__init__.py
 ${PYTHON_SITELIB}/ros2pkg/verb/create.py
 ${PYTHON_SITELIB}/ros2pkg/verb/executables.py
@@ -254,6 +278,7 @@ ${PYTHON_SITELIB}/ros2run/__init__.py
 ${PYTHON_SITELIB}/ros2run/api/__init__.py
 ${PYTHON_SITELIB}/ros2run/command/__init__.py
 ${PYTHON_SITELIB}/ros2run/command/run.py
+${PYTHON_SITELIB}/ros2run/py.typed
 ${PYTHON_SITELIB}/ros2service-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/ros2service-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/ros2service-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -265,9 +290,12 @@ ${PYTHON_SITELIB}/ros2service/__init__.py
 ${PYTHON_SITELIB}/ros2service/api/__init__.py
 ${PYTHON_SITELIB}/ros2service/command/__init__.py
 ${PYTHON_SITELIB}/ros2service/command/service.py
+${PYTHON_SITELIB}/ros2service/py.typed
 ${PYTHON_SITELIB}/ros2service/verb/__init__.py
 ${PYTHON_SITELIB}/ros2service/verb/call.py
+${PYTHON_SITELIB}/ros2service/verb/echo.py
 ${PYTHON_SITELIB}/ros2service/verb/find.py
+${PYTHON_SITELIB}/ros2service/verb/info.py
 ${PYTHON_SITELIB}/ros2service/verb/list.py
 ${PYTHON_SITELIB}/ros2service/verb/type.py
 ${PYTHON_SITELIB}/ros2topic-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
@@ -281,6 +309,7 @@ ${PYTHON_SITELIB}/ros2topic/__init__.py
 ${PYTHON_SITELIB}/ros2topic/api/__init__.py
 ${PYTHON_SITELIB}/ros2topic/command/__init__.py
 ${PYTHON_SITELIB}/ros2topic/command/topic.py
+${PYTHON_SITELIB}/ros2topic/py.typed
 ${PYTHON_SITELIB}/ros2topic/verb/__init__.py
 ${PYTHON_SITELIB}/ros2topic/verb/bw.py
 ${PYTHON_SITELIB}/ros2topic/verb/delay.py
@@ -314,6 +343,7 @@ share/ament_index/resource_index/parent_prefix_path/ros2lifecycle_test_fixtures
 share/ament_index/resource_index/rosidl_interfaces/ros2cli_test_interfaces
 share/ros2action/package.xml
 share/ros2cli/environment/ros2-argcomplete.bash
+share/ros2cli/environment/ros2-argcomplete.fish
 share/ros2cli/environment/ros2-argcomplete.zsh
 share/ros2cli/package.dsv
 share/ros2cli/package.xml
@@ -343,6 +373,7 @@ share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_
 share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake
 share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_introspection_cppExport.cmake
 share/ros2cli_test_interfaces/cmake/rosidl_cmake-extras.cmake
+share/ros2cli_test_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/ros2cli_test_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/ros2cli_test_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/ros2cli_test_interfaces/environment/ament_prefix_path.dsv

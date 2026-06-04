@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	ros2cli
-ROS2_VERSION=	0.18.3
+ROS2_VERSION=	0.41.0
 PKGNAME=	${DISTNAME}
 
 CATEGORIES=	sysutils
@@ -29,6 +29,9 @@ ROS2_SUBPKGS=\
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 
+DEPEND_ABI.ament-cmake-ros+=	ament-cmake-ros>=0.15.7
+
+include ../../devel/ament-cmake-ros/depend.mk
 include ../../devel/ros2-rclcpp/depend.mk
 include ../../devel/ros2-rclpy/depend.mk
 include ../../interfaces/ros2-rosidl-defaults/depend.mk
