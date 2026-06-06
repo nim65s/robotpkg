@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rosidl_dynamic_typesupport_fastrtps
-ROS2_VERSION=	0.1.0
+ROS2_VERSION=	0.6.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	runtime typesupport and serialization for fastRTPS
@@ -15,5 +15,5 @@ include ../../devel/ros2-rcutils/depend.mk
 include ../../interfaces/ros2-rosidl-dynamic-typesupport/depend.mk
 include ../../interfaces/ros2-rosidl-typesupport-fastrtps/depend.mk
 include ../../middleware/fastcdr/depend.mk
-include ../../middleware/fastrtps/depend.mk
+include ../../middleware/fastdds/depend.mk
 include ../../mk/robotpkg.mk
