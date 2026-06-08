@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	class_loader
-ROS2_VERSION=	2.2.0
+ROS2_VERSION=	3.0.0
 ROS2_REPO=	ros
 
 CATEGORIES=	devel
@@ -13,7 +13,9 @@ CONFLICTS+=	ros-class-loader-[0-9]*
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 
-include ../../devel/ament-cmake-ros/depend.mk
+DEPEND_ABI.console-bridge += console-bridge>=0.4
+
 include ../../devel/ros2-rcpputils/depend.mk
+include ../../devel/ros2-rcutils/depend.mk
 include ../../sysutils/console-bridge/depend.mk
 include ../../mk/robotpkg.mk

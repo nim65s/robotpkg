@@ -1,4 +1,4 @@
-SHA1 (class_loader-2.2.0.tar.gz) = 813de101c3dc2111b3a12740cc83940f9389b7b0
-RMD160 (class_loader-2.2.0.tar.gz) = cc662e16fa34fb18ed2d832ef285d8d7195cfa1f
-Size (class_loader-2.2.0.tar.gz) = 38718 bytes
-SHA1 (patch-aa) = b8f9a5ae21809415edf0eba63dfb36f0bb6f6e56
+SHA1 (class_loader-3.0.0.tar.gz) = a44e8164f00eea3e96d4e873c45c0a511c24d233
+RMD160 (class_loader-3.0.0.tar.gz) = 4d7efce3f126ca224d941ee847be38b5dfbfcb62
+Size (class_loader-3.0.0.tar.gz) = 42577 bytes
+SHA1 (patch-aa) = 05a6bb0605bd03a247b533699c0e9069ccaba85a

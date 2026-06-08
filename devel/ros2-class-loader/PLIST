@@ -1,7 +1,8 @@
-@comment Wed Apr 13 16:55:15 CEST 2022
+@comment Tue Jun 9 00:34:13 CEST 2026
 include/class_loader/class_loader/class_loader.hpp
 include/class_loader/class_loader/class_loader_core.hpp
 include/class_loader/class_loader/exceptions.hpp
+include/class_loader/class_loader/interface_traits.hpp
 include/class_loader/class_loader/meta_object.hpp
 include/class_loader/class_loader/multi_library_class_loader.hpp
 include/class_loader/class_loader/register_macro.hpp
@@ -18,6 +19,7 @@ share/class_loader/cmake/class_loaderConfig.cmake
 share/class_loader/cmake/class_loaderExport-release.cmake
 share/class_loader/cmake/class_loaderExport.cmake
 share/class_loader/cmake/class_loader_hide_library_symbols.cmake
+share/class_loader/cmake/sanitizers.cmake
 share/class_loader/environment/ament_prefix_path.dsv
 share/class_loader/environment/ament_prefix_path.sh
 share/class_loader/environment/path.dsv
