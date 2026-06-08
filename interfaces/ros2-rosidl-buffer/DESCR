@@ -1,0 +1,2 @@
+Buffer backend interface for ROS2 buffer types.
+Backend discovery and plugin loading for ROS2 buffer types.

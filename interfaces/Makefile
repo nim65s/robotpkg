@@ -23,6 +23,7 @@ SUBDIR+=	ros2-common-interfaces
 SUBDIR+=	ros2-rcl-core-interfaces
 SUBDIR+=	ros2-rcl-interfaces
 SUBDIR+=	ros2-rosidl
+SUBDIR+=	ros2-rosidl-buffer
 SUBDIR+=	ros2-rosidl-core
 SUBDIR+=	ros2-rosidl-dynamic-typesupport
 SUBDIR+=	ros2-rosidl-dynamic-typesupport-fastrtps
