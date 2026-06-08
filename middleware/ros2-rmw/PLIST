@@ -1,10 +1,11 @@
-@comment Thu Jul 31 01:55:26 CEST 2025
+@comment Mon Jun 8 22:53:34 CEST 2026
 include/rmw/rmw/allocators.h
 include/rmw/rmw/check_type_identifiers_match.h
 include/rmw/rmw/convert_rcutils_ret_to_rmw_ret.h
 include/rmw/rmw/discovery_options.h
 include/rmw/rmw/domain_id.h
 include/rmw/rmw/dynamic_message_type_support.h
+include/rmw/rmw/enclave.h
 include/rmw/rmw/error_handling.h
 include/rmw/rmw/event.h
 include/rmw/rmw/event_callback_type.h
@@ -20,6 +21,7 @@ include/rmw/rmw/events_statuses/requested_deadline_missed.h
 include/rmw/rmw/features.h
 include/rmw/rmw/get_network_flow_endpoints.h
 include/rmw/rmw/get_node_info_and_types.h
+include/rmw/rmw/get_service_endpoint_info.h
 include/rmw/rmw/get_service_names_and_types.h
 include/rmw/rmw/get_topic_endpoint_info.h
 include/rmw/rmw/get_topic_names_and_types.h
@@ -30,7 +32,6 @@ include/rmw/rmw/impl/cpp/macros.hpp
 include/rmw/rmw/incompatible_qos_events_statuses.h
 include/rmw/rmw/init.h
 include/rmw/rmw/init_options.h
-include/rmw/rmw/localhost.h
 include/rmw/rmw/macros.h
 include/rmw/rmw/message_sequence.h
 include/rmw/rmw/names_and_types.h
@@ -45,6 +46,8 @@ include/rmw/rmw/rmw.h
 include/rmw/rmw/sanity_checks.h
 include/rmw/rmw/security_options.h
 include/rmw/rmw/serialized_message.h
+include/rmw/rmw/service_endpoint_info.h
+include/rmw/rmw/service_endpoint_info_array.h
 include/rmw/rmw/subscription_content_filter_options.h
 include/rmw/rmw/subscription_options.h
 include/rmw/rmw/time.h
@@ -55,13 +58,19 @@ include/rmw/rmw/validate_full_topic_name.h
 include/rmw/rmw/validate_namespace.h
 include/rmw/rmw/validate_node_name.h
 include/rmw/rmw/visibility_control.h
+include/rmw_security_common/rmw_security_common/security.hpp
+include/rmw_security_common/rmw_security_common/visibility_control.h
 lib/librmw.so
+lib/librmw_security_common.so
 share/ament_index/resource_index/package_run_dependencies/rmw
 share/ament_index/resource_index/package_run_dependencies/rmw_implementation_cmake
+share/ament_index/resource_index/package_run_dependencies/rmw_security_common
 share/ament_index/resource_index/packages/rmw
 share/ament_index/resource_index/packages/rmw_implementation_cmake
+share/ament_index/resource_index/packages/rmw_security_common
 share/ament_index/resource_index/parent_prefix_path/rmw
 share/ament_index/resource_index/parent_prefix_path/rmw_implementation_cmake
+share/ament_index/resource_index/parent_prefix_path/rmw_security_common
 share/rmw/cmake/ament_cmake_export_dependencies-extras.cmake
 share/rmw/cmake/ament_cmake_export_include_directories-extras.cmake
 share/rmw/cmake/ament_cmake_export_libraries-extras.cmake
@@ -103,3 +112,23 @@ share/rmw_implementation_cmake/local_setup.sh
 share/rmw_implementation_cmake/local_setup.zsh
 share/rmw_implementation_cmake/package.dsv
 share/rmw_implementation_cmake/package.xml
+share/rmw_security_common/cmake/ament_cmake_export_dependencies-extras.cmake
+share/rmw_security_common/cmake/ament_cmake_export_include_directories-extras.cmake
+share/rmw_security_common/cmake/ament_cmake_export_libraries-extras.cmake
+share/rmw_security_common/cmake/ament_cmake_export_targets-extras.cmake
+share/rmw_security_common/cmake/rmw_security_commonConfig-version.cmake
+share/rmw_security_common/cmake/rmw_security_commonConfig.cmake
+share/rmw_security_common/cmake/rmw_security_common_libraryExport-release.cmake
+share/rmw_security_common/cmake/rmw_security_common_libraryExport.cmake
+share/rmw_security_common/environment/ament_prefix_path.dsv
+share/rmw_security_common/environment/ament_prefix_path.sh
+share/rmw_security_common/environment/library_path.dsv
+share/rmw_security_common/environment/library_path.sh
+share/rmw_security_common/environment/path.dsv
+share/rmw_security_common/environment/path.sh
+share/rmw_security_common/local_setup.bash
+share/rmw_security_common/local_setup.dsv
+share/rmw_security_common/local_setup.sh
+share/rmw_security_common/local_setup.zsh
+share/rmw_security_common/package.dsv
+share/rmw_security_common/package.xml

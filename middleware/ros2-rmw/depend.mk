@@ -22,7 +22,8 @@ DEPEND_DIR.ros2-rmw?=	../../middleware/ros2-rmw
 SYSTEM_SEARCH.ros2-rmw=\
   $(call ros2_system_search,	\
     rmw				\
-    rmw_implementation_cmake)
+    rmw_implementation_cmake	\
+    ?rmw_security_common)
 
 include ../../interfaces/ros2-rosidl-dynamic-typesupport/depend.mk
 

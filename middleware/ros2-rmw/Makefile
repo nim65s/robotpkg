@@ -3,14 +3,15 @@
 #
 
 ROS2_PKG=	rmw
-ROS2_VERSION=	7.3.2
+ROS2_VERSION=	7.11.0
 
 CATEGORIES=	middleware
 ROS2_COMMENT=	middleware interface.
 
 ROS2_SUBPKGS=\
   rmw				\
-  rmw_implementation_cmake
+  rmw_implementation_cmake	\
+  rmw_security_common
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 

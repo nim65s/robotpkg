@@ -1,3 +1,5 @@
-SHA1 (rmw-7.3.2.tar.gz) = 3ba3cb4c8262bd1327a50eabc789773d32f0a160
-RMD160 (rmw-7.3.2.tar.gz) = 802f617f211d83b8d566746f5a1ffb54e84be6f0
-Size (rmw-7.3.2.tar.gz) = 97483 bytes
+SHA1 (rmw-7.11.0.tar.gz) = d23303309c5f58b14f52dd267850e5afa2e4d672
+RMD160 (rmw-7.11.0.tar.gz) = f2b9c7285c2de751a9843d857fa475bf9ac1d895
+Size (rmw-7.11.0.tar.gz) = 107949 bytes
+SHA1 (patch-rmw_src_validate_full_topic_name.c) = 3865b71818ee7d411a64de15e9237aea15d88982
+SHA1 (patch-rmw_src_validate_node_name.c) = cce833532ee06c924ca062a475e4d53279078bec
