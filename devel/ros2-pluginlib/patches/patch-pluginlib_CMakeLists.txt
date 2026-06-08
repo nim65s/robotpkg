@@ -1,0 +1,39 @@
+TinyXML2 does not always have *Config.cmake files: use pkg-config
+
+--- pluginlib/CMakeLists.txt~	2026-05-06 17:26:05.000000000 +0200
++++ pluginlib/CMakeLists.txt	2026-06-10 22:59:34.336507747 +0200
+@@ -16,18 +16,20 @@
+ find_package(class_loader REQUIRED)
+ find_package(rcutils REQUIRED)
+ find_package(rcpputils REQUIRED)
+-find_package(TinyXML2 REQUIRED)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2)
+ 
+ add_library(${PROJECT_NAME} INTERFACE)
+ target_include_directories(${PROJECT_NAME} INTERFACE
+   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+-  "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
++  "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
++  ${tinyxml2_INCLUDE_DIRS})
+ target_link_libraries(${PROJECT_NAME} INTERFACE
+   ament_index_cpp::ament_index_cpp
+   class_loader::class_loader
+   rcutils::rcutils
+   rcpputils::rcpputils
+-  tinyxml2::tinyxml2)
++  ${tinyxml2_LINK_LIBRARIES})
+ 
+ add_executable(list_plugins src/list_plugins.cpp)
+ target_include_directories(list_plugins PUBLIC
+@@ -41,7 +43,9 @@
+         DESTINATION lib/${PROJECT_NAME}
+ )
+ 
+-ament_export_dependencies(ament_index_cpp class_loader rcutils rcpputils TinyXML2)
++ament_export_dependencies(ament_index_cpp class_loader rcutils rcpputils)
++ament_export_include_directories(${tinyxml2_INCLUDE_DIRS})
++ament_export_libraries(${tinyxml2_LINK_LIBRARIES})
+ 
+ # Export old-style CMake variables
+ ament_export_include_directories("include/${PROJECT_NAME}")
