@@ -1,4 +1,4 @@
-@comment Tue May 7 19:12:35 CEST 2024
+@comment Tue Jun 9 01:12:39 CEST 2026
 @comment filtered by rosidl adapter.awk
 @comment filtered by rosidl generator.awk
 @comment filtered by rosidl-typesupport-fastrtps generator.awk
@@ -6,7 +6,6 @@ include/rmw_dds_common/rmw_dds_common/context.hpp
 include/rmw_dds_common/rmw_dds_common/gid_utils.hpp
 include/rmw_dds_common/rmw_dds_common/graph_cache.hpp
 include/rmw_dds_common/rmw_dds_common/qos.hpp
-include/rmw_dds_common/rmw_dds_common/security.hpp
 include/rmw_dds_common/rmw_dds_common/time_utils.hpp
 include/rmw_dds_common/rmw_dds_common/visibility_control.h
 lib/librmw_dds_common.so
@@ -66,6 +65,7 @@ share/rmw_dds_common/cmake/rmw_dds_common__rosidl_typesupport_introspection_cppE
 share/rmw_dds_common/cmake/rmw_dds_common_libraryExport-release.cmake
 share/rmw_dds_common/cmake/rmw_dds_common_libraryExport.cmake
 share/rmw_dds_common/cmake/rosidl_cmake-extras.cmake
+share/rmw_dds_common/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/rmw_dds_common/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/rmw_dds_common/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/rmw_dds_common/environment/ament_prefix_path.dsv
