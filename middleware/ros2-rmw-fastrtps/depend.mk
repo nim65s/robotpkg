@@ -25,7 +25,7 @@ SYSTEM_SEARCH.ros2-rmw-fastrtps=\
 
 include ../../interfaces/ros2-rosidl-typesupport-fastrtps/depend.mk
 include ../../middleware/fastcdr/depend.mk
-include ../../middleware/fastrtps/depend.mk
+include ../../middleware/fastdds/depend.mk
 
 endif # ROS2_RMW_FASTRTPS_DEPEND_MK ----------------------------------------
 

@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Wed,  6 Apr 2022
 #
 
+PKGREVISION=	1
 ROS2_PKG=	rcutils
 ROS2_VERSION=	6.10.1
 

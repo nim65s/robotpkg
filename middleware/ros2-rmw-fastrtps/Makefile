@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rmw_fastrtps
-ROS2_VERSION=	8.4.2
+ROS2_VERSION=	9.5.1
 
 CATEGORIES=	middleware
 ROS2_COMMENT=	Middleware interface using Fast RTPS
@@ -15,14 +15,15 @@ ROS2_SUBPKGS=\
 
 include ../../meta-pkgs/ros2-core/Makefile.common
 
-DEPEND_ABI.fastrtps=fastrtps>=2.13
+DEPEND_ABI.fastdds=fastdds>=3
 DEPEND_ABI.ros2-tracing= ros2-tracing>=7
 
 include ../../devel/ament-cmake-ros/depend.mk
 include ../../devel/ros2-rcpputils/depend.mk
 include ../../interfaces/ros2-rosidl-dynamic-typesupport/depend.mk
 include ../../interfaces/ros2-rosidl-dynamic-typesupport-fastrtps/depend.mk
-include ../../middleware/fastrtps/depend.mk
+include ../../interfaces/ros2-rosidl-buffer/depend.mk
+include ../../middleware/fastdds/depend.mk
 include ../../middleware/ros2-rmw-dds-common/depend.mk
 include ../../sysutils/ros2-tracing/depend.mk
 include ../../mk/robotpkg.mk
