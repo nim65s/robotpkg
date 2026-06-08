@@ -2,9 +2,14 @@
 #                                           Anthony Mallet on Thu Aug 17 2023
 #
 
+$1 == "share" && $NF == "idl" { rosidls[$0] }
 $1 == "share" && $NF == "msg" { f = $0; sub(/[.]msg$/, "", f); msg[f] }
 $1 == "share" && $NF == "srv" { f = $0; sub(/[.]srv$/, "", f); srv[f] }
 $1 == "share" && $NF == "action" { f = $0; sub(/[.]action$/, "", f); act[f] }
+
+NF > 3 && $NF == "cmake" && $(NF-1) ~ /^rosidl_cmake/ {
+    f = $0; sub(/\/[^\/]+$/, "", f); cmake[f]
+}
 
 END {
     rosidl_adapters()
@@ -13,6 +18,15 @@ END {
 
 function rosidl_adapters(	f)
 {
+    # generated cmake files
+    for(f in cmake) {
+        generated[f, "rosidl_cmake_export_typesupport_libraries-extras.cmake"]
+        generated[f, "rosidl_cmake_export_typesupport_targets-extras.cmake"]
+        if (pkgversion("ros2-rosidl<5.1.3")) continue
+
+        generated[f, "rosidl_cmake_aggregate_target-extras.cmake"]
+    }
+
     if (pkgversion("ros2-rosidl<4.3")) {
         # split request/response messages are not considered as msg
         for(f in srv) {

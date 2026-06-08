@@ -23,6 +23,8 @@ DEPEND_ABI.ros2-rosidl?=ros2-rosidl>=4
 SYSTEM_SEARCH.ros2-rosidl=\
   $(call ros2_system_search,				\
     rosidl_adapter					\
+    ?rosidl_buffer					\
+    ?rosidl_buffer_py					\
     rosidl_cmake					\
     rosidl_generator_c					\
     rosidl_generator_cpp				\

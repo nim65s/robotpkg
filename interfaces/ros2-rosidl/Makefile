@@ -2,15 +2,16 @@
 # Created:			Anthony Mallet on Fri, 1 Apr 2022
 #
 
-PKGREVISION=	1
 ROS2_PKG=	rosidl
-ROS2_VERSION=	4.9.0
+ROS2_VERSION=	5.3.1
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	API and scripts to manipulate .msg/.srv/.action files.
 
 ROS2_SUBPKGS=\
     rosidl_adapter				\
+    rosidl_buffer				\
+    rosidl_buffer_py				\
     rosidl_cmake				\
     rosidl_typesupport_interface		\
     rosidl_runtime_c				\
@@ -36,10 +37,12 @@ SUBST_SED.py-vers=\
 SUBST_FILES.py-vers=\
   rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake
 
-# uses FindPython3
-DEPEND_ABI.cmake+=      cmake>=3.12
+DEPEND_ABI.python+=		python>=3.7
+DEPEND_ABI.py-pybind11+=	${PKGTAG.python}-pybind11>=2.6
 
 include ../../devel/ament-cmake-ros/depend.mk
 include ../../devel/ros2-rcutils/depend.mk
 include ../../mk/sysdep/py-lark-parser.mk
+include ../../mk/sysdep/py-pybind11.mk
+include ../../mk/sysdep/python.mk
 include ../../mk/robotpkg.mk
