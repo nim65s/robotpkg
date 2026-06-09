@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rosidl_runtime_py
-ROS2_VERSION=	0.9.2
+ROS2_VERSION=	0.16.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	runtime for working with generated interfaces in Python
