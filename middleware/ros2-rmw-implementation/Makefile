@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rmw_implementation
-ROS2_VERSION=	3.1.2
+ROS2_VERSION=	3.2.0
 
 CATEGORIES=	middleware
 ROS2_COMMENT=	CMake infrastructure and dependencies for middlewares.
