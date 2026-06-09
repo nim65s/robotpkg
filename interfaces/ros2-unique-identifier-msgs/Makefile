@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	unique_identifier_msgs
-ROS2_VERSION=	2.5.0
+ROS2_VERSION=	2.9.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	messages for universally unique identifiers.

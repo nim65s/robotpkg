@@ -1,4 +1,4 @@
-@comment Tue May 7 19:06:24 CEST 2024
+@comment Tue Jun 9 18:49:34 CEST 2026
 @comment filtered by rosidl adapter.awk
 @comment filtered by rosidl generator.awk
 @comment filtered by rosidl-typesupport-fastrtps generator.awk
@@ -42,6 +42,7 @@ share/unique_identifier_msgs/cmake/export_unique_identifier_msgs__rosidl_typesup
 share/unique_identifier_msgs/cmake/export_unique_identifier_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/unique_identifier_msgs/cmake/export_unique_identifier_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/unique_identifier_msgs/cmake/rosidl_cmake-extras.cmake
+share/unique_identifier_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/unique_identifier_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/unique_identifier_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/unique_identifier_msgs/cmake/unique_identifier_msgsConfig-version.cmake
