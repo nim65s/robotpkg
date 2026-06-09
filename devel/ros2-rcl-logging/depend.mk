@@ -20,6 +20,7 @@ DEPEND_DIR.ros2-rcl-logging?=	../../devel/ros2-rcl-logging
 
 SYSTEM_SEARCH.ros2-rcl-logging=\
   $(call ros2_system_search,			\
+    ?rcl_logging_implementation			\
     rcl_logging_interface			\
     rcl_logging_noop				\
     rcl_logging_spdlog)				\
