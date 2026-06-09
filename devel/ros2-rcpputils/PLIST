@@ -1,4 +1,4 @@
-@comment Thu Jul 31 02:23:33 CEST 2025
+@comment Wed Jun 10 00:26:05 CEST 2026
 include/rcpputils/rcpputils/asserts.hpp
 include/rcpputils/rcpputils/compile_warnings.hpp
 include/rcpputils/rcpputils/endian.hpp
@@ -13,6 +13,7 @@ include/rcpputils/rcpputils/rolling_mean_accumulator.hpp
 include/rcpputils/rcpputils/scope_exit.hpp
 include/rcpputils/rcpputils/shared_library.hpp
 include/rcpputils/rcpputils/split.hpp
+include/rcpputils/rcpputils/thread_name.hpp
 include/rcpputils/rcpputils/thread_safety_annotations.hpp
 include/rcpputils/rcpputils/time.hpp
 include/rcpputils/rcpputils/tl_expected/expected.hpp

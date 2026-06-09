@@ -1,0 +1,15 @@
+Check for -pthread compiler flag, this is required to use pthread.
+
+--- CMakeLists.txt~	2026-05-06 20:35:44.000000000 +0200
++++ CMakeLists.txt	2026-06-10 22:22:26.852436447 +0200
+@@ -42,6 +42,10 @@
+ endif()
+ target_link_libraries(${PROJECT_NAME} PUBLIC rcutils::rcutils)
+ 
++# check -pthread for pthread_setname_np(3)
++find_package(Threads REQUIRED)
++target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
++
+ # Export old-style CMake variables
+ ament_export_include_directories("include/${PROJECT_NAME}")
+ ament_export_libraries(${PROJECT_NAME})

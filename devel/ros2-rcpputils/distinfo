@@ -1,4 +1,5 @@
-SHA1 (rcpputils-2.13.4.tar.gz) = 0f7e5e9dd795bdeacad5cda387d6f817bf604e4e
-RMD160 (rcpputils-2.13.4.tar.gz) = ef1e1051117a6d8c3ead14aef244218cc31adf11
-Size (rcpputils-2.13.4.tar.gz) = 59174 bytes
-SHA1 (patch-aa) = dbeee59bfe3fadd90d3d0cfb6ab44918ce5b3cbe
+SHA1 (rcpputils-2.15.0.tar.gz) = 8ef5a9d4edaa7c5d01a880be05cbac3b9c369eed
+RMD160 (rcpputils-2.15.0.tar.gz) = 1f85a685f0e0986608421d22b2e20be69b1614d1
+Size (rcpputils-2.15.0.tar.gz) = 59155 bytes
+SHA1 (patch-CMakeLists.txt) = 1aca6b42624c56f3f77e07d692b1eb157b7f8b4e
+SHA1 (patch-src_thread_name.cpp) = 44412f744a50164113689ec77091c2628d607c84

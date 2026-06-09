@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rcpputils
-ROS2_VERSION=	2.13.4
+ROS2_VERSION=	2.15.0
 
 CATEGORIES=	devel
 ROS2_COMMENT=	utility code for C++.
