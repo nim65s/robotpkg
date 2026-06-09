@@ -21,6 +21,8 @@ DEPEND_DIR.ros2-rcutils?=	../../devel/ros2-rcutils
 SYSTEM_SEARCH.ros2-rcutils=\
   $(call ros2_system_search, rcutils)
 
+include ../../devel/ament-cmake-ros/depend.mk
+
 endif # ROS2_RCUTILS_DEPEND_MK ---------------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}

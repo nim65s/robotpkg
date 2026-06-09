@@ -1,5 +1,6 @@
-@comment Wed Jul 30 20:31:04 CEST 2025
+@comment Tue Jun 9 11:00:24 CEST 2026
 include/rcutils/rcutils/allocator.h
+include/rcutils/rcutils/base64.h
 include/rcutils/rcutils/cmdline_parser.h
 include/rcutils/rcutils/env.h
 include/rcutils/rcutils/error_handling.h
@@ -24,6 +25,7 @@ include/rcutils/rcutils/stdatomic_helper/win32/stdatomic.h
 include/rcutils/rcutils/strcasecmp.h
 include/rcutils/rcutils/strdup.h
 include/rcutils/rcutils/strerror.h
+include/rcutils/rcutils/strnlen.h
 include/rcutils/rcutils/testing/fault_injection.h
 include/rcutils/rcutils/time.h
 include/rcutils/rcutils/types.h
@@ -37,12 +39,6 @@ include/rcutils/rcutils/types/uint8_array.h
 include/rcutils/rcutils/visibility_control.h
 include/rcutils/rcutils/visibility_control_macros.h
 lib/librcutils.so
-${PYTHON_SITELIB}/rcutils-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
-${PYTHON_SITELIB}/rcutils-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
-${PYTHON_SITELIB}/rcutils-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
-${PYTHON_SITELIB}/rcutils-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/top_level.txt
-${PYTHON_SITELIB}/rcutils/__init__.py
-${PYTHON_SITELIB}/rcutils/logging.py
 share/ament_index/resource_index/package_run_dependencies/rcutils
 share/ament_index/resource_index/packages/rcutils
 share/ament_index/resource_index/parent_prefix_path/rcutils
@@ -60,8 +56,6 @@ share/rcutils/environment/library_path.dsv
 share/rcutils/environment/library_path.sh
 share/rcutils/environment/path.dsv
 share/rcutils/environment/path.sh
-share/rcutils/environment/pythonpath.dsv
-share/rcutils/environment/pythonpath.sh
 share/rcutils/local_setup.bash
 share/rcutils/local_setup.dsv
 share/rcutils/local_setup.sh

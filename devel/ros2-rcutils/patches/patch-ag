@@ -1,0 +1,29 @@
+Fix glibc detection. backtrace(3) is not a glibc unique feature.
+Result was not properly assigned anyway.
+
+--- cmake/check_c_compiler_uses_glibc.cmake~	2026-05-06 20:34:17.000000000 +0200
++++ cmake/check_c_compiler_uses_glibc.cmake	2026-06-04 19:56:41.358940607 +0200
+@@ -21,16 +21,15 @@
+   include(CheckCSourceCompiles)
+ 
+   set(GLIBC_TEST_CODE [====[
+-    #include <execinfo.h>
++#include <features.h>
+ 
+-    int main() {
+-      void * buffer[1];
+-      int size = sizeof(buffer) / sizeof(void *);
+-      backtrace(&buffer, size);
+-      return 0;
+-    }
++#if defined(__GLIBC__)
++int main() { return 0; }
++#else
++#error
++#endif
+   ]====])
+ 
+   check_c_source_compiles("${GLIBC_TEST_CODE}" ${result_variable})
+-  set(${result_variable} ${result_variable} PARENT_SCOPE)
++  set(${result_variable} ${${result_variable}} PARENT_SCOPE)
+ endfunction()
