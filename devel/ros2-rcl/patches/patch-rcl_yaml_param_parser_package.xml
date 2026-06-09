@@ -1,0 +1,13 @@
+Let robotpkg manage libyaml dependency and use pkg-config as libyaml doesn't
+have cmake bits.
+
+--- rcl_yaml_param_parser/package.xml~	2026-05-22 11:40:49.000000000 +0200
++++ rcl_yaml_param_parser/package.xml	2026-06-06 13:30:11.507596401 +0200
+@@ -17,7 +17,6 @@
+   <buildtool_depend>ament_cmake_ros</buildtool_depend>
+   <buildtool_depend>ament_cmake_gen_version_h</buildtool_depend>
+ 
+-  <depend>libyaml_vendor</depend>
+   <depend>rcutils</depend>
+   <depend>rmw</depend>
+   <depend>yaml</depend>

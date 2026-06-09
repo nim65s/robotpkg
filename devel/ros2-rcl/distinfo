@@ -1,4 +1,8 @@
-SHA1 (rcl-9.2.7.tar.gz) = f3a7b637546f67afcb0eae68573414555099b840
-RMD160 (rcl-9.2.7.tar.gz) = b172cadbdea61ae8f324a70c9374a40b580f969f
-Size (rcl-9.2.7.tar.gz) = 422938 bytes
-SHA1 (patch-aa) = 67c1f72db8dbda78a9407367c09a896ffbfda7e1
+SHA1 (rcl-10.5.1.tar.gz) = 4e001f71e1b581ba1d69e393a136fd787148d2df
+RMD160 (rcl-10.5.1.tar.gz) = 343bd25745446171b84fd38048187e7715293bc8
+Size (rcl-10.5.1.tar.gz) = 456403 bytes
+SHA1 (patch-rcl_CMakeLists.txt) = 25590a6c97c660c9d38d41890fd7623645291790
+SHA1 (patch-rcl_package.xml) = 02ecfa67da3e115e63dc788cf937399e8af97409
+SHA1 (patch-rcl_yaml_param_parser_CMakeLists.txt) = d62951b6f9cb545317f7af3febfdb64fee53f852
+SHA1 (patch-rcl_yaml_param_parser_package.xml) = c5b99c9e100c8296a4e44184d61cc8afa20c985b
+SHA1 (patch-rcl_yaml_param_parser_src_parse.c) = d8dcb512e4053b5ba3058906c0a922643eb960f2

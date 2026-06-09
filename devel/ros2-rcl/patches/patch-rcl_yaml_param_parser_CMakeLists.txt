@@ -1,0 +1,48 @@
+Let robotpkg manage libyaml dependency and use pkg-config as libyaml doesn't
+have cmake bits.
+
+--- rcl_yaml_param_parser/CMakeLists.txt~	2026-05-22 11:40:49.000000000 +0200
++++ rcl_yaml_param_parser/CMakeLists.txt	2026-06-06 13:36:33.677294878 +0200
+@@ -6,8 +6,8 @@
+ find_package(ament_cmake_gen_version_h REQUIRED)
+ find_package(rcutils REQUIRED)
+ find_package(rmw REQUIRED)
+-find_package(libyaml_vendor REQUIRED)
+-find_package(yaml REQUIRED)
++find_package(PkgConfig)
++pkg_check_modules(LIBYAML REQUIRED yaml-0.1)
+ 
+ # Default to C++17
+ if(NOT CMAKE_CXX_STANDARD)
+@@ -22,6 +22,18 @@
+   )
+ endif()
+ 
++include(CheckSymbolExists)
++check_symbol_exists("strtod_l" "locale.h;stdlib.h" HAVE_STRTOD_L)
++if(HAVE_STRTOD_L)
++  set_property(
++    SOURCE src/parse.c APPEND PROPERTY COMPILE_DEFINITIONS "HAVE_STRTOD_L=1")
++endif()
++check_symbol_exists("uselocale" "locale.h" HAVE_USELOCALE)
++if(HAVE_USELOCALE)
++  set_property(
++    SOURCE src/parse.c APPEND PROPERTY COMPILE_DEFINITIONS "HAVE_USELOCALE=1")
++endif()
++
+ add_library(
+   ${PROJECT_NAME}
+   src/add_to_arrays.c
+@@ -37,9 +38,11 @@
+ target_link_libraries(${PROJECT_NAME} PUBLIC
+   rcutils::rcutils
+ )
++target_include_directories(${PROJECT_NAME} PRIVATE ${LIBYAML_INCLUDE_DIRS})
++target_link_options(${PROJECT_NAME} PRIVATE ${LIBYAML_LDFLAGS})
+ target_link_libraries(${PROJECT_NAME} PRIVATE
+   rmw::rmw
+-  yaml
++  ${LIBYAML_LIBRARIES}
+ )
+ 
+ # Set the visibility to hidden by default if possible

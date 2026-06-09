@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rcl
-ROS2_VERSION=	9.2.7
+ROS2_VERSION=	10.5.1
 
 CATEGORIES=	devel
 ROS2_COMMENT=	support for language specific ROS Client Libraries.

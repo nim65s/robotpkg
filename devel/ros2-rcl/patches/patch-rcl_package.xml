@@ -1,0 +1,13 @@
+Let robotpkg manage libyaml dependency and use pkg-config as libyaml doesn't
+have cmake bits.
+
+--- rcl/package.xml~	2026-05-22 11:40:49.000000000 +0200
++++ rcl/package.xml	2026-06-06 13:29:05.865594158 +0200
+@@ -20,7 +20,6 @@
+ 
+   <build_export_depend>rmw</build_export_depend>
+ 
+-  <depend>libyaml_vendor</depend>
+   <depend>rcl_interfaces</depend>
+   <depend>rcl_logging_interface</depend>
+   <depend>rcl_logging_implementation</depend>
