@@ -1,4 +1,4 @@
-@comment Tue May 7 19:04:15 CEST 2024
+@comment Tue Jun 9 18:55:45 CEST 2026
 @comment filtered by rosidl adapter.awk
 @comment filtered by rosidl generator.awk
 @comment filtered by rosidl-typesupport-fastrtps generator.awk
@@ -136,6 +136,7 @@ share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cExport.
 share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/action_msgs/cmake/rosidl_cmake-extras.cmake
+share/action_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/action_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/action_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/action_msgs/environment/ament_prefix_path.dsv
@@ -196,6 +197,7 @@ share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fas
 share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
 share/builtin_interfaces/cmake/rosidl_cmake-extras.cmake
+share/builtin_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/builtin_interfaces/environment/ament_prefix_path.dsv
@@ -228,6 +230,7 @@ share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cExpor
 share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/service_msgs/cmake/rosidl_cmake-extras.cmake
+share/service_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/service_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/service_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/service_msgs/cmake/service_msgsConfig-version.cmake
@@ -269,6 +272,7 @@ share/type_description_interfaces/cmake/export_type_description_interfaces__rosi
 share/type_description_interfaces/cmake/export_type_description_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/type_description_interfaces/cmake/export_type_description_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
 share/type_description_interfaces/cmake/rosidl_cmake-extras.cmake
+share/type_description_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/type_description_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/type_description_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/type_description_interfaces/cmake/type_description_interfacesConfig-version.cmake
