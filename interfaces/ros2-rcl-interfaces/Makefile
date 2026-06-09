@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rcl_interfaces
-ROS2_VERSION=	1.7.0
+ROS2_VERSION=	2.5.0
 
 CATEGORIES=	interfaces
 ROS2_COMMENT=	messages and services used by the ROS client libraries.

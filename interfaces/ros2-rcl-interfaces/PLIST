@@ -1,4 +1,4 @@
-@comment Tue May 7 19:10:11 CEST 2024
+@comment Tue Jun 9 19:06:29 CEST 2026
 @comment filtered by rosidl adapter.awk
 @comment filtered by rosidl generator.awk
 @comment filtered by rosidl-typesupport-fastrtps generator.awk
@@ -163,8 +163,24 @@ ${PYTHON_SITELIB}/rosgraph_msgs/_rosgraph_msgs_s.ep.rosidl_typesupport_c.c
 ${PYTHON_SITELIB}/rosgraph_msgs/_rosgraph_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 ${PYTHON_SITELIB}/rosgraph_msgs/_rosgraph_msgs_s.ep.rosidl_typesupport_introspection_c.c
 ${PYTHON_SITELIB}/rosgraph_msgs/msg/__init__.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_action.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_action_s.c
 ${PYTHON_SITELIB}/rosgraph_msgs/msg/_clock.py
 ${PYTHON_SITELIB}/rosgraph_msgs/msg/_clock_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_graph.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_graph_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_interface_type.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_interface_type_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_node.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_node_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_qo_s_profile.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_qo_s_profile_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_service.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_service_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_topic.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_topic_s.c
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_type_hash.py
+${PYTHON_SITELIB}/rosgraph_msgs/msg/_type_hash_s.c
 ${PYTHON_SITELIB}/rosgraph_msgs/rosgraph_msgs_s__rosidl_typesupport_c.so
 ${PYTHON_SITELIB}/rosgraph_msgs/rosgraph_msgs_s__rosidl_typesupport_fastrtps_c.so
 ${PYTHON_SITELIB}/rosgraph_msgs/rosgraph_msgs_s__rosidl_typesupport_introspection_c.so
@@ -211,22 +227,31 @@ ${PYTHON_SITELIB}/test_msgs/msg/_bounded_sequences.py
 ${PYTHON_SITELIB}/test_msgs/msg/_bounded_sequences_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_builtins.py
 ${PYTHON_SITELIB}/test_msgs/msg/_builtins_s.c
+${PYTHON_SITELIB}/test_msgs/msg/_complex_nested_key.py
+${PYTHON_SITELIB}/test_msgs/msg/_complex_nested_key_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_constants.py
 ${PYTHON_SITELIB}/test_msgs/msg/_constants_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_defaults.py
 ${PYTHON_SITELIB}/test_msgs/msg/_defaults_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_empty.py
 ${PYTHON_SITELIB}/test_msgs/msg/_empty_s.c
+${PYTHON_SITELIB}/test_msgs/msg/_keyed_long.py
+${PYTHON_SITELIB}/test_msgs/msg/_keyed_long_s.c
+${PYTHON_SITELIB}/test_msgs/msg/_keyed_string.py
+${PYTHON_SITELIB}/test_msgs/msg/_keyed_string_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_multi_nested.py
 ${PYTHON_SITELIB}/test_msgs/msg/_multi_nested_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_nested.py
 ${PYTHON_SITELIB}/test_msgs/msg/_nested_s.c
+${PYTHON_SITELIB}/test_msgs/msg/_non_keyed_with_nested_key.py
+${PYTHON_SITELIB}/test_msgs/msg/_non_keyed_with_nested_key_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_strings.py
 ${PYTHON_SITELIB}/test_msgs/msg/_strings_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_unbounded_sequences.py
 ${PYTHON_SITELIB}/test_msgs/msg/_unbounded_sequences_s.c
 ${PYTHON_SITELIB}/test_msgs/msg/_w_strings.py
 ${PYTHON_SITELIB}/test_msgs/msg/_w_strings_s.c
+${PYTHON_SITELIB}/test_msgs/py.typed
 ${PYTHON_SITELIB}/test_msgs/service_fixtures.py
 ${PYTHON_SITELIB}/test_msgs/srv/__init__.py
 ${PYTHON_SITELIB}/test_msgs/srv/_arrays.py
@@ -286,6 +311,7 @@ share/composition_interfaces/cmake/export_composition_interfaces__rosidl_typesup
 share/composition_interfaces/cmake/export_composition_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/composition_interfaces/cmake/export_composition_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
 share/composition_interfaces/cmake/rosidl_cmake-extras.cmake
+share/composition_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/composition_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/composition_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/composition_interfaces/environment/ament_prefix_path.dsv
@@ -329,6 +355,7 @@ share/lifecycle_msgs/cmake/lifecycle_msgs__rosidl_typesupport_introspection_cExp
 share/lifecycle_msgs/cmake/lifecycle_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
 share/lifecycle_msgs/cmake/lifecycle_msgs__rosidl_typesupport_introspection_cppExport.cmake
 share/lifecycle_msgs/cmake/rosidl_cmake-extras.cmake
+share/lifecycle_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/lifecycle_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/lifecycle_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/lifecycle_msgs/environment/ament_prefix_path.dsv
@@ -377,6 +404,7 @@ share/rcl_interfaces/cmake/rcl_interfaces__rosidl_typesupport_introspection_cExp
 share/rcl_interfaces/cmake/rcl_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake
 share/rcl_interfaces/cmake/rcl_interfaces__rosidl_typesupport_introspection_cppExport.cmake
 share/rcl_interfaces/cmake/rosidl_cmake-extras.cmake
+share/rcl_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/rcl_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/rcl_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/rcl_interfaces/environment/ament_prefix_path.dsv
@@ -439,6 +467,7 @@ share/rosgraph_msgs/cmake/rosgraph_msgs__rosidl_typesupport_introspection_cExpor
 share/rosgraph_msgs/cmake/rosgraph_msgs__rosidl_typesupport_introspection_cppExport-release.cmake
 share/rosgraph_msgs/cmake/rosgraph_msgs__rosidl_typesupport_introspection_cppExport.cmake
 share/rosgraph_msgs/cmake/rosidl_cmake-extras.cmake
+share/rosgraph_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/rosgraph_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/rosgraph_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/rosgraph_msgs/environment/ament_prefix_path.dsv
@@ -453,7 +482,15 @@ share/rosgraph_msgs/local_setup.bash
 share/rosgraph_msgs/local_setup.dsv
 share/rosgraph_msgs/local_setup.sh
 share/rosgraph_msgs/local_setup.zsh
+share/rosgraph_msgs/msg/Action.msg
 share/rosgraph_msgs/msg/Clock.msg
+share/rosgraph_msgs/msg/Graph.msg
+share/rosgraph_msgs/msg/InterfaceType.msg
+share/rosgraph_msgs/msg/Node.msg
+share/rosgraph_msgs/msg/QoSProfile.msg
+share/rosgraph_msgs/msg/Service.msg
+share/rosgraph_msgs/msg/Topic.msg
+share/rosgraph_msgs/msg/TypeHash.msg
 share/rosgraph_msgs/package.dsv
 share/rosgraph_msgs/package.xml
 share/statistics_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
@@ -470,6 +507,7 @@ share/statistics_msgs/cmake/export_statistics_msgs__rosidl_typesupport_fastrtps_
 share/statistics_msgs/cmake/export_statistics_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/statistics_msgs/cmake/export_statistics_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/statistics_msgs/cmake/rosidl_cmake-extras.cmake
+share/statistics_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/statistics_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/statistics_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/statistics_msgs/cmake/statistics_msgsConfig-version.cmake
@@ -518,6 +556,7 @@ share/test_msgs/cmake/export_test_msgs__rosidl_typesupport_fastrtps_cExport.cmak
 share/test_msgs/cmake/export_test_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/test_msgs/cmake/export_test_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/test_msgs/cmake/rosidl_cmake-extras.cmake
+share/test_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 share/test_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
 share/test_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/test_msgs/cmake/test_msgsConfig-version.cmake
@@ -547,11 +586,15 @@ share/test_msgs/msg/BasicTypes.msg
 share/test_msgs/msg/BoundedPlainSequences.msg
 share/test_msgs/msg/BoundedSequences.msg
 share/test_msgs/msg/Builtins.msg
+share/test_msgs/msg/ComplexNestedKey.idl
 share/test_msgs/msg/Constants.msg
 share/test_msgs/msg/Defaults.msg
 share/test_msgs/msg/Empty.msg
+share/test_msgs/msg/KeyedLong.idl
+share/test_msgs/msg/KeyedString.idl
 share/test_msgs/msg/MultiNested.msg
 share/test_msgs/msg/Nested.msg
+share/test_msgs/msg/NonKeyedWithNestedKey.idl
 share/test_msgs/msg/Strings.msg
 share/test_msgs/msg/UnboundedSequences.msg
 share/test_msgs/msg/WStrings.msg

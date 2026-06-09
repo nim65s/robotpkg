@@ -27,6 +27,8 @@ SYSTEM_SEARCH.ros2-rcl-interfaces=\
     statistics_msgs		\
     test_msgs)
 
+include ../../interfaces/ros2-rcl-core-interfaces/depend.mk
+
 endif # ROS2_RCL_INTERFACES_DEPEND_MK --------------------------------------
 
 DEPEND_DEPTH:=			${DEPEND_DEPTH:+=}
