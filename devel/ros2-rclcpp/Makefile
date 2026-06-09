@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rclcpp
-ROS2_VERSION=	28.1.10
+ROS2_VERSION=	33.0.1
 
 CATEGORIES=	devel
 ROS2_COMMENT=	client Library for C++
@@ -24,6 +24,8 @@ SUBST_SED.py-vers=\
   -e 's|package(Python3 REQ|package(Python3 ${PYTHON_VERSION} EXACT REQ|'
 SUBST_FILES.py-vers=\
  rclcpp/CMakeLists.txt
+
+DEPEND_ABI.ros2-rcpputils+= ros2-rcpputils>=2.14.1
 
 include ../../devel/ament-cmake-ros/depend.mk
 include ../../devel/ros2-class-loader/depend.mk

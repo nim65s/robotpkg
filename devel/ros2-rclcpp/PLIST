@@ -1,4 +1,4 @@
-@comment Thu Jul 31 02:26:48 CEST 2025
+@comment Wed Jun 10 00:29:52 CEST 2026
 include/rclcpp/rclcpp/allocator/allocator_common.hpp
 include/rclcpp/rclcpp/allocator/allocator_deleter.hpp
 include/rclcpp/rclcpp/any_executable.hpp
@@ -13,6 +13,7 @@ include/rclcpp/rclcpp/copy_all_parameter_values.hpp
 include/rclcpp/rclcpp/create_client.hpp
 include/rclcpp/rclcpp/create_generic_client.hpp
 include/rclcpp/rclcpp/create_generic_publisher.hpp
+include/rclcpp/rclcpp/create_generic_service.hpp
 include/rclcpp/rclcpp/create_generic_subscription.hpp
 include/rclcpp/rclcpp/create_publisher.hpp
 include/rclcpp/rclcpp/create_service.hpp
@@ -44,12 +45,12 @@ include/rclcpp/rclcpp/exceptions/exceptions.hpp
 include/rclcpp/rclcpp/executor.hpp
 include/rclcpp/rclcpp/executor_options.hpp
 include/rclcpp/rclcpp/executors.hpp
+include/rclcpp/rclcpp/executors/events_cbg_executor/events_cbg_executor.hpp
 include/rclcpp/rclcpp/executors/executor_entities_collection.hpp
 include/rclcpp/rclcpp/executors/executor_entities_collector.hpp
 include/rclcpp/rclcpp/executors/executor_notify_waitable.hpp
 include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp
 include/rclcpp/rclcpp/executors/single_threaded_executor.hpp
-include/rclcpp/rclcpp/executors/static_single_threaded_executor.hpp
 include/rclcpp/rclcpp/expand_topic_or_service_name.hpp
 include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp
 include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp
@@ -70,6 +71,7 @@ include/rclcpp/rclcpp/function_traits.hpp
 include/rclcpp/rclcpp/future_return_code.hpp
 include/rclcpp/rclcpp/generic_client.hpp
 include/rclcpp/rclcpp/generic_publisher.hpp
+include/rclcpp/rclcpp/generic_service.hpp
 include/rclcpp/rclcpp/generic_subscription.hpp
 include/rclcpp/rclcpp/get_message_type_support_handle.hpp
 include/rclcpp/rclcpp/graph_listener.hpp
@@ -82,7 +84,6 @@ include/rclcpp/rclcpp/loaned_message.hpp
 include/rclcpp/rclcpp/logger.hpp
 include/rclcpp/rclcpp/logging.hpp
 include/rclcpp/rclcpp/macros.hpp
-include/rclcpp/rclcpp/memory_strategies.hpp
 include/rclcpp/rclcpp/memory_strategy.hpp
 include/rclcpp/rclcpp/message_info.hpp
 include/rclcpp/rclcpp/message_memory_strategy.hpp
@@ -138,6 +139,7 @@ include/rclcpp/rclcpp/node_interfaces/node_waitables_interface_traits.hpp
 include/rclcpp/rclcpp/node_options.hpp
 include/rclcpp/rclcpp/parameter.hpp
 include/rclcpp/rclcpp/parameter_client.hpp
+include/rclcpp/rclcpp/parameter_descriptor_wrapper.hpp
 include/rclcpp/rclcpp/parameter_event_handler.hpp
 include/rclcpp/rclcpp/parameter_events_filter.hpp
 include/rclcpp/rclcpp/parameter_map.hpp
@@ -188,11 +190,15 @@ include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp
 include/rclcpp/rclcpp/wait_set_template.hpp
 include/rclcpp/rclcpp/waitable.hpp
 include/rclcpp_action/rclcpp_action/client.hpp
+include/rclcpp_action/rclcpp_action/client_base.hpp
 include/rclcpp_action/rclcpp_action/client_goal_handle.hpp
 include/rclcpp_action/rclcpp_action/client_goal_handle_impl.hpp
 include/rclcpp_action/rclcpp_action/create_client.hpp
+include/rclcpp_action/rclcpp_action/create_generic_client.hpp
 include/rclcpp_action/rclcpp_action/create_server.hpp
 include/rclcpp_action/rclcpp_action/exceptions.hpp
+include/rclcpp_action/rclcpp_action/generic_client.hpp
+include/rclcpp_action/rclcpp_action/generic_client_goal_handle.hpp
 include/rclcpp_action/rclcpp_action/qos.hpp
 include/rclcpp_action/rclcpp_action/rclcpp_action.hpp
 include/rclcpp_action/rclcpp_action/server.hpp
@@ -220,6 +226,7 @@ lib/librclcpp.so
 lib/librclcpp_action.so
 lib/librclcpp_lifecycle.so
 lib/rclcpp_components/component_container
+lib/rclcpp_components/component_container_event
 lib/rclcpp_components/component_container_isolated
 lib/rclcpp_components/component_container_mt
 share/ament_index/resource_index/package_run_dependencies/rclcpp
