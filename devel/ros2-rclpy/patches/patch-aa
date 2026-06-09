@@ -1,16 +1,17 @@
 Require exact python version to match robotpkg selected version.
-Let robotpkg manage pybind11 dependency.
 
---- rclpy/CMakeLists.txt~	2022-04-08 22:43:34.000000000 +0200
-+++ rclpy/CMakeLists.txt	2022-05-11 14:36:14.725488927 +0200
-@@ -38,9 +38,8 @@
- find_package(rosidl_runtime_c REQUIRED)
+--- rclpy/CMakeLists.txt~	2026-05-22 11:49:05.000000000 +0200
++++ rclpy/CMakeLists.txt	2026-06-09 23:53:21.356908783 +0200
+@@ -42,11 +42,9 @@
+ # the search will prefer /usr/bin/python3 over /usr/bin/python3.11.  And that
+ # latter functionality is only available in CMake 3.20 or later, so we need
+ # at least that version.
+-cmake_policy(SET CMP0094 NEW)
+-set(Python3_FIND_UNVERSIONED_NAMES FIRST)
  
  # Find python before pybind11
 -find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 +find_package(Python3 @PYTHON_VERSION@ EXACT REQUIRED COMPONENTS Interpreter Development)
  
--find_package(pybind11_vendor REQUIRED)
  find_package(pybind11 REQUIRED)
  
- # enables using the Python extensions from the build space for testing

@@ -1,6 +1,6 @@
-SHA1 (rclpy-3.3.2.tar.gz) = 101057f88e5c289b17e6aae5452c17423065637a
-RMD160 (rclpy-3.3.2.tar.gz) = edcaac2b7b8b3e8c0b165b0294fa5d1770c5c012
-Size (rclpy-3.3.2.tar.gz) = 192564 bytes
-SHA1 (patch-aa) = 4dc772ca5ea1c95187e3286c378f7c9492f408b7
+SHA1 (rclpy-11.0.1.tar.gz) = 49598a9acfdc525ae2b5e80472dca1d7becdbcd2
+RMD160 (rclpy-11.0.1.tar.gz) = e1e1a340e812614439f456d972a2e519859579a8
+Size (rclpy-11.0.1.tar.gz) = 328676 bytes
+SHA1 (patch-aa) = 850077d5eeab9058cade3fcec18f7e1e30826eff
 SHA1 (patch-ab) = 59b6d5825b155d411a4e9f26ec207ad53a347394
 SHA1 (patch-ac) = add6a9351a3c11ca7f2c1fde1749a8cfba328f02

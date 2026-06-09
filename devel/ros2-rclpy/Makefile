@@ -3,7 +3,7 @@
 #
 
 ROS2_PKG=	rclpy
-ROS2_VERSION=	3.3.2
+ROS2_VERSION=	11.0.1
 
 CATEGORIES=	devel
 ROS2_COMMENT=	client Library for python
@@ -26,7 +26,6 @@ SUBST_SED.py-vers=	-e 's|@PYTHON_VERSION@|${PYTHON_VERSION}|g'
 SUBST_FILES.py-vers=\
   rclpy/CMakeLists.txt
 
-include ../../devel/ros2-python-cmake-module/depend.mk
 include ../../devel/ros2-rcl/depend.mk
 include ../../interfaces/ros2-rcl-interfaces/depend.mk
 include ../../interfaces/ros2-rosidl/depend.mk
@@ -35,4 +34,5 @@ include ../../middleware/ros2-rmw-implementation/depend.mk
 include ../../sysutils/ament-index/depend.mk
 include ../../sysutils/py-ros2-rpyutils/depend.mk
 include ../../mk/sysdep/py-pybind11.mk
+include ../../mk/sysdep/py-yaml.mk
 include ../../mk/robotpkg.mk
