@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2011-2013,2018 LAAS/CNRS
+# Copyright (c) 2011-2013, 2018, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # Permission to use, copy, modify, and distribute this software for any purpose
@@ -30,6 +30,9 @@ BULKBASE?=	/opt/openrobots
 
 # Directory in which log files from the bulk build are kept.
 BULK_LOGDIR?=	${LOCALBASE}/var/log/bulk
+
+# Main log file to log the list of processed packages
+BULK_MAINLOG?=	${BULK_LOGDIR}/${BULK_TAG}.log
 
 # Where to log N/A packages (for caching the information between bulks)
 BULK_PKGFILENA?=${PACKAGES}/NotAvail/${PKGNAME}

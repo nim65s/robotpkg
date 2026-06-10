@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2011-2014,2017-2018 LAAS/CNRS
+# Copyright (c) 2011-2014, 2017-2018, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # Permission to use, copy, modify, and distribute this software for any purpose

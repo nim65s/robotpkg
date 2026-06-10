@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2011-2013 LAAS/CNRS
+# Copyright (c) 2011-2013, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # Permission to use, copy, modify, and distribute this software for any purpose
@@ -125,4 +125,8 @@ bulk-metadata:
 		$(if ${PKG_OPTIONS_VAR},'${PKG_OPTIONS_VAR}=')		\
 	| while IFS='|' read t p; do					\
 	  ${BULK_META} "AVAIL	$$p";					\
-	done
+	done;								\
+	status="  ok  "; ${TEST} -s ${_bulklog_broken} && status=broken;\
+	status="`${DATE}` $$status ${PKGNAME}";				\
+	${TEST} -t 1 && ${ECHO_MSG} "$$status" >>${BULK_MAINLOG};	\
+	${ECHO_MSG} "$$status"
