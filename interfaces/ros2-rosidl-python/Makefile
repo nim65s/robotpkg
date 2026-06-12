@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Mon, 11 Apr 2022
 #
 
+PKGREVISION=	1
 ROS2_PKG=	rosidl_python
 ROS2_VERSION=	0.25.0
 

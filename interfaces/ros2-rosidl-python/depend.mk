@@ -23,27 +23,37 @@ SYSTEM_SEARCH.ros2-rosidl-python=\
   '${PYTHON_SYSLIBSEARCH}/rosidl_generator_py/__init__.py'
 
 include ../../devel/ros2-python-cmake-module/depend.mk
+include ../../interfaces/ros2-rosidl/depend.mk
 include ../../sysutils/py-ros2-rpyutils/depend.mk
 include ../../mk/sysdep/py-numpy.mk
 include ../../mk/sysdep/python.mk
 
+# PLIST management depending on version
+#
+PLIST_FILTER_CLASSES+=			rosidl-python
+PLIST_FILTER_STAGE.rosidl-python=	post-subst post-rosidl pre-python
+PRINT_PLIST_FILTER_STAGE.rosidl-python=	pre-subst post-rosidl pre-python
+PLIST_FILTER_AWK_PROG.rosidl-python=\
+  ${DEPEND_DIR.ros2-rosidl-python}/files/plist.awk
+
 # For python-cmake-module<0.12 as a system package, PYTHON_EXT_SUFFIX is
 # needed.
 #
-PLIST_FILTER+=\
+PLIST_FILTER_CLASSES+=\
   $(if $(and								\
     $(filter system,${PREFER.ros2-python-cmake-module}),		\
-    $(call isyes,$(call pmatch,						\
-      ros2-python-cmake-module<0.12,					\
-      ${PKGVERSION.ros2-python-cmake-module}))),			\
-    | ${AWK} '								\
-        /$(subst /,\/,${PYTHON_SITELIB})/ && /[.]so$$/ {		\
-          gsub(/[.]so$$/, "${PYTHON_EXT_SUFFIX}");			\
-        }								\
-        {print}')
+    $(call isyes,$(call pmatch, ros2-python-cmake-module<0.12,		\
+      ${PKGVERSION.ros2-python-cmake-module}))),rosidl-python-so)
 
-PRINT_PLIST_AWK_SUBST+=\
-  gsub(/[$$]{PYTHON_EXT_SUFFIX}$$/, ".so")
+PLIST_FILTER_STAGE.rosidl-python-so = pre-subst
+override define PLIST_FILTER_AWK.rosidl-python-so
+  plist_expand && /[$$][{]PYTHON_SITELIB[}]/ && /[.]so$$/ {
+    gsub(/[.]so$$/, "${PYTHON_EXT_SUFFIX}")
+  }
+  plist_collapse && index($$0, "$${PYTHON_EXT_SUFFIX}") {
+    gsub(/[$$][{]PYTHON_EXT_SUFFIX[}]$$/, ".so")
+  }
+endef
 
 endif # ROS2_ROSIDL_PYTHON_DEPEND_MK ---------------------------------------
 
