@@ -37,6 +37,13 @@ define PKG_ALTERNATIVE_SET.python37+=
   include ../../mk/sysdep/py-importlib-metadata.mk
 endef
 
+# PLIST depends on version
+#
+PLIST_FILTER_CLASSES+= py-ament-package
+
+PLIST_FILTER_AWK_PROG.py-ament-package=\
+  ${DEPEND_DIR.py-ament-package}/files/plist.awk
+
 endif # PY_AMENT_PACKAGE_DEPEND_MK -----------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}
