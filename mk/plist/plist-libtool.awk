@@ -34,11 +34,6 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-### This awk script handles libtool archive entries in PLISTs.  This script
-### requires the following scripts to be included:
-###
-###	plist-functions.awk (print_entry)
-###
 ### Certain environment variables must be set prior to running this script:
 ###
 ### IGNORE_LIBTOOLIZE is a whitespace-separated list of ${PREFIX}-relative
@@ -46,9 +41,6 @@
 ###
 ### LIBTOOL_EXPAND is the path to the script that prints out the
 ###	actual library files associated with a libtool archive file.
-###
-### LIBTOOLIZE_PLIST is a yes/no variable indicating whether to expand
-###	*.la files in the PLIST into the corresponding real libraries.
 ###
 ### PREFIX is the installation prefix of the the package.
 ###
@@ -58,8 +50,6 @@
 
 BEGIN {
 	LIBTOOL_EXPAND = ENVIRON["LIBTOOL_EXPAND"] ? ENVIRON["LIBTOOL_EXPAND"] : "/opt/robotpkg/mk/plist/libtool-expand"
-	LIBTOOLIZE_PLIST = ENVIRON["LIBTOOLIZE_PLIST"] ? ENVIRON["LIBTOOLIZE_PLIST"] : "yes"
-	PREFIX = ENVIRON["PREFIX"] ? ENVIRON["PREFIX"] : "/opt/openrobots"
 	TEST = ENVIRON["TEST"] ? ENVIRON["TEST"] : "test"
 
 	IGNORE_LA_REGEXP = ENVIRON["IGNORE_LIBTOOLIZE"] ? ENVIRON["IGNORE_LIBTOOLIZE"] : ""
@@ -69,20 +59,12 @@ BEGIN {
 	}
 }
 
-###
-### Expand libtool archives into the list of corresponding shared and/or
-### static libraries.
-###
-(LIBTOOLIZE_PLIST ~ /[yY][eE][sS]/) && \
+# Expand libtool archives into the list of corresponding shared and/or
+# static libraries.
+#
 /^[^@]/ && ($0 !~ "^" IGNORE_LA_REGEXP "$") && /\.la$/ {
-	print_entry($0)
-	cmd = TEST " -f " PREFIX "/" $0
-	if (system(cmd) == 0) {
-		cmd = "cd " PREFIX " && " LIBTOOL_EXPAND " " $0
-		while (cmd | getline) {
-			print_entry($0)
-		}
-		close(cmd)
-	}
-	next
+    cmd = LIBTOOL_EXPAND " " $0
+    while (cmd | getline f)
+        generated[f] = here()
+    close(cmd)
 }

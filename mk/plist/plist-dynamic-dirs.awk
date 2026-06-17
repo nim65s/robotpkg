@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2012, 2026 LAAS/CNRS
+# Copyright (c) 2026 LAAS/CNRS
 # All rights reserved.
 #
 # Redistribution  and  use  in  source  and binary  forms,  with  or  without
@@ -19,26 +19,14 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR  OTHER TORTIOUS ACTION, ARISING OUT OF OR
 # IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
-#                                           Anthony Mallet on Tue Oct  9 2012
+#                                           Anthony Mallet on Fri Jun 19 2026
 #
 
 BEGIN {
-    PREFIX = ENVIRON["PREFIX"] ? ENVIRON["PREFIX"] : "/opt/openrobots"
-    sub("[/]+$", "/", PREFIX)
-    _PREFIX = length(PREFIX)
+    split(ENVIRON["DYNAMIC_PLIST_DIRS"], DYNAMIC_PLIST_DIRS, " ")
 }
 
-# remove PREFIX
-index($0, PREFIX) == 1 { $0 = substr($0, _PREFIX + 1); sub("^/+", "") }
-
-# resolves references  to  /./, /../  and  extra  '/' characters
 {
-    gsub("//+", "/")
-    gsub("[^/]+/[.][.]/", "")
-    gsub("/[.]/", "/")
-    gsub("^[.]/", "")
-    gsub("/[.]$", "")
+    for (i in DYNAMIC_PLIST_DIRS)
+        if (index($0, DYNAMIC_PLIST_DIRS[i]) == 1) generated[$0] = here()
 }
-
-# ignore empty lines
-/^$/ { next }

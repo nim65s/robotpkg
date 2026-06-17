@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2006-2012,2018-2019 LAAS/CNRS
+# Copyright (c) 2006-2012, 2018-2019, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # This project includes software developed by the NetBSD Foundation, Inc.
@@ -110,8 +110,12 @@ pkg-install-check-files:
 	${RUN}${RM} -f ${WRKDIR}/conflicts.log;				\
 	prefix="${PREFIX}";						\
 	${CAT} /dev/null ${PLIST_SRC} |					\
-	  ${SETENV} ${_PLIST_AWK_ENV} ${AWK} ${_PLIST_AWK} |		\
-	  ${SETENV} ${_PLIST_AWK_ENV} ${AWK} ${_PLIST_SHLIB_AWK} |	\
+	  ${SETENV} ${PLIST_AWK_ENV} ${AWK}				\
+	    $(addprefix -f ,						\
+	      ${_PLIST_PREFILTER_AWK_PROG}				\
+	      ${PLIST_FILTER_AWK_PROG.subst}				\
+	      ${_PLIST_POSTFILTER_AWK_PROG})				\
+	    expand |							\
 	while read f; do						\
 	  case $$f in							\
 	    @cwd*)	set -- $$f; shift; prefix="$$@";;		\

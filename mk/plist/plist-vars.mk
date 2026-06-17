@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2006,2009-2013 LAAS/CNRS
+# Copyright (c) 2006, 2009-2013, 2026 LAAS/CNRS
 # Copyright (c) 1994-2006 The NetBSD Foundation, Inc.
 # All rights reserved.
 #
@@ -44,16 +44,31 @@
 # This is the path to the generated PLIST file.
 PLIST=		${WRKDIR}/.PLIST
 
-# This Makefile fragment provides all PLIST-related variables and targets.
+# PLIST_FILTER_CLASSES
+#	A list of filters applied to PLIST. Builtin classes include the 'subst'
+#	class, applying plist replacements or variables.
+#
+# PLIST_FILTER_STAGE.<class>
+#	Run the filter after or before the listed classes. Can be pre-% or
+#	post-% with % in PLIST_FILTER_CLASSES. Defaults to pre-subst.
+# PRINT_PLIST_FILTER_STAGE.<class>
+#	Same as PLIST_FILTER_STAGE.<class> but for the print-PLIST target.
+#	Defaults to PLIST_FILTER_STAGE.<class> with pre- and post- swapped.
+#
+# PLIST_FILTER_AWK_PROG.<class>
+# PLIST_FILTER_AWK.<class>
+#	Define the filter program to run. PLIST_FILTER_AWK_PROG must refer to a
+#	filename containing an awk prog. PLIST_FILTER_AWK must contain an awk
+#	prog string.
+#
+PLIST_FILTER_CLASSES?=
+
+
+# DYNAMIC_PLIST_DIRS
+#	A list of directories relative to PREFIX whose contents after intall
+#	target is added to PLIST.
+DYNAMIC_PLIST_DIRS?=
+
+# These Makefile fragments provide all PLIST-related variables and targets.
 $(call require, ${ROBOTPKG_DIR}/mk/plist/plist.mk)
-
-
-# --- print-PLIST (PUBLIC) -------------------------------------------------
-#
-# print-PLIST is a public target to generate a initial PLIST for the package.
-#
-$(call require, ${ROBOTPKG_DIR}/mk/depends/depends-vars.mk)
 $(call require, ${ROBOTPKG_DIR}/mk/plist/print-plist.mk)
-
-.PHONY: print-PLIST
-print-PLIST: $(call add-barrier, depends, print-PLIST) do-print-PLIST

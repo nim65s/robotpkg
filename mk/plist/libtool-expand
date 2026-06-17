@@ -39,8 +39,8 @@
 
 : ${ECHO=echo}
 : ${GREP=grep}
-: ${SORT=sort}
 : ${TEST=test}
+: ${PREFIX=/opt/openrobots}
 
 self="${0##*/}"
 
@@ -50,6 +50,7 @@ usage() {
 
 ${TEST} $# -gt 0 || { usage; exit 1; }
 
+cd ${PREFIX}
 for la
 do
 	dir="${la%/*.la}"
@@ -90,4 +91,4 @@ do
 			${ECHO} "$libpath"
 		done
 	fi
-done | ${SORT} -u
+done

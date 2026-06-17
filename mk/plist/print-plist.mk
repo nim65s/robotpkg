@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2006-2009,2011-2013,2017,2022 LAAS/CNRS
+# Copyright (c) 2006-2009, 2011-2013, 2017, 2022, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # This project includes software developed by the NetBSD Foundation, Inc.
@@ -74,15 +74,15 @@ PRINT_PLIST_FILTER?=
 #
 _PRINT_PLIST_FILES_CMD=	\
   ${FIND} $(abspath ${PREFIX}) -xdev -ctime -1 ! -type d ! \(		\
-	-path '${MAKECONF}' -o -path '${ROBOTPKG_DIR}/*' -o		\
-	-path '${PKG_DBDIR}/*' -o -path '${PKG_REFCOUNT_DBDIR}/*'	\
+    -path '${MAKECONF}' -o -path '${ROBOTPKG_DIR}/*' -o			\
+    -path '${PKG_DBDIR}/*' -o -path '${PKG_REFCOUNT_DBDIR}/*'		\
   \) ! -exec ${PKG_INFO} -qFe {} 2>/dev/null \;				\
   ! -exec ${TEST} -d ${PKG_REFCOUNT_DBDIR}/{} \;			\
   -print;
-_PRINT_PLIST_FILES_CMD+= {						\
+_PRINT_PLIST_FILES_CMD+=						\
   { ${PKG_INFO} -qL ${PKGNAME} 2>/dev/null||:; } | while read f; do	\
     ${TEST} -f "$$f" && ${ECHO} "$$f";					\
-  done; };
+  done;
 _PRINT_PLIST_FILES_CMD+= ${PRINT_PLIST_FILES_CMD}
 
 _PRINT_PLIST_DIRS_CMD=	\
@@ -96,82 +96,99 @@ _PRINT_PLIST_DIRS_CMD+=	\
     case "$$f" in "@pkgdir "*) ${ECHO} "$${f\#@pkgdir }";; esac;	\
   done;
 
-# Perform substitutions
+
+# --- subst ----------------------------------------------------------------
 #
-_PRINT_PLIST_AWK_SUBST={
-_PRINT_PLIST_AWK_SUBST+= ${PRINT_PLIST_AWK_SUBST}
-_PRINT_PLIST_AWK_SUBST+=						\
-	gsub(/${NODENAME}/, "$${NODENAME}");				\
-	gsub(/$(subst .,\.,${OS_VERSION})/, "$${OS_VERSION}");		\
-	gsub(/$(subst .,\.,${OS_KERNEL_VERSION})/,			\
-					"$${OS_KERNEL_VERSION}");	\
-	gsub(/${PKGNAME_NOREV}/, "$${PKGNAME}");			\
-	gsub(/$(subst .,\.,${PKGVERSION_NOREV})/, "$${PKGVERSION}");	\
-	gsub("^${PKGINFODIR}/", "$${PKGINFODIR}/");			\
-	gsub("^${PKGMANDIR}/", "$${PKGMANDIR}/");
-_PRINT_PLIST_AWK_SUBST+=}
-
-
-# The awk statement that will ignore directories from PRINT_PLIST_IGNORE_DIRS
+# PRINT_PLIST_NOSUBST avoids backward substitutions from PLIST_SUBST
 #
-_PRINT_PLIST_AWK_IGNORE=$(foreach __dir__,				\
-  $(patsubst $(abspath ${PREFIX})/%,%,${PRINT_PLIST_IGNORE_DIRS}),	\
-  ($$0 ~ /^$(subst /,\/,${__dir__})/) { next; })
+PRINT_PLIST_NOSUBST?=
 
-ifneq (,$(call isyes,$(LIBTOOLIZE_PLIST)))
-  PRINT_PLIST_LIBTOOLIZE=| (						\
-	  if ${TEST} -d ${WRKDIR}; then					\
-	  	tmpdir="${WRKDIR}";					\
-	  else								\
-	  	tmpdir="$${TMPDIR-/tmp}";				\
-	  fi;								\
-	  fileslist="$$tmpdir/print.plist.files.$$$$";			\
-	  libslist="$$tmpdir/print.plist.libs.$$$$";			\
-	  cd ${PREFIX};							\
-	  while read file; do						\
-		case $$file in						\
-		*.la)							\
-			${_LIBTOOL_EXPAND} $$file >> $$libslist;	\
-			;;						\
-		esac;							\
-		${ECHO} "$$file";					\
-	  done > $$fileslist;						\
-	  if ${TEST} -f "$$libslist"; then				\
-	  	${GREP} -hvxF "`${SORT} -u $$libslist`" "$$fileslist";	\
-	  else								\
-	  	${CAT} "$$fileslist";					\
-	  fi;								\
-	  ${RM} -f "$$fileslist" "$$libslist";				\
-	)
-endif
+PLIST_AWK_ENV+= PRINT_PLIST_NOSUBST_VARS=$(call quote,${PRINT_PLIST_NOSUBST})
 
-do-print-PLIST: print-PLIST-message
-	${RUN} exec >${PRINT_PLIST_FILE};				\
+
+# --- print-PLIST filter engine --------------------------------------------
+#
+
+# default stage, reversed compared to plist unless otherwise specified
+$(foreach _, $(sort ${PLIST_FILTER_CLASSES}),				\
+  $(eval PRINT_PLIST_FILTER_STAGE.$_ ?=					\
+    $(call substs, after- pre- post-, pre- post- after-,		\
+      ${PLIST_FILTER_STAGE.$_}))					\
+  $(eval _PRINT_PLIST_FILTER_DEPS.$_ :=))
+
+# resolve filter stages
+override define _print_plist_filter_stages
+  # map pre-% STAGE to equivalent post-% in designated filter
+  $(foreach _,								\
+    $(patsubst pre-%,%,$(filter pre-%,${PRINT_PLIST_FILTER_STAGE.$1})),	\
+      $(eval _PRINT_PLIST_FILTER_DEPS.$_ += $1))
+
+  # filter {pre,post}-% STAGE: pre-% are removed, applied above, and
+  # post-% are transformed into just the class name.
+  _PRINT_PLIST_FILTER_DEPS.$1 +=					\
+    $(patsubst post-%,%,$(filter-out pre-%,${PRINT_PLIST_FILTER_STAGE.$1}))
+endef
+$(foreach _, $(sort ${PLIST_FILTER_CLASSES}),				\
+  $(eval $(call _print_plist_filter_stages,$_)))
+
+# sort filters
+_ppfilter_sorted:=
+_ppfilter_cycle:=
+override define _ppfilter_tsort
+  $(if $(filter $1,${_ppfilter_sorted}),,				\
+    $(if $(filter $1,${_ppfilter_cycle}),				\
+      $(info Circular dependency in PLIST filters:)			\
+      $(info $		${_ppfilter_cycle} $1)				\
+      $(error aborting))						\
+									\
+    $(eval _ppfilter_cycle+=$1)						\
+    $(foreach _,							\
+      ${_PRINT_PLIST_FILTER_DEPS.$1},$(call _ppfilter_tsort,$_))	\
+    $(eval _ppfilter_cycle:=$(filter-out $1,${_ppfilter_cycle}))	\
+    $(eval _ppfilter_sorted+=$1)					\
+    $1)
+endef
+PRINT_PLIST_FILTER_SORTED=\
+  $(or ${_ppfilter_sorted},						\
+    $(foreach _,${PLIST_FILTER_CLASSES},$(call _ppfilter_tsort,$_)))
+
+
+# --- print-PLIST (PUBLIC) -------------------------------------------------
+#
+# print-PLIST is a public target to generate a initial PLIST for the package.
+#
+$(call require, ${ROBOTPKG_DIR}/mk/depends/depends-vars.mk)
+
+_PRINT_PLIST_TARGETS+= $(call add-barrier, depends, print-PLIST)
+_PRINT_PLIST_TARGETS+= print-PLIST-message
+_PRINT_PLIST_TARGETS+= do-print-plist
+
+.PHONY: print-PLIST
+print-PLIST: ${_PRINT_PLIST_TARGETS}
+
+.PHONY: do-print-plist
+do-print-plist: $(foreach _,${PLIST_FILTER_CLASSES},${PLIST_FILTER_AWK_PROG.$_})
+do-print-plist:
+	${RUN}exec >${PRINT_PLIST_FILE};				\
 	${ECHO} '@comment '`${_CDATE_CMD}`;				\
 	{ ${_PRINT_PLIST_FILES_CMD} }					\
-	 | ${AWK} '{ sub("^$(abspath ${PREFIX})/", ""); print; }'	\
-         ${PRINT_PLIST_LIBTOOLIZE}					\
-         ${PRINT_PLIST_FILTER}						\
 	 | ${SORT} -u							\
-	 | ${AWK} '							\
-           {								\
-	     while(gsub("//", "/"));					\
-	     gsub("[^/][^/]*/[.][.]/", "");				\
-	     gsub("/[.]/", "/"); gsub("^[.]/", ""); gsub("/[.]$$", "");	\
-	   }								\
-	   ${_PRINT_PLIST_AWK_IGNORE}					\
-	   ${_PRINT_PLIST_AWK_SUBST}					\
-	   { if ($$0 in entries) next; entries[$$0]; }			\
-	   { print $$0 }';						\
+	 | ${SETENV} ${PLIST_AWK_ENV} ${AWK}				\
+	    $(addprefix -f ,						\
+	      ${_PLIST_PREFILTER_AWK_PROG}				\
+	      $(foreach _,${PRINT_PLIST_FILTER_SORTED},			\
+	        ${PLIST_FILTER_AWK_PROG.$_})				\
+	      ${_PLIST_POSTFILTER_AWK_PROG})				\
+	    collapse							\
+         ${PRINT_PLIST_FILTER};						\
 	{ ${_PRINT_PLIST_DIRS_CMD} }					\
 	  | ${SORT} -r							\
 	  | ${AWK} '							\
-		{ sub("^$(abspath ${PREFIX})/+", ""); }			\
-		/^$$/ { next; }						\
-		${_PRINT_PLIST_AWK_IGNORE}				\
-		${_PRINT_PLIST_AWK_SUBST}				\
-		{ if ($$0 in entries) next; entries[$$0]; };		\
-		{ print "@pkgdir " $$0; }'
+	      { sub("^$(abspath ${PREFIX})/+", ""); }			\
+	      /^$$/ { next; }						\
+  $(foreach _,${PRINT_PLIST_IGNORE_DIRS}, $$0 ~ "$_" { next })		\
+	      { if ($$0 in entries) next; entries[$$0]; };		\
+	      { print "@pkgdir " $$0; }'
 	@${STEP_MSG} "Created ${PRINT_PLIST_FILE}"
 
 
