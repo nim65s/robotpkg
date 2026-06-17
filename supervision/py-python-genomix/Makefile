@@ -3,7 +3,7 @@
 #
 
 PKGNAME=	${PKGTAG.python-}${DISTNAME}
-DISTNAME=	python-genomix-1.2.1
+DISTNAME=	python-genomix-1.3
 CATEGORIES=	supervision
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=python-genomix/}
 MASTER_REPOSITORY= ${MASTER_REPOSITORY_OPENROBOTS}genomix/python-genomix
