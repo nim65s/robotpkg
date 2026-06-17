@@ -1,17 +1,13 @@
-@comment Fri Apr 23 17:26:46 CEST 2021
+@comment Wed Jun 17 14:40:32 CEST 2026
 bin/rosaction
 lib/libros-client.la
 lib/pkgconfig/genom3-ros.pc
 share/genom/site-templates/ros/client/c/client.Makefile.am
 share/genom/site-templates/ros/client/c/client.cc
 share/genom/site-templates/ros/client/c/client.configure.ac
-share/genom/site-templates/ros/client/c/docutil.tcl
-share/genom/site-templates/ros/client/c/info.c
 share/genom/site-templates/ros/client/c/init.cc
-share/genom/site-templates/ros/client/c/json.cc
 share/genom/site-templates/ros/client/c/msglib.cc
 share/genom/site-templates/ros/client/c/msglib.h
-share/genom/site-templates/ros/client/c/plugin.c
 share/genom/site-templates/ros/client/c/portlib.cc
 share/genom/site-templates/ros/client/c/private.h
 share/genom/site-templates/ros/client/c/template.tcl
@@ -34,7 +30,6 @@ share/genom/site-templates/ros/common/portlib.h
 share/genom/site-templates/ros/common/ros.package.xml
 share/genom/site-templates/ros/common/serialize.h
 share/genom/site-templates/ros/common/service.h
-share/genom/site-templates/ros/common/typecopy.h
 share/genom/site-templates/ros/server/activities.cc
 share/genom/site-templates/ros/server/activities.h
 share/genom/site-templates/ros/server/control-codels.cc
