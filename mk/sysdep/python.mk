@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2025 LAAS/CNRS
+# Copyright (c) 2010-2026 LAAS/CNRS
 # All rights reserved.
 #
 # Redistribution  and  use  in  source  and binary  forms,  with  or  without
@@ -350,24 +350,14 @@ SUBST_SED.py-interp+=	-e 's|@PYTHON@|${PYTHON}|'
 
 # Add extra replacement in PLISTs
 PLIST_SUBST+=\
-	PLIST_PYTHON_PYCACHE=$(call quote,${PYTHON_PYCACHE})		\
-	PLIST_PYTHON_SITELIB=$(call quote,${PYTHON_SITELIB})		\
-	PLIST_PYTHON_TAG=$(call quote,${PYTHON_TAG})			\
-	PLIST_PYTHON_EXT_SUFFIX=$(call quote,${PYTHON_EXT_SUFFIX})	\
-	PYTHON_VERSION=${PYTHON_VERSION}
+  PLIST_PYTHON_PYCACHE=$(call quote,${PYTHON_PYCACHE})		\
+  PLIST_PYTHON_SITELIB=$(call quote,${PYTHON_SITELIB})		\
+  PLIST_PYTHON_TAG=$(call quote,${PYTHON_TAG})			\
+  PLIST_PYTHON_EXT_SUFFIX=$(call quote,${PYTHON_EXT_SUFFIX})	\
+  PLIST_PYTHON_VERSION=${PYTHON_VERSION}
 
-PRINT_PLIST_AWK_SUBST+=\
-	gsub("${PYTHON_SITELIB}/", "$${PYTHON_SITELIB}/");		\
-	gsub(/$(subst .,\.,${PYTHON_VERSION})/, "$${PYTHON_VERSION}");	\
-	$(if ${PYTHON_EXT_SUFFIX},					\
-	  if (/[$$]{PYTHON_SITELIB}/)					\
-	    gsub("$(subst .,[.],${PYTHON_EXT_SUFFIX})",			\
-	      "$${PYTHON_EXT_SUFFIX}");)
-
-# Only for backward compatibility: .py{c,o} files are not explicitly in PLISTs
-PLIST_SUBST+=\
-	PLIST_PYTHON_PYCACHE=$(call quote,${PYTHON_PYCACHE})		\
-	PLIST_PYTHON_TAG=$(call quote,${PYTHON_TAG})			\
+PRINT_PLIST_NOSUBST+=\
+  $(if $(filter .so,${PYTHON_EXT_SUFFIX}), PLIST_PYTHON_EXT_SUFFIX)
 
 # Prevent from automatically compiling files - might clutter PLIST if
 # installation involves a python execution. Compilation is handled by the
@@ -413,29 +403,37 @@ ifndef PYTHON_NO_PLIST_COMPILE
 	  }								\
 	' ${PLIST}
 
-  PLIST_FILTER+=| ${AWK} '						\
-    { print }								\
-    ( ${PYTHON_PLIST_COMPILE_PATTERN} ) {				\
-      $(if ${PYTHON_PYCACHE},						\
-        gsub("[^/]+[.]py$$", "${PYTHON_PYCACHE}/&");)			\
-      $(if ${PYTHON_TAG},gsub("[.]py$$", "${PYTHON_TAG}&");)		\
-      print $$0 "c";							\
-      if ($(subst python,,${PKG_ALTERNATIVE.python})>=35) {		\
-        gsub("[.]py$$", "");						\
-        print $$0 ".opt-1.pyc";						\
-      } else								\
-        print $$0 "o";							\
-    }'
+  PLIST_FILTER_CLASSES+=	python
+  PLIST_FILTER_STAGE.python=	post-subst
+  override define PLIST_FILTER_AWK.python
+    BEGIN { PYTHON_SITELIB="${PYTHON_SITELIB}" }
 
-  PRINT_PLIST_FILTER+=| ${AWK} '					\
-    ! /.py[co]$$/ { print; next; }					\
-    {									\
-      orig=$$0;								\
-      gsub(".opt-[12].pyc$$", ".pyc");					\
-      gsub("${PYTHON_TAG}[.]py[co]$$", ".py");				\
-      $(if ${PYTHON_PYCACHE},gsub("${PYTHON_PYCACHE}","");)		\
-    }									\
-    ! ( ${PYTHON_PLIST_COMPILE_PATTERN} ) { print orig; }'
+    function pycompiled(f) {
+      $(if ${PYTHON_PYCACHE},
+        gsub("[^/]+[.]py$$", "${PYTHON_PYCACHE}/&", f))
+      $(if ${PYTHON_TAG},gsub("[.]py$$", "${PYTHON_TAG}&", f))
+      generated[f "c"] = here()
+      if ($(subst python,,${PKG_ALTERNATIVE.python})>=35) {
+        gsub("[.]py$$", "", f)
+        generated[f ".opt-1.pyc"] = here()
+      } else {
+        generated[f "o"] = here()
+      }
+    }
+
+    plist_collapse && /[.]py[co]$$/ {
+      gsub(".opt-[12].pyc$$", ".pyc")
+      gsub("${PYTHON_TAG}[.]py[co]$$", ".py")
+      $(if ${PYTHON_PYCACHE},gsub("${PYTHON_PYCACHE}/",""))
+    }
+    (${PYTHON_PLIST_COMPILE_PATTERN}) { pycompiled($$0) }
+
+    END {
+      for(f in generated) {
+        $$0 = f; if (${PYTHON_PLIST_COMPILE_PATTERN}) pycompiled(f)
+      }
+    }
+  endef
 endif
 
 # Define package helper targets to compile .py files
