@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Fri, 19 Oct 2012
 #
 
-DISTNAME=	genomix-1.8
+DISTNAME=	genomix-1.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=genomix/}
 MASTER_REPOSITORY= ${MASTER_REPOSITORY_OPENROBOTS}genomix
@@ -15,7 +15,6 @@ LICENSE=	2-clause-bsd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=$(dir ${TCL_CONFIG_SH})
-NOT_FOR_PLATFORM=	# empty
 
 DEPEND_ABI.tcl=	tcl>=8.5
 
