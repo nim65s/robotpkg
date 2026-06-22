@@ -43,46 +43,13 @@ include ../../devel/ros2-rcutils/depend.mk
 include ../../mk/sysdep/py-empy.mk
 include ../../mk/sysdep/python.mk
 
-# Generators
-ROSIDL_GENERATOR_SRCS.rosidl-adapter+=\
-  ${DEPEND_DIR.ros2-rosidl}/files/adapter.awk
-ROSIDL_GENERATOR_VERS.rosidl-adapter+=\
-  $(addsuffix -$(call pkgversion,${PKGVERSION.ros2-rosidl}),		\
-    rosidl_cmake)
-
-ROSIDL_GENERATOR_SRCS.rosidl+=\
-  ${DEPEND_DIR.ros2-rosidl}/files/generator.awk
-ROSIDL_GENERATOR_VERS.rosidl+=\
-  $(addsuffix -$(call pkgversion,${PKGVERSION.ros2-rosidl}),		\
-    rosidl_generator_c							\
-    rosidl_generator_cpp						\
-    rosidl_typesupport_introspection_c					\
-    rosidl_typesupport_introspection_cpp				\
-    rosidl_generator_type_description)
-
-# PLIST handling depending on existing ROS generators.
+# PLIST handling depending on existing ROS adapters and generators.
 # Those generators generate different files depending on their version.
 #
-# First is rosidl-adapter generating IDL files, then all others.
-#
-PLIST_FILTER+=\
-  $(foreach _,rosidl-adapter rosidl,					\
-    | ${AWK}								\
-      -v generators='${ROSIDL_GENERATOR_VERS.$_}'			\
-      $(addprefix -f ${CURDIR}/,					\
-        ${ROSIDL_GENERATOR_SRCS.$_}					\
-        ../../mk/internal/libdewey.awk					\
-        ${DEPEND_DIR.ros2-rosidl}/files/plist-generator.awk)		\
-      expand)
-PRINT_PLIST_FILTER+=\
-  $(foreach _,rosidl rosidl-adapter,					\
-    | ${AWK}								\
-      -v generators='${ROSIDL_GENERATOR_VERS.$_}'			\
-      $(addprefix -f ${CURDIR}/,					\
-        ${ROSIDL_GENERATOR_SRCS.$_}					\
-        ../../mk/internal/libdewey.awk					\
-        ${DEPEND_DIR.ros2-rosidl}/files/plist-generator.awk)		\
-      collapse)
+PLIST_FILTER_CLASSES+= rosidl
+
+PLIST_FILTER_STAGE.rosidl=	post-subst
+PLIST_FILTER_AWK_PROG.rosidl=	${DEPEND_DIR.ros2-rosidl}/files/plist.awk
 
 endif # ROS2_ROSIDL_DEPEND_MK ----------------------------------------------
 

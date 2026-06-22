@@ -2,33 +2,55 @@
 #                                           Anthony Mallet on Thu Aug 17 2023
 #
 
-# See interfaces/ros2-rosidl/files/plist-generator.awk for details
+$1 == "share" && $NF == "msg" { f = $0; sub(/[.]msg$/, "", f); msg[f] }
+$1 == "share" && $NF == "srv" { f = $0; sub(/[.]srv$/, "", f); srv[f] }
+$1 == "share" && $NF == "action" { f = $0; sub(/[.]action$/, "", f); act[f] }
+
 END {
-    if (rosidl_generator)
-        plist["@comment filtered by rosidl generator.awk"]
+    rosidl_adapters()
+    rosidl_generators()
 }
 
-NF > 3 && $1 == "share" && $NF == "idl" {
-    rosidl_generator = 1
-    rosidl_generator_type_description($2, $(NF-2), $(NF-1))
+function rosidl_adapters(	f)
+{
+    if (pkgversion("ros2-rosidl<4.3")) {
+        # split request/response messages are not considered as msg
+        for(f in srv) {
+            generated[f "_Request.msg"] = generated[f "_Response.msg"] = srv[f]
+            delete msg[f "_Request"]; delete msg[f "_Response"]
+        }
+    }
 
-    base_ = decamel($(NF-1))
-    rosidl_generator_c($2, $(NF-2), base_)
-    rosidl_generator_cpp($2, $(NF-2), base_)
-    rosidl_typesupport_introspection_c($2, $(NF-2), base_)
-    rosidl_typesupport_introspection_cpp($2, $(NF-2), base_)
+    for(f in msg) rosidls[f ".idl"]
+    for(f in srv) rosidls[f ".idl"]
+    for(f in act) rosidls[f ".idl"]
+    for(f in rosidls) generated[f]
+    if (f) here("ros2-rosidl")
+}
+
+function rosidl_generators(	i, n, path, base)
+{
+    if (!pkgversion("ros2-rosidl")) return
+
+    for(i in rosidls) {
+        n = split(i, path)
+        rosidl_generator_type_description(path[2], path[n-2], path[n-1])
+
+        base = decamel(path[n-1])
+        rosidl_generator_c(path[2], path[n-2], base)
+        rosidl_generator_cpp(path[2], path[n-2], base)
+        rosidl_typesupport_introspection_c(path[2], path[n-2], base)
+        rosidl_typesupport_introspection_cpp(path[2], path[n-2], base)
+    }
 }
 
 function rosidl_generator_type_description(pkg, dir, base)
 {
-    if (!generator("rosidl_generator_type_description")) return
     generated["share", pkg, dir, base ".json"]
 }
 
 function rosidl_generator_c(pkg, dir, base)
 {
-    if (!generator("rosidl_generator_c")) return
-
     generated["include", pkg, pkg, "msg",
               "rosidl_generator_c__visibility_control.h"]
 
@@ -38,7 +60,7 @@ function rosidl_generator_c(pkg, dir, base)
     generated["include", pkg, pkg, dir, "detail", base "__struct.h"]
     generated["include", pkg, pkg, dir, "detail", base "__type_support.h"]
 
-    if (generator("rosidl_generator_c<4")) return
+    if (pkgversion("ros2-rosidl<4")) return
 
     generated["include", pkg, pkg, dir, "detail", base "__description.c"]
     generated["include", pkg, pkg, dir, "detail", base "__type_support.c"]
@@ -46,14 +68,12 @@ function rosidl_generator_c(pkg, dir, base)
 
 function rosidl_generator_cpp(pkg, dir, base)
 {
-    if (!generator("rosidl_generator_cpp")) return
-
     generated["include", pkg, pkg, dir, base ".hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__builder.hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__struct.hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__traits.hpp"]
 
-    if (generator("rosidl_generator_cpp<4.2")) return
+    if (pkgversion("ros2-rosidl<4.2")) return
 
     generated["include", pkg, pkg, dir, "detail", base "__type_support.hpp"]
 
@@ -63,8 +83,6 @@ function rosidl_generator_cpp(pkg, dir, base)
 
 function rosidl_typesupport_introspection_c(pkg, dir, base)
 {
-    if (!generator("rosidl_typesupport_introspection_c")) return
-
     generated["include", pkg, pkg, "msg",
               "rosidl_typesupport_introspection_c__visibility_control.h"]
 
@@ -78,8 +96,6 @@ function rosidl_typesupport_introspection_c(pkg, dir, base)
 
 function rosidl_typesupport_introspection_cpp(pkg, dir, base)
 {
-    if (!generator("rosidl_typesupport_introspection_cpp")) return
-
     generated["include", pkg, pkg, dir,
               "detail", base "__rosidl_typesupport_introspection_cpp.hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__type_support.cpp"]
