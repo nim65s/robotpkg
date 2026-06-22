@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 #
-# Copyright (c) 2011,2013,2018 LAAS/CNRS
+# Copyright (c) 2011, 2013, 2018, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # Redistribution  and  use  in  source  and binary  forms,  with  or  without
@@ -471,7 +471,7 @@ function mkversion(ap, str)
     ap[-1] = 0
     ap[-2] = str
     while(str)
-	str = mkcomponent(ap, str)
+        str = mkcomponent(ap, str)
 }
 
 
@@ -590,6 +590,7 @@ function vextract(pattern, str)
 	pattern[3] = substr(str, RSTART+1)
     } else {
 	pattern[1] = str
+        pattern[3] = ""
     }
 }
 
