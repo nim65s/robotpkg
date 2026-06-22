@@ -2,23 +2,25 @@
 #                                           Anthony Mallet on Thu Aug 17 2023
 #
 
-# See interfaces/ros2-rosidl/files/plist-generator.awk for details
-END {
-    if (rosidl_typesupport_fastrtps)
-        plist["@comment filtered by rosidl-typesupport-fastrtps generator.awk"]
-}
+# Needs interfaces/ros2-rosidl/files/plist.awk for rosidls array
+#
+END { rosidl_typesupport_fastrtps() }
 
-NF > 3 && $1 == "share" && $NF == "idl" {
-    rosidl_typesupport_fastrtps = 1
-    base_ = decamel($(NF-1))
-    rosidl_typesupport_fastrtps_c($2, $(NF-2), base_)
-    rosidl_typesupport_fastrtps_cpp($2, $(NF-2), base_)
+function rosidl_typesupport_fastrtps(	i, n, path, base) {
+    if (!pkgversion("ros2-rosidl-typesupport-fastrtps")) return
+
+    for(i in rosidls) {
+        n = split(i, path)
+
+        base = decamel(path[n-1])
+        rosidl_typesupport_fastrtps_c(path[2], path[n-2], base)
+        rosidl_typesupport_fastrtps_cpp(path[2], path[n-2], base)
+    }
+    if (i) here("ros2-rosidl-typesupport-fastrtps")
 }
 
 function rosidl_typesupport_fastrtps_c(pkg, dir, base)
 {
-    if (!generator("rosidl_typesupport_fastrtps_c")) return
-
     generated["include", pkg, pkg, "msg",
               "rosidl_typesupport_fastrtps_c__visibility_control.h"]
 
@@ -28,8 +30,6 @@ function rosidl_typesupport_fastrtps_c(pkg, dir, base)
 
 function rosidl_typesupport_fastrtps_cpp(pkg, dir, base)
 {
-    if (!generator("rosidl_typesupport_fastrtps_cpp")) return
-
     generated["include", pkg, pkg, "msg",
               "rosidl_typesupport_fastrtps_cpp__visibility_control.h"]
 

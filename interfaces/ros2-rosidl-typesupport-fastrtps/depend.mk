@@ -35,17 +35,17 @@ include ../../devel/ament-cmake-ros/depend.mk
 
 # PLIST management depending on version
 #
-ROSIDL_GENERATOR_SRCS.rosidl+=\
-  ${DEPEND_DIR.ros2-rosidl-typesupport-fastrtps}/files/generator.awk
-ROSIDL_GENERATOR_VERS.rosidl+=$(addsuffix				\
-  -$(call pkgversion,${PKGVERSION.ros2-rosidl-typesupport-fastrtps}),	\
-    rosidl_typesupport_fastrtps_c					\
-    rosidl_typesupport_fastrtps_cpp)
+PLIST_FILTER_CLASSES+= rosidl-ts-fastrtps
 
-# For some reason, those empty dirs are installed. They are marked as generated
-# but print-PLIST doesn't use the filters for directories.
+PLIST_FILTER_STAGE.rosidl-ts-fastrtps=		post-subst post-rosidl
+PRINT_PLIST_FILTER_STAGE.rosidl-ts-fastrtps=	pre-subst post-rosidl
+PLIST_FILTER_AWK_PROG.rosidl-ts-fastrtps=\
+  ${DEPEND_DIR.ros2-rosidl-typesupport-fastrtps}/files/plist.awk
+
+# For some reason, those empty dirs are installed. They are marked as
+# generated but print-PLIST doesn't use the filters for directories.
 #
-PRINT_PLIST_IGNORE_DIRS+= @pkgdir include/.*/detail/dds_fastrtps$$
+PRINT_PLIST_IGNORE_DIRS+= include/.*/detail/dds_fastrtps$$
 
 endif # ROS2_ROSIDL_TS_FASTRTPS_DEPEND_MK ----------------------------------
 
