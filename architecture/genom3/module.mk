@@ -133,19 +133,17 @@ define PKG_OPTION_SET.ros-client-ros
 
   # the PLIST heavily depends on the actual list of services
   GENERATE_PLIST+=\
-    ${CAT} ${TEMPLATES_WRKDIR}/ros/client/ros/plist | ${AWK} '		\
-      { sub("^${PREFIX}/?", ""); print }				\
-    ';
+    ${CAT} ${TEMPLATES_WRKDIR}/ros/client/ros/plist;
 
   # hackish ... but this is for a PLIST.guess anyway, so nothing critical
-  PRINT_PLIST_AWK_FILTERS+=\
-	/include\/${GENOM_MODULE}_ros\// {next}				\
-	/$(subst /,\/,${PYTHON_SITELIB})\/${GENOM_MODULE}_ros\// {next}	\
-	/lib\/pkgconfig\/${GENOM_MODULE}_ros.pc/ {next}			\
-	/share\/${GENOM_MODULE}_ros\/package.xml$$/ {next}		\
-	/share\/${GENOM_MODULE}_ros\/cmake/ {next}			\
-	/share\/${GENOM_MODULE}_ros\/msg/ {next}			\
-	/share\/${GENOM_MODULE}_ros\/srv/ {next}
+  PRINT_PLIST_GENOM_FILTER+=\
+    /include\/${GENOM_MODULE}_ros\// {next}				\
+    /$(subst /,\/,${PYTHON_SITELIB})\/${GENOM_MODULE}_ros\// {next}	\
+    /lib\/pkgconfig\/${GENOM_MODULE}_ros.pc/ {next}			\
+    /share\/${GENOM_MODULE}_ros\/package.xml$$/ {next}			\
+    /share\/${GENOM_MODULE}_ros\/cmake/ {next}				\
+    /share\/${GENOM_MODULE}_ros\/msg/ {next}				\
+    /share\/${GENOM_MODULE}_ros\/srv/ {next}
 
   pre-configure: genom3-autoreconf(ros/client/ros)
 
@@ -191,22 +189,19 @@ endef
 # Add extra replacement in PLISTs and a generic template for standard genom
 # files
 PLIST_TEMPLATES=	architecture/genom3/PLIST.templates
-PLIST_SUBST+=		GENOM_MODULE=$(call quote,${GENOM_MODULE})
+PLIST_SUBST+=		PLIST_GENOM_MODULE=$(call quote,${GENOM_MODULE})
 
 GENERATE_PLIST+=	${CAT} ${ROBOTPKG_DIR}/${PLIST_TEMPLATES};
 
-PRINT_PLIST_AWK_SUBST+=	gsub("${GENOM_MODULE}", "$${GENOM_MODULE}");
-PRINT_PLIST_AWK_FILTERS=
+PRINT_PLIST_GENOM_FILTER?=
 PRINT_PLIST_FILTER+=\
 	| ${AWK} '							\
 	  BEGIN { print "@comment includes ${PLIST_TEMPLATES}" }	\
-	  ${PRINT_PLIST_AWK_FILTERS}					\
+	  ${PRINT_PLIST_GENOM_FILTER}					\
 	  NR > FNR {							\
 	     if (!($$0 in filter)) print "$${PLIST.codels}" $$0; next;	\
 	  }								\
-	  { gsub("[$$]{GENOM_MODULE}", "${GENOM_MODULE}") }		\
-	  { gsub("[$$]{PLIST[^}]*}", "") }				\
-	  { filter[$$0] }						\
+	  { gsub("[$$]{PLIST[^}]*}", ""); filter[$$0] }			\
 	  ' ${ROBOTPKG_DIR}/${PLIST_TEMPLATES} -
 
 
