@@ -24,6 +24,7 @@ SYSTEM_SEARCH.ros2-rosidl=\
   $(call ros2_system_search,				\
     rosidl_adapter					\
     ?rosidl_buffer					\
+    ?rosidl_buffer_backend				\
     ?rosidl_buffer_py					\
     rosidl_cmake					\
     rosidl_generator_c					\
