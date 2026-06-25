@@ -1,4 +1,4 @@
-# robotpkg build/rake.mk
+# robotpkg build/gmake.mk
 # Created:			Anthony Mallet on Wed, 23 Oct 2013
 #
 
@@ -15,6 +15,7 @@ MAKE_FLAGS?=	# empty
 BUILD_TARGET?=	all
 
 # always reset robotpkg gmake context when using gmake to build a package
+MAKE_ENV+=	MAKE=${MAKE}
 MAKE_ENV+=	MAKELEVEL=
 do-build do-install: MAKEOVERRIDES=
 do-build do-install: MAKEFLAGS=
