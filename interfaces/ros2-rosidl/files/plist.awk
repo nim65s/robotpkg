@@ -35,10 +35,9 @@ function rosidl_adapters(	f)
         }
     }
 
-    for(f in msg) rosidls[f ".idl"]
-    for(f in srv) rosidls[f ".idl"]
-    for(f in act) rosidls[f ".idl"]
-    for(f in rosidls) generated[f]
+    for(f in msg) { rosidls[f ".idl"]; generated[f ".idl"] }
+    for(f in srv) { rosidls[f ".idl"]; generated[f ".idl"] }
+    for(f in act) { rosidls[f ".idl"]; generated[f ".idl"] }
     if (f) here("ros2-rosidl")
 }
 
@@ -68,7 +67,6 @@ function rosidl_generator_c(pkg, dir, base)
     generated["include", pkg, pkg, "msg",
               "rosidl_generator_c__visibility_control.h"]
 
-    generated["include", pkg, pkg, dir, base ".h"]
     generated["include", pkg, pkg, dir, "detail", base "__functions.h"]
     generated["include", pkg, pkg, dir, "detail", base "__functions.c"]
     generated["include", pkg, pkg, dir, "detail", base "__struct.h"]
@@ -82,7 +80,6 @@ function rosidl_generator_c(pkg, dir, base)
 
 function rosidl_generator_cpp(pkg, dir, base)
 {
-    generated["include", pkg, pkg, dir, base ".hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__builder.hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__struct.hpp"]
     generated["include", pkg, pkg, dir, "detail", base "__traits.hpp"]
