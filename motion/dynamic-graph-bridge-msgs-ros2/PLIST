@@ -1,7 +1,18 @@
-@comment Tue May 7 18:41:19 CEST 2024
-@comment filtered by rosidl adapter.awk
-@comment filtered by rosidl generator.awk
-@comment filtered by rosidl-typesupport-fastrtps generator.awk
+@comment Fri Jun 26 14:33:48 CEST 2026
+@comment filtered by py-ament-package
+@comment filtered by ros2-rosidl
+@comment filtered by ros2-rosidl-python
+@comment filtered by ros2-rosidl-typesupport-fastrtps
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/msg/matrix.h
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/msg/matrix.hpp
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/msg/vector.h
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/msg/vector.hpp
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_command.h
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_command.hpp
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_python_command.h
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_python_command.hpp
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_python_file.h
+include/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs/srv/run_python_file.hpp
 lib/libdynamic_graph_bridge_msgs__rosidl_generator_c.so
 lib/libdynamic_graph_bridge_msgs__rosidl_generator_py.so
 lib/libdynamic_graph_bridge_msgs__rosidl_typesupport_c.so
@@ -10,10 +21,10 @@ lib/libdynamic_graph_bridge_msgs__rosidl_typesupport_fastrtps_c.so
 lib/libdynamic_graph_bridge_msgs__rosidl_typesupport_fastrtps_cpp.so
 lib/libdynamic_graph_bridge_msgs__rosidl_typesupport_introspection_c.so
 lib/libdynamic_graph_bridge_msgs__rosidl_typesupport_introspection_cpp.so
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/top_level.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/PKG-INFO
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/top_level.txt
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/__init__.py
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/_dynamic_graph_bridge_msgs_s.ep.rosidl_typesupport_c.c
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/_dynamic_graph_bridge_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
@@ -23,16 +34,11 @@ ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs_s__rosidl_
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/dynamic_graph_bridge_msgs_s__rosidl_typesupport_introspection_c.so
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/msg/__init__.py
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/msg/_matrix.py
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/msg/_matrix_s.c
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/msg/_vector.py
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/msg/_vector_s.c
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/__init__.py
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_command.py
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_command_s.c
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_python_command.py
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_python_command_s.c
 ${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_python_file.py
-${PYTHON_SITELIB}/dynamic_graph_bridge_msgs/srv/_run_python_file_s.c
 share/ament_index/resource_index/package_run_dependencies/dynamic_graph_bridge_msgs
 share/ament_index/resource_index/packages/dynamic_graph_bridge_msgs
 share/ament_index/resource_index/parent_prefix_path/dynamic_graph_bridge_msgs
@@ -61,8 +67,6 @@ share/dynamic_graph_bridge_msgs/cmake/export_dynamic_graph_bridge_msgs__rosidl_t
 share/dynamic_graph_bridge_msgs/cmake/export_dynamic_graph_bridge_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/dynamic_graph_bridge_msgs/cmake/export_dynamic_graph_bridge_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/dynamic_graph_bridge_msgs/cmake/rosidl_cmake-extras.cmake
-share/dynamic_graph_bridge_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/dynamic_graph_bridge_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/dynamic_graph_bridge_msgs/environment/ament_prefix_path.dsv
 share/dynamic_graph_bridge_msgs/environment/ament_prefix_path.sh
 share/dynamic_graph_bridge_msgs/environment/library_path.dsv
@@ -71,10 +75,7 @@ share/dynamic_graph_bridge_msgs/environment/path.dsv
 share/dynamic_graph_bridge_msgs/environment/path.sh
 share/dynamic_graph_bridge_msgs/environment/pythonpath.dsv
 share/dynamic_graph_bridge_msgs/environment/pythonpath.sh
-share/dynamic_graph_bridge_msgs/local_setup.bash
-share/dynamic_graph_bridge_msgs/local_setup.dsv
-share/dynamic_graph_bridge_msgs/local_setup.sh
-share/dynamic_graph_bridge_msgs/local_setup.zsh
+share/dynamic_graph_bridge_msgs/local_setup.*
 share/dynamic_graph_bridge_msgs/msg/Matrix.msg
 share/dynamic_graph_bridge_msgs/msg/Vector.msg
 share/dynamic_graph_bridge_msgs/package.dsv
