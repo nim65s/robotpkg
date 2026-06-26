@@ -1,9 +1,20 @@
-@comment Wed Jun 10 00:46:54 CEST 2026
-@comment filtered by rosidl adapter.awk
-@comment filtered by rosidl generator.awk
-@comment filtered by rosidl-typesupport-fastrtps generator.awk
+@comment Fri Jun 26 14:27:19 CEST 2026
+@comment filtered by py-ament-package
+@comment filtered by ros2-rosidl
+@comment filtered by ros2-rosidl-python
+@comment filtered by ros2-rosidl-typesupport-fastrtps
 bin/_ros2_daemon
 bin/ros2
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/action/short_varied_multi_nested.h
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/action/short_varied_multi_nested.hpp
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied.h
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied.hpp
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied_multi_nested.h
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied_multi_nested.hpp
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied_nested.h
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/msg/short_varied_nested.hpp
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/srv/short_varied_multi_nested.h
+include/ros2cli_test_interfaces/ros2cli_test_interfaces/srv/short_varied_multi_nested.hpp
 lib/libros2cli_test_interfaces__rosidl_generator_c.so
 lib/libros2cli_test_interfaces__rosidl_generator_py.so
 lib/libros2cli_test_interfaces__rosidl_typesupport_c.so
@@ -31,13 +42,13 @@ ${PYTHON_SITELIB}/ros2action/verb/info.py
 ${PYTHON_SITELIB}/ros2action/verb/list.py
 ${PYTHON_SITELIB}/ros2action/verb/send_goal.py
 ${PYTHON_SITELIB}/ros2action/verb/type.py
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/PKG-INFO
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/entry_points.txt
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/not-zip-safe
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/requires.txt
-${PYTHON_SITELIB}/${PKGNAME}-py${PYTHON_VERSION}.egg-info/top_level.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/PKG-INFO
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/entry_points.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/not-zip-safe
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/requires.txt
+${PYTHON_SITELIB}/${DISTNAME}-py${PYTHON_VERSION}.egg-info/top_level.txt
 ${PYTHON_SITELIB}/ros2cli/__init__.py
 ${PYTHON_SITELIB}/ros2cli/cli.py
 ${PYTHON_SITELIB}/ros2cli/command/__init__.py
@@ -77,20 +88,15 @@ ${PYTHON_SITELIB}/ros2cli_test_interfaces/_ros2cli_test_interfaces_s.ep.rosidl_t
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/_ros2cli_test_interfaces_s.ep.rosidl_typesupport_introspection_c.c
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/action/__init__.py
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/action/_short_varied_multi_nested.py
-${PYTHON_SITELIB}/ros2cli_test_interfaces/action/_short_varied_multi_nested_s.c
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/__init__.py
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied.py
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied_multi_nested.py
-${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied_multi_nested_s.c
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied_nested.py
-${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied_nested_s.c
-${PYTHON_SITELIB}/ros2cli_test_interfaces/msg/_short_varied_s.c
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/ros2cli_test_interfaces_s__rosidl_typesupport_c.so
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/ros2cli_test_interfaces_s__rosidl_typesupport_fastrtps_c.so
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/ros2cli_test_interfaces_s__rosidl_typesupport_introspection_c.so
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/srv/__init__.py
 ${PYTHON_SITELIB}/ros2cli_test_interfaces/srv/_short_varied_multi_nested.py
-${PYTHON_SITELIB}/ros2cli_test_interfaces/srv/_short_varied_multi_nested_s.c
 ${PYTHON_SITELIB}/ros2component-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/ros2component-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/ros2component-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -348,7 +354,6 @@ share/ros2cli/environment/ros2-argcomplete.zsh
 share/ros2cli/package.dsv
 share/ros2cli/package.xml
 share/ros2cli_test_interfaces/action/ShortVariedMultiNested.action
-share/ros2cli_test_interfaces/action/ShortVariedMultiNested.idl
 share/ros2cli_test_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
 share/ros2cli_test_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
 share/ros2cli_test_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
@@ -373,9 +378,6 @@ share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_
 share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake
 share/ros2cli_test_interfaces/cmake/ros2cli_test_interfaces__rosidl_typesupport_introspection_cppExport.cmake
 share/ros2cli_test_interfaces/cmake/rosidl_cmake-extras.cmake
-share/ros2cli_test_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
-share/ros2cli_test_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/ros2cli_test_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/ros2cli_test_interfaces/environment/ament_prefix_path.dsv
 share/ros2cli_test_interfaces/environment/ament_prefix_path.sh
 share/ros2cli_test_interfaces/environment/library_path.dsv
@@ -384,10 +386,7 @@ share/ros2cli_test_interfaces/environment/path.dsv
 share/ros2cli_test_interfaces/environment/path.sh
 share/ros2cli_test_interfaces/environment/pythonpath.dsv
 share/ros2cli_test_interfaces/environment/pythonpath.sh
-share/ros2cli_test_interfaces/local_setup.bash
-share/ros2cli_test_interfaces/local_setup.dsv
-share/ros2cli_test_interfaces/local_setup.sh
-share/ros2cli_test_interfaces/local_setup.zsh
+share/ros2cli_test_interfaces/local_setup.*
 share/ros2cli_test_interfaces/msg/ShortVaried.msg
 share/ros2cli_test_interfaces/msg/ShortVariedMultiNested.msg
 share/ros2cli_test_interfaces/msg/ShortVariedNested.msg
@@ -404,10 +403,7 @@ share/ros2lifecycle_test_fixtures/environment/ament_prefix_path.dsv
 share/ros2lifecycle_test_fixtures/environment/ament_prefix_path.sh
 share/ros2lifecycle_test_fixtures/environment/path.dsv
 share/ros2lifecycle_test_fixtures/environment/path.sh
-share/ros2lifecycle_test_fixtures/local_setup.bash
-share/ros2lifecycle_test_fixtures/local_setup.dsv
-share/ros2lifecycle_test_fixtures/local_setup.sh
-share/ros2lifecycle_test_fixtures/local_setup.zsh
+share/ros2lifecycle_test_fixtures/local_setup.*
 share/ros2lifecycle_test_fixtures/package.dsv
 share/ros2lifecycle_test_fixtures/package.xml
 share/ros2multicast/package.xml
