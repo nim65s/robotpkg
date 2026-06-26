@@ -38,10 +38,6 @@ function rosidl_generator_py(pkg, dir, base)
 {
     if (!pkgversion("ros2-rosidl-python")) return
 
-    generated[PYTHON_SITELIB, pkg, "__init__.py"]
-
-    generated[PYTHON_SITELIB, pkg, dir, "__init__.py"]
-    generated[PYTHON_SITELIB, pkg, dir, "_" base ".py"]
     generated[PYTHON_SITELIB, pkg, dir, "_" base "_s.c"]
 
     if (pkgversion("ros2-rosidl-python<0.26")) return
