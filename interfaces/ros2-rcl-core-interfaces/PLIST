@@ -1,7 +1,36 @@
-@comment Tue Jun 9 18:55:45 CEST 2026
-@comment filtered by rosidl adapter.awk
-@comment filtered by rosidl generator.awk
-@comment filtered by rosidl-typesupport-fastrtps generator.awk
+@comment Fri Jun 26 13:49:55 CEST 2026
+@comment filtered by py-ament-package
+@comment filtered by ros2-rosidl
+@comment filtered by ros2-rosidl-python
+@comment filtered by ros2-rosidl-typesupport-fastrtps
+include/action_msgs/action_msgs/msg/goal_info.h
+include/action_msgs/action_msgs/msg/goal_info.hpp
+include/action_msgs/action_msgs/msg/goal_status.h
+include/action_msgs/action_msgs/msg/goal_status.hpp
+include/action_msgs/action_msgs/msg/goal_status_array.h
+include/action_msgs/action_msgs/msg/goal_status_array.hpp
+include/action_msgs/action_msgs/srv/cancel_goal.h
+include/action_msgs/action_msgs/srv/cancel_goal.hpp
+include/builtin_interfaces/builtin_interfaces/msg/duration.h
+include/builtin_interfaces/builtin_interfaces/msg/duration.hpp
+include/builtin_interfaces/builtin_interfaces/msg/time.h
+include/builtin_interfaces/builtin_interfaces/msg/time.hpp
+include/service_msgs/service_msgs/msg/service_event_info.h
+include/service_msgs/service_msgs/msg/service_event_info.hpp
+include/type_description_interfaces/type_description_interfaces/msg/field.h
+include/type_description_interfaces/type_description_interfaces/msg/field.hpp
+include/type_description_interfaces/type_description_interfaces/msg/field_type.h
+include/type_description_interfaces/type_description_interfaces/msg/field_type.hpp
+include/type_description_interfaces/type_description_interfaces/msg/individual_type_description.h
+include/type_description_interfaces/type_description_interfaces/msg/individual_type_description.hpp
+include/type_description_interfaces/type_description_interfaces/msg/key_value.h
+include/type_description_interfaces/type_description_interfaces/msg/key_value.hpp
+include/type_description_interfaces/type_description_interfaces/msg/type_description.h
+include/type_description_interfaces/type_description_interfaces/msg/type_description.hpp
+include/type_description_interfaces/type_description_interfaces/msg/type_source.h
+include/type_description_interfaces/type_description_interfaces/msg/type_source.hpp
+include/type_description_interfaces/type_description_interfaces/srv/get_type_description.h
+include/type_description_interfaces/type_description_interfaces/srv/get_type_description.hpp
 lib/libaction_msgs__rosidl_generator_c.so
 lib/libaction_msgs__rosidl_generator_py.so
 lib/libaction_msgs__rosidl_typesupport_c.so
@@ -47,14 +76,10 @@ ${PYTHON_SITELIB}/action_msgs/action_msgs_s__rosidl_typesupport_fastrtps_c.so
 ${PYTHON_SITELIB}/action_msgs/action_msgs_s__rosidl_typesupport_introspection_c.so
 ${PYTHON_SITELIB}/action_msgs/msg/__init__.py
 ${PYTHON_SITELIB}/action_msgs/msg/_goal_info.py
-${PYTHON_SITELIB}/action_msgs/msg/_goal_info_s.c
 ${PYTHON_SITELIB}/action_msgs/msg/_goal_status.py
 ${PYTHON_SITELIB}/action_msgs/msg/_goal_status_array.py
-${PYTHON_SITELIB}/action_msgs/msg/_goal_status_array_s.c
-${PYTHON_SITELIB}/action_msgs/msg/_goal_status_s.c
 ${PYTHON_SITELIB}/action_msgs/srv/__init__.py
 ${PYTHON_SITELIB}/action_msgs/srv/_cancel_goal.py
-${PYTHON_SITELIB}/action_msgs/srv/_cancel_goal_s.c
 ${PYTHON_SITELIB}/builtin_interfaces-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/builtin_interfaces-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/builtin_interfaces-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -68,9 +93,7 @@ ${PYTHON_SITELIB}/builtin_interfaces/builtin_interfaces_s__rosidl_typesupport_fa
 ${PYTHON_SITELIB}/builtin_interfaces/builtin_interfaces_s__rosidl_typesupport_introspection_c.so
 ${PYTHON_SITELIB}/builtin_interfaces/msg/__init__.py
 ${PYTHON_SITELIB}/builtin_interfaces/msg/_duration.py
-${PYTHON_SITELIB}/builtin_interfaces/msg/_duration_s.c
 ${PYTHON_SITELIB}/builtin_interfaces/msg/_time.py
-${PYTHON_SITELIB}/builtin_interfaces/msg/_time_s.c
 ${PYTHON_SITELIB}/service_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/PKG-INFO
 ${PYTHON_SITELIB}/service_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/SOURCES.txt
 ${PYTHON_SITELIB}/service_msgs-${PKGVERSION}-py${PYTHON_VERSION}.egg-info/dependency_links.txt
@@ -81,7 +104,6 @@ ${PYTHON_SITELIB}/service_msgs/_service_msgs_s.ep.rosidl_typesupport_fastrtps_c.
 ${PYTHON_SITELIB}/service_msgs/_service_msgs_s.ep.rosidl_typesupport_introspection_c.c
 ${PYTHON_SITELIB}/service_msgs/msg/__init__.py
 ${PYTHON_SITELIB}/service_msgs/msg/_service_event_info.py
-${PYTHON_SITELIB}/service_msgs/msg/_service_event_info_s.c
 ${PYTHON_SITELIB}/service_msgs/service_msgs_s__rosidl_typesupport_c.so
 ${PYTHON_SITELIB}/service_msgs/service_msgs_s__rosidl_typesupport_fastrtps_c.so
 ${PYTHON_SITELIB}/service_msgs/service_msgs_s__rosidl_typesupport_introspection_c.so
@@ -95,20 +117,13 @@ ${PYTHON_SITELIB}/type_description_interfaces/_type_description_interfaces_s.ep.
 ${PYTHON_SITELIB}/type_description_interfaces/_type_description_interfaces_s.ep.rosidl_typesupport_introspection_c.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/__init__.py
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_field.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_field_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_field_type.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_field_type_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_individual_type_description.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_individual_type_description_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_key_value.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_key_value_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_type_description.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_type_description_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/msg/_type_source.py
-${PYTHON_SITELIB}/type_description_interfaces/msg/_type_source_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/srv/__init__.py
 ${PYTHON_SITELIB}/type_description_interfaces/srv/_get_type_description.py
-${PYTHON_SITELIB}/type_description_interfaces/srv/_get_type_description_s.c
 ${PYTHON_SITELIB}/type_description_interfaces/type_description_interfaces_s__rosidl_typesupport_c.so
 ${PYTHON_SITELIB}/type_description_interfaces/type_description_interfaces_s__rosidl_typesupport_fastrtps_c.so
 ${PYTHON_SITELIB}/type_description_interfaces/type_description_interfaces_s__rosidl_typesupport_introspection_c.so
@@ -136,9 +151,6 @@ share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cExport.
 share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/action_msgs/cmake/export_action_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/action_msgs/cmake/rosidl_cmake-extras.cmake
-share/action_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
-share/action_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/action_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/action_msgs/environment/ament_prefix_path.dsv
 share/action_msgs/environment/ament_prefix_path.sh
 share/action_msgs/environment/library_path.dsv
@@ -147,10 +159,7 @@ share/action_msgs/environment/path.dsv
 share/action_msgs/environment/path.sh
 share/action_msgs/environment/pythonpath.dsv
 share/action_msgs/environment/pythonpath.sh
-share/action_msgs/local_setup.bash
-share/action_msgs/local_setup.dsv
-share/action_msgs/local_setup.sh
-share/action_msgs/local_setup.zsh
+share/action_msgs/local_setup.*
 share/action_msgs/msg/GoalInfo.msg
 share/action_msgs/msg/GoalStatus.msg
 share/action_msgs/msg/GoalStatusArray.msg
@@ -197,9 +206,6 @@ share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fas
 share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/builtin_interfaces/cmake/export_builtin_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
 share/builtin_interfaces/cmake/rosidl_cmake-extras.cmake
-share/builtin_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
-share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/builtin_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/builtin_interfaces/environment/ament_prefix_path.dsv
 share/builtin_interfaces/environment/ament_prefix_path.sh
 share/builtin_interfaces/environment/library_path.dsv
@@ -208,10 +214,7 @@ share/builtin_interfaces/environment/path.dsv
 share/builtin_interfaces/environment/path.sh
 share/builtin_interfaces/environment/pythonpath.dsv
 share/builtin_interfaces/environment/pythonpath.sh
-share/builtin_interfaces/local_setup.bash
-share/builtin_interfaces/local_setup.dsv
-share/builtin_interfaces/local_setup.sh
-share/builtin_interfaces/local_setup.zsh
+share/builtin_interfaces/local_setup.*
 share/builtin_interfaces/msg/Duration.msg
 share/builtin_interfaces/msg/Time.msg
 share/builtin_interfaces/package.dsv
@@ -230,9 +233,6 @@ share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cExpor
 share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/service_msgs/cmake/export_service_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
 share/service_msgs/cmake/rosidl_cmake-extras.cmake
-share/service_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
-share/service_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/service_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/service_msgs/cmake/service_msgsConfig-version.cmake
 share/service_msgs/cmake/service_msgsConfig.cmake
 share/service_msgs/cmake/service_msgs__rosidl_typesupport_cExport-release.cmake
@@ -251,10 +251,7 @@ share/service_msgs/environment/path.dsv
 share/service_msgs/environment/path.sh
 share/service_msgs/environment/pythonpath.dsv
 share/service_msgs/environment/pythonpath.sh
-share/service_msgs/local_setup.bash
-share/service_msgs/local_setup.dsv
-share/service_msgs/local_setup.sh
-share/service_msgs/local_setup.zsh
+share/service_msgs/local_setup.*
 share/service_msgs/msg/ServiceEventInfo.msg
 share/service_msgs/package.dsv
 share/service_msgs/package.xml
@@ -272,9 +269,6 @@ share/type_description_interfaces/cmake/export_type_description_interfaces__rosi
 share/type_description_interfaces/cmake/export_type_description_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
 share/type_description_interfaces/cmake/export_type_description_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
 share/type_description_interfaces/cmake/rosidl_cmake-extras.cmake
-share/type_description_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
-share/type_description_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
-share/type_description_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 share/type_description_interfaces/cmake/type_description_interfacesConfig-version.cmake
 share/type_description_interfaces/cmake/type_description_interfacesConfig.cmake
 share/type_description_interfaces/cmake/type_description_interfaces__rosidl_typesupport_cExport-release.cmake
@@ -293,10 +287,7 @@ share/type_description_interfaces/environment/path.dsv
 share/type_description_interfaces/environment/path.sh
 share/type_description_interfaces/environment/pythonpath.dsv
 share/type_description_interfaces/environment/pythonpath.sh
-share/type_description_interfaces/local_setup.bash
-share/type_description_interfaces/local_setup.dsv
-share/type_description_interfaces/local_setup.sh
-share/type_description_interfaces/local_setup.zsh
+share/type_description_interfaces/local_setup.*
 share/type_description_interfaces/msg/Field.msg
 share/type_description_interfaces/msg/FieldType.msg
 share/type_description_interfaces/msg/IndividualTypeDescription.msg
