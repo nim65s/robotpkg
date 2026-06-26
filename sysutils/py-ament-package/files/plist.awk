@@ -4,7 +4,7 @@
 $1 == "share" && $(NF-1) == "local_setup" {
     h = here("py-ament-package")
     sub(/[^.]*$/, "")
-    if (plist_collapse) plist[$0 "*"]
+    if (plist_collapse) plist[$0 "*"] = h
 
     generated[$0 "bash"] = h
     generated[$0 "dsv"] = h
