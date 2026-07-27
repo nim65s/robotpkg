@@ -1,5 +1,5 @@
-SHA1 (pinocchio-v3.9.0.tar.gz) = 1c4431b539edfe53463cf8e6e84ad7557c3003fc
-RMD160 (pinocchio-v3.9.0.tar.gz) = e50ee95dc32d604ccb459618ed75e5a7e73455a2
-Size (pinocchio-v3.9.0.tar.gz) = 4049097 bytes
+SHA1 (pinocchio-v4.1.0.tar.gz) = 92a11594a4a323b7d7e03492c68a9a0ac5256e62
+RMD160 (pinocchio-v4.1.0.tar.gz) = 791fa590dbf71b22a6d497397e1fa81e1e2b5ecf
+Size (pinocchio-v4.1.0.tar.gz) = 4428024 bytes
 SHA1 (patch-al) = d4204a70129a12c57231c72374f4e5cd06ff01fe
-SHA1 (patch-unittest_python_pybind11_CMakeLists.txt) = 3087b2d412233da19c096b15d014774f334e483f
+SHA1 (patch-unittest_python_pybind11_CMakeLists.txt) = db64a6e66d3c3717e9d12b15c300546bab04d46d
