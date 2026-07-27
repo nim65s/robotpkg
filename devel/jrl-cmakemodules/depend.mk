@@ -14,7 +14,6 @@ ifeq (+,$(JRL_CMAKEMODULES_DEPEND_MK)) # -----------------------------------
 PREFER.jrl-cmakemodules?=	robotpkg
 
 SYSTEM_SEARCH.jrl-cmakemodules=\
-  'include/jrl/cmakemodules/config.hh:/JRL_CMAKEMODULES_VERSION /s/[^0-9.]//gp' \
   '{lib,share}/cmake/jrl-cmakemodules/jrl-cmakemodulesConfigVersion.cmake:/PACKAGE_VERSION/s/[^0-9.]//gp'
 
 DEPEND_USE+=			jrl-cmakemodules
