@@ -4,7 +4,7 @@
 
 ORG=			stack-of-tasks
 NAME=			eigenpy
-VERSION=		3.12.0
+VERSION=		3.13.0
 
 CATEGORIES=		math
 COMMENT=		Eigen bindings to python

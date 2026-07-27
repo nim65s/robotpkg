@@ -107,6 +107,7 @@ lib/cmake/eigenpy/eigenpyConfig.cmake
 lib/cmake/eigenpy/eigenpyConfigVersion.cmake
 lib/cmake/eigenpy/eigenpyTargets-release.cmake
 lib/cmake/eigenpy/eigenpyTargets.cmake
+lib/cmake/eigenpy/pypa-metadata.cmake
 lib/cmake/eigenpy/python-helpers.cmake
 lib/cmake/eigenpy/python.cmake
 lib/libeigenpy.so
