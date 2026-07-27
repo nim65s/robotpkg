@@ -4,7 +4,7 @@
 
 ORG=			coal-library
 NAME=			coal
-VERSION=		3.0.2
+VERSION=		3.0.4
 
 CATEGORIES=		path
 COMMENT=		collision detection and distance computations
