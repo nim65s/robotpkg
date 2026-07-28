@@ -2,7 +2,7 @@
 # Created:			Guilhem Saurel on Mon, 16 Jan 2026
 #
 
-DISTNAME=		fatrop-1.0.0
+DISTNAME=		fatrop-1.1.0
 MASTER_SITES=		${MASTER_SITE_GITHUB:=meco-group/}
 GITHUB_TAG=		v${PKGVERSION_NOREV}
 
