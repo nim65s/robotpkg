@@ -3,6 +3,10 @@
 #
 
 HPP_PACKAGE=		gepetto-viewer
+HPP_COMMENT=		Graphical Interface for Pinocchio and HPP
+HPP_NAMESPACE=		gepetto
+HPP_VERSION=		6.1.0
+
 PKGNAME=		${PKGTAG.python-}${PKGTAG.qt-}${DISTNAME}
 
 CATEGORIES=		graphics
