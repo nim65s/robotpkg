@@ -5,9 +5,6 @@
 HPP_PACKAGE=		hpp-romeo
 HPP_COMMENT=		Python and ros launch files for Romeo robot in hpp.
 
-ROSNAME=		$(subst -,_,${HPP_PACKAGE})
-DISTNAME=		${ROSNAME}-${HPP_VERSION}
-
 CATEGORIES=		robots
 
 DYNAMIC_PLIST_DIRS+=	share/doc/${ROSNAME}
