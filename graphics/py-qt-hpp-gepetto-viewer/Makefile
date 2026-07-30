@@ -18,13 +18,13 @@ CONFLICTS+=		py[0-9][0-9]-qt[0-9]-hpp-gepetto-viewer-[0-9]*
 
 DYNAMIC_PLIST_DIRS+=	etc/gepetto-gui
 
-CMAKE_ARGS+=\
-  -DUSE_QT4=$(if $(filter qt4,${PKG_ALTERNATIVE.qt}),TRUE,FALSE)
+DEPEND_ABI.qt?=		qt>=5
 
 include ../../graphics/py-qt-gepetto-viewer-corba/depend.mk
 include ../../graphics/qt-qgv/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../path/py-hpp-corbaserver/depend.mk
+include ../../path/py-hpp-python/depend.mk
 include ../../path/hpp-util/depend.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/qt.mk
