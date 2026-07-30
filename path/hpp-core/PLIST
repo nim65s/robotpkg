@@ -50,6 +50,7 @@ include/hpp/core/path-optimization/simple-shortcut.hh
 include/hpp/core/path-optimization/simple-time-parameterization.hh
 include/hpp/core/path-optimization/spline-gradient-based-abstract.hh
 include/hpp/core/path-optimization/spline-gradient-based.hh
+include/hpp/core/path-optimization/trapezoidal-time-parameterization.hh
 include/hpp/core/path-optimizer.hh
 include/hpp/core/path-planner.hh
 include/hpp/core/path-planner/bi-rrt-star.hh

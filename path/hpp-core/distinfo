@@ -1,5 +1,3 @@
-SHA1 (hpp-core-v6.1.0.tar.gz) = b50813dfae667813250cd23f260eb77acf740e8a
-RMD160 (hpp-core-v6.1.0.tar.gz) = 94814618bf86cf83471d2da78a0309f61fbf2509
-Size (hpp-core-v6.1.0.tar.gz) = 1227048 bytes
-SHA1 (patch-tests_containers.cc) = 33a181fc94589ff3073b4c8099231a1df98dbd9a
-SHA1 (patch-tests_test-gradient-based.cc) = 1601944c647b33e3196a38042e2f1bf8f61a1c41
+SHA1 (hpp-core-v9.0.2.tar.gz) = 7974e12b66fb2486988babd19554cdc1e0b25167
+RMD160 (hpp-core-v9.0.2.tar.gz) = 8ecd4c163f0fac9a2d66acfbba43904a495cb714
+Size (hpp-core-v9.0.2.tar.gz) = 1233078 bytes
