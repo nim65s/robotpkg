@@ -21,13 +21,7 @@ CMAKE_ARGS+=\
 
 CMAKE_ARGS+=		-DBUILD_COAL_PLUGIN=ON
 
-# Qt4 requires qmake
-include ../../mk/sysdep/qt.mk
-define PKG_ALTERNATIVE_SET.qt4 +=
-
-  include ../../mk/sysdep/qmake.mk
-  CMAKE_ARGS+=		-DQT_QMAKE_EXECUTABLE=${QMAKE}
-endef
+DEPEND_ABI.qt?=		qt>=5
 
 include ../../graphics/py-qt-gepetto-viewer-corba/depend.mk
 include ../../path/coal/depend.mk
