@@ -2,7 +2,7 @@
 # Created:			Florent Lamiraux on Thu, 12 Mar 2015
 #
 
-HPP_PACKAGE=		hpp_tutorial
+HPP_PACKAGE=		hpp-tutorial
 HPP_COMMENT=		Tutorial for manipulation and path planning
 
 CATEGORIES=		doc
