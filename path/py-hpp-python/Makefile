@@ -2,7 +2,6 @@
 # Created:			Guilhem Saurel on Thu, 19 Dec 2024
 #
 
-PKGREVISION=		2
 HPP_PACKAGE=		hpp-python
 HPP_COMMENT=		Python bindings for Humanoid Path Planner
 
@@ -23,7 +22,6 @@ CMAKE_ARG_PATH=		..
 pre-configure:
 	${RUN}${MKDIR} ${WRKSRC}/build
 
-include ../../doc/py-hpp-tutorial/depend.mk
 include ../../math/hpp-pinocchio/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../math/py-pinocchio/depend.mk
