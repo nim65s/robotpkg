@@ -13,13 +13,11 @@ PYTHON_NOTAG_CONFLICT=	yes
 
 include ../../meta-pkgs/hpp/Makefile.common
 
-# Qt4 requires qmake
-include ../../mk/sysdep/qt.mk
-define PKG_ALTERNATIVE_SET.qt4 +=
+DEPEND_ABI.qt+=		qt>=5
 
-  include ../../mk/sysdep/qmake.mk
-  CMAKE_ARGS+=		-DQT_QMAKE_EXECUTABLE=${QMAKE}
-endef
+CMAKE_ARGS+=		-DUSE_CORBA=ON
+CMAKE_ARGS+=		-DUSE_JS=ON
+CMAKE_ARGS+=		-DUSE_QT=ON
 
 include ../../graphics/py-qt-gepetto-viewer-corba/depend.mk
 include ../../graphics/qt-qgv/depend.mk

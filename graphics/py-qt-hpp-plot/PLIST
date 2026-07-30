@@ -4,6 +4,7 @@ include/hpp/plot/config.hh
 include/hpp/plot/deprecated.hh
 include/hpp/plot/graph-widget.hh
 include/hpp/plot/hpp-manipulation-graph.hh
+include/hpp/plot/hpp-native-graph.hh
 include/hpp/plot/warning.hh
 lib/cmake/hpp-plot/cxx-standard.cmake
 lib/cmake/hpp-plot/hpp-plotConfig.cmake
@@ -13,7 +14,17 @@ lib/cmake/hpp-plot/hpp-plotTargets.cmake
 lib/gepetto-gui-plugins/hppmonitoringplugin.so
 lib/libhpp-plot.so
 lib/pkgconfig/hpp-plot.pc
+${PYTHON_SITELIB}/pyhpp_plot/__init__.py
+${PYTHON_SITELIB}/pyhpp_plot/graph_viewer.so
+${PYTHON_SITELIB}/pyhpp_plot/graph_viewer_thread.py
+${PYTHON_SITELIB}/pyhpp_plot/interactive_viewer.py
+${PYTHON_SITELIB}/pyhpp_plot/utils.py
+${PYTHON_SITELIB}/pyhpp_plot/web_app_server.py
+${PYTHON_SITELIB}/pyhpp_plot/websocket_bridge.py
 share/ament_index/resource_index/packages/hpp-plot
 share/hpp-plot/hook/ament_prefix_path.dsv
 share/hpp-plot/hook/python_path.dsv
 share/hpp-plot/package.xml
+share/hpp-plot/webapp/assets/index-CLGk4Rl1.css
+share/hpp-plot/webapp/assets/index-HqASH0VF.js
+share/hpp-plot/webapp/index.html
