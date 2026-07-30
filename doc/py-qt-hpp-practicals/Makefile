@@ -2,7 +2,6 @@
 # Created:			Florent Lamiraux on Wed, 29 May 2019
 #
 
-PKGREVISION=		1
 HPP_PACKAGE=		hpp-practicals
 HPP_COMMENT=		Practicals for hpp software
 
