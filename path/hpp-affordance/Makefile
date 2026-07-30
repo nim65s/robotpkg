@@ -2,7 +2,6 @@
 # Created:			Guilhem Saurel on Tue, 13 Apr 2021
 #
 
-PKGREVISION=	1
 HPP_PACKAGE=	hpp-affordance
 HPP_COMMENT=	Extract Whole-Body Affordances for Mutli-Contact Planning
 
