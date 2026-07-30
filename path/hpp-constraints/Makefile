@@ -2,7 +2,6 @@
 # Created:			Antonio El Khoury on Thu, 26 Sep 2013
 #
 
-PKGREVISION=		1
 HPP_PACKAGE=		hpp-constraints
 HPP_COMMENT=		Define non-linear constraints on robot configurations
 
