@@ -1,3 +1,4 @@
 SHA1 (pythonqt-v3.6.0.tar.gz) = 1350c3a7cf7bf9858806c562747d8df5224db72c
 RMD160 (pythonqt-v3.6.0.tar.gz) = 06837160f52365ca34c87ef31d5003286eea7590
 Size (pythonqt-v3.6.0.tar.gz) = 6533344 bytes
+SHA1 (patch-tests_tests.pro) = aa2d57f18a100cf9bdf6d56b53457a956d8c7f24
