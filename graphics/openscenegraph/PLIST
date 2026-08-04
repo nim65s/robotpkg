@@ -735,7 +735,6 @@ lib/osgPlugins-${PKGVERSION}/osgdb_revisions.so
 lib/osgPlugins-${PKGVERSION}/osgdb_rgb.so
 lib/osgPlugins-${PKGVERSION}/osgdb_rot.so
 lib/osgPlugins-${PKGVERSION}/osgdb_scale.so
-lib/osgPlugins-${PKGVERSION}/osgdb_sdl.so
 lib/osgPlugins-${PKGVERSION}/osgdb_serializers_osg.so
 lib/osgPlugins-${PKGVERSION}/osgdb_serializers_osganimation.so
 lib/osgPlugins-${PKGVERSION}/osgdb_serializers_osgfx.so

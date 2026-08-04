@@ -3,8 +3,8 @@ Disable plugins for which no dependency is checked
 Disable resthttpdevice plugin broken with recent boost versions
 ref https://github.com/openscenegraph/OpenSceneGraph/issues/921
 
---- src/osgPlugins/CMakeLists.txt~	2020-01-31 12:03:07.000000000 +0100
-+++ src/osgPlugins/CMakeLists.txt	2020-06-22 13:25:23.024841832 +0200
+--- src/osgPlugins/CMakeLists.txt~	2026-08-04 14:53:45.158560459 +0200
++++ src/osgPlugins/CMakeLists.txt	2026-08-04 14:54:13.237119656 +0200
 @@ -103,13 +103,10 @@
      ADD_PLUGIN_DIRECTORY(jpeg)
  ENDIF()
@@ -40,7 +40,7 @@ ref https://github.com/openscenegraph/OpenSceneGraph/issues/921
  ENDIF()
  
  IF(DIRECTSHOW_FOUND)
-@@ -251,15 +248,12 @@
+@@ -255,15 +248,12 @@
  ENDIF()
  
  IF(RSVG_FOUND)
@@ -56,7 +56,11 @@ ref https://github.com/openscenegraph/OpenSceneGraph/issues/921
  ENDIF()
  
  ADD_PLUGIN_DIRECTORY(pvr)
-@@ -304,7 +297,6 @@
+@@ -300,11 +290,9 @@
+ # Device integration plugins
+ #
+ IF   (SDL_FOUND)
+-    ADD_PLUGIN_DIRECTORY(sdl)
  ENDIF(SDL_FOUND)
  
  IF(ASIO_FOUND)
