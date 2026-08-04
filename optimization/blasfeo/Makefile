@@ -12,6 +12,7 @@ MAINTAINER=	guilhem.saurel@laas.fr
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON
 CMAKE_ARGS+=	-DBLASFEO_HEADERS_INSTALLATION_DIRECTORY=include/${PKGBASE}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../mk/sysdep/cmake.mk
 include ../../mk/language/c.mk
