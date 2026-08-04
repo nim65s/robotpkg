@@ -16,6 +16,9 @@ HOMEPAGE=	http://${NAME}.sourceforge.net/
 LICENSE=	mit
 MAINTAINER=	openrobots@laas.fr
 
+CMAKE_ARGS+=	-DBoost_NO_BOOST_CMAKE=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 include ../../archivers/zlib/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
