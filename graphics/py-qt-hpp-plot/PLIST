@@ -25,6 +25,3 @@ share/ament_index/resource_index/packages/hpp-plot
 share/hpp-plot/hook/ament_prefix_path.dsv
 share/hpp-plot/hook/python_path.dsv
 share/hpp-plot/package.xml
-share/hpp-plot/webapp/assets/index-CLGk4Rl1.css
-share/hpp-plot/webapp/assets/index-HqASH0VF.js
-share/hpp-plot/webapp/index.html

@@ -16,7 +16,7 @@ include ../../meta-pkgs/hpp/Makefile.common
 DEPEND_ABI.qt+=		qt>=5
 
 CMAKE_ARGS+=		-DUSE_CORBA=ON
-CMAKE_ARGS+=		-DUSE_JS=ON
+CMAKE_ARGS+=		-DUSE_JS=OFF
 CMAKE_ARGS+=		-DUSE_QT=ON
 
 include ../../graphics/py-qt-gepetto-viewer-corba/depend.mk
