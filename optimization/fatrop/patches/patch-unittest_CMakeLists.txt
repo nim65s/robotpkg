@@ -1,0 +1,14 @@
+Don't try to fetch googletest if not found (as the dependency is already
+included, not found probably means not supported).
+Just don't build tests instead.
+
+--- unittest/CMakeLists.txt~	2026-05-30 09:12:05.000000000 +0000
++++ unittest/CMakeLists.txt	2026-08-05 20:45:34.473531259 +0000
+@@ -9,6 +9,7 @@
+ if(NOT WITH_BUILD_GTEST AND GTest_FOUND)
+   message(STATUS "Using system-installed Google Test")
+ else()
++  return()
+   if(NOT WITH_BUILD_GTEST)
+     message(STATUS "System Google Test not found. Falling back to fetching Google Test.")
+   endif()
