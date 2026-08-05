@@ -33,6 +33,7 @@ CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_DEBUG=${Boost_PYTHON_LIBRARY}
 MAKE_JOBS_SAFE=		no
 
 DEPEND_METHOD.eigen3+=	full
+DEPEND_ABI.eigen3+=	eigen3>=3.4
 DEPEND_ABI.python=	python>=3
 
 include ../../math/eigen3/depend.mk
