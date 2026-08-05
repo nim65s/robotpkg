@@ -11,6 +11,9 @@ PYTHON_NOTAG_CONFLICT=	yes
 
 include ../../meta-pkgs/hpp/Makefile.common
 
+# fix DYNAMIC_PLIST_DIRS inconsistent with settings in Makefile.common
+PKG_OPTION_SET.doc:=$(subst hpp-tutorial,hpp_tutorial,${PKG_OPTION_SET.doc})
+
 include ../../mapping/octomap/depend.mk
 include ../../graphics/py-qt-hpp-gepetto-viewer/depend.mk
 include ../../path/py-hpp-corbaserver/depend.mk
