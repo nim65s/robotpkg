@@ -11,11 +11,10 @@ COMMENT=		Efficient Inverse Dynamics based on Pinocchio
 
 CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 
-USE_BOOST_LIBS=		unit_test_framework
-
 USE_MASTER_GITHUB=	true
+include ../../devel/jrl-cmakemodules/Makefile.common
 
-include ../../devel/jrl-cmakemodules/depend.mk
+USE_BOOST_LIBS=		unit_test_framework
 
 include ../../graphics/urdfdom/depend.mk
 include ../../mapping/octomap/depend.mk

@@ -15,7 +15,7 @@ USE_PYTHON_ONLY=	true
 
 USE_MASTER_GITHUB=	true
 
-include ../../devel/jrl-cmakemodules/depend.mk
+include ../../devel/jrl-cmakemodules/Makefile.common
 
 include ../../graphics/urdfdom-headers/depend.mk
 include ../../graphics/urdfdom/depend.mk

@@ -17,6 +17,8 @@ USE_MASTER_GITHUB=	yes
 
 CONFLICTS+=		qt[0-9]-qgv-[0-9]*
 
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 USE_QMAKE=		no
 
 USE_QT5_COMPONENTS=	core tools
@@ -25,7 +27,6 @@ CMAKE_ARGS+=		-DBINDINGS_$(subst qt,QT,${PKG_ALTERNATIVE.qt})=ON
 CMAKE_ARGS+=		-DQT_QMAKE_EXECUTABLE=${QMAKE}
 CMAKE_ARGS+=		-DGraphviz_INCLUDE_DIR=${PREFIX.graphviz}/include/graphviz
 
-include ../../devel/jrl-cmakemodules/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/graphviz.mk
 include ../../mk/sysdep/libgraphviz.mk

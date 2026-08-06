@@ -11,11 +11,10 @@ COMMENT=		Library for creating curves
 LICENSE=		2-clause-bsd
 MAINTAINER=		gepetto@laas.fr
 
-CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
-
 USE_MASTER_GITHUB=	true
+include ../../devel/jrl-cmakemodules/Makefile.common
 
-include ../../devel/jrl-cmakemodules/depend.mk
+CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 
 include ../../math/eigen3/depend.mk
 include ../../math/pinocchio/depend.mk

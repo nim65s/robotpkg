@@ -12,6 +12,10 @@ COMMENT=		Eigen bindings to python
 PYTHON_SELF_CONFLICT=	yes
 PYTHON_NOTAG_CONFLICT=	yes
 
+USE_MASTER_GITHUB=	true
+
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 CMAKE_ARGS+=		-Wno-dev # annoying messages
 CMAKE_ARGS+=		-DBUILD_UNIT_TESTS=ON
 
@@ -25,15 +29,12 @@ CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_RELEASE=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_DEBUG=${Boost_PYTHON_LIBRARY}
 
-USE_MASTER_GITHUB=	true
-
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
 DEPEND_METHOD.eigen3+=	full
 DEPEND_ABI.python=	python>=3
 
-include ../../devel/jrl-cmakemodules/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk

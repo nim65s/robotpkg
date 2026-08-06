@@ -16,13 +16,13 @@ PYTHON_SELF_CONFLICT=	yes
 
 USE_MASTER_GITHUB=	true
 
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
 DEPEND_ABI.pinocchio=	pinocchio>=2.6.3
 DEPEND_ABI.python=	python>=3
-
-include ../../devel/jrl-cmakemodules/depend.mk
 
 include ../../graphics/urdfdom/depend.mk
 include ../../mapping/octomap/depend.mk

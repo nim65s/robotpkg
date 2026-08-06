@@ -20,8 +20,6 @@ DEPEND_USE+=			jrl-cmakemodules
 DEPEND_ABI.jrl-cmakemodules=	jrl-cmakemodules>=1.1.0
 DEPEND_DIR.jrl-cmakemodules?=	../../devel/jrl-cmakemodules
 
-include ../../devel/jrl-cmakemodules/Makefile.common
-
 endif # JRL_CMAKEMODULES_DEPEND_MK -----------------------------------------
 
 DEPEND_DEPTH:=		${DEPEND_DEPTH:+=}

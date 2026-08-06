@@ -11,17 +11,15 @@ COMMENT=		Efficient Inverse Dynamics (python bindings)
 LICENSE=		2-clause-bsd
 MAINTAINER=		guilhem.saurel@laas.fr
 
-USE_BOOST_LIBS=		unit_test_framework
-USE_PYTHON_ONLY=	yes
-
-USE_MASTER_GITHUB=	true
-
 # this does not support multiple parallel python version
 CONFLICTS+=		py[0-9][0-9]-tsid-[0-9]*
 
-DEPEND_ABI.python=	python>=3.6
+USE_BOOST_LIBS=		unit_test_framework
+USE_PYTHON_ONLY=	yes
+USE_MASTER_GITHUB=	true
+include ../../devel/jrl-cmakemodules/Makefile.common
 
-include ../../devel/jrl-cmakemodules/depend.mk
+DEPEND_ABI.python=	python>=3.6
 
 include ../../graphics/urdfdom/depend.mk
 include ../../mapping/octomap/depend.mk

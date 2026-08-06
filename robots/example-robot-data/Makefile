@@ -15,7 +15,7 @@ CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 
 USE_MASTER_GITHUB=	true
 
-include ../../devel/jrl-cmakemodules/depend.mk
+include ../../devel/jrl-cmakemodules/Makefile.common
 
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/pkg-config.mk

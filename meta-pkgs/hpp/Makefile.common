@@ -30,7 +30,8 @@ endif
 
 USE_MASTER_GITHUB=	yes
 
-include ../../devel/jrl-cmakemodules/depend.mk
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk

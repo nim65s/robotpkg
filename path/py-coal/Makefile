@@ -11,17 +11,18 @@ HPP_COMMENT=		collision detection and distance computations (python bindingss)
 LICENSE=		2-clause-bsd
 CONFLICTS+=		${PKGTAG.python-}hpp-fcl-[0-9]*
 
-USE_BOOST_LIBS= thread date_time system filesystem unit_test_framework chrono
-USE_BOOST_LIBS+=	python
 USE_MASTER_GITHUB=	true
 USE_PYTHON_ONLY=	yes
+include ../../devel/jrl-cmakemodules/Makefile.common
 
 CMAKE_ARGS+=		-DCOAL_BACKWARD_COMPATIBILITY_WITH_HPP_FCL=ON
 CMAKE_ARGS+=		-DHPP_FCL_HAS_QHULL=ON
 
+USE_BOOST_LIBS=		thread date_time system filesystem unit_test_framework
+USE_BOOST_LIBS+=	chrono python
+
 DEPEND_ABI.assimp+=	assimp>=5
 
-include ../../devel/jrl-cmakemodules/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../math/py-eigenpy/depend.mk
 include ../../path/coal/depend.mk

@@ -10,6 +10,9 @@ CATEGORIES=		math
 COMMENT=		Efficient rigid body dynamics
 HOMEPAGE=		http://${ORG}.github.io/${NAME}/
 
+USE_MASTER_GITHUB=	true
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 CMAKE_ARGS+=		-DBUILD_WITH_CASADI_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_WITH_COLLISION_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_BENCHMARK=OFF
@@ -20,9 +23,6 @@ CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 CMAKE_ARGS+=		-DINSTALL_DOCUMENTATION=OFF
 
 USE_BOOST_LIBS=		system filesystem
-USE_MASTER_GITHUB=	true
-
-include ../../devel/jrl-cmakemodules/depend.mk
 
 # On Debian 9, the combination of GCC version / default args
 # and Boost version raises:
@@ -48,6 +48,6 @@ include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk
 
-DEPEND_ABI.urdfdom +=	urdfdom>=0.2.3
+DEPEND_ABI.urdfdom+=	urdfdom>=0.2.3
 
 include ../../mk/robotpkg.mk

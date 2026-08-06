@@ -10,6 +10,10 @@ CATEGORIES=		math
 COMMENT=		Efficient rigid body dynamics (python bindings)
 HOMEPAGE=		http://${ORG}.github.io/${NAME}/
 
+USE_PYTHON_ONLY=	true
+USE_MASTER_GITHUB=	true
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 CMAKE_ARGS+=		-DBUILD_WITH_CASADI_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_WITH_COLLISION_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_BENCHMARK=OFF
@@ -26,13 +30,9 @@ CMAKE_ARGS+=		-DBUILD_WITH_LIBPYTHON=OFF
 CMAKE_ARGS+=		-DBUILDING_ROS2_PACKAGE=OFF
 
 DEPEND_ABI.pinocchio=	pinocchio>=${VERSION}
-USE_PYTHON_ONLY=	true
-USE_MASTER_GITHUB=	true
 
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
-
-include ../../devel/jrl-cmakemodules/depend.mk
 
 # On Debian 9, the combination of GCC version / default args
 # and Boost version raises:

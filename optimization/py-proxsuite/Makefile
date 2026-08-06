@@ -19,14 +19,14 @@ MAINTAINER=		gsaurel@laas.fr
 
 USE_PYTHON_ONLY=	true
 
+include ../../devel/jrl-cmakemodules/Makefile.common
+
 CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 
 CMAKE_ARGS+=		-DEigen3_INCLUDE_DIR=${PREFIX.eigen3}/include/eigen3
 CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 
 BUILD_DIRS=		bindings/python
-
-include ../../devel/jrl-cmakemodules/depend.mk
 
 DEPEND_ABI.cmake=	cmake>=3.12
 DEPEND_ABI.python=	python>=3.8
