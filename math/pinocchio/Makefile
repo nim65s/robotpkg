@@ -24,16 +24,6 @@ CMAKE_ARGS+=		-DINSTALL_DOCUMENTATION=OFF
 
 USE_BOOST_LIBS=		system filesystem
 
-# On Debian 9, the combination of GCC version / default args
-# and Boost version raises:
-# error: unable to find numeric literal operator 'operator""Q'
-include ../../mk/robotpkg.prefs.mk # OPSYS / OS_VERSION
-ifeq (Debian,${OPSYS})
-  ifeq (9,${OS_VERSION})
-    CXXFLAGS+=		-DBOOST_MATH_DISABLE_FLOAT128
-  endif
-endif
-
 include ../../graphics/urdfdom/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../path/coal/depend.mk

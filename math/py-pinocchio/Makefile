@@ -34,16 +34,6 @@ DEPEND_ABI.pinocchio=	pinocchio>=${VERSION}
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
-# On Debian 9, the combination of GCC version / default args
-# and Boost version raises:
-# error: unable to find numeric literal operator 'operator""Q'
-include ../../mk/robotpkg.prefs.mk # OPSYS / OS_VERSION
-ifeq (Debian,${OPSYS})
-  ifeq (9,${OS_VERSION})
-    CXXFLAGS+=		-DBOOST_MATH_DISABLE_FLOAT128
-  endif
-endif
-
 DEPEND_ABI.boost-headers+=	boost-headers>=1.55
 DEPEND_ABI.py-eigenpy+=		${PKGTAG.python-}eigenpy>=3.4
 DEPEND_ABI.python+=		python>=3
