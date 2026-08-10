@@ -1,4 +1,4 @@
-@comment Tue Feb 26 11:24:12 CET 2019
+@comment Mon Aug 10 12:02:34 CEST 2026
 bin/hpp-plot-manipulation-graph
 include/hpp/plot/config.hh
 include/hpp/plot/deprecated.hh
@@ -25,3 +25,6 @@ share/ament_index/resource_index/packages/hpp-plot
 share/hpp-plot/hook/ament_prefix_path.dsv
 share/hpp-plot/hook/python_path.dsv
 share/hpp-plot/package.xml
+share/hpp-plot/webapp/assets/index-CLGk4Rl1.css
+share/hpp-plot/webapp/assets/index-HqASH0VF.js
+share/hpp-plot/webapp/index.html
