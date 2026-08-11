@@ -1,4 +1,4 @@
-@comment Tue Apr 7 11:50:20 CEST 2026
+@comment Tue Aug 11 19:21:40 CEST 2026
 bin/genom3
 bin/genom${PKGVERSION}
 bin/profundis
@@ -13,7 +13,7 @@ include/genom3/c/idlsequence.h
 lib/pkgconfig/genom3-c-client.pc
 lib/pkgconfig/genom3.pc
 libexec/genom-pcpp
-${PKGMANDIR}/man1/genom3.1
+${PKGMANDIR}man1/genom3.1
 share/doc/genom/AUTHORS
 share/doc/genom/CHANGES
 share/doc/genom/LICENSE
@@ -144,7 +144,6 @@ share/genom/templates/common/docutil.tcl
 share/genom/templates/common/exception.h
 share/genom/templates/common/exec-codels.c
 share/genom/templates/common/genom.gen
-share/genom/templates/common/json-types.h
 share/genom/templates/common/jsonops-c.h
 share/genom/templates/common/log.c
 share/genom/templates/common/parameters-c.h
