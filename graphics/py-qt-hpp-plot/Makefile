@@ -39,5 +39,5 @@ include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
 
 post-install:
-	${RUN}cd ${PREFIX} && cd ${WEBAPP_DIR} && \
+	${RUN}cd ${PREFIX} && cd ${WEBAPP_INSTALL_DIR} && \
 	  ${CMAKE} -E tar xvz ${DISTDIR}/${WEBAPP_DISTFILE}
