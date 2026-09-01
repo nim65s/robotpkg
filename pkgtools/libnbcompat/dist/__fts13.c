@@ -1,4 +1,4 @@
-/*	$NetBSD: __fts13.c,v 1.10 2008/10/30 16:00:54 joerg Exp $	*/
+/*	$NetBSD: __fts13.c,v 1.12 2025/10/29 15:39:25 nia Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993, 1994
@@ -39,7 +39,7 @@
 #if 0
 static char sccsid[] = "@(#)fts.c	8.6 (Berkeley) 8/14/94";
 #else
-__RCSID("$NetBSD: __fts13.c,v 1.10 2008/10/30 16:00:54 joerg Exp $");
+__RCSID("$NetBSD: __fts13.c,v 1.12 2025/10/29 15:39:25 nia Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 
@@ -66,6 +66,14 @@ __RCSID("$NetBSD: __fts13.c,v 1.10 2008/10/30 16:00:54 joerg Exp $");
 #if ! HAVE_NBTOOL_CONFIG_H
 #define HAVE_STRUCT_DIRENT_D_NAMLEN 1
 #endif
+#endif
+
+/*
+ * SCO OpenServer 5.0.7/3.2 has no MAXPATHLEN, but it has PATH_MAX (256).
+ * in limits.h. But it is not usable under ordinal condition.
+ */
+#if !defined(MAXPATHLEN)
+#define MAXPATHLEN	1024
 #endif
 
 #if 0

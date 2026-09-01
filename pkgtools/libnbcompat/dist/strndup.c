@@ -1,8 +1,7 @@
-/*	$NetBSD: extern.h,v 1.2 2025/10/29 15:39:26 nia Exp $	*/
-/*	NetBSD: extern.h,v 1.8 2008/08/26 21:18:38 joerg Exp 	*/
+/*	$NetBSD: strndup.c,v 1.2 2024/01/12 19:14:19 wiz Exp $	*/
 
-/*-
- * Copyright (c) 1991, 1993
+/*
+ * Copyright (c) 1988, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -28,26 +27,56 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
- *
- *	@(#)extern.h	8.3 (Berkeley) 6/4/94
  */
 
-#include "../btree/extern.h"
+#if HAVE_NBTOOL_CONFIG_H
+#include "nbtool_config.h"
+#endif
 
-int	 __rec_close(DB *);
-int	 __rec_delete(const DB *, const DBT *, unsigned int);
-int	 __rec_dleaf(BTREE *, PAGE *, uint32_t);
-int	 __rec_fd(const DB *);
-int	 __rec_fmap(BTREE *, recno_t);
-int	 __rec_fout(BTREE *);
-int	 __rec_fpipe(BTREE *, recno_t);
-int	 __rec_get(const DB *, const DBT *, DBT *, unsigned int);
-int	 __rec_iput(BTREE *, recno_t, const DBT *, unsigned int);
-int	 __rec_put(const DB *dbp, DBT *, const DBT *, unsigned int);
-int	 __rec_ret(BTREE *, EPG *, recno_t, DBT *, DBT *);
-EPG	*__rec_search(BTREE *, recno_t, enum SRCHOP);
-int	 __rec_seq(const DB *, DBT *, DBT *, unsigned int);
-int	 __rec_sync(const DB *, unsigned int);
-int	 __rec_vmap(BTREE *, recno_t);
-int	 __rec_vout(BTREE *);
-int	 __rec_vpipe(BTREE *, recno_t);
+#include <nbcompat.h>
+#include <nbcompat/cdefs.h>
+
+#if defined(LIBC_SCCS) && !defined(lint)
+#if 0
+static char sccsid[] = "@(#)strdup.c	8.1 (Berkeley) 6/4/93";
+#else
+__RCSID("$NetBSD: strndup.c,v 1.2 2024/01/12 19:14:19 wiz Exp $");
+#endif
+#endif /* LIBC_SCCS and not lint */
+
+#if 0
+#include "namespace.h"
+#endif
+
+#include <nbcompat/assert.h>
+#if HAVE_ERRNO_H
+#include <errno.h>
+#endif
+#include <nbcompat/stdlib.h>
+#include <nbcompat/string.h>
+
+#if 0
+#ifdef __weak_alias
+__weak_alias(strndup,_strndup)
+#endif
+#endif
+
+#if !HAVE_STRNDUP
+char *
+strndup(const char *str, size_t n)
+{
+	size_t len;
+	char *copy;
+
+	_DIAGASSERT(str != NULL);
+
+	for (len = 0; len < n && str[len]; len++)
+		continue;
+
+	if (!(copy = malloc(len + 1)))
+		return (NULL);
+	memcpy(copy, str, len);
+	copy[len] = '\0';
+	return (copy);
+}
+#endif /* !HAVE_STRNDUP */

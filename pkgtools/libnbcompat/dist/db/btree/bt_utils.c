@@ -1,4 +1,4 @@
-/*	$NetBSD: bt_utils.c,v 1.1 2008/10/10 00:21:43 joerg Exp $	*/
+/*	$NetBSD: bt_utils.c,v 1.3 2025/10/29 15:39:25 nia Exp $	*/
 /*	NetBSD: bt_utils.c,v 1.13 2008/09/10 17:52:35 joerg Exp 	*/
 
 /*-
@@ -35,10 +35,9 @@
 
 #include <nbcompat.h>
 #include <nbcompat/cdefs.h>
+#include <nbcompat/param.h>
 
-__RCSID("$NetBSD: bt_utils.c,v 1.1 2008/10/10 00:21:43 joerg Exp $");
-
-#include <sys/param.h>
+__RCSID("$NetBSD: bt_utils.c,v 1.3 2025/10/29 15:39:25 nia Exp $");
 
 #include <assert.h>
 #include <stdio.h>
@@ -73,7 +72,7 @@ __bt_ret(BTREE *t, EPG *e, DBT *key, DBT *rkey, DBT *data, DBT *rdata, int copy)
 	bl = GETBLEAF(e->page, e->index);
 
 	/*
-	 * We must copy big keys/data to make them contigous.  Otherwise,
+	 * We must copy big keys/data to make them contiguous.  Otherwise,
 	 * leave the page pinned and don't copy unless the user specified
 	 * concurrent access.
 	 */

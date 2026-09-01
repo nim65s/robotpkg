@@ -1,4 +1,4 @@
-/*	$NetBSD: db.h,v 1.3 2010/03/03 06:03:45 obache Exp $	*/
+/*	$NetBSD: db.h,v 1.5 2025/10/29 15:39:26 nia Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993, 1994
@@ -49,6 +49,14 @@
 */
 #ifdef  __sgi
 #define pgno_t	db_pgno_t
+#endif
+
+/*
+ * SCO OpenServer 5.0.7/3.2 has no MAXPATHLEN, but it has PATH_MAX (256).
+ * in limits.h. But it is not usable under ordinal condition.
+ */
+#if !defined(MAXPATHLEN)
+#define MAXPATHLEN	1024
 #endif
 
 #define	MAX_PAGE_NUMBER	0xffffffff	/* >= # of pages in a file */

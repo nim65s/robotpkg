@@ -1,4 +1,4 @@
-/*	$NetBSD: string.h,v 1.2 2008/04/29 05:46:08 martin Exp $	*/
+/*	$NetBSD: string.h,v 1.7 2024/03/19 00:59:01 nia Exp $	*/
 
 /*-
  * Copyright (c) 2004 The NetBSD Foundation, Inc.
@@ -40,11 +40,7 @@
  * Declare functions and macros that may be missing in <string.h>.
  */
 
-#if !HAVE_MEMMOVE
-# define memmove(a,b,c)	bcopy((b),(a),(c))
-#endif
-
-#if !HAVE_STRDUP
+#if !HAVE_DECL_STRDUP
 char	*strdup(const char *);
 #endif
 
@@ -60,8 +56,20 @@ size_t	strlcat(char *, const char *, size_t);
 size_t	strlcpy(char *, const char *, size_t);
 #endif
 
+#if !HAVE_STRNLEN
+size_t	strnlen(const char *s, size_t maxlen);
+#endif
+
+#if !HAVE_STRNDUP
+char	*strndup(const char *, size_t);
+#endif
+
 #if !HAVE_STRSEP
 char	*strsep(char **stringp, const char *delim);
+#endif
+
+#if !HAVE_MEMRCHR
+void	*memrchr(const void *, int, size_t);
 #endif
 
 #endif	/* !_NBCOMPAT_STRING_H_ */

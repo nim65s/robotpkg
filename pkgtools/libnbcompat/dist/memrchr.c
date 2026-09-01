@@ -1,11 +1,11 @@
-/*	$NetBSD: ctype.h,v 1.3 2015/06/08 00:44:46 joerg Exp $	*/
+/*	$NetBSD: memrchr.c,v 1.1 2024/03/19 00:59:00 nia Exp $	*/
 
 /*-
- * Copyright (c) 2004 The NetBSD Foundation, Inc.
+ * Copyright (c) 2008 The NetBSD Foundation, Inc.
  * All rights reserved.
  *
  * This code is derived from software contributed to The NetBSD Foundation
- * by Johnny C. Lam.
+ * by Christos Zoulas.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -29,19 +29,34 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _NBCOMPAT_CTYPE_H_
-#define _NBCOMPAT_CTYPE_H_
-
-#if HAVE_CTYPE_H
-# include <ctype.h>
+#if HAVE_NBTOOL_CONFIG_H
+#include "nbtool_config.h"
 #endif
 
-/*
- * Declare macros and functions that may be missing in <ctype.h>.
- */
+#include <nbcompat.h>
+#include <nbcompat/cdefs.h>
+#if defined(LIBC_SCCS) && !defined(lint)
+__RCSID("$NetBSD: memrchr.c,v 1.1 2024/03/19 00:59:00 nia Exp $");
+#endif /* LIBC_SCCS and not lint */
 
-#if !HAVE_DECL_ISBLANK
-int	isblank(int);
+#include <nbcompat/assert.h>
+#include <nbcompat/string.h>
+
+#if !HAVE_MEMRCHR
+void *
+memrchr(const void *s, int c, size_t n)
+{
+	_DIAGASSERT(s != NULL);
+
+	if (n != 0) {
+		const unsigned char *p = (const unsigned char *)s + n;
+		const unsigned char cmp = c;
+
+		do {
+			if (*--p == cmp)
+				return __UNCONST(p);
+		} while (--n != 0);
+	}
+	return NULL;
+}
 #endif
-
-#endif	/* !_NBCOMPAT_CTYPE_H_ */
