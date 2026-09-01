@@ -1,4 +1,4 @@
-/*	$NetBSD: __glob13.c,v 1.4 2014/03/14 22:08:17 ryoon Exp $	*/
+/*	$NetBSD: __glob13.c,v 1.6 2025/10/29 15:39:25 nia Exp $	*/
 
 /*
  * Copyright (c) 1989, 1993
@@ -38,7 +38,7 @@
 #if 0
 static char sccsid[] = "@(#)glob.c	8.3 (Berkeley) 10/13/93";
 #else
-__RCSID("$NetBSD: __glob13.c,v 1.4 2014/03/14 22:08:17 ryoon Exp $");
+__RCSID("$NetBSD: __glob13.c,v 1.6 2025/10/29 15:39:25 nia Exp $");
 #endif
 #endif /* LIBC_SCCS and not lint */
 
@@ -47,9 +47,7 @@ __RCSID("$NetBSD: __glob13.c,v 1.4 2014/03/14 22:08:17 ryoon Exp $");
  * in limits.h. But it is not usable under ordinal condition.
  */
 #if !defined(MAXPATHLEN)
-#if defined(_SCO_DS)
 #define MAXPATHLEN	1024
-#endif
 #endif
 
 /*
@@ -594,9 +592,9 @@ glob1(pattern, pglob, limit)
 	 * we save one character so that we can use ptr >= limit,
 	 * in the general case when we are appending non nul chars only.
 	 */
-	return(glob2(pathbuf, pathbuf,
+	return glob2(pathbuf, pathbuf,
 	    pathbuf + (sizeof(pathbuf) / sizeof(*pathbuf)) - 1, pattern,
-	    pglob, limit));
+	    pglob, limit);
 }
 
 /*

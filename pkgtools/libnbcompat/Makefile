@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Wed, 6 Jun 2007
 #
 
-DISTNAME=		libnbcompat-20150615
+DISTNAME=		libnbcompat-20251029
 CATEGORIES=		pkgtools devel
 MASTER_SITES=		# empty
 DISTFILES=		# empty
@@ -15,7 +15,6 @@ LICENSE=		2-clause-bsd modified-bsd original-bsd
 NO_CHECKSUM=		yes
 
 GNU_CONFIGURE=		yes
-MAKE_ENV+=		LIBMODE=644
 CONFIGURE_ARGS+=	--enable-bsd-getopt --enable-db
 
 include ../../mk/language/c.mk
