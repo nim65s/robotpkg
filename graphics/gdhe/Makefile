@@ -2,7 +2,7 @@
 # Created:			Arnaud Degroote on Sat, 17 May 2008
 #
 
-DISTNAME=	gdhe-3.8.5
+DISTNAME=	gdhe-3.8.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=gdhe/}
 MASTER_REPOSITORY= ${MASTER_REPOSITORY_OPENROBOTS}gdhe

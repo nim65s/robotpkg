@@ -1,4 +1,4 @@
-@comment Fri Mar 16 18:29:24 CET 2012
+@comment Tue Sep 1 19:28:54 CEST 2026
 bin/gdhe
 bin/reader
 include/gdhe/GDHE.h
@@ -56,8 +56,3 @@ share/gdhe/tcl/setup.tcl
 share/gdhe/tcl/trailer.tcl
 share/gdhe/tcl/video.tcl
 share/gdhe/tcl/xr4000.tcl
-@dirrm share/gdhe/tcl
-@dirrm share/gdhe/images
-@dirrm share/gdhe/examples
-@dirrm lib/gdhe
-@dirrm include/gdhe
