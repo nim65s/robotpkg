@@ -27,6 +27,8 @@ define PKG_OPTION_SET.corba
   include ../../middleware/omniORB/depend.mk
 endef
 
+DEPEND_ABI.cmake+=	cmake<4 # requires CMP0026 OLD
+
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
 include ../../mk/sysdep/cmake.mk
