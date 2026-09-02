@@ -10,7 +10,8 @@ CATEGORIES=		motion
 COMMENT=		SoftMotion Planner Library
 LICENSE=		gnu-lgpl-v3
 MAINTAINER=		wuwei.he@laas.fr
-NOT_FOR_PLATFORM=
+
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 # tcl option
 PKG_SUPPORTED_OPTIONS+=	tcl
