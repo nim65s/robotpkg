@@ -6,7 +6,6 @@ COMMENT=	Mathematics
 SUBDIR+=	boost-numeric-bindings
 SUBDIR+=	boost-numeric-bindings-v1
 SUBDIR+=	eigen-quadprog
-SUBDIR+=	eigen2
 SUBDIR+=	eigen3
 SUBDIR+=	eiquadprog
 SUBDIR+=	gbM
