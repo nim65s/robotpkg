@@ -18,6 +18,8 @@ NO_PUBLIC_BIN=	${RESTRICTED}
 
 WRKSRC=			${WRKDIR}/hrp2_computer_monitor-${VERSION}
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DYNAMIC_PLIST_DIRS+=	share/doc/hrp2_computer_monitor
 
 include ../../mk/sysdep/cmake.mk
