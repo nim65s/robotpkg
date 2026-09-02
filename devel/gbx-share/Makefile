@@ -10,6 +10,7 @@ LICENSE=	gnu-lgpl-v2
 include ../../meta-pkgs/gearbox/Makefile.common
 
 CMAKE_ARGS+=	-DGBX_INSTALL_CMAKE_SCRIPTS=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../mk/language/c.mk
 include ../../mk/robotpkg.mk
