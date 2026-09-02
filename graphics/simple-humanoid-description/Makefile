@@ -14,6 +14,8 @@ MAINTAINER=		hpp@laas.fr
 
 include ../../devel/jrl-cmakemodules/Makefile.common
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/pkg-config.mk
 include ../../mk/language/c.mk
