@@ -18,6 +18,8 @@ MAINTAINER=	roboptim@googlegroups.com
 
 CMAKE_ARGS+=		-DBOOST_ROOT=${PREFIX.boost-headers}
 CMAKE_ARGS+=		-DCXX_DISABLE_WERROR=yes
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DYNAMIC_PLIST_DIRS+=	share/doc/roboptim-core
 
 INCLUDE_DIRS.libtool-ltdl=	include
