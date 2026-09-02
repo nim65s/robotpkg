@@ -16,6 +16,8 @@ COMMENT=		Data files for the LAAS Gerard Bauzil environment
 LICENSE=		2-clause-bsd
 
 CMAKE_ARGS+=		-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DYNAMIC_PLIST_DIRS+=	share/doc/gerard_bauzil
 
 include ../../mk/sysdep/cmake.mk
