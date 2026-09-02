@@ -12,7 +12,7 @@ DEPEND_PKG+=		genom
 ifdef GENOM_MODULE
   GENOM_ARGS?=#		empty
 
-  PKG_SUPPORTED_OPTIONS+=	api tcl openprs tclserv_client python xenomai
+  PKG_SUPPORTED_OPTIONS+=	api tcl tclserv_client python xenomai
   PKG_SUGGESTED_OPTIONS+=	tcl
 
   PKG_OPTION_DESCR.api=	Generate module API only
@@ -26,16 +26,6 @@ ifdef GENOM_MODULE
     CONFIGURE_ARGS+=	--with-tcl=$(dir ${TCL_CONFIG_SH})
     include ../../net/tclserv/depend.mk
     include ../../mk/sysdep/tcl.mk
-  endef
-
-  PKG_OPTION_DESCR.openprs=Generate OpenPRS client code
-  define PKG_OPTION_SET.openprs
-    ifeq (,$(filter tclserv_client,${PKG_OPTIONS}))
-      PKG_FAIL_REASON+=	"'openprs' option for ${PKGBASE} requires the"
-      PKG_FAIL_REASON+=	"'tclserv_client' option to be enabled."
-    endif
-    GENOM_ARGS+=	-o
-    include ../../supervision/transgen/depend.mk
   endef
 
   PKG_OPTION_DESCR.tclserv_client=Generate C tclServ client code
