@@ -1,0 +1,44 @@
+Use taskSpawn2 for pocolibs>=3.4
+
+--- gyroKVH1000/gyroTaskLib/gyroTaskLib.c~	2010-07-30 15:31:29.000000000 +0200
++++ gyroKVH1000/gyroTaskLib/gyroTaskLib.c	2026-09-02 14:47:49.297856889 +0200
+@@ -73,7 +73,7 @@
+ static  u_long msec0;
+ 
+ /* local functions */
+-static void	gyroReadTask(GyroData *gyro);
++static void *	gyroReadTask(void *data);
+ 
+ /*
+  * gyroInitAngle -------------------------------------------------------------
+@@ -143,9 +143,9 @@
+   
+   /* read task */
+   gyroData->taskId =
+-    taskSpawn(GYRO_READ_TASK_NAME, GYRO_READ_TASK_PRIORITY, 0,
++    taskSpawn2(GYRO_READ_TASK_NAME, GYRO_READ_TASK_PRIORITY, 0,
+ 	      GRYO_READ_TASK_STACK_SIZE,
+-	      (FUNCPTR)gyroReadTask, gyroData);
++	      gyroReadTask, gyroData);
+   
+   gyroData->stop = 0;
+   commonStructGive(gyroData);
+@@ -455,9 +455,10 @@
+  *
+  */
+ 
+-static void
+-gyroReadTask(GyroData *gyro)
++static void *
++gyroReadTask(void *data)
+ {
++  GyroData *gyro = data;
+   u_long date;
+ 
+   fputs("---- gyro: started\n", stderr);
+@@ -481,4 +482,5 @@
+    gyroData = NULL;
+ 
+    fputs("gyro: stopped\n", stderr);
++   return NULL;
+ }
