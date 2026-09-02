@@ -2,7 +2,7 @@
 # Created:			Anthony Mallet on Wed, 11 Jul 2007
 #
 
-DISTNAME=		picoweb-1.3
+DISTNAME=		picoweb-1.3.1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_OPENROBOTS:=picoweb/}
 MASTER_REPOSITORY=	git ssh://trac.laas.fr/git/robots/picoweb
