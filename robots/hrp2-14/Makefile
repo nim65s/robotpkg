@@ -17,6 +17,7 @@ NO_PUBLIC_BIN=	${RESTRICTED}
 
 DYNAMIC_PLIST_DIRS+=	share/doc/hrp2-14
 CMAKE_ARGS+=		-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/doxygen.mk
