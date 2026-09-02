@@ -10,6 +10,8 @@ include ../../meta-pkgs/orocos-toolchain/Makefile.common
 
 COMMENT=		C++ logging library with real-time support
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 include ../../mk/sysdep/cmake.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++11.mk
