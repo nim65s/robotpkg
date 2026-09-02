@@ -134,8 +134,8 @@ endif
 # define an alternative for available pythons packages
 PKG_ALTERNATIVES+=		python
 PKG_ALTERNATIVES.python=	python27
-PKG_ALTERNATIVES.python+=	python36 python38
-PKG_ALTERNATIVES.python+=	python39 python310 python311 python312 python313
+PKG_ALTERNATIVES.python+=	python36 python38 python39 python310
+PKG_ALTERNATIVES.python+=	python311 python312 python313 python314
 
 # select default preferences depending on OS/VERSION
 include ../../mk/robotpkg.prefs.mk # for OPSYS
@@ -147,17 +147,11 @@ ifeq (Debian,${OPSYS})
   endif
   PREFER_ALTERNATIVE.python?=	python313
 else ifeq (Fedora,${OPSYS})
-  ifneq (,$(filter 37,${OS_VERSION}))
-    PREFER_ALTERNATIVE.python?=	python311 python27
-  endif
   ifneq (,$(filter 38 39 40 41,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python312 python27
   endif
   PREFER_ALTERNATIVE.python?=	python313
 else ifeq (Ubuntu,${OPSYS})
-  ifneq (,$(filter 18.04%,${OS_VERSION}))
-    PREFER_ALTERNATIVE.python?=	python27 python36
-  endif
   ifneq (,$(filter 20.%,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python38 python27
   endif
@@ -167,7 +161,7 @@ else ifeq (Ubuntu,${OPSYS})
   ifneq (,$(filter 24.%,${OS_VERSION}))
     PREFER_ALTERNATIVE.python?=	python312
   endif
-  PREFER_ALTERNATIVE.python?=	python313
+  PREFER_ALTERNATIVE.python?=	python314
 else ifeq (Rocky,${OPSYS})
   PREFER_ALTERNATIVE.python?=	python36
 else ifeq (Arch,${OPSYS})
@@ -279,6 +273,19 @@ define PKG_ALTERNATIVE_SET.python313
   DEPEND_METHOD.python313?= ${DEPEND_METHOD.python}
 
   include ../../mk/sysdep/python313.mk
+endef
+
+PKG_ALTERNATIVE_DESCR.python314= Use python-3.14
+PKGTAG.python314 =		py314
+define PKG_ALTERNATIVE_SELECT.python314
+  $(call preduce,${DEPEND_ABI.python} python>=3.14<3.15)
+endef
+define PKG_ALTERNATIVE_SET.python314
+  _py_abi:=$(subst python,python314,${PKG_ALTERNATIVE_SELECT.python314})
+  DEPEND_ABI.python314?= $(strip ${_py_abi})
+  DEPEND_METHOD.python314?= ${DEPEND_METHOD.python}
+
+  include ../../mk/sysdep/python314.mk
 endef
 
 
