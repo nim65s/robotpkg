@@ -1,6 +1,23 @@
+* Fix build with cmake>=4: this package does not seem to use CMP0026 and CMP0042
+* Avoid installing garbage
+
 --- CMakeLists.txt~	2016-05-07 21:07:04.000000000 +0200
 +++ CMakeLists.txt	2016-06-16 11:52:34.663429267 +0200
-@@ -242,6 +242,7 @@
+@@ -156,13 +156,6 @@
+ #
+ ################################################################################
+ 
+-# Suppressing some stupid warnings from CMake 3.0
+-IF (POLICY CMP0026)
+-	CMAKE_POLICY(SET CMP0026 OLD)
+-ENDIF( )
+-IF (POLICY CMP0042)
+-	CMAKE_POLICY(SET CMP0042 OLD)
+-ENDIF( )
+ 
+ #
+ # Compiler options are in separate file
+@@ -242,6 +236,7 @@
  	DESTINATION
  		${INSTALL_INCLUDE_DIR}
  	FILES_MATCHING PATTERN "*.hpp"
@@ -8,7 +25,7 @@
  )
  INSTALL(
  	DIRECTORY
-@@ -249,17 +250,9 @@
+@@ -249,17 +244,9 @@
  	DESTINATION
  		${INSTALL_INCLUDE_DIR}
  	FILES_MATCHING PATTERN "*.ipp"

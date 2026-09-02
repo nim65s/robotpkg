@@ -16,6 +16,7 @@ COMMENT=	Algorithms for automatic control and dynamic optimization
 LICENSE=	gnu-lgpl-v3
 
 CMAKE_ARGS+=	-DACADO_WITH_EXAMPLES=OFF
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 INCLUDE_DIRS.eigen3=	include
 
