@@ -19,6 +19,7 @@ LICENSE=	gnu-lgpl-v2
 WRKSRC=		${WRKDIR}/orocos_kinematics_dynamics-${VERSION}/orocos_kdl
 
 CMAKE_ARGS+=	-DEIGEN3_INCLUDE_DIR=${PREFIX.eigen3}/include/eigen3
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../math/eigen3/depend.mk
 include ../../mk/sysdep/cmake.mk
