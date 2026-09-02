@@ -15,6 +15,7 @@ MAINTAINER=	charles.lesire@onera.fr
 WRKSRC=		${WRKDIR}/${PKGBASE}
 
 CMAKE_ARGS+=	-DTIXML_USE_STL=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../mk/sysdep/cmake.mk
 include ../../mk/language/c.mk
