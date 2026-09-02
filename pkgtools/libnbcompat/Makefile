@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Wed, 6 Jun 2007
 #
 
+PKREVISION=		1
 DISTNAME=		libnbcompat-20251029
 CATEGORIES=		pkgtools devel
 MASTER_SITES=		# empty
