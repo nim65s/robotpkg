@@ -2,11 +2,10 @@
 # Created:			Matthieu Herrb on Tue, 2 Sep 2008
 #
 
-DISTNAME=	pilo-genom-1.2
-PKGREVISION=	1
+DISTNAME=	pilo-genom-1.2.1
 CATEGORIES=	motion
 MASTER_SITES=	${MASTER_SITE_OPENROBOTS:=pilo/}
-MASTER_REPOSITORY=	git ssh://trac.laas.fr/git/robots/pilo-genom
+MASTER_REPOSITORY=	${MASTER_REPOSITORY_OPENROBOTS}pilo-genom
 
 MAINTAINER=	openrobots@laas.fr
 HOMEPAGE=	http://softs.laas.fr/openrobots/

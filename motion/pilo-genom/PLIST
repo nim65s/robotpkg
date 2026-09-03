@@ -1,41 +1,9 @@
-@comment Fri Mar 13 15:58:05 CET 2009
-bin/pilo
-bin/piloSendInitRqst
-bin/piloTest
-include/pilo/libsmoothtraj/piloBrokenLineLibProto.h
-include/pilo/libsmoothtraj/piloRSLibProto.h
-include/pilo/libsmoothtraj/piloSpeedLibProto.h
-include/pilo/piloStruct.h
-include/pilo/server/piloEndian.h
-include/pilo/server/piloError.h
-include/pilo/server/piloMsgLib.h
-include/pilo/server/piloPosterLib.h
-include/pilo/server/piloPosterLibStruct.h
-include/pilo/server/piloPosterReadLibProto.h
-include/pilo/server/piloPosterShowLib.h
-include/pilo/server/piloPosterWriteLibProto.h
-include/pilo/server/piloPosterXMLLib.h
-include/pilo/server/piloPrint.h
-include/pilo/server/piloPrintXML.h
-include/pilo/server/piloScan.h
-include/pilo/server/piloType.h
-${PLIST.openprs}include/pilo/server/openprs/piloDecodeOpenprs.h
-${PLIST.openprs}include/pilo/server/openprs/piloEncodeOpenprs.h
-${PLIST.openprs}include/pilo/server/openprs/piloRequestsOpenprsProto.h
-lib/libpiloClient.la
-lib/libpiloSmoothtraj.la
-${PLIST.openprs}lib/openprs/modpiloOpenprs.la
-${PLIST.openprs}lib/pkgconfig/pilo-oprs.pc
-lib/pkgconfig/pilo-smoothtraj.pc
-lib/pkgconfig/pilo.pc
-${PLIST.tcl}lib/tclserv/libpiloTclServ.la
-share/modules/gen/pilo.gen
-${PLIST.openprs}share/modules/openprs/piloOpenprs.inc
-${PLIST.openprs}share/modules/openprs/piloOpenprs.opf
-${PLIST.openprs}share/modules/openprs/piloOpenprs.sym
-${PLIST.tcl}share/modules/tcl/piloClient.tcl
-${PLIST.openprs}@dirrm include/pilo/server/openprs
-@dirrm include/pilo/server
-@dirrm include/pilo/libsmoothtraj
-@dirrm include/pilo
-
+@comment Thu Sep 3 15:23:04 CEST 2026
+@comment includes architecture/genom/PLIST.module
+include/${GENOM_MODULE}/libsmoothtraj/${GENOM_MODULE}BrokenLineLibProto.h
+include/${GENOM_MODULE}/libsmoothtraj/${GENOM_MODULE}RSLibProto.h
+include/${GENOM_MODULE}/libsmoothtraj/${GENOM_MODULE}SpeedLibProto.h
+include/${GENOM_MODULE}/${GENOM_MODULE}Struct.h
+lib/lib${GENOM_MODULE}Smoothtraj.la
+lib/pkgconfig/${GENOM_MODULE}-smoothtraj.pc
+share/modules/gen/${GENOM_MODULE}.gen
