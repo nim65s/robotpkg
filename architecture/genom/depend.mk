@@ -75,7 +75,6 @@ ifdef GENOM_MODULE
 	  BEGIN { print "@comment includes ${PLIST_TEMPLATE.genom}" }	\
 	  NR > FNR { if (!($$0 in filter)) print; next; }		\
 	  {								\
-	    gsub("[$$]{GENOM_MODULE}", "${GENOM_MODULE}");		\
 	    gsub("[$$]{PLIST[^}]*}", "");				\
 	    filter[$$0];						\
 	  }' ${ROBOTPKG_DIR}/${PLIST_TEMPLATE.genom} -
