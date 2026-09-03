@@ -11,6 +11,7 @@ LICENSE=	gnu-lgpl-v3
 include ../../meta-pkgs/gearbox/Makefile.common
 
 CMAKE_ARGS+=	-DENABLE_LIB_FLEXIPORT=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../devel/gbx-share/depend.mk
 include ../../mk/sysdep/pkg-config.mk
