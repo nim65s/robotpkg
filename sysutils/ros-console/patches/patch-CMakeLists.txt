@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- CMakeLists.txt~	2025-04-10 23:52:49.000000000 +0200
++++ CMakeLists.txt	2026-09-03 23:00:40.853155244 +0200
+@@ -7,7 +7,7 @@
+ 
+ find_package(catkin REQUIRED COMPONENTS cpp_common rostime rosunit)
+ 
+-find_package(Boost REQUIRED COMPONENTS regex system thread)
++find_package(Boost REQUIRED COMPONENTS regex thread)
+ 
+ # select rosconsole backend
+ set(ROSCONSOLE_BACKEND "" CACHE STRING "Type of rosconsole backend, one of 'log4cxx', 'glog', 'print'")

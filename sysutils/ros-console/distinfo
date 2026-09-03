@@ -1,3 +1,5 @@
 SHA1 (ros/rosconsole/1.14.4.tar.gz) = 4df96355e44295c9cb70d5972f0173b252424b16
 RMD160 (ros/rosconsole/1.14.4.tar.gz) = 4d3045c3f2c6d08b697c83452864219653b9fcf9
 Size (ros/rosconsole/1.14.4.tar.gz) = 26351 bytes
+SHA1 (patch-CMakeLists.txt) = 017dfb456bde45964850d3092b3db2237b8be482
+SHA1 (patch-package.xml) = 5c893f8fa6ac187dd4cd4cd00912b7c0e7887216

@@ -1,0 +1,12 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- package.xml~	2025-04-10 23:52:49.000000000 +0200
++++ package.xml	2026-09-03 23:00:32.348485986 +0200
+@@ -12,7 +12,6 @@
+ 
+   <build_depend>apr</build_depend>
+   <build_depend>libboost-regex-dev</build_depend>
+-  <build_depend>libboost-system-dev</build_depend>
+   <build_depend>libboost-thread-dev</build_depend>
+   <build_depend>cpp_common</build_depend>
+   <build_depend>log4cxx</build_depend>
