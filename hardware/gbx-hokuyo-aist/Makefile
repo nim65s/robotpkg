@@ -10,6 +10,7 @@ LICENSE=        gnu-lgpl-v3
 include ../../meta-pkgs/gearbox/Makefile.common
 
 CMAKE_ARGS+=	-DENABLE_LIB_HOKUYO_AIST=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 LIBRARY_DIRS.gbx-flexiport+=	lib/gearbox
 RPATH_DIRS.gbx-flexiport+=	lib/gearbox
