@@ -1,35 +1,5 @@
-@comment Tue Jan 12 18:19:17 CET 2010
-bin/locoDemo
-bin/locoDemoSendInitRqst
-bin/locoDemoTest
-include/locoDemo/locoDemoConst.h
-include/locoDemo/locoDemoStruct.h
-include/locoDemo/server/locoDemoEndian.h
-include/locoDemo/server/locoDemoError.h
-include/locoDemo/server/locoDemoMsgLib.h
-include/locoDemo/server/locoDemoPosterLib.h
-include/locoDemo/server/locoDemoPosterLibStruct.h
-include/locoDemo/server/locoDemoPosterReadLibProto.h
-include/locoDemo/server/locoDemoPosterShowLib.h
-include/locoDemo/server/locoDemoPosterWriteLibProto.h
-include/locoDemo/server/locoDemoPosterXMLLib.h
-include/locoDemo/server/locoDemoPrint.h
-include/locoDemo/server/locoDemoPrintXML.h
-include/locoDemo/server/locoDemoScan.h
-include/locoDemo/server/locoDemoType.h
-${PLIST.openprs}include/locoDemo/server/openprs/locoDemoDecodeOpenprs.h
-${PLIST.openprs}include/locoDemo/server/openprs/locoDemoEncodeOpenprs.h
-${PLIST.openprs}include/locoDemo/server/openprs/locoDemoRequestsOpenprsProto.h
-lib/liblocoDemoClient.la
-${PLIST.openprs}lib/openprs/modlocoDemoOpenprs.la
-${PLIST.openprs}lib/pkgconfig/locoDemo-oprs.pc
-lib/pkgconfig/locoDemo.pc
-${PLIST.tcl}lib/tclserv/liblocoDemoTclServ.la
-share/modules/gen/locoDemo.gen
-${PLIST.openprs}share/modules/openprs/locoDemoOpenprs.inc
-${PLIST.openprs}share/modules/openprs/locoDemoOpenprs.opf
-${PLIST.openprs}share/modules/openprs/locoDemoOpenprs.sym
-${PLIST.tcl}lib/tclserv/liblocoDemoTclServ.la
-share/modules/tcl/locoDemoClient.tcl
-@dirrm include/locoDemo/server
-@dirrm include/locoDemo
+@comment Thu Sep 3 14:11:56 CEST 2026
+@comment includes architecture/genom/PLIST.module
+include/${GENOM_MODULE}/${GENOM_MODULE}Const.h
+include/${GENOM_MODULE}/${GENOM_MODULE}Struct.h
+share/modules/gen/${GENOM_MODULE}.gen
