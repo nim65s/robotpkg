@@ -1,0 +1,12 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- package.xml~	2025-04-26 01:28:02.000000000 +0200
++++ package.xml	2026-09-03 22:56:07.730920302 +0200
+@@ -22,7 +22,6 @@
+   <build_depend version_gte="0.3.3">cmake_modules</build_depend>
+ 
+   <depend>libboost-thread-dev</depend>
+-  <depend>libboost-system-dev</depend>
+   <depend>libboost-filesystem-dev</depend>
+   <depend>libconsole-bridge-dev</depend>
+   <depend>libpoco-dev</depend>
