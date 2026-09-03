@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- cpp_common/CMakeLists.txt~	2023-06-15 15:53:51.000000000 +0200
++++ cpp_common/CMakeLists.txt	2026-09-03 12:11:35.609281293 +0200
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.0.2)
+ project(cpp_common)
+ 
+-find_package(Boost REQUIRED COMPONENTS system thread)
++find_package(Boost REQUIRED COMPONENTS thread)
+ find_package(console_bridge REQUIRED)
+ find_package(catkin REQUIRED)
+ catkin_package(

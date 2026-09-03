@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- rostime/CMakeLists.txt~	2023-06-15 15:53:51.000000000 +0200
++++ rostime/CMakeLists.txt	2026-09-03 12:15:27.535238307 +0200
+@@ -2,7 +2,7 @@
+ project(rostime)
+ 
+ find_package(catkin REQUIRED COMPONENTS cpp_common)
+-find_package(Boost REQUIRED COMPONENTS date_time system thread)
++find_package(Boost REQUIRED COMPONENTS date_time thread)
+ catkin_package(
+   INCLUDE_DIRS include
+   LIBRARIES ${PROJECT_NAME}

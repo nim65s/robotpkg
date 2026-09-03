@@ -1,0 +1,16 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- cpp_common/package.xml~	2023-06-15 15:53:51.000000000 +0200
++++ cpp_common/package.xml	2026-09-03 12:11:48.012225529 +0200
+@@ -18,11 +18,9 @@
+ 
+   <buildtool_depend>catkin</buildtool_depend>
+ 
+-  <build_depend>libboost-system-dev</build_depend>
+   <build_depend>libboost-thread-dev</build_depend>
+   <build_depend>libconsole-bridge-dev</build_depend>
+ 
+-  <run_depend>libboost-system-dev</run_depend>
+   <run_depend>libboost-thread-dev</run_depend>
+   <run_depend>libconsole-bridge-dev</run_depend>
+ </package>

@@ -1,3 +1,7 @@
 SHA1 (ros/roscpp_core/0.7.3.tar.gz) = 09003897fc36b730f1194948e2a6ad51200710aa
 RMD160 (ros/roscpp_core/0.7.3.tar.gz) = 8170035f30f5e4c3d8bb58d24c0417d012324689
 Size (ros/roscpp_core/0.7.3.tar.gz) = 37674 bytes
+SHA1 (patch-cpp_common_CMakeLists.txt) = d817cbfb42391e65b0ca45ab119cde50b8cdd81a
+SHA1 (patch-cpp_common_package.xml) = e5d2b3bbb22a58ebbcc489254278d57b2b3b2fbc
+SHA1 (patch-rostime_CMakeLists.txt) = 40262048ab925178b41c79f173179163964a1a03
+SHA1 (patch-rostime_package.xml) = 8140d9e077b7ddc4221da7a78be8e61a91aae480
