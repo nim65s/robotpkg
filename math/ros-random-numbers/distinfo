@@ -1,3 +1,4 @@
 SHA1 (ros/random_numbers/0.3.2.tar.gz) = 52916e505c168e472f3241d5cfa5ad99c453ebc8
 RMD160 (ros/random_numbers/0.3.2.tar.gz) = f22e0a3bab60d9f7b8219b9f1989531fc1656acf
 Size (ros/random_numbers/0.3.2.tar.gz) = 6952 bytes
+SHA1 (patch-CMakeLists.txt) = 5a21e51cc5abf5fb3ab99d0d6cb6b2c81e3c98fc
