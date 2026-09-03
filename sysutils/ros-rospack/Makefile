@@ -2,6 +2,7 @@
 # Created:			Anthony Mallet on Mon, 10 Dec 2012
 #
 
+PKGREVISION=	1
 ROS_PKG=	rospack
 ROS_VERSION=	2.5.1
 
@@ -16,7 +17,7 @@ CMAKE_ARGS+=	-DTinyXML2_ROOT_DIR=${PREFIX.tinyxml}
 
 DEPEND_ABI.ros-catkin+=	${PKGTAG.python-}ros-catkin>=0.5.64
 
-USE_BOOST_LIBS=	filesystem program_options system
+USE_BOOST_LIBS=	filesystem program_options
 
 include ../../devel/ros-catkin/depend.mk
 include ../../devel/ros-cmake-modules/depend.mk

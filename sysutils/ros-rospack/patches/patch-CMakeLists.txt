@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- CMakeLists.txt~	2018-05-31 20:50:27.000000000 +0200
++++ CMakeLists.txt	2026-09-03 15:44:58.735722606 +0200
+@@ -2,7 +2,7 @@
+ project(rospack)
+ 
+ find_package(catkin REQUIRED COMPONENTS cmake_modules)
+-find_package(Boost REQUIRED COMPONENTS filesystem program_options system)
++find_package(Boost REQUIRED COMPONENTS filesystem program_options)
+ set(Python_ADDITIONAL_VERSIONS "${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}")
+ find_package(PythonLibs "${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}" REQUIRED)
+ find_package(TinyXML2 REQUIRED)
