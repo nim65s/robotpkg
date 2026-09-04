@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- clients/roscpp/CMakeLists.txt~	2025-05-20 00:26:10.000000000 +0200
++++ clients/roscpp/CMakeLists.txt	2026-09-04 16:59:29.060734394 +0200
+@@ -22,7 +22,7 @@
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/ros/common.h.in ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros/common.h)
+ 
+-find_package(Boost REQUIRED COMPONENTS chrono filesystem system)
++find_package(Boost REQUIRED COMPONENTS chrono filesystem)
+ 
+ include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+ # this is needed for use within a bazel workspace. See #1548 for details.
