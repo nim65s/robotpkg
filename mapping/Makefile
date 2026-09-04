@@ -12,7 +12,6 @@ SUBDIR+=	regionMap-lib
 SUBDIR+=	ros-laser-geometry
 SUBDIR+=	segkit
 SUBDIR+=	worldmodelgrid3d
-SUBDIR+=	worldmodelgrid3dg-genom
 SUBDIR+=	zone-genom
 
 include ../mk/robotpkg.subdir.mk
