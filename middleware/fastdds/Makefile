@@ -37,6 +37,7 @@ define PKG_OPTION_SET.doc
     -DDOC_INSTALL_DIR=${PREFIX}/share/doc/${PKGBASE}
   DYNAMIC_PLIST_DIRS+=	share/doc/${PKGBASE}
 
+  DEPEND_ABI.doxygen+=	doxygen>=1.8.16 # ambiguous file name in file command
   include ../../mk/sysdep/doxygen.mk
 endef
 
