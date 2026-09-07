@@ -17,9 +17,7 @@ MAINTAINER=		gepetto@laas.fr
 
 DYNAMIC_PLIST_DIRS+=	share/doc/${NAME}
 
-# disable -Werror because of x86_64 warnings (must be fixed upstream) and
-# boost + gcc that don't cohabit well depending on their respective versions
-CMAKE_ARGS+=		-DCXX_DISABLE_WERROR=yes
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 # man pages location
 CMAKE_ARGS+=		-DMANDIR=${PREFIX}/${PKGMANDIR}
