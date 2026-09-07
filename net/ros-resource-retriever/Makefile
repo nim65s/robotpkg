@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=	resource_retriever
-ROS_VERSION=	1.12.7
+ROS_VERSION=	1.12.10
 
 CATEGORIES=	net
 ROS_COMMENT=	API to retrieve data from url-format files
