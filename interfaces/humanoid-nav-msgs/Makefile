@@ -5,19 +5,20 @@
 VERSION=		0.3.0
 DISTNAME=		humanoid_msgs-${VERSION}
 PKGNAME=		humanoid-nav-msgs-${VERSION}
-CATEGORIES=		interfaces
-MASTER_SITES=		${MASTER_SITE_GITHUB:=ahornung/humanoid_msgs/archive/}
+MASTER_SITES=		${MASTER_SITE_GITHUB:=ahornung/}
 MASTER_REPOSITORY=	${MASTER_REPOSITORY_GITHUB}/ahornung/humanoid_msgs
-DISTFILES=		${VERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=		${PKGBASE}
 
+CATEGORIES=		interfaces
 MAINTAINER=		openrobots@laas.fr
 HOMEPAGE=		https://github.com/ahornung/humanoid_msgs
 COMMENT=		ROS messages and services for humanoid robots
 LICENSE=		modified-bsd
+
 CONFLICTS+=		ros-humanoid-msgs-[0-9]*
 
 WRKSRC=			${WRKDIR}/humanoid_msgs-${VERSION}/humanoid_nav_msgs
+
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 include ../../devel/ros-catkin/depend.mk
 include ../../interfaces/ros-common-msgs/depend.mk
