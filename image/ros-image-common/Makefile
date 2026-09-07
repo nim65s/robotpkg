@@ -21,6 +21,7 @@ SUBST_FILES.py-interp+=	opencv_tests/nodes/*.py
 USE_BOOST_LIBS+=filesystem python
 
 Boost_PYTHON_LIBRARY=	$(filter %.so,${SYSTEM_FILES.boost-lib-python})
+CMAKE_ARGS+=		-DBoost_PYTHON_VERSION=${PYTHON_VERSION}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_RELEASE=${Boost_PYTHON_LIBRARY}
 CMAKE_ARGS+=		-DBoost_PYTHON_LIBRARY_DEBUG=${Boost_PYTHON_LIBRARY}
 
