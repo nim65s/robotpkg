@@ -9,9 +9,9 @@ ifeq (+,${ROS2_DEPEND_COMMON}) # -------------------------------------------
 # Default ros2 packages preferences
 include ../../mk/robotpkg.prefs.mk # for OPSYS
 ifeq (Ubuntu,${OPSYS})
-  ifneq (,$(filter 22.04% 24.04%,${OS_VERSION}))
-    SYSTEM_PREFIX.ros2?=$(firstword \
-      $(realpath $(addprefix /opt/ros/,rolling kilted jazzy iron humble)))
+  ifneq (,$(filter 22.04% 24.04% 26.04%,${OS_VERSION}))
+    SYSTEM_PREFIX.ros2?=$(firstword $(realpath $(addprefix /opt/ros/,	\
+      rolling lyrical kilted jazzy iron humble)))
     PREFER.ros2?=	system
   endif
 endif
