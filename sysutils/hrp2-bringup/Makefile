@@ -18,6 +18,8 @@ NO_PUBLIC_BIN=	${RESTRICTED}
 
 WRKSRC=			${WRKDIR}/hrp2_bringup-${VERSION}
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DYNAMIC_PLIST_DIRS+=	share/doc/hrp2_bringup
 
 include ../../robots/hrp2-machine/depend.mk
