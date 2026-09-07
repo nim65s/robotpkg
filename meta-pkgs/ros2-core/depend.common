@@ -10,8 +10,12 @@ ifeq (+,${ROS2_DEPEND_COMMON}) # -------------------------------------------
 include ../../mk/robotpkg.prefs.mk # for OPSYS
 ifeq (Ubuntu,${OPSYS})
   ifneq (,$(filter 22.04% 24.04% 26.04%,${OS_VERSION}))
-    SYSTEM_PREFIX.ros2?=$(firstword $(realpath $(addprefix /opt/ros/,	\
-      rolling lyrical kilted jazzy iron humble)))
+    _sysvers.ros2=	rolling lyrical kilted jazzy iron humble
+
+    SYSTEM_PREFIX.ros2?=\
+      $(firstword $(realpath $(addprefix /opt/ros/,${_sysvers.ros2})))
+    _sysver.ros2=\
+      $(filter ${_sysvers.ros2},$(notdir ${SYSTEM_PREFIX.ros2}))
     PREFER.ros2?=	system
   endif
 endif
@@ -22,8 +26,10 @@ PREFER.ros2?=		robotpkg
 # Set defaults for ros2 packages in use
 define ROS2_DEPEND_USE_defaults
   $(foreach _,${ROS2_DEPEND_USE},$_ $(eval
-    PREFER.$_?=		${PREFER.ros2}
-    SYSTEM_PREFIX.$_?=	${SYSTEM_PREFIX.ros2}))
+    PREFER.$_?=			${PREFER.ros2}
+    SYSTEM_PREFIX.$_?=		${SYSTEM_PREFIX.ros2}
+    $(if ${_sysver.ros2},
+      SYSTEM_PKG.${OPSYS}.$_?=	$(subst ros2-,ros-${_sysver.ros2}-,$_))))
 endef
 
 DEPEND_USE+=		${ROS2_DEPEND_USE_defaults}
