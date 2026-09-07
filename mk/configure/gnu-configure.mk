@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2006,2008-2011,2013 LAAS/CNRS
+# Copyright (c) 2006, 2008-2011, 2013, 2026 LAAS/CNRS
 # All rights reserved.
 #
 # This project includes software developed by the NetBSD Foundation, Inc.
@@ -115,3 +115,13 @@ SUBST_FILES.fixcxxcpp=\
 SUBST_SED.fixcxxcpp=\
 	-e '/C++ preproc.*fails sanity/,/exit 1/s/exit 1/: /g'	\
 	-e '/fn_error.*C++ preproc.*fails sanity/s/^/: /g'
+
+# 2.70<=autoconf<2.73 fails to detect that g++-16 is C++11 compatible and adds
+# -std=gnu++11 to CXX, breaking packages that want more than that.
+#
+SUBST_CLASSES+=		$(if ${_language_c++_mk},fixcxx20)
+SUBST_STAGE.fixcxx20=	do-configure-pre-hook
+SUBST_MESSAGE.fixcxx20=	Disabling C++20 errors in GNU configure scripts
+SUBST_FILES.fixcxx20=\
+  $(addsuffix /${CONFIGURE_SCRIPT},${CONFIGURE_DIRS})
+SUBST_SED.fixcxx20=	-e '/u8"UTF-8/s@^@//@g'
