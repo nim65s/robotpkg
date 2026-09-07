@@ -216,7 +216,7 @@ $(foreach _, $(sort ${PLIST_FILTER_CLASSES}),				\
 _PLIST_FILTER_AWK= ${WRKDIR}/.plist_filter
 override define _plist_filter_scripts
   # convert raw awk script source to a file
-  ifneq (,$(strip ${PLIST_FILTER_AWK.$1}))
+  ifdef PLIST_FILTER_AWK.$1
     PLIST_FILTER_AWK_PROG.$1 +=${_PLIST_FILTER_AWK}.$1
     ${_PLIST_FILTER_AWK}.$1: export plist_filter=$${PLIST_FILTER_AWK.$1}
   endif
