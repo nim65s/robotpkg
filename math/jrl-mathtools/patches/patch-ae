@@ -1,0 +1,13 @@
+boost::system is header only since 1.69 and removed in 1.90
+
+--- cmake/boost.cmake~	2013-02-08 18:08:24.000000000 +0100
++++ cmake/boost.cmake	2026-09-08 11:02:52.639240008 +0200
+@@ -34,7 +34,7 @@
+ 
+   IF(NOT DEFINED BOOST_COMPONENTS)
+     SET(BOOST_COMPONENTS
+-      filesystem system thread program_options unit_test_framework)
++      filesystem thread program_options unit_test_framework)
+   ENDIF(NOT DEFINED BOOST_COMPONENTS)
+ 
+   FIND_PACKAGE(Boost 1.40 COMPONENTS ${BOOST_COMPONENTS} REQUIRED)

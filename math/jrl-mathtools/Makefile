@@ -19,6 +19,7 @@ DEPEND_ABI.boost-headers=	boost-headers>=1.40
 DEPEND_ABI.boost-libs=		boost-libs>=1.40
 
 CMAKE_ARGS+=	-DCXX_DISABLE_WERROR=TRUE
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 # configure the path to blas/lapack libraries. cmake Find{BLAS,LAPACK}
 # have no other mean to configure a specific path.
@@ -26,7 +27,7 @@ CMAKE_ARGS+=\
   '-DBLAS_LIBRARIES=${BLAS_LIB}'			\
   '-DLAPACK_LIBRARIES=${LAPACK_LIB};${BLAS_LIB}'
 
-USE_BOOST_LIBS= filesystem system thread program_options unit_test_framework
+USE_BOOST_LIBS= filesystem thread program_options unit_test_framework
 
 include ../../math/lapack/depend.mk
 include ../../mk/sysdep/boost-headers.mk
