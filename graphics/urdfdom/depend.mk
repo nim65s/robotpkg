@@ -12,7 +12,12 @@ endif
 ifeq (+,$(URDFDOM_DEPEND_MK)) # --------------------------------------------
 
 include ../../mk/robotpkg.prefs.mk # for OPSYS
-ifeq (NetBSD,${OPSYS})
+ifeq (Fedora,${OPSYS})
+  ifneq (,$(filter 42 43,${OS_VERSION}))
+    PREFER.urdfdom?=	system
+  endif
+  PREFER.urdfdom?=	robotpkg
+else ifeq (NetBSD,${OPSYS})
   PREFER.urdfdom?=	robotpkg
 endif
 PREFER.urdfdom?=	system
