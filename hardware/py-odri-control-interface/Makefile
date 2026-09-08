@@ -18,6 +18,7 @@ include ../../devel/jrl-cmakemodules/Makefile.common
 
 WRKSRC=			${WRKDIR}/$(subst -,_,${NAME})-${VERSION}
 CMAKE_ARGS+=		-DINSTALL_DOCUMENTATION=OFF
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 DEPEND_ABI.cmake+=	cmake>=3.14
 
