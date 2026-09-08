@@ -15,6 +15,7 @@ MAINTAINER=		hpp@laas.fr
 
 DYNAMIC_PLIST_DIRS+=	share/doc/romeo_description
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 CMAKE_ARGS+=		-DCMAKE_INSTALL_LIBDIR=lib
 
 include ../../devel/ros-catkin/depend.mk
