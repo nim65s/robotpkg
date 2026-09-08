@@ -1,0 +1,40 @@
+* Don't force C++11 standard - boost-math-1.90 requires C++14
+* boost::system is header only since 1.69 and removed in 1.90
+
+--- tf/CMakeLists.txt~	2020-06-09 03:15:21.000000000 +0200
++++ tf/CMakeLists.txt	2026-09-08 10:08:21.121867343 +0200
+@@ -1,17 +1,6 @@
+ cmake_minimum_required(VERSION 3.0.2)
+ project(tf)
+ 
+-include(CheckCXXCompilerFlag)
+-unset(COMPILER_SUPPORTS_CXX11 CACHE)
+-if(MSVC)
+-  # https://docs.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version
+-  # MSVC has c++14 enabled by default, no need to specify c++11
+-else()
+-  check_cxx_compiler_flag(-std=c++11 COMPILER_SUPPORTS_CXX11)
+-  if(COMPILER_SUPPORTS_CXX11)
+-    add_compile_options(-std=c++11)
+-  endif()
+-endif()
+ 
+ find_package(catkin REQUIRED COMPONENTS
+     angles
+@@ -25,7 +14,7 @@
+     std_msgs
+     tf2_ros
+ )
+-find_package(Boost REQUIRED COMPONENTS thread system)
++find_package(Boost REQUIRED COMPONENTS thread)
+ 
+ catkin_python_setup()
+ 
+@@ -52,6 +41,7 @@
+     src/transform_broadcaster.cpp
+     src/transform_listener.cpp
+ )
++target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
+ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+ add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ 
