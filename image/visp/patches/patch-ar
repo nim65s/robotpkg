@@ -2,6 +2,8 @@ PCLConfig.cmake >= 1.9.1 has issues with PUSH/POP stack, so that it is
 unusable. Avoid looking for PCL here and let robotpkg pass the required
 variables.
 
+Eigen3>=5 requires C++14
+
 --- CMakeLists.txt~	2020-02-14 14:41:31.000000000 +0100
 +++ CMakeLists.txt	2020-03-25 15:35:57.391053906 +0100
 @@ -590,7 +590,7 @@
@@ -13,3 +15,17 @@ variables.
  
  # ----------------------------------------------------------------------------
  # Handle cxx standard depending on specific 3rd parties. Should be before module parsing and VISP3rdParty.cmake include
+@@ -636,6 +636,13 @@
+     endif()
+   endif()
+ endif()
++if(USE_EIGEN3)
++  if(Eigen3_VERSION VERSION_GREATER 5)
++    set(CMAKE_CXX_STANDARD 14)
++    set(VISP_CXX_STANDARD ${VISP_CXX_STANDARD_14}) # for vpConfig.h
++  endif()
++endif()
++
+ 
+ # Upgrade c++ standard to 14 for IIT force-torque SDK that needs at least c++ 14 standard
+ if(USE_FTIITSDK)

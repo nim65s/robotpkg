@@ -1,0 +1,12 @@
+Drop useless statement breaking with cmake>=4
+
+--- cmake/VISPGenerateConfigScript.cmake~	2020-02-14 14:41:31.000000000 +0100
++++ cmake/VISPGenerateConfigScript.cmake	2026-09-08 19:23:58.102687742 +0200
+@@ -238,7 +238,6 @@
+ # =============================================================================
+ else() # DEFINED CMAKE_HELPER_SCRIPT
+ 
+-  cmake_minimum_required(VERSION 2.8.12.2)
+   include("${CMAKE_HELPER_SCRIPT}")
+   include("${VISP_SOURCE_DIR}/cmake/VISPUtils.cmake")
+ 
