@@ -1,0 +1,15 @@
+eigen3 in robotpkg is at least 3.0, no need to add failing checks that it
+is >=2.91.0
+
+--- cmake/FindEigen3.cmake~	2025-09-10 18:14:40.000000000 +0200
++++ cmake/FindEigen3.cmake	2026-09-08 14:09:58.600420341 +0200
+@@ -21,7 +21,8 @@
+ # variables are defined as in some CMake version this variables
+ # interfere with the correct finding of Eigen3 module, complaining
+ # that the found version is not compatible with 2.91.0
+-find_package(Eigen3 NO_MODULE QUIET)
++find_package(Eigen3 NO_MODULE REQUIRED)
++return()
+ 
+ if(NOT Eigen3_FIND_VERSION)
+   if(NOT Eigen3_FIND_VERSION_MAJOR)
