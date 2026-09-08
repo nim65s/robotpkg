@@ -1,0 +1,15 @@
+NULL is not a valid DaeStringRef, and this fails in C++20
+The test is useless anyway as the attr->getName() result is used just before
+without testing it for NULL, so it would fail there first.
+
+--- dom/src/dae/daeMetaElement.cpp~	2012-06-01 08:24:22.000000000 +0200
++++ dom/src/dae/daeMetaElement.cpp	2026-09-08 12:12:11.653361125 +0200
+@@ -175,7 +175,7 @@
+     else
+         _metaAttributes.append(attr);
+ 
+-    if ((attr->getName() != NULL) &&
++    if (
+         (strcmp(attr->getName(),"id") == 0)) {
+         _metaID = attr;
+         _isTrackableForQueries = true;
