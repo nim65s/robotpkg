@@ -12,6 +12,8 @@ COMMENT=		Provides capsule description of the robots
 LICENSE=		2-clause-bsd
 MAINTAINER=		hpp@laas.fr
 
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DYNAMIC_PLIST_DIRS+=	share/doc/robot_capsule_urdf
 
 SUBST_CLASSES+=         py-interp
