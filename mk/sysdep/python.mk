@@ -163,7 +163,13 @@ else ifeq (Ubuntu,${OPSYS})
   endif
   PREFER_ALTERNATIVE.python?=	python314
 else ifeq (Rocky,${OPSYS})
-  PREFER_ALTERNATIVE.python?=	python36
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER_ALTERNATIVE.python?=	python36
+  endif
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER_ALTERNATIVE.python?=	python39
+  endif
+  PREFER_ALTERNATIVE.python?=	python312
 else ifeq (Arch,${OPSYS})
   PREFER_ALTERNATIVE.python?=	python312
 else ifeq (NetBSD,${OPSYS})
