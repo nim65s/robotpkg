@@ -2,6 +2,7 @@
 # Created:			Guilhem Saurel on Mon, 29 Aug 2022
 #
 
+PKGREVISION=		1
 ORG=			Simple-Robotics
 NAME=			proxsuite
 VERSION=		0.7.3
@@ -37,7 +38,6 @@ include ../../math/eigen3/depend.mk
 include ../../optimization/proxsuite/depend.mk
 include ../../mk/sysdep/cereal.mk
 include ../../mk/sysdep/cmake.mk
-include ../../mk/sysdep/matio.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk

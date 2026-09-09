@@ -2,6 +2,7 @@
 # Created:			Guilhem Saurel on Mon, 26 Sep 2022
 #
 
+PKGREVISION=		1
 ORG=			Simple-Robotics
 NAME=			proxsuite
 VERSION=		0.7.3
@@ -27,9 +28,7 @@ CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 include ../../devel/visit-struct/depend.mk
 include ../../hardware/simde/depend.mk
 include ../../math/eigen3/depend.mk
-include ../../mk/sysdep/cereal.mk
 include ../../mk/sysdep/cmake.mk
-include ../../mk/sysdep/matio.mk
 include ../../mk/language/c.mk
 include ../../mk/language/c++.mk
 include ../../mk/robotpkg.mk
