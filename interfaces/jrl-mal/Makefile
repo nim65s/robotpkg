@@ -17,6 +17,7 @@ DYNAMIC_PLIST_DIRS+=	share/doc/jrl-mal
 
 CMAKE_ARGS+=	-DCXX_DISABLE_WERROR=TRUE
 CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 # configure the path to blas/lapack libraries. cmake Find{BLAS,LAPACK}
 # have no other mean to configure a specific path.
