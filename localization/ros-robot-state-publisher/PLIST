@@ -1,12 +1,10 @@
-@comment Wed Sep 13 13:53:57 CEST 2023
+@comment Wed Sep 9 15:33:46 CEST 2026
 include/robot_state_publisher/joint_state_listener.h
 include/robot_state_publisher/robot_state_publisher.h
-include/robot_state_publisher/treefksolverposfull_recursive.hpp
 lib/libjoint_state_listener.so
 lib/librobot_state_publisher_solver.so
 lib/pkgconfig/robot_state_publisher.pc
 lib/robot_state_publisher/robot_state_publisher
-lib/robot_state_publisher/state_publisher
 share/robot_state_publisher/cmake/robot_state_publisherConfig-version.cmake
 share/robot_state_publisher/cmake/robot_state_publisherConfig.cmake
 share/robot_state_publisher/package.xml

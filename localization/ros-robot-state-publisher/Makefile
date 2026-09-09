@@ -2,9 +2,8 @@
 # Created:			Séverin Lemaignan on Tue, 06 Aug 2013
 #
 
-PKGREVISION=	2
 ROS_PKG=	robot_state_publisher
-ROS_VERSION=	1.13.6
+ROS_VERSION=	1.15.3
 
 CATEGORIES=	localization
 ROS_COMMENT=	publish the state of a robot
