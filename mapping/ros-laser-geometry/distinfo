@@ -1,3 +1,4 @@
-SHA1 (ros/laser_geometry/1.6.7.tar.gz) = e13d8d8a0db3a50a1f1201527a27c223d13f25b3
-RMD160 (ros/laser_geometry/1.6.7.tar.gz) = f621210c224c1c8e45093b7791b43fb20711e79c
-Size (ros/laser_geometry/1.6.7.tar.gz) = 19095 bytes
+SHA1 (ros/laser_geometry/1.6.8.tar.gz) = fb1bfd885000ee83ea29ab4d23acf8bed317d118
+RMD160 (ros/laser_geometry/1.6.8.tar.gz) = 47e1e80f0d9d49962d6466882bb3bc56d794602f
+Size (ros/laser_geometry/1.6.8.tar.gz) = 19223 bytes
+SHA1 (patch-CMakeLists.txt) = 702f52ee2667a49b16021a389e89d93844e4b579

@@ -3,7 +3,7 @@
 #
 
 ROS_PKG=		laser_geometry
-ROS_VERSION=		1.6.7
+ROS_VERSION=		1.6.8
 ROS_REPO=		ros-perception
 
 CATEGORIES=		mapping
