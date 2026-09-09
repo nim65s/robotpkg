@@ -11,6 +11,13 @@ endif
 
 ifeq (+,$(IPOPT_DEPEND_MK)) # ------------------------------
 
+include ../../mk/robotpkg.prefs.mk # for OPSYS
+ifeq (Rocky,${OPSYS})
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER.ipopt?=		system
+  endif
+  PREFER.ipopt?=		robotpkg
+endif
 PREFER.ipopt?=			system
 
 DEPEND_USE+=			ipopt
@@ -20,7 +27,7 @@ DEPEND_DIR.ipopt?=		../../optimization/ipopt
 
 SYSTEM_SEARCH.ipopt=\
   'include/coin{,-or}/IpoptConfig.h:/IPOPT_VERSION/s/[^0-9.]//gp'	\
-  'lib/pkgconfig/ipopt.pc:/^Version/s/[^0-9.]//gp'				\
+  'lib/pkgconfig/ipopt.pc:/^Version/s/[^0-9.]//gp'			\
   'lib/libipopt.so'
 
 endif # --------------------------------------------------------------------
