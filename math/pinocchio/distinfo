@@ -3,4 +3,4 @@ RMD160 (pinocchio-v4.1.0.tar.gz) = 791fa590dbf71b22a6d497397e1fa81e1e2b5ecf
 Size (pinocchio-v4.1.0.tar.gz) = 4428024 bytes
 SHA1 (patch-include_pinocchio_src_utils_alloca.hxx) = d8058ae0d910eebf0eca24142f0b24270fe35068
 SHA1 (patch-include_pinocchio_src_utils_eigen-helpers.hxx) = 2425339c44d896b82aaad9ceaeaefd30bc8ca300
-SHA1 (patch-include_pinocchio_utils_alloca.hpp) = 7d75a0719948904866b5d493c3f57432f84067b2
+SHA1 (patch-include_pinocchio_utils_alloca.hpp) = af05791714486a6b0f9c4b4b47d5721482ef2517

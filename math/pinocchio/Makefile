@@ -16,18 +16,18 @@ include ../../devel/jrl-cmakemodules/Makefile.common
 CMAKE_ARGS+=		-DBUILD_WITH_CASADI_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_WITH_COLLISION_SUPPORT=ON
 CMAKE_ARGS+=		-DBUILD_BENCHMARK=OFF
+CMAKE_ARGS+=		-DBUILD_EXAMPLES=OFF
 CMAKE_ARGS+=		-DBUILD_TESTING=OFF
 CMAKE_ARGS+=		-DBUILD_UTILS=OFF
 CMAKE_ARGS+=		-DBUILD_TESTS_WITH_HPP=OFF
 CMAKE_ARGS+=		-DBUILD_PYTHON_INTERFACE=OFF
 CMAKE_ARGS+=		-DINSTALL_DOCUMENTATION=OFF
 
-USE_BOOST_LIBS=		system filesystem
+USE_BOOST_LIBS=		filesystem serialization
 
 include ../../graphics/urdfdom/depend.mk
 include ../../math/eigen3/depend.mk
 include ../../path/coal/depend.mk
-include ../../robots/example-robot-data/depend.mk
 include ../../mapping/octomap/depend.mk
 include ../../optimization/casadi/depend.mk
 include ../../sysutils/console-bridge/depend.mk

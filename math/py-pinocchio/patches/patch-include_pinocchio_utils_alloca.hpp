@@ -3,12 +3,14 @@ Also alloca.h header is glibc only, stdlib.h otherwise
 
 --- include/pinocchio/utils/alloca.hpp~	2026-07-07 10:37:24.000000000 +0200
 +++ include/pinocchio/utils/alloca.hpp	2026-08-04 13:05:42.709717132 +0200
-@@ -6,8 +6,12 @@
+@@ -6,8 +6,14 @@
  // IWYU pragma: begin_keep
  #ifdef _WIN32
    #include <malloc.h>
 +#elif defined(__GNUC__) || defined(__clang__)
-+# define alloca __builtin_alloca
++# ifndef alloca
++#  define alloca(x) __builtin_alloca(x)
++# endif
 +#elif defined(__GLIBC__)
 +# include <alloca.h>
  #else
