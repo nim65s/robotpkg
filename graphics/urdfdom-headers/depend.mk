@@ -19,6 +19,11 @@ ifeq (Fedora,${OPSYS})
   PREFER.urdfdom-headers?=	robotpkg
 else ifeq (NetBSD,${OPSYS})
   PREFER.urdfdom-headers?=	robotpkg
+else ifeq (Rocky,${OPSYS})
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER.urdfdom-headers?=	system
+  endif
+  PREFER.urdfdom-headers?=	robotpkg
 endif
 PREFER.urdfdom-headers?=	system
 

@@ -19,6 +19,11 @@ ifeq (Fedora,${OPSYS})
   PREFER.urdfdom?=	robotpkg
 else ifeq (NetBSD,${OPSYS})
   PREFER.urdfdom?=	robotpkg
+else ifeq (Rocky,${OPSYS})
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER.urdfdom?=	system
+  endif
+  PREFER.urdfdom?=	robotpkg
 endif
 PREFER.urdfdom?=	system
 
