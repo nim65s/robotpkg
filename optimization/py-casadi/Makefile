@@ -17,6 +17,7 @@ DEPEND_ABI.casadi=\
   casadi-${PKGVERSION$(if $(filter system,${PREFER.casadi}),_NOREV)}
 DEPEND_ABI.swig=	swig>=3
 
+include ../../math/eigen3/depend.mk
 include ../../optimization/casadi/depend.mk
 include ../../mk/sysdep/python.mk
 include ../../mk/sysdep/swig.mk
