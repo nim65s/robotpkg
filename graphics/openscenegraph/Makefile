@@ -21,6 +21,10 @@ CONFIGURE_ENV+=		COLLADA_DIR=${PREFIX.collada-dom}
 CMAKE_ARGS+=		-DCOLLADA_DOM_2_4_OR_LATER=ON
 CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
+# unwanted dependencies
+CMAKE_ARGS+=		-DCMAKE_DISABLE_FIND_PACKAGE_LIBLAS=ON
+CMAKE_ARGS+=		-DCMAKE_DISABLE_FIND_PACKAGE_OpenCascade=ON
+
 include ../../graphics/collada-dom/depend.mk
 include ../../mk/sysdep/cmake.mk
 include ../../mk/sysdep/mesa.mk
