@@ -12,9 +12,12 @@ endif
 ifeq (+,$(OCTOMAP_DEPEND_MK)) # --------------------------------------------
 
 include ../../mk/robotpkg.prefs.mk # for OPSYS
-ifeq (CentOS,${OPSYS})
+ifeq (NetBSD,${OPSYS})
   PREFER.octomap?=	robotpkg
-else ifeq (NetBSD,${OPSYS})
+else ifeq (Rocky,${OPSYS})
+  ifneq (,$(filter 8,${OS_VERSION}))
+    PREFER.octomap?=	system
+  endif
   PREFER.octomap?=	robotpkg
 endif
 PREFER.octomap?=	system
