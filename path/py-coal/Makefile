@@ -15,11 +15,12 @@ USE_MASTER_GITHUB=	true
 USE_PYTHON_ONLY=	yes
 include ../../devel/jrl-cmakemodules/Makefile.common
 
+CMAKE_ARGS+=		-DENABLE_PYTHON_DOXYGEN_AUTODOC=OFF
+
 CMAKE_ARGS+=		-DCOAL_BACKWARD_COMPATIBILITY_WITH_HPP_FCL=ON
 CMAKE_ARGS+=		-DHPP_FCL_HAS_QHULL=ON
 
-USE_BOOST_LIBS=		thread date_time system filesystem unit_test_framework
-USE_BOOST_LIBS+=	chrono python
+USE_BOOST_LIBS=		serialization filesystem log
 
 DEPEND_ABI.assimp+=	assimp>=5
 
