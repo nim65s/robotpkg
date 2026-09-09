@@ -20,8 +20,8 @@ DEPEND_ABI.eigen3?=	eigen3>=3.3
 DEPEND_DIR.eigen3?=	../../math/eigen3
 
 SYSTEM_SEARCH.eigen3=	\
-  'include/eigen3/signature_of_eigen3_matrix_library'		\
-  '{lib,share}/{cmake,eigen3}/{cmake,eigen3}/Eigen3Config.cmake'\
+  'include/eigen3/signature_of_eigen3_matrix_library'			\
+  '{lib,share}/{cmake/eigen3,eigen3/cmake,eigen3}/Eigen3Config.cmake'	\
   '{lib,share}/pkgconfig/eigen3.pc:/Version/s/[^0-9.]//gp'
 
 SYSTEM_PKG.Debian.eigen3=	libeigen3-dev
