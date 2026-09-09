@@ -1,3 +1,4 @@
 SHA1 (hpp-constraints-v9.0.2.tar.gz) = 3dec835b9de77c8f867c26fcc5be2cf2f7ad0bc4
 RMD160 (hpp-constraints-v9.0.2.tar.gz) = d9a99a3f96bc2d20c9827b8b41da1d393cbfda77
 Size (hpp-constraints-v9.0.2.tar.gz) = 337374 bytes
+SHA1 (patch-include_hpp_constraints_matrix-view.hh) = 5d81e314e9e57665b099e704bac4fe6883819a79
