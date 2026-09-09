@@ -2,6 +2,7 @@
 # Created:			Guilhem Saurel on Tue, 14 Apr 2020
 #
 
+PKGREVISION=		1
 ORG=			loco-3d
 NAME=			crocoddyl
 VERSION=		3.2.1
@@ -21,6 +22,10 @@ include ../../devel/jrl-cmakemodules/Makefile.common
 # parallel builds exhaust memory - until a better solution is found
 MAKE_JOBS_SAFE=		no
 
+CMAKE_ARGS+=		-DBUILD_BENCHMARK=OFF
+CMAKE_ARGS+=		-DBUILD_EXAMPLES=OFF
+CMAKE_ARGS+=		-DBUILD_TESTING=OFF
+
 DEPEND_ABI.pinocchio=	pinocchio>=2.6.3
 DEPEND_ABI.python=	python>=3
 
@@ -33,8 +38,6 @@ include ../../math/py-pinocchio/depend.mk
 include ../../optimization/crocoddyl/depend.mk
 include ../../optimization/ipopt/depend.mk
 include ../../path/coal/depend.mk
-include ../../robots/example-robot-data/depend.mk
-include ../../robots/py-example-robot-data/depend.mk
 include ../../mk/sysdep/assimp.mk
 include ../../mk/sysdep/boost-headers.mk
 include ../../mk/sysdep/boost-libs.mk
